@@ -20,7 +20,11 @@ func talk(textarray : Array):
 	"""
 	text = textarray
 	block_walk = true
-	reset()
+	hidden = false
+	num = 0
+	$RichTextLabel.text = text[num]
+	to_beginning()
+	show()
 
 func _process(delta):
 	if Input.is_action_just_pressed("accept") and !hidden:
@@ -31,28 +35,18 @@ func _process(delta):
 				to_beginning()
 
 			elif $RichTextLabel.percent_visible == 1:
-				hide_dialogue()
+				block_walk = false
+				$InputBlocker.wait_time = block_time
+				$InputBlocker.start()
+				num = 0
+				hide()
 		else:
 			$RichTextLabel.percent_visible = 1
 
-func hide_dialogue():
-	hide()
-	block_walk = false
-	$InputBlocker.wait_time = block_time
-	$InputBlocker.start()
-	num = 0
-
-func reset():
-	show()
-	hidden = false
-	num = 0
-	$RichTextLabel.text = text[num]
-	to_beginning()
-	
 func to_beginning():
 	wait = false
 	$Timer.wait_time = wait_time
-	$RichTextLabel.percent_visible = 0
+	$RichTextLabel.percent_visible = 0.05
 	$Timer.start()
 
 func _on_Timer_timeout():
