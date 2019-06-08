@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/test/dialoguebox.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/font/Pixeled.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="NinePatchRect" type="NinePatchRect"]
+margin_left = 160.816
+margin_top = 18.7279
+margin_right = 893.816
+margin_bottom = 175.728
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 25, 24 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 13.0
+margin_top = 11.0
+margin_right = 719.0
+margin_bottom = 143.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Hallo ich bin Klengan!!!!"
