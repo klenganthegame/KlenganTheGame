@@ -1,12 +1,46 @@
 extends NinePatchRect
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var wait_time = 0.02
+var time : float
 
-# Called when the node enters the scene tree for the first time.
+var text = ["Klengan:\nHallo Ich bin Klengan!", "wie geht es dir?", "Lululul"]
+var num : int
+var wait : bool
+
 func _ready():
-	pass # Replace with function body.
+	reset()
 
-func _():
-	pass
+func _process(delta):
+	if Input.is_action_just_pressed("accept"):
+		if wait == true:
+			print("here")
+			if num < len(text)-1:
+				print("heeeere")
+				num += 1
+				$RichTextLabel.text = text[num]
+				to_beginning()
+
+			elif $RichTextLabel.percent_visible == 1:
+				hide()
+				
+		else:
+			$RichTextLabel.percent_visible = 1
+
+func reset():
+	num = 0
+	$RichTextLabel.text = text[num]
+	to_beginning()
+	
+func to_beginning():
+	wait = false
+	$Timer.wait_time = wait_time
+	$RichTextLabel.percent_visible = 0
+	$Timer.start()
+
+func _on_Timer_timeout():
+	if $RichTextLabel.percent_visible < 1:
+		$RichTextLabel.percent_visible += .01
+	else: 
+		wait = true
+	$Timer.start()
+	

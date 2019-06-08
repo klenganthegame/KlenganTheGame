@@ -43,7 +43,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1
+frame = 5
 playing = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -67,6 +67,7 @@ pressed = ExtResource( 15 )
 action = "walk_left"
 
 [node name="NinePatchRect" parent="CanvasLayer" instance=ExtResource( 16 )]
+wait_time = 0.02
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
