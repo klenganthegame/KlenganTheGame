@@ -13,9 +13,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("accept"):
 		if wait == true:
-			print("here")
 			if num < len(text)-1:
-				print("heeeere")
 				num += 1
 				$RichTextLabel.text = text[num]
 				to_beginning()
