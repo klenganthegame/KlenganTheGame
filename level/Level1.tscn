@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-0.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-1.png" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-5.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-6.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=8]
-[ext_resource path="res://AnimatedSprite.gd" type="Script" id=9]
+[ext_resource path="res://objects/level1/AnimatedSprite.gd" type="Script" id=9]
+[ext_resource path="res://objects/level1/Klengan.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -26,3 +27,5 @@ scale = Vector2( 0.235149, 0.235149 )
 frames = SubResource( 1 )
 frame = 1
 script = ExtResource( 9 )
+
+[node name="Klengan" parent="." instance=ExtResource( 10 )]
