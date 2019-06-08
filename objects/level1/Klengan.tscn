@@ -43,7 +43,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 4
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -82,5 +82,6 @@ action = "walk_left"
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 16 )]
 visible = false
+wait_time = 0.01
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

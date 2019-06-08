@@ -32,7 +32,7 @@ func _process(delta):
 		
 		
 		# for debug purposes:
-		$CanvasLayer/DialogueBox.talk(["Klengan:\nHallo ich bin Klengan", "Möge der Saft mit euch sein", "schubidu", "blahblahblahblah"])
+		$CanvasLayer/DialogueBox.talk(["Klengan:\nWas ist das?? Ist das etwa...", "ein... Klon??? Mark Forster?", "Warum Klonen sie Mark Forster????", "blahblahblahblah"])
 
 func _physics_process(delta):
 	motion.y += GRAVITY
