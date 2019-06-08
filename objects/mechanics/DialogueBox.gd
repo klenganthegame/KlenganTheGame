@@ -25,7 +25,6 @@ func talk(textarray : Array):
 	hidden = false
 	num = 0
 	$RichTextLabel.text = text[num]
-	print("talk")
 	to_beginning()
 	show()
 
@@ -61,7 +60,6 @@ func _on_Timer_timeout():
 	$Timer.start()
 
 func _on_InputBlocker_timeout():
-	print("schubi")
 	hidden = true
 	block_walk = false
 	$Timer.stop()
