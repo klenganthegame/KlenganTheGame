@@ -17,12 +17,12 @@ func _ready():
 func _physics_process(delta):
 	motion.y += GRAVITY
 	var friction = false
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("walk_right"):
 		motion.x = min(motion.x + ACCELERATON, MAX_SPEED)
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("walk")
 		
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("walk_left"):
 		motion.x = max(motion.x - ACCELERATON, -MAX_SPEED)
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("walk")
