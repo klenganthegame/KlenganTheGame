@@ -20,6 +20,12 @@ patch_margin_right = 11
 patch_margin_bottom = 10
 script = ExtResource( 2 )
 
+[node name="InputBlocker" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 13.0
 margin_top = 11.0
@@ -27,10 +33,6 @@ margin_right = 719.0
 margin_bottom = 143.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Klengan:
-Hallo ich bin Klengan!!!!"
 scroll_active = false
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+[connection signal="timeout" from="InputBlocker" to="." method="_on_InputBlocker_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

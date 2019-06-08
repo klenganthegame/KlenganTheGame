@@ -1,17 +1,29 @@
 extends NinePatchRect
 
 export var wait_time = 0.02
+export var block_time = 0.3
 var time : float
 
-var text = ["Klengan:\nHallo Ich bin Klengan!", "wie geht es dir?", "Lululul"]
+var text = []
 var num : int
 var wait : bool
+var block_walk : bool
+var hidden : bool
 
 func _ready():
+	hidden = true
+	pass
+
+func talk(textarray : Array):
+	"""
+	Use this function to activate the DialogueBox
+	"""
+	text = textarray
+	block_walk = true
 	reset()
 
 func _process(delta):
-	if Input.is_action_just_pressed("accept"):
+	if Input.is_action_just_pressed("accept") and !hidden:
 		if wait == true:
 			if num < len(text)-1:
 				num += 1
@@ -19,12 +31,20 @@ func _process(delta):
 				to_beginning()
 
 			elif $RichTextLabel.percent_visible == 1:
-				hide()
-				
+				hide_dialogue()
 		else:
 			$RichTextLabel.percent_visible = 1
 
+func hide_dialogue():
+	hide()
+	block_walk = false
+	$InputBlocker.wait_time = block_time
+	$InputBlocker.start()
+	num = 0
+
 func reset():
+	show()
+	hidden = false
 	num = 0
 	$RichTextLabel.text = text[num]
 	to_beginning()
@@ -41,4 +61,6 @@ func _on_Timer_timeout():
 	else: 
 		wait = true
 	$Timer.start()
-	
+
+func _on_InputBlocker_timeout():
+	hidden = true
