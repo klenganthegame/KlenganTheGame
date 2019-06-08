@@ -39,7 +39,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 5
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -49,19 +49,19 @@ smoothing_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="Up" type="TouchScreenButton" parent="Camera2D/CanvasLayer"]
-position = Vector2( 892.26, 486.974 )
+position = Vector2( 890, 480 )
 normal = ExtResource( 10 )
 pressed = ExtResource( 11 )
 action = "jump"
 
 [node name="Right" type="TouchScreenButton" parent="Camera2D/CanvasLayer"]
-position = Vector2( 149.519, 486.91 )
+position = Vector2( 150, 480 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 13 )
 action = "walk_right"
 
 [node name="Left" type="TouchScreenButton" parent="Camera2D/CanvasLayer"]
-position = Vector2( 35.8014, 489.774 )
+position = Vector2( 35, 480 )
 normal = ExtResource( 14 )
 pressed = ExtResource( 15 )
 action = "walk_left"
