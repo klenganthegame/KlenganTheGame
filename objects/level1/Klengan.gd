@@ -26,7 +26,7 @@ func _process(delta):
 	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden:
 		
 		# TODO:
-		#   If (Group = interactable && person):
+		#   If (Group = interactable && person:
 		#       get Textarray from Interactable Object and talk
 		
 		
@@ -59,14 +59,16 @@ func _physics_process(delta):
 			if friction == true:
 				motion.x = lerp(motion.x, 0, 0.2)
 			else:
-			#if motion.y-50 < 0:
-				#$AnimatedSprite.play("jump") # Fall
-				#$CollisionShape2D.hide()
-			#else:
-				#$AnimatedSprite.play("fall") # Jump
-				#$CollisionShape2D.show()
 				if friction == true:
 					motion.x = lerp(motion.x, 0, 0.05)
+		else:
+			if motion.y-50 < 0:
+				#$AnimatedSprite.play("jump") # Fall
+				$CollisionShape2D.disabled = true
+			else:
+				#$AnimatedSprite.play("fall") # Jump
+				$CollisionShape2D.disabled = false
+				
 	
 		var collisions = move_and_collide(motion * delta) 
 		# if collisions:
