@@ -17,10 +17,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -430 ), Vector2( 0, -400 ), Vector2( 0, -430 ) ]
+"values": [ Vector2( 0, -360 ), Vector2( 0, -330 ) ]
 }
 
 [node name="Interactable" type="Node2D"]
@@ -37,7 +37,7 @@ shape = SubResource( 1 )
 anims/exclamation = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -426.191 )
+position = Vector2( 0, -330 )
 texture = ExtResource( 2 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
