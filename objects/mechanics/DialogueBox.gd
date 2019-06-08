@@ -10,6 +10,8 @@ var wait : bool
 var block_walk : bool
 var hidden : bool
 
+var block_box_timer : bool
+
 func _ready():
 	hidden = true
 	pass
@@ -23,6 +25,7 @@ func talk(textarray : Array):
 	hidden = false
 	num = 0
 	$RichTextLabel.text = text[num]
+	print("talk")
 	to_beginning()
 	show()
 
@@ -35,10 +38,11 @@ func _process(delta):
 				to_beginning()
 
 			elif $RichTextLabel.percent_visible == 1:
-				block_walk = false
+				num = 0
+				wait == false
+				$RichTextLabel.percent_visible = .05
 				$InputBlocker.wait_time = block_time
 				$InputBlocker.start()
-				num = 0
 				hide()
 		else:
 			$RichTextLabel.percent_visible = 1
@@ -57,4 +61,7 @@ func _on_Timer_timeout():
 	$Timer.start()
 
 func _on_InputBlocker_timeout():
+	print("schubi")
 	hidden = true
+	block_walk = false
+	$Timer.stop()

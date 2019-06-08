@@ -22,13 +22,17 @@ func _ready():
 
 func _process(delta):
 	can_move = !$CanvasLayer/DialogueBox.block_walk
+
 	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden:
 		
-		# TODO:get Textarray from Interactable Object
+		# TODO:
+		#   If (Group = interactable && person):
+		#       get Textarray from Interactable Object and talk
+		
 		
 		
 		# for debug purposes:
-		$CanvasLayer/DialogueBox.talk(["Hallo ich bin Klengan", "Möge der Saft mit euch sein", "schubidu", "blahblahblahblah"])
+		$CanvasLayer/DialogueBox.talk(["Klengan:\nHallo ich bin Klengan", "Möge der Saft mit euch sein", "schubidu", "blahblahblahblah"])
 
 func _physics_process(delta):
 	motion.y += GRAVITY
