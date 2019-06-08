@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Area2D.gd" type="Script" id=1]
+[ext_resource path="res://objects/level1/Area2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-0.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-2.png" type="Texture" id=4]
