@@ -47,6 +47,6 @@ func _physics_process(delta):
 			motion.x = lerp(motion.x, 0, 0.05)
 	
 	var collisions = move_and_collide(motion * delta) 
-	if collisions:
-		Input.start_joy_vibration(0, 0.5, 0.5, 0.5)
+	# if collisions:
+		#Input.start_joy_vibration(0, 0.5, 0.5, 0.5)
 	motion = move_and_slide(motion,Vector2(0, -1))
