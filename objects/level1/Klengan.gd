@@ -6,10 +6,14 @@ export var ACCELERATON : int = 50
 export var MAX_SPEED : int = 200
 export var JUMP_HEIGTH : int = -550
 
-
 var velocity : Vector2 = Vector2()
 var motion : Vector2 = Vector2()
 var looking_right : bool = true
+
+var target
+var inventory = []
+var can_move = true
+var can_interact = false
 
 func _ready():
 	pass    

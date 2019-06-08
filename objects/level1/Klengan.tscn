@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://objects/level1/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-0.png" type="Texture" id=2]
@@ -32,6 +32,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 19.0106, 98.0105 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24.9137, 10 )
+
 [node name="Klengan" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -39,28 +42,32 @@ script = ExtResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 4
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor/display_folded = true
 current = true
 smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="Up" type="TouchScreenButton" parent="Camera2D/CanvasLayer"]
+visible = false
 position = Vector2( 890, 480 )
 normal = ExtResource( 10 )
 pressed = ExtResource( 11 )
 action = "jump"
 
 [node name="Right" type="TouchScreenButton" parent="Camera2D/CanvasLayer"]
+visible = false
 position = Vector2( 150, 480 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 13 )
 action = "walk_right"
 
 [node name="Left" type="TouchScreenButton" parent="Camera2D/CanvasLayer"]
+visible = false
 position = Vector2( 35, 480 )
 normal = ExtResource( 14 )
 pressed = ExtResource( 15 )
@@ -69,3 +76,9 @@ action = "walk_left"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.44014 )
 shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, 90 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
