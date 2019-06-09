@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Klengan the Game"
 run/main_scene="res://level/Level1.tscn"
+boot_splash/image="res://Sprites/other/bootsplash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
