@@ -47,23 +47,26 @@ texture = ExtResource( 2 )
 position = Vector2( 338.34, -71.7692 )
 
 [node name="InteractableSamples" type="Node2D" parent="."]
-editor/display_folded = true
 
-[node name="Interactable3" parent="InteractableSamples" instance=ExtResource( 4 )]
-position = Vector2( -377.874, 624.659 )
-dialogue = [ "Klengan: Ich glaube es ist nicht die Zeit um da hoch zu klettern." ]
+[node name="Interactable7" parent="InteractableSamples" instance=ExtResource( 4 )]
+position = Vector2( -380.802, 396.121 )
+dialogue = [ "Klengan: Ja wow...........", "jetzt bin ich doch hier oben...." ]
 
-[node name="Interactable" parent="InteractableSamples/Interactable3" instance=ExtResource( 4 )]
-position = Vector2( 233.314, 2.36633 )
-dialogue = [ "Klengan: Das ist aber eine schöne Lampe." ]
+[node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 4 )]
+position = Vector2( 1849.11, 623.509 )
+dialogue = [ "Klengan: Sieht aus wie eine Tür..." ]
 
-[node name="Interactable" parent="InteractableSamples/Interactable3/Interactable" instance=ExtResource( 4 )]
-position = Vector2( 1654.36, -1.75818 )
+[node name="Interactable5" parent="InteractableSamples" instance=ExtResource( 4 )]
+position = Vector2( 1509.8, 625.267 )
 dialogue = [ "Klengan: Hm...", "Ein Haufen Beschallungsgeräte..." ]
 
-[node name="Interactable" parent="InteractableSamples/Interactable3/Interactable/Interactable" instance=ExtResource( 4 )]
-position = Vector2( 339.311, -1.75806 )
-dialogue = [ "Klengan: Sieht aus wie eine Tür..." ]
+[node name="Interactable4" parent="InteractableSamples" instance=ExtResource( 4 )]
+position = Vector2( -144.56, 627.025 )
+dialogue = [ "Klengan: Das ist aber eine schöne Lampe." ]
+
+[node name="Interactable3" parent="InteractableSamples" instance=ExtResource( 4 )]
+position = Vector2( -379.46, 627.832 )
+dialogue = [ "Klengan: Ich glaube es ist nicht die Zeit um da hoch zu klettern." ]
 
 [node name="Interactable" parent="InteractableSamples" instance=ExtResource( 4 )]
 position = Vector2( -899.478, 626.783 )
@@ -77,14 +80,17 @@ dialogue = [ "Klengan: Was ein schöner Schuh." ]
 position = Vector2( 811.771, 510.844 )
 
 [node name="CollisionSamples" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D4"]
 position = Vector2( 709.957, 479.334 )
 shape = SubResource( 3 )
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D11"]
 position = Vector2( 1369.74, 566.398 )
