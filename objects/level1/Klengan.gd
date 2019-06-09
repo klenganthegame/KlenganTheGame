@@ -83,3 +83,8 @@ func _on_Area2D_area_exited(area):
 	can_interact = false
 	area = null
 	pass # Replace with function body.
+
+
+func _on_DialogueBox_dialogue_exit():
+	# do stuff here
+	pass
