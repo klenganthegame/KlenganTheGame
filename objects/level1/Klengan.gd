@@ -12,10 +12,7 @@ var looking_right : bool = true
 
 var can_interact = false
 var can_move = true
-
-# var target
-# var inventory = []
-
+var area : Area2D
 
 func _ready():
 	pass    
@@ -23,16 +20,10 @@ func _ready():
 func _process(delta):
 	can_move = !$CanvasLayer/DialogueBox.block_walk
 
-	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden:
-		
-		# TODO:
-		#   If (Group = interactable && person:
-		#       get Textarray from Interactable Object and talk
-		
-		
-		
-		# for debug purposes:
-		$CanvasLayer/DialogueBox.talk(["Klengan:\nWas ist das?? Ist das etwa...", "ein... Klon??? Mark Forster?", "Warum Klonen sie Mark Forster????", "blahblahblahblah"])
+	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden and area != null:
+		var interactable = area.get_parent()
+		if interactable.is_in_group("Interactable"):
+			$CanvasLayer/DialogueBox.talk(interactable.dialogue)
 
 func _physics_process(delta):
 	motion.y += GRAVITY
@@ -75,11 +66,18 @@ func _physics_process(delta):
 			#Input.start_joy_vibration(0, 0.5, 0.5, 0.5)
 		motion = move_and_slide(motion,Vector2(0, -1))
 
-func _on_Area2D_area_entered(area):
+func talk(text : Array):
+	$CanvasLayer/DialogueBox.talk(text)
+	pass
+	
+
+func _on_Area2D_area_entered(_area):
 	can_interact = true
+	area = _area
 	pass # Replace with function body.
 
 
 func _on_Area2D_area_exited(area):
 	can_interact = false
+	area = null
 	pass # Replace with function body.
