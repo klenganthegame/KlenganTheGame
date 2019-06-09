@@ -8,13 +8,13 @@
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=7]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.3257, 5.04416 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1713.54, 10 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 72.2358, 6.07898 )
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -99,27 +99,27 @@ editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D4"]
 position = Vector2( 709.957, 479.334 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D11"]
 position = Vector2( 1369.74, 566.398 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionSamples"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D"]
 position = Vector2( 377.174, 645.869 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D2"]
 position = Vector2( 833.244, 410.729 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
