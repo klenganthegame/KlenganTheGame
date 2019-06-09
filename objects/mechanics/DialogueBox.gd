@@ -12,6 +12,8 @@ var hidden : bool
 
 var block_box_timer : bool
 
+signal dialogue_exit()
+
 func _ready():
 	hidden = true
 	pass
@@ -63,3 +65,4 @@ func _on_InputBlocker_timeout():
 	hidden = true
 	block_walk = false
 	$Timer.stop()
+	emit_signal("dialogue_exit")
