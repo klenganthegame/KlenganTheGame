@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/test/Backstage_example.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=2]
-[ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/level1/Klengan.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/level1/Klengan.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1713.54, 10 )
@@ -22,19 +23,47 @@ position = Vector2( -978.208, 146.405 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 377.174, 645.869 )
 shape = SubResource( 1 )
 
-[node name="KlenganKlon_test" parent="." instance=ExtResource( 3 )]
-position = Vector2( 811.771, 510.844 )
-
-[node name="Klengan" parent="." instance=ExtResource( 4 )]
+[node name="Klengan" parent="." instance=ExtResource( 3 )]
 position = Vector2( 338.34, -71.7692 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 809.127, 407.714 )
 shape = SubResource( 2 )
+
+[node name="InteractableSamples" type="Node2D" parent="."]
+
+[node name="Interactable3" parent="InteractableSamples" instance=ExtResource( 4 )]
+position = Vector2( -377.874, 624.659 )
+dialogue = [ "Klengan: Ich glaube es ist nicht die Zeit um da hoch zu klettern." ]
+
+[node name="Interactable" parent="InteractableSamples/Interactable3" instance=ExtResource( 4 )]
+position = Vector2( 233.314, 2.36633 )
+dialogue = [ "Klengan: Das ist aber eine schöne Lampe." ]
+
+[node name="Interactable" parent="InteractableSamples/Interactable3/Interactable" instance=ExtResource( 4 )]
+position = Vector2( 1654.36, -1.75818 )
+dialogue = [ "Klengan: Hm...", "Ein Haufen Beschallungsgeräte..." ]
+
+[node name="Interactable" parent="InteractableSamples/Interactable3/Interactable/Interactable" instance=ExtResource( 4 )]
+position = Vector2( 339.311, -1.75806 )
+dialogue = [ "Klengan: Sieht aus wie eine Tür..." ]
+
+[node name="Interactable" parent="InteractableSamples" instance=ExtResource( 4 )]
+position = Vector2( -899.478, 626.783 )
+dialogue = [ "Klengan: Diesen Schuh kenn ich doch.." ]
+
+[node name="Interactable2" parent="InteractableSamples" instance=ExtResource( 4 )]
+position = Vector2( -1112.53, 626.435 )
+dialogue = [ "Klengan: Was ein schöner Schuh." ]
+
+[node name="KlenganKlon_test" parent="InteractableSamples" instance=ExtResource( 5 )]
+position = Vector2( 811.771, 510.844 )
