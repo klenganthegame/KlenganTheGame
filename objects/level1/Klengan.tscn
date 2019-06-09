@@ -19,7 +19,6 @@
 [ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=17]
 [ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=18]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -70,6 +69,12 @@ position = Vector2( 890, 480 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 13 )
 action = "jump"
+
+[node name="Up2" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 780, 480 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 13 )
+action = "accept"
 
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 150, 480 )
