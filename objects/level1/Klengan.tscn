@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://objects/level1/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Klengan/idle/dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
@@ -13,11 +13,12 @@
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/MobileButtons/85/JumpUnpressed_85.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/MobileButtons/85/JumpPressed_85.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/MobileButtons/85/RightUnressed_85.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/MobileButtons/85/RightPressed_85.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/MobileButtons/85/LeftUnpressed_85.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=17]
-[ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sprites/font/PressStart2P.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Sprites/MobileButtons/85/RightUnressed_85.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/MobileButtons/85/RightPressed_85.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/MobileButtons/85/LeftUnpressed_85.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=18]
+[ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,11 +33,15 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 19.0106, 98.0105 )
-
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 24.9137, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19.0106, 6.71835 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 38
+font_data = ExtResource( 14 )
 
 [node name="Klengan" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -45,21 +50,24 @@ script = ExtResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -50 )
 current = true
 smoothing_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 0.44014 )
-shape = SubResource( 2 )
-
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 90 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.39494, 90.9944 )
+shape = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -69,26 +77,36 @@ normal = ExtResource( 12 )
 pressed = ExtResource( 13 )
 action = "jump"
 
-[node name="Up2" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="Okay" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 780, 480 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 13 )
 action = "accept"
 
+[node name="Label" type="Label" parent="CanvasLayer/Okay"]
+margin_left = 6.13867
+margin_top = 23.327
+margin_right = 88.1387
+margin_bottom = 102.327
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "OK"
+
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 150, 480 )
-normal = ExtResource( 14 )
-pressed = ExtResource( 15 )
+normal = ExtResource( 15 )
+pressed = ExtResource( 16 )
 action = "walk_right"
 
 [node name="Left" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 35, 480 )
-normal = ExtResource( 16 )
-pressed = ExtResource( 17 )
+normal = ExtResource( 17 )
+pressed = ExtResource( 18 )
 action = "walk_left"
 
-[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 18 )]
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 19 )]
 visible = false
 wait_time = 0.01
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]

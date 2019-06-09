@@ -14,6 +14,8 @@ var can_interact = false
 var can_move = true
 var area : Area2D
 
+signal dialogue_exit()
+
 func _ready():
 	pass    
 
@@ -65,6 +67,8 @@ func _physics_process(delta):
 		# if collisions:
 			#Input.start_joy_vibration(0, 0.5, 0.5, 0.5)
 		motion = move_and_slide(motion,Vector2(0, -1))
+	else:
+		$AnimatedSprite.play("idle")
 
 func talk(text : Array):
 	$CanvasLayer/DialogueBox.talk(text)
@@ -74,10 +78,15 @@ func talk(text : Array):
 func _on_Area2D_area_entered(_area):
 	can_interact = true
 	area = _area
-	pass # Replace with function body.
+	pass
 
 
 func _on_Area2D_area_exited(area):
 	can_interact = false
 	area = null
-	pass # Replace with function body.
+	pass
+
+
+func _on_DialogueBox_dialogue_exit():
+	emit_signal("dialogue_exit")
+	pass
