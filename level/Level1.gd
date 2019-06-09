@@ -13,6 +13,6 @@ func _ready():
 	"...",
 	"*Telefon klingelt*",
 	"Klengan: Hallo?",
-	"Der Haider: Du kannst auch deinen Kontroller verwenden.",
+	"Der Haider: Du kannst auch deinen Controller verwenden.",
 	"A zum springen und Y um zu Interagieren"])
 	pass # Replace with function body.
