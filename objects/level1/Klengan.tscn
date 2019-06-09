@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://objects/level1/Klengan.gd" type="Script" id=1]
-[ext_resource path="res://dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
-[ext_resource path="res://dc8e1c008cb14966e26f05868829106c-0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Klengan/idle/dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Klengan/idle/dc8e1c008cb14966e26f05868829106c-0.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-0.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-1.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-2.png" type="Texture" id=6]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Sprites/MobileButtons/85/LeftUnpressed_85.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=17]
 [ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=18]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
