@@ -32,11 +32,11 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 19.0106, 98.0105 )
-
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 24.9137, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19.0106, 6.71835 )
 
 [node name="Klengan" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -51,15 +51,16 @@ playing = true
 current = true
 smoothing_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 0.44014 )
-shape = SubResource( 2 )
-
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 90 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.39494, 90.9944 )
+shape = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
