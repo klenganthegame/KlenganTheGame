@@ -7,7 +7,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Klengan.talk(["Klengan: Okay... Also E oder Enter drücken um zu bestätigen...", 
-	"Mit W & D laufen?", 
+	"Mit A & D laufen?", 
 	"Und mit W oder SPACE springen?", 
 	"Klingt machbar...", 
 	"...",
