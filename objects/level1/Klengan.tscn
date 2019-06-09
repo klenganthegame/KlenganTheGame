@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://objects/level1/Klengan.gd" type="Script" id=1]
-[ext_resource path="res://dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
-[ext_resource path="res://dc8e1c008cb14966e26f05868829106c-0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Klengan/idle/dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Klengan/idle/dc8e1c008cb14966e26f05868829106c-0.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-0.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-1.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-2.png" type="Texture" id=6]
@@ -45,7 +45,6 @@ script = ExtResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -69,6 +68,12 @@ position = Vector2( 890, 480 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 13 )
 action = "jump"
+
+[node name="Up2" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 780, 480 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 13 )
+action = "accept"
 
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 150, 480 )

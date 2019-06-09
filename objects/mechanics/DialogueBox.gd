@@ -25,8 +25,8 @@ func talk(textarray : Array):
 	hidden = false
 	num = 0
 	$RichTextLabel.text = text[num]
-	to_beginning()
 	show()
+	to_beginning()
 
 func _process(delta):
 	if Input.is_action_just_pressed("accept") and !hidden:
