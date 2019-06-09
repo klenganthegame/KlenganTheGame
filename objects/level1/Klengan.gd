@@ -14,6 +14,8 @@ var can_interact = false
 var can_move = true
 var area : Area2D
 
+signal dialogue_exit()
+
 func _ready():
 	pass    
 
@@ -76,15 +78,15 @@ func talk(text : Array):
 func _on_Area2D_area_entered(_area):
 	can_interact = true
 	area = _area
-	pass # Replace with function body.
+	pass
 
 
 func _on_Area2D_area_exited(area):
 	can_interact = false
 	area = null
-	pass # Replace with function body.
+	pass
 
 
 func _on_DialogueBox_dialogue_exit():
-	# do stuff here
+	emit_signal("dialogue_exit")
 	pass
