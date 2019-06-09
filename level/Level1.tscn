@@ -49,6 +49,7 @@ texture = ExtResource( 3 )
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( -131.814, 504.394 )
 texture = ExtResource( 4 )
+color = Color( 1, 0.921569, 0.572549, 1 )
 shadow_enabled = true
 
 [node name="Klengan" parent="." instance=ExtResource( 5 )]
