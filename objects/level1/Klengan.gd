@@ -65,6 +65,8 @@ func _physics_process(delta):
 		# if collisions:
 			#Input.start_joy_vibration(0, 0.5, 0.5, 0.5)
 		motion = move_and_slide(motion,Vector2(0, -1))
+	else:
+		$AnimatedSprite.play("idle")
 
 func talk(text : Array):
 	$CanvasLayer/DialogueBox.talk(text)
