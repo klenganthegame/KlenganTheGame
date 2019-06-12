@@ -56,6 +56,7 @@ shadow_enabled = true
 position = Vector2( -1266.74, 528.765 )
 
 [node name="InteractableSamples" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Interactable7" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -380.802, 396.121 )

@@ -14,13 +14,21 @@ var can_interact = false
 var can_move = true
 var area : Area2D
 
+var spawn : Vector2
+
 signal dialogue_exit()
 
 func _ready():
-	pass    
+	spawn = transform.get_origin()
+	pass
 
 func _process(delta):
 	can_move = !$CanvasLayer/DialogueBox.block_walk
+	
+	
+	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
+		transform.origin = spawn
+		talk(["Autsch... Das nächste Mal helfe ich dir nicht mehr aus der Patsche..."])
 
 	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden and area != null:
 		var interactable = area.get_parent()
@@ -66,7 +74,7 @@ func _physics_process(delta):
 		var collisions = move_and_collide(motion * delta) 
 		# if collisions:
 			#Input.start_joy_vibration(0, 0.5, 0.5, 0.5)
-		motion = move_and_slide(motion,Vector2(0, -1))
+		motion = move_and_slide(motion, Vector2(0, -1))
 	else:
 		$AnimatedSprite.play("idle")
 

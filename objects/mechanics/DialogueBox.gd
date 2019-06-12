@@ -80,4 +80,5 @@ func _on_InputBlocker_timeout():
 	hidden = true
 	block_walk = false
 	$Timer.stop()
+	audio.stop()
 	emit_signal("dialogue_exit")
