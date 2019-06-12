@@ -28,7 +28,7 @@ func _process(delta):
 	
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
-		talk(["Autsch... Das nächste Mal helfe ich dir nicht mehr aus der Patsche..."])
+		talk(["GameMaster: Uff... Das nächste Mal helfe ich dir nicht mehr aus der Patsche..."])
 
 	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden and area != null:
 		var interactable = area.get_parent()
