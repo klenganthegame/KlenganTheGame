@@ -1,12 +1,13 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://level/Level1.gd" type="Script" id=1]
+[ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/test/Backstage_example.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/test/light.png" type="Texture" id=4]
 [ext_resource path="res://objects/level1/Klengan.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.3257, 5.04416 )
