@@ -11,4 +11,4 @@ texture = ExtResource( 1 )
 
 [node name="Interactable" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 94.737 )
-dialogue = [ "Klengan: Was? Ein Mark Forster Klon??", "Wie Kann das sein?! Warum klonen sie den??", "Und nicht mich??", "Mark Forster Klon: Blubb Blubb" ]
+dialogue = [ "Klengan: Was? Ein Mark Forster Klon??", "Wie kann das sein?! Warum klonen sie den??", "Und nicht mich??", "Mark Forster Klon: Blubb Blubb." ]
