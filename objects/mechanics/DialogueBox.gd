@@ -8,14 +8,19 @@ var text = []
 var num : int
 var wait : bool
 var block_walk : bool
-var hidden : bool
+var hidden : bool = true
+
+var audio : AudioStreamPlayer
+var audioShouldPlay : bool = true
 
 var block_box_timer : bool
 
 signal dialogue_exit()
 
 func _ready():
-	hidden = true
+	audio = AudioStreamPlayer.new()
+	add_child(audio)
+	audio.stream = load("res://audio/ui/Message.ogg")
 	pass
 
 func talk(textarray : Array):
@@ -31,11 +36,15 @@ func talk(textarray : Array):
 	to_beginning()
 
 func _process(delta):
+	if !hidden && !audio.playing && audioShouldPlay:
+		audio.play(0)
+		
 	if Input.is_action_just_pressed("accept") and !hidden:
 		if wait == true:
 			if num < len(text)-1:
 				num += 1
 				$RichTextLabel.text = text[num]
+				
 				to_beginning()
 
 			elif $RichTextLabel.percent_visible == 1:
@@ -50,19 +59,26 @@ func _process(delta):
 
 func to_beginning():
 	wait = false
+	
 	$Timer.wait_time = wait_time
 	$RichTextLabel.percent_visible = 0.05
+	
+	audioShouldPlay = true
+	
 	$Timer.start()
 
 func _on_Timer_timeout():
 	if $RichTextLabel.percent_visible < 1:
 		$RichTextLabel.percent_visible += .01
-	else: 
+	else:
 		wait = true
+		audioShouldPlay = false
+		audio.stop()
 	$Timer.start()
 
 func _on_InputBlocker_timeout():
 	hidden = true
 	block_walk = false
 	$Timer.stop()
+	audio.stop()
 	emit_signal("dialogue_exit")
