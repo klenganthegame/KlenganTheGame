@@ -62,7 +62,6 @@ func to_beginning():
 	
 	$Timer.wait_time = wait_time
 	$RichTextLabel.percent_visible = 0.05
-	
 	audioShouldPlay = true
 	
 	$Timer.start()

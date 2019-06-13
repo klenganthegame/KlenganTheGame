@@ -35,6 +35,8 @@ margin_right = 719.0
 margin_bottom = 143.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+visible_characters = 2
+percent_visible = 0.05
 text = "Hallo ich bin Klengan
 wie geht es dir?
 mie geht es gut "
