@@ -9,5 +9,5 @@ func _ready():
 	"*Telefon klingelt*",
 	"Klengan: Hallo?",
 	"Der Haider: Du kannst auch deinen Controller verwenden.",
-	"A zum springen und X um zu Interagieren"])
+	"A zum Springen und X um zu Interagieren"])
 	pass
