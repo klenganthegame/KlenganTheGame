@@ -5,6 +5,6 @@ Spielen und weitere Informationen
 =======
 [Hier klicken](https://klenganthegame.github.io/KlenganTheGame/index.html)
 
-Wie oft wir dachten, wir hätten eine Bug gefixt
+Wie oft wir dachten, wir hätten einen Bug gefixt
 ======
 ||
