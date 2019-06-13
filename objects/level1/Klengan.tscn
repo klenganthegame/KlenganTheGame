@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://objects/level1/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Klengan/idle/dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
@@ -11,14 +11,16 @@
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-5.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-6.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/MobileButtons/85/JumpUnpressed_85.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/MobileButtons/85/JumpPressed_85.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/font/PressStart2P.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://Sprites/MobileButtons/85/RightUnressed_85.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/MobileButtons/85/RightPressed_85.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/MobileButtons/85/LeftUnpressed_85.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=18]
-[ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=19]
+[ext_resource path="res://sprites/mobilebuttons/original/JumpUnpressed.png" type="Texture" id=12]
+[ext_resource path="res://sprites/mobilebuttons/original/JumpPressed.png" type="Texture" id=13]
+[ext_resource path="res://sprites/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=14]
+[ext_resource path="res://sprites/mobilebuttons/original/EnterPressed.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/font/PressStart2P.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Sprites/MobileButtons/85/RightUnressed_85.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/MobileButtons/85/RightPressed_85.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/MobileButtons/85/LeftUnpressed_85.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=20]
+[ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -41,7 +43,7 @@ extents = Vector2( 19.0106, 6.71835 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 38
-font_data = ExtResource( 14 )
+font_data = ExtResource( 16 )
 
 [node name="Klengan" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -72,15 +74,17 @@ shape = SubResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 890, 480 )
+position = Vector2( 890, 480.815 )
+scale = Vector2( 5, 5 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 13 )
 action = "jump"
 
 [node name="Okay" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 780, 480 )
-normal = ExtResource( 12 )
-pressed = ExtResource( 13 )
+position = Vector2( 790.815, 480 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 15 )
 action = "accept"
 
 [node name="Label" type="Label" parent="CanvasLayer/Okay"]
@@ -94,17 +98,17 @@ text = "OK"
 
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 150, 480 )
-normal = ExtResource( 15 )
-pressed = ExtResource( 16 )
+normal = ExtResource( 17 )
+pressed = ExtResource( 18 )
 action = "walk_right"
 
 [node name="Left" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 35, 480 )
-normal = ExtResource( 17 )
-pressed = ExtResource( 18 )
+normal = ExtResource( 19 )
+pressed = ExtResource( 20 )
 action = "walk_left"
 
-[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 19 )]
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 21 )]
 visible = false
 wait_time = 0.01
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

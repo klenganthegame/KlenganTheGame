@@ -69,8 +69,7 @@ func _physics_process(delta):
 			else:
 				#$AnimatedSprite.play("fall") # Jump
 				$CollisionShape2D.disabled = false
-				
-	
+
 		var collisions = move_and_collide(motion * delta) 
 		# if collisions:
 			#Input.start_joy_vibration(0, 0.5, 0.5, 0.5)
