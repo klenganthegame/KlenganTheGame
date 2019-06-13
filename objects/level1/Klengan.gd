@@ -23,9 +23,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	can_move = !$CanvasLayer/DialogueBox.block_walk
-	
-	
+	can_move = !$CanvasLayer/DialogueBox.block_walk	
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
 		talk(["GameMaster: Uff... Das nächste Mal helfe ich dir nicht mehr aus der Patsche..."])
@@ -76,6 +74,7 @@ func _physics_process(delta):
 		motion = move_and_slide(motion, Vector2(0, -1))
 	else:
 		$AnimatedSprite.play("idle")
+		move_and_slide(Vector2(0, 0), Vector2(0, 0))
 
 func talk(text : Array):
 	$CanvasLayer/DialogueBox.talk(text)
