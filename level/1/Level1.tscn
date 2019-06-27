@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://level/Level1.gd" type="Script" id=1]
+[ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/test/Backstage_example.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/test/light.png" type="Texture" id=4]
@@ -12,7 +12,7 @@
 extents = Vector2( 52.3257, 5.04416 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1713.54, 10 )
+extents = Vector2( 1663.18, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 72.2358, 6.07898 )
@@ -59,7 +59,7 @@ position = Vector2( -1266.74, 528.765 )
 
 [node name="Interactable7" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -380.802, 396.121 )
-dialogue = [ "Klengan: Ja wow...........", "jetzt bin ich doch hier oben...." ]
+dialogue = [ "Klengan: Ja wow...........", "Jetzt bin ich doch hier oben...." ]
 
 [node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( 1849.11, 623.509 )
@@ -75,7 +75,7 @@ dialogue = [ "Klengan: Das ist aber eine schöne Lampe." ]
 
 [node name="Interactable3" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -379.46, 607.206 )
-dialogue = [ "Klengan: Ich glaube es ist nicht die Zeit um da hoch zu klettern." ]
+dialogue = [ "Klengan: Ich glaube, es ist nicht die Zeit, um da hoch zu klettern." ]
 
 [node name="Interactable" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -897.891, 607.743 )
@@ -90,10 +90,9 @@ position = Vector2( 811.771, 510.844 )
 
 [node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -677.146, 606.057 )
-dialogue = [ "Klengan: La...La...La.... okay.. ich lass das mit dem Singen lieber...", "Ich möchte ja nicht so enden wie der liebe Apo... oder Leon Marscher...." ]
+dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...", "Ich möchte ja nicht so enden wie der liebe Apo... oder Leon Marscher...." ]
 
 [node name="CollisionSamples" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
@@ -112,7 +111,7 @@ shape = SubResource( 1 )
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionSamples"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D"]
-position = Vector2( 377.174, 645.869 )
+position = Vector2( 339.388, 645.869 )
 shape = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="CollisionSamples"]

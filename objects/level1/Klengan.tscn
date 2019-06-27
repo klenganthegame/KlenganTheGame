@@ -11,14 +11,15 @@
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-5.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-6.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Klengan/Walk/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/MobileButtons/85/JumpUnpressed_85.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/MobileButtons/85/JumpPressed_85.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/font/PressStart2P.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://Sprites/MobileButtons/85/RightUnressed_85.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/MobileButtons/85/RightPressed_85.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/MobileButtons/85/LeftUnpressed_85.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=18]
-[ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=19]
+[ext_resource path="res://sprites/mobilebuttons/original/JumpUnpressed.png" type="Texture" id=12]
+[ext_resource path="res://sprites/mobilebuttons/original/JumpPressed.png" type="Texture" id=13]
+[ext_resource path="res://sprites/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=14]
+[ext_resource path="res://sprites/mobilebuttons/original/EnterPressed.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/MobileButtons/85/RightUnressed_85.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/MobileButtons/85/RightPressed_85.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/MobileButtons/85/LeftUnpressed_85.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=19]
+[ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -33,24 +34,20 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24.9137, 10 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 19.0106, 6.71835 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 38
-font_data = ExtResource( 14 )
 
 [node name="Klengan" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -63,48 +60,41 @@ editor/display_folded = true
 position = Vector2( 0, 90 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.39494, 90.9944 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 890, 480 )
+position = Vector2( 890, 481.042 )
+scale = Vector2( 5, 5 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 13 )
 action = "jump"
 
 [node name="Okay" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 780, 480 )
-normal = ExtResource( 12 )
-pressed = ExtResource( 13 )
+position = Vector2( 790.815, 480 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 15 )
 action = "accept"
-
-[node name="Label" type="Label" parent="CanvasLayer/Okay"]
-margin_left = 6.13867
-margin_top = 23.327
-margin_right = 88.1387
-margin_bottom = 102.327
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "OK"
 
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 150, 480 )
-normal = ExtResource( 15 )
-pressed = ExtResource( 16 )
+normal = ExtResource( 16 )
+pressed = ExtResource( 17 )
 action = "walk_right"
 
 [node name="Left" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 35, 480 )
-normal = ExtResource( 17 )
-pressed = ExtResource( 18 )
+normal = ExtResource( 18 )
+pressed = ExtResource( 19 )
 action = "walk_left"
 
-[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 19 )]
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 20 )]
 visible = false
 wait_time = 0.01
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
