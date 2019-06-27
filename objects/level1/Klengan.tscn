@@ -15,10 +15,10 @@
 [ext_resource path="res://sprites/mobilebuttons/original/JumpPressed.png" type="Texture" id=13]
 [ext_resource path="res://sprites/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=14]
 [ext_resource path="res://sprites/mobilebuttons/original/EnterPressed.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/MobileButtons/85/RightUnressed_85.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/MobileButtons/85/RightPressed_85.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/MobileButtons/85/LeftUnpressed_85.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/MobileButtons/85/LeftPressed_85.png" type="Texture" id=19]
+[ext_resource path="res://sprites/mobilebuttons/original/RightUnpressed.png" type="Texture" id=16]
+[ext_resource path="res://sprites/mobilebuttons/original/RightPressed.png" type="Texture" id=17]
+[ext_resource path="res://sprites/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=18]
+[ext_resource path="res://sprites/mobilebuttons/original/LeftPressed.png" type="Texture" id=19]
 [ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -48,6 +48,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -84,12 +85,14 @@ action = "accept"
 
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 150, 480 )
+scale = Vector2( 5, 5 )
 normal = ExtResource( 16 )
 pressed = ExtResource( 17 )
 action = "walk_right"
 
 [node name="Left" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 35, 480 )
+scale = Vector2( 5, 5 )
 normal = ExtResource( 18 )
 pressed = ExtResource( 19 )
 action = "walk_left"
