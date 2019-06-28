@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/test/dialoguebox.png" type="Texture" id=1]
+[ext_resource path="res://sprites/test/dialoguebox.png" type="Texture" id=1]
 [ext_resource path="res://objects/mechanics/DialogueBox.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/font/PressStart2P.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/font/PressStart2P.ttf" type="DynamicFontData" id=3]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
