@@ -8,7 +8,6 @@
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=7]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.3257, 5.04416 )
 
