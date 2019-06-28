@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Klengan the Game"
 run/main_scene="res://level/1/Level1.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/icons/icon.png"
 
 [input]
 
