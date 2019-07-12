@@ -9,11 +9,11 @@ export var JUMP_HEIGTH : int = -550
 var velocity : Vector2 = Vector2()
 var motion : Vector2 = Vector2()
 var looking_right : bool = true
-
 var can_interact = false
 var can_move = true
 var area : Area2D
-
+var can_move_right: bool = true
+var can_move_left: bool = true
 var spawn : Vector2
 
 signal dialogue_exit()
@@ -32,21 +32,22 @@ func _process(delta):
 		var interactable = area.get_parent()
 		if interactable.is_in_group("Interactable"):
 			$CanvasLayer/DialogueBox.talk(interactable.dialogue)
-
 func _physics_process(delta):
 	motion.y += GRAVITY
 	var friction = false
 
 	if can_move:
 		if Input.is_action_pressed("walk_right"):
-			motion.x = min(motion.x + ACCELERATON, MAX_SPEED)
-			$AnimatedSprite.flip_h = false
-			$AnimatedSprite.play("walk")
+			if can_move_right:
+				motion.x = min(motion.x + ACCELERATON, MAX_SPEED)
+				$AnimatedSprite.flip_h = false
+				$AnimatedSprite.play("walk")
 		
 		elif Input.is_action_pressed("walk_left"):
-			motion.x = max(motion.x - ACCELERATON, -MAX_SPEED)
-			$AnimatedSprite.flip_h = true
-			$AnimatedSprite.play("walk")
+			if can_move_left:
+				motion.x = max(motion.x - ACCELERATON, -MAX_SPEED)
+				$AnimatedSprite.flip_h = true
+				$AnimatedSprite.play("walk")
 		else:
 			$AnimatedSprite.play("idle")
 			friction = true
@@ -54,7 +55,7 @@ func _physics_process(delta):
 		
 		if is_on_floor():
 			if Input.is_action_pressed("jump"):
-				motion.y = JUMP_HEIGTH
+				motion.y = - JUMP_HEIGTH
 			if friction == true:
 				motion.x = lerp(motion.x, 0, 0.2)
 			else:
@@ -96,3 +97,27 @@ func _on_Area2D_area_exited(area):
 func _on_DialogueBox_dialogue_exit():
 	emit_signal("dialogue_exit")
 	pass
+
+
+func _on_left_wall_touched():
+	can_move_left = false
+	pass
+
+
+func _on_left_wall_left():
+	can_move_left = true
+	pass
+
+
+func _on_right_wall_touched():
+	can_move_right = false
+	pass
+
+
+func _on_right_wall_left():
+	can_move_right = true
+	pass
+
+
+	
+	
