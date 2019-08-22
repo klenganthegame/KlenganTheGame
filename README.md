@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/klenganthegame/KlenganTheGame/master/sprites/icons/Icon1024.png" 
+       width="200" height="200" />
+</p>
+
+</p>
+
 # KlenganTheGame
 Ein Webgame für den YouTuber Klengan.
 Momentante idee ist ein Jump and Run mit einer kleinen Story mit Anspielungen auf Klengan und YouTube Deutschland. 
