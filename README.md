@@ -25,8 +25,8 @@ Bevor du jedoch wild drauflos fragst, schau mal ins [wiki](https://github.com/kl
 ### Projektorganisation
 [Discord](https://bit.ly/ktg-discord) - Für Ideen und Zusammenarbeit   
 [Projekt Übersicht](https://tree.taiga.io/project/itsleo-klengan-the-game/timeline) - Tracken des Fortschrittes, Verteilen von Aufgaben   
-[Projekt Wiki](https://github.com/klenganthegame/KlenganTheGame/wiki)
-Weitere Docs gibt es für "Teammitglieder" im Dicord.
+[Projekt Wiki](https://github.com/klenganthegame/KlenganTheGame/wiki) - Infos zum und um das Projekt   
+Weitere Docs gibt es für Teammitglieder im Dicord.
 
 ### Social
 [Twitter](https://twitter.com/KlengantheGame_) - Offizielle Ankündigungen   
