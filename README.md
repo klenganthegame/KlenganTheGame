@@ -35,16 +35,16 @@ Wir suchen noch motivierte Entwickler und Visionäre die mithelfen können diese
 Einfach eine Nachicht in den Discord senden!
 
 ## Community
-Bei Fragen am besten im Discord melden, andere Kanäle werden weniger
+Bei Fragen am besten im Discord melden, andere Kanäle werden weniger oft überprüft.
 
 ### Projektorganisation
-[Discord](https://bit.ly/ktg-discord)   
-[Projekt Übersicht](https://tree.taiga.io/project/itsleo-klengan-the-game/timeline)   
+[Discord](https://bit.ly/ktg-discord) - Für Ideen und Zusammenarbeit   
+[Projekt Übersicht](https://tree.taiga.io/project/itsleo-klengan-the-game/timeline) - Tracken des Fortschrittes, Verteilen von Aufgaben   
 
 ### Social
-[Twitter](https://twitter.com/KlengantheGame_)   
-[Instagram](https://www.instagram.com/klengan_the_game/)   
-[Reddit](https://www.instagram.com/klengan_the_game/)   
+[Twitter](https://twitter.com/KlengantheGame_) - Offizielle Ankündigungen   
+[Instagram](https://www.instagram.com/klengan_the_game/) - Bilder und Sneak Peaks   
+[Reddit](https://www.reddit.com/r/KlenganTheGame/) - Forum    
 
 ## Spielen
 [Hier klicken](https://klenganthegame.github.io/KlenganTheGame/index.html)   
