@@ -37,13 +37,13 @@ Einfach eine Nachicht in den Discord senden!
 ## Community
 Bei Fragen am besten im Discord melden, andere Kanäle werden weniger
 
-**Projektorganisation**
+### Projektorganisation
 [Discord](https://bit.ly/ktg-discord)   
 [Projekt Übersicht](https://tree.taiga.io/project/itsleo-klengan-the-game/timeline)   
 
-**Social**
+### Social
 [Twitter](https://twitter.com/KlengantheGame_)   
-[Instagram]()   
+[Instagram](https://www.instagram.com/klengan_the_game/)   
 [Reddit](https://www.instagram.com/klengan_the_game/)   
 
 ## Spielen
