@@ -35,7 +35,7 @@ Wir suchen noch motivierte Entwickler und Visionäre die mithelfen können diese
 Einfach eine Nachicht in den Discord senden!
 
 ## Community
-Bei Fragen am besten im Discord melden, andere Kanäle werden weniger oft überprüft.
+Bei Ideen, Verbesserungsvorschlögen und Fragen am besten im Discord melden, andere Kanäle werden weniger oft überprüft.
 
 ### Projektorganisation
 [Discord](https://bit.ly/ktg-discord) - Für Ideen und Zusammenarbeit   
