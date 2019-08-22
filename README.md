@@ -40,6 +40,7 @@ Bei Ideen, Verbesserungsvorschlögen und Fragen am besten im Discord melden, and
 ### Projektorganisation
 [Discord](https://bit.ly/ktg-discord) - Für Ideen und Zusammenarbeit   
 [Projekt Übersicht](https://tree.taiga.io/project/itsleo-klengan-the-game/timeline) - Tracken des Fortschrittes, Verteilen von Aufgaben   
+[Projekt Wiki](https://github.com/klenganthegame/KlenganTheGame/wiki)
 Weitere Docs gibt es für "Teammitglieder" im Dicord.
 
 ### Social
