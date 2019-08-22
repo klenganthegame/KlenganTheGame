@@ -14,12 +14,13 @@ Eine Zusammenfassung zum momentanen Stand des Projektes findest du [hier](https:
 
 ## Mithelfen
 Wir suchen noch motivierte Leute die mithelfen können dieses Spiel voranzubringen! 
-Wenn du kenntnisse im Bereich (Spiele)programmierung, Grafikdesign, Gamedesign, Musik oder Storywriting hast, dann schau mal [hier]() wie du momentan Mithelfen kannst.
+Wenn du kenntnisse im Bereich (Spiele)programmierung, Grafikdesign, Gamedesign, Musik oder Storywriting hast, dann schau mal [hier](https://github.com/klenganthegame/KlenganTheGame/wiki/Mithelfen) wie du momentan Mithelfen kannst.
 
 Grundsätzlich: Bei interesse einfach eine Nachicht in den Discord senden!
 
 ## Community
 Bei Ideen, Verbesserungsvorschlögen und Fragen am besten im Discord melden, andere Kanäle werden weniger oft überprüft.
+Bevor du jedoch wild drauflos fragst, schau mal ins [wiki](https://github.com/klenganthegame/KlenganTheGame/wiki). Vielleicht findust du dort schon deine Antwort.
 
 ### Projektorganisation
 [Discord](https://bit.ly/ktg-discord) - Für Ideen und Zusammenarbeit   
