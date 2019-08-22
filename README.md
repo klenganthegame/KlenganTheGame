@@ -1,5 +1,6 @@
 # KlenganTheGame
 Ein Webgame für den YouTuber Klengan.
+Momentante idee ist ein Jump and Run mit einer kleinen Story mit Anspielungen auf Klengan und YouTube Deutschland. 
 
 ## Momentaner Stand (22/08/19)
 ### Spiel
