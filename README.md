@@ -9,30 +9,14 @@
 Ein Webgame für den YouTuber Klengan und seine Community.
 Momentante Idee ist ein Jump and Run mit einer kleinen Story mit Anspielungen auf Klengan und YouTube Deutschland. 
 
-## Momentaner Stand (22/08/19)
-### Spiel
-- Kein Konkreter Plan
-- Kein Level fertig
+## Technik und Bestandsaufnahme
+Eine Zusammenfassung zum momentanen Stand des Projektes findest du [hier](https://github.com/klenganthegame/KlenganTheGame/wiki/Momentaner-Stand).
 
-### Technik
-#### Godot
-Momentan eine native & web fähige Lösung mit [Godot](https://godotengine.org/) (Skriptsprache: GDScript).
-Wer interessiert ist, einfach [Godot downloaden](https://godotengine.org/download/windows) und das Projekt öffnen.
-Deutsche Docs zu Godot gibts [hier](https://docs.godotengine.org/de/latest/index.html), eine gute Videoreihe zum Einstieg [hier](https://www.youtube.com/playlist?list=PL_pqkvxZ6ho0nVXxQCdND2cbWSVAX2nhs).
+## Mithelfen
+Wir suchen noch motivierte Leute die mithelfen können dieses Spiel voranzubringen! 
+Wenn du kenntnisse im Bereich (Spiele)programmierung, Grafikdesign, Gamedesign, Musik oder Storywriting hast, dann schau mal [hier]() wie du momentan Mithelfen kannst.
 
-#### Git / Github
-Wenn du (nicht Programmierer bist und) keine Ahnung hast was das hier alles ist (Github), dann schau dir definitiv Git und Github mal genauer an. Hier ein paar Links die hilfreich sein können:   
-
-[Kompakt und Anschaulich](https://www.youtube.com/watch?v=A-4WltCTVms&list=PLe6EXFvnTV7-_41SpakZoTIYCgX4aMTdU)   
-[Deutsch und etwas länger](https://www.youtube.com/watch?v=EfU4o7U_xAk)
-
-
-### Team
-- Viele Ideen
-- zu wenig _dauerhaft engagierte_ Leute für die Umsetzung
-
-Wir suchen noch motivierte Entwickler und Visionäre die mithelfen können dieses Spiel voranzubringen.
-Einfach eine Nachicht in den Discord senden!
+Grundsätzlich: Bei interesse einfach eine Nachicht in den Discord senden!
 
 ## Community
 Bei Ideen, Verbesserungsvorschlögen und Fragen am besten im Discord melden, andere Kanäle werden weniger oft überprüft.
