@@ -21,9 +21,9 @@ Wer interessiert ist, einfach [Godot downloaden](https://godotengine.org/downloa
 Deutsche Docs zu Godot gibts [hier](https://docs.godotengine.org/de/latest/index.html), eine gute Videoreihe zum Einstieg [hier](https://www.youtube.com/playlist?list=PL_pqkvxZ6ho0nVXxQCdND2cbWSVAX2nhs).
 
 ##### Git / Github
-Wenn du (nicht Programmierer bist und) keine Ahnung hast was das hier alles ist (Github), dann schau dir definitiv Git und Github mal genauer an. Hier ein paar Links die hilfreich sein können:
+Wenn du (nicht Programmierer bist und) keine Ahnung hast was das hier alles ist (Github), dann schau dir definitiv Git und Github mal genauer an. Hier ein paar Links die hilfreich sein können:   
 
-[Kompakt und Anschaulich](https://www.youtube.com/watch?v=A-4WltCTVms&list=PLe6EXFvnTV7-_41SpakZoTIYCgX4aMTdU)
+[Kompakt und Anschaulich](https://www.youtube.com/watch?v=A-4WltCTVms&list=PLe6EXFvnTV7-_41SpakZoTIYCgX4aMTdU)   
 [Deutsch und etwas länger](https://www.youtube.com/watch?v=EfU4o7U_xAk)
 
 
@@ -35,17 +35,17 @@ Wir suchen noch motivierte Entwickler und Visionäre die mithelfen können diese
 Einfach eine Nachicht in den Discord senden!
 
 ## Community
-Bei fragen am besten im Discord melden, andere Kanäle werden weniger
+Bei Fragen am besten im Discord melden, andere Kanäle werden weniger
 
 **Projektorganisation**
-[Discord](https://discord.gg/BdXrmeU)
-[Projekt Übersicht](https://tree.taiga.io/project/itsleo-klengan-the-game/timeline)
+[Discord](https://bit.ly/ktg-discord)   
+[Projekt Übersicht](https://tree.taiga.io/project/itsleo-klengan-the-game/timeline)   
 
 **Social**
-[Twitter](https://twitter.com/KlengantheGame_)
-[Instagram]()
-[Reddit](https://www.instagram.com/klengan_the_game/)
+[Twitter](https://twitter.com/KlengantheGame_)   
+[Instagram]()   
+[Reddit](https://www.instagram.com/klengan_the_game/)   
 
 ## Spielen
-[Hier klicken](https://klenganthegame.github.io/KlenganTheGame/index.html)
+[Hier klicken](https://klenganthegame.github.io/KlenganTheGame/index.html)   
 
