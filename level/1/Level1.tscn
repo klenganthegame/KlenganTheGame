@@ -1,13 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://sprites/test/Backstage_example.png" type="Texture" id=2]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=3]
-[ext_resource path="res://sprites/test/light.png" type="Texture" id=4]
-[ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=7]
-
+[ext_resource path="res://sprites/test/light.png" type="Texture" id=3]
+[ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.3257, 5.04416 )
@@ -45,51 +43,50 @@ texture = ExtResource( 2 )
 
 [node name="6658c1c8d437455b869f1be0ff25527f-7" type="Sprite" parent="."]
 position = Vector2( -978.208, 146.405 )
-texture = ExtResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( -131.814, 504.394 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 color = Color( 1, 0.921569, 0.572549, 1 )
 shadow_enabled = true
 
-[node name="Klengan" parent="." instance=ExtResource( 5 )]
-position = Vector2( -1266.74, 528.765 )
+[node name="Klengan" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1236.59, 519.245 )
 
 [node name="InteractableSamples" type="Node2D" parent="."]
 
-[node name="Interactable7" parent="InteractableSamples" instance=ExtResource( 6 )]
+[node name="Interactable7" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( -380.802, 396.121 )
 dialogue = [ "Klengan: Ja wow...........", "Jetzt bin ich doch hier oben...." ]
 
-[node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 6 )]
+[node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( 1849.11, 623.509 )
 dialogue = [ "Klengan: Sieht aus wie eine Tür..." ]
 
-[node name="Interactable5" parent="InteractableSamples" instance=ExtResource( 6 )]
+[node name="Interactable5" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( 1509.8, 625.267 )
 dialogue = [ "Klengan: Hm...", "Ein Haufen Beschallungsgeräte..." ]
 
-[node name="Interactable4" parent="InteractableSamples" instance=ExtResource( 6 )]
+[node name="Interactable4" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( -144.56, 609.572 )
 dialogue = [ "Klengan: Das ist aber eine schöne Lampe." ]
 
-[node name="Interactable3" parent="InteractableSamples" instance=ExtResource( 6 )]
+[node name="Interactable3" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( -379.46, 607.206 )
 dialogue = [ "Klengan: Ich glaube, es ist nicht die Zeit, um da hoch zu klettern." ]
 
-[node name="Interactable" parent="InteractableSamples" instance=ExtResource( 6 )]
+[node name="Interactable" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( -897.891, 607.743 )
 dialogue = [ "Klengan: Diesen Schuh kenn ich doch.." ]
 
-[node name="Interactable2" parent="InteractableSamples" instance=ExtResource( 6 )]
+[node name="Interactable2" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( -1106.18, 608.982 )
 dialogue = [ "Klengan: Was ein schöner Schuh." ]
 
-[node name="KlenganKlon_test" parent="InteractableSamples" instance=ExtResource( 7 )]
+[node name="KlenganKlon_test" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( 811.771, 510.844 )
 
-[node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 6 )]
+[node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( -677.146, 606.057 )
 dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...", "Ich möchte ja nicht so enden wie der liebe Apo... oder Leon Marscher...." ]
 
