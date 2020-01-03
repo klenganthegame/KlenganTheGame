@@ -8,16 +8,25 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "NinePatchRect",
+"class": "DialogueBox",
+"language": "GDScript",
+"path": "res://addons/adbox/DialogueBox.gd"
+} ]
 _global_script_class_icons={
-
+"DialogueBox": "res://addons/adbox/icon.png"
 }
 
 [application]
 
 config/name="Klengan the Game"
 run/main_scene="res://level/1/Level1.tscn"
-config/icon="res://sprites/icons/icon.png"
+config/icon="res://resources/sprites/icons/icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "adbox" )
 
 [input]
 
@@ -54,8 +63,6 @@ accept={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
-

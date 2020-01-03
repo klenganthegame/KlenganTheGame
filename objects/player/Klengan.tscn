@@ -1,28 +1,27 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
-[ext_resource path="res://sprites/klengan/idle/dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
-[ext_resource path="res://sprites/klengan/idle/dc8e1c008cb14966e26f05868829106c-0.png" type="Texture" id=3]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-0.png" type="Texture" id=4]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-1.png" type="Texture" id=5]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-2.png" type="Texture" id=6]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-3.png" type="Texture" id=7]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-4.png" type="Texture" id=8]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-5.png" type="Texture" id=9]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-6.png" type="Texture" id=10]
-[ext_resource path="res://sprites/klengan/rename/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=11]
-[ext_resource path="res://sprites/mobilebuttons/original/JumpPressed.png" type="Texture" id=12]
-[ext_resource path="res://sprites/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=13]
-[ext_resource path="res://sprites/mobilebuttons/original/EnterPressed.png" type="Texture" id=14]
-[ext_resource path="res://sprites/mobilebuttons/original/RightUnpressed.png" type="Texture" id=15]
-[ext_resource path="res://sprites/mobilebuttons/original/RightPressed.png" type="Texture" id=16]
-[ext_resource path="res://sprites/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=17]
-[ext_resource path="res://sprites/mobilebuttons/original/LeftPressed.png" type="Texture" id=18]
-[ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=19]
-
-
-
-
+[ext_resource path="res://sprites/klengan/idle/idle1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/klengan/idle/idle2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/klengan/walk/walk1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/klengan/walk/walk2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/klengan/walk/walk3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/klengan/walk/walk4.png" type="Texture" id=7]
+[ext_resource path="res://sprites/klengan/walk/walk5.png" type="Texture" id=8]
+[ext_resource path="res://sprites/klengan/walk/walk6.png" type="Texture" id=9]
+[ext_resource path="res://sprites/klengan/walk/walk7.png" type="Texture" id=10]
+[ext_resource path="res://sprites/klengan/walk/walk8.png" type="Texture" id=11]
+[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=12]
+[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=13]
+[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=14]
+[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=15]
+[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=16]
+[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=17]
+[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=18]
+[ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=19]
+[ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=20]
+[ext_resource path="res://resources/audio/text_beep.wav" type="AudioStream" id=21]
+[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -43,6 +42,9 @@ extents = Vector2( 24.9137, 10 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 19.0106, 6.71835 )
 
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 22 )
+
 [node name="Klengan" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -51,6 +53,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -99,9 +102,23 @@ normal = ExtResource( 17 )
 pressed = ExtResource( 18 )
 action = "walk_left"
 
-[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 19 )]
+[node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
 visible = false
-wait_time = 0.01
+margin_left = 131.58
+margin_top = 47.0
+margin_right = 891.58
+margin_bottom = 210.0
+texture = ExtResource( 19 )
+region_rect = Rect2( -2.28871, -3.69064, 28.5712, 30.4968 )
+patch_margin_left = 8
+patch_margin_top = 10
+patch_margin_right = 12
+patch_margin_bottom = 13
+script = ExtResource( 20 )
+message_sound = ExtResource( 21 )
+font = SubResource( 4 )
+action_name = "accept"
+wait_time = 0.05
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
