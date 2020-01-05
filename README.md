@@ -11,7 +11,7 @@ Momentante Idee ist ein Jump and Run mit einer kleinen Story mit Anspielungen au
 
 ![](https://img.shields.io/badge/Engine-Godot-blue.svg)
 ![](https://img.shields.io/badge/Version-0.0-green.svg) 
-![](https://img.shields.io/badge/License-0.0-green.svg)
+![](https://img.shields.io/badge/License-GNU_GPLv2-green.svg)
 <br>
 ![](https://img.shields.io/github/issues/KlenganTheGame/KlenganTheGame)
 ## Technik und Bestandsaufnahme
