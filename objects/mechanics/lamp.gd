@@ -1,19 +1,28 @@
 extends Node2D
 
-export (Array, String) var dialogue  = ["NONE"]
+
+
+export var is_on : bool = false
 
 func _ready():
+
+	if is_on:
+		on()
+	else:
+		off()
+
+func on():
 	$off.hide()
 	$on.show()
-	pass
-
-func _process(delta):
-		$Area2D/CollisionShape2D.disabled = false
-
-func _on_Area2D_area_entered(area):
+	
+func off():
 	$off.show()
 	$on.hide()
-
-func _on_Area2D_area_exited(area):
-	$on.show()
-	$off.hide()
+	
+func trigger():
+	AudioHandler.play_button_sound()
+	is_on = !is_on
+	if is_on:
+		on()
+	else:
+		off()

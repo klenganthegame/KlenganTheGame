@@ -8,16 +8,37 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "NinePatchRect",
+"class": "DialogueBox",
+"language": "GDScript",
+"path": "res://addons/adbox/DialogueBox.gd"
+}, {
+"base": "Node2D",
+"class": "InteractableObject",
+"language": "GDScript",
+"path": "res://objects/mechanics/Interactable.gd"
+} ]
 _global_script_class_icons={
-
+"DialogueBox": "res://addons/adbox/icon.png",
+"InteractableObject": ""
 }
 
 [application]
 
-config/name="Klengan the Game"
+config/name="KlenganTheGame"
 run/main_scene="res://level/1/Level1.tscn"
-config/icon="res://sprites/icons/icon.png"
+boot_splash/image="res://resources/bootsplash/bootsplash.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://resources/icons/icon.png"
+
+[autoload]
+
+AudioHandler="*res://scripts/audiohandler.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "adbox" )
 
 [input]
 
@@ -54,8 +75,7 @@ accept={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
-

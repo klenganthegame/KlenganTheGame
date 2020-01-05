@@ -16,6 +16,8 @@ var area : Area2D
 
 var spawn : Vector2
 
+var last_action_interactable : bool = false
+
 signal dialogue_exit()
 
 func _ready():
@@ -23,15 +25,17 @@ func _ready():
 	pass
 
 func _process(delta):
-	can_move = !$CanvasLayer/DialogueBox.block_walk	
+	can_move = !$CanvasLayer/DialogueBox.block_walk
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
-		talk(["GameMaster: Uff... Das nächste Mal helfe ich dir nicht mehr aus der Patsche..."])
-
+		talk(["Gott: Uff... Was tust du..."])
+		
 	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden and area != null:
 		var interactable = area.get_parent()
 		if interactable.is_in_group("Interactable"):
 			$CanvasLayer/DialogueBox.talk(interactable.dialogue)
+			print(interactable.name)
+			last_action_interactable = true
 
 func _physics_process(delta):
 	motion.y += GRAVITY
@@ -94,5 +98,10 @@ func _on_Area2D_area_exited(area):
 
 
 func _on_DialogueBox_dialogue_exit():
+	
+	if last_action_interactable:
+		var interactable = area.get_parent()
+		interactable.interacted()
+		last_action_interactable = false
 	emit_signal("dialogue_exit")
 	pass
