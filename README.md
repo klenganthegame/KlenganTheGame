@@ -9,6 +9,11 @@
 Ein Webgame für den YouTuber Klengan und seine Community.
 Momentante Idee ist ein Jump and Run mit einer kleinen Story mit Anspielungen auf Klengan und YouTube Deutschland. 
 
+![](https://img.shields.io/badge/Engine-Godot-blue.svg)
+![](https://img.shields.io/badge/Version-0.0-green.svg) 
+![](https://img.shields.io/badge/License-0.0-green.svg)
+<br>
+![](https://img.shields.io/github/issues/KlenganTheGame/KlenganTheGame)
 ## Technik und Bestandsaufnahme
 Eine Zusammenfassung zum momentanen Stand des Projektes findest du [hier](https://github.com/klenganthegame/KlenganTheGame/wiki/Momentaner-Stand).
 
@@ -36,17 +41,31 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 ## Spielen
 [Hier klicken](https://klenganthegame.github.io/KlenganTheGame/index.html)
 
+![](https://cdn.discordapp.com/attachments/571696895085248512/572003302271746058/Fred_Scaled.png)
 
-## Credits
+## Mitwirkende
+(unvollständig)
 
 ### Projektleitung
-Leo
+* [PonySchreck](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
+* Leo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+
+### weitere Organisation
 
 ### Grafiken
-(unvollständig)
-Vablo
-Xanad0u
+* Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-als_Grafiker_ausgetreten-inactive.svg)
+* EnLo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* KeksMandarine![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### Entwicklung
+* [PonySchreck](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
+* [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
+* [FluentCoding](https://github.com/FluentCoding) ![aktivität](https://img.shields.io/badge/Aktivität-ausgetreten-inactive.svg)
 
+### Storywriting
 
+### Sound-Design 
+
+### Dokumentation uä.
+* [Cyanit](https://github.com/cyanit) ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
