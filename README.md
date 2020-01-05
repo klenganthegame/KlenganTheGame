@@ -34,5 +34,19 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 [Reddit](https://www.reddit.com/r/KlenganTheGame/) - Forum    
 
 ## Spielen
-[Hier klicken](https://klenganthegame.github.io/KlenganTheGame/index.html)   
+[Hier klicken](https://klenganthegame.github.io/KlenganTheGame/index.html)
+
+
+## Credits
+
+### Projektleitung
+Leo
+
+### Grafiken
+(unvollständig)
+Vablo
+Xanad0u
+
+### Entwicklung
+
 
