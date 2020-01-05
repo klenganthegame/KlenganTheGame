@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "DialogueBox",
 "language": "GDScript",
 "path": "res://addons/adbox/DialogueBox.gd"
+}, {
+"base": "Node2D",
+"class": "InteractableObject",
+"language": "GDScript",
+"path": "res://objects/mechanics/Interactable.gd"
 } ]
 _global_script_class_icons={
-"DialogueBox": "res://addons/adbox/icon.png"
+"DialogueBox": "res://addons/adbox/icon.png",
+"InteractableObject": ""
 }
 
 [application]
@@ -67,4 +73,5 @@ accept={
 
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
