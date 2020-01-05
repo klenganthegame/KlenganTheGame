@@ -20,9 +20,11 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Klengan the Game"
+config/name="KlenganTheGame"
 run/main_scene="res://level/1/Level1.tscn"
-config/icon="res://resources/sprites/icons/icon.png"
+boot_splash/image="res://resources/bootsplash/bootsplash.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://resources/icons/icon.png"
 
 [editor_plugins]
 
