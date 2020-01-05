@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Light_off.png-d458c1ec8162f1d2f95b6bb7bc3f3d75.stex"
+path="res://.import/Light_off.png-4aa6a71f363906ad9a7932cb8bc365c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/test/Light_off.png"
-dest_files=[ "res://.import/Light_off.png-d458c1ec8162f1d2f95b6bb7bc3f3d75.stex" ]
+source_file="res://resources/sprites/objects/Light_off.png"
+dest_files=[ "res://.import/Light_off.png-4aa6a71f363906ad9a7932cb8bc365c0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

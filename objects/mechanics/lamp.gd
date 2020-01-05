@@ -1,19 +1,36 @@
 extends Node2D
 
-export (Array, String) var dialogue  = ["NONE"]
+export var message_sound : AudioStreamSample = load("res://resources/audio/button.wav")
+var audio : AudioStreamPlayer
+
+export var is_on : bool = false
 
 func _ready():
+	message_sound.loop_mode = message_sound.LOOP_DISABLED
+	message_sound.loop_begin = 0
+	message_sound.loop_end = 0
+	
+	audio = AudioStreamPlayer.new()
+	audio.stream = message_sound
+	add_child(audio)
+	
+	if is_on:
+		on()
+	else:
+		off()
+
+func on():
 	$off.hide()
 	$on.show()
-	pass
-
-func _process(delta):
-		$Area2D/CollisionShape2D.disabled = false
-
-func _on_Area2D_area_entered(area):
+	
+func off():
 	$off.show()
 	$on.hide()
-
-func _on_Area2D_area_exited(area):
-	$on.show()
-	$off.hide()
+	
+func trigger():
+	audio.play(0)
+	is_on = !is_on
+	if is_on:
+		on()
+	else:
+		off()

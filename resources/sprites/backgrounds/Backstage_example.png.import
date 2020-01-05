@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exclamation_point.png-3e93288db259659aefc72496eb7abe67.stex"
+path="res://.import/Backstage_example.png-0cebc3cec74dcad48c1c731df5d6e660.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/test/exclamation_point.png"
-dest_files=[ "res://.import/exclamation_point.png-3e93288db259659aefc72496eb7abe67.stex" ]
+source_file="res://resources/sprites/backgrounds/Backstage_example.png"
+dest_files=[ "res://.import/Backstage_example.png-0cebc3cec74dcad48c1c731df5d6e660.stex" ]
 
 [params]
 

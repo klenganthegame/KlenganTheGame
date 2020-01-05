@@ -70,8 +70,8 @@ func _enter_tree():
 	
 	InputBlocker = Timer.new()
 	
-	InputBlocker.autostart = true
-	InputBlocker.one_shot = true
+	#InputBlocker.autostart = true
+	#InputBlocker.one_shot = true
 	InputBlocker.wait_time = block_time
 
 	ShowTimer = Timer.new()
@@ -123,6 +123,8 @@ func talk(textarray : Array):
 	"""
 	Use this function to activate the DialogueBox
 	"""
+	if textarray.empty():
+		return
 	text = textarray
 	block_walk = true
 	num = 0
@@ -143,7 +145,7 @@ func to_beginning():
 	ShowTimer.start()
 
 func _on_Timer_timeout():
-	if TextBox.percent_visible < 1:
+	if TextBox.percent_visible < 1 and !hidden:
 		TextBox.percent_visible += percent_addition 
 		audio.play(0)
 	else:

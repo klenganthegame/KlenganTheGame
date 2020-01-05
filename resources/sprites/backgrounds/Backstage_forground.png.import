@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-a731a7b6489fc3d0201757293d9bef8f.stex"
+path="res://.import/Backstage_forground.png-85190bf6544434786c5dd50f58bd4261.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/test/light.png"
-dest_files=[ "res://.import/light.png-a731a7b6489fc3d0201757293d9bef8f.stex" ]
+source_file="res://resources/sprites/backgrounds/Backstage_forground.png"
+dest_files=[ "res://.import/Backstage_forground.png-85190bf6544434786c5dd50f58bd4261.stex" ]
 
 [params]
 
