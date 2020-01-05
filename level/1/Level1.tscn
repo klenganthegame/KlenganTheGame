@@ -14,7 +14,7 @@ extents = Vector2( 52.3257, 5.04416 )
 extents = Vector2( 1663.18, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 72.2358, 6.07898 )
+extents = Vector2( 36.9971, 6.07898 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 88.502, 10 )
@@ -47,10 +47,18 @@ position = Vector2( -978.208, 146.405 )
 [node name="Klengan" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1236.59, 519.245 )
 
-[node name="InteractableSamples" type="Node2D" parent="."]
+[node name="Lights" type="Node2D" parent="."]
 
-[node name="lamp" parent="InteractableSamples" instance=ExtResource( 4 )]
+[node name="lamp" parent="Lights" instance=ExtResource( 4 )]
 position = Vector2( -981.215, 317.911 )
+
+[node name="lamp2" parent="Lights" instance=ExtResource( 4 )]
+position = Vector2( 639.393, 291.682 )
+
+[node name="lamp3" parent="Lights" instance=ExtResource( 4 )]
+position = Vector2( -284.197, 299.272 )
+
+[node name="InteractableSamples" type="Node2D" parent="."]
 
 [node name="Lightswitch" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( -1044.55, 618.629 )
@@ -65,10 +73,10 @@ position = Vector2( 1509.8, 625.267 )
 dialogue = [ "Klengan: Hm...", "Ein Haufen Beschallungsgeräte..." ]
 
 [node name="KlenganKlon_test" parent="InteractableSamples" instance=ExtResource( 6 )]
-position = Vector2( 811.771, 510.844 )
+position = Vector2( -289.972, 510.139 )
 
 [node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 5 )]
-position = Vector2( -677.146, 606.057 )
+position = Vector2( -670.33, 649.227 )
 dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...", "Ich möchte ja nicht so enden wie der liebe Apo... oder Leon Marscher...." ]
 
 [node name="CollisionSamples" type="Node2D" parent="."]
@@ -90,14 +98,13 @@ shape = SubResource( 1 )
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionSamples"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D"]
-position = Vector2( 339.388, 645.869 )
+position = Vector2( 342.888, 645.319 )
 shape = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D2"]
-position = Vector2( 833.244, 410.729 )
+position = Vector2( 876.414, 410.729 )
 shape = SubResource( 3 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="CollisionSamples"]
@@ -135,11 +142,14 @@ editor/display_folded = true
 position = Vector2( -382.579, 444.331 )
 shape = SubResource( 8 )
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="CollisionSamples"]
-
 [node name="StaticBody2D10" type="StaticBody2D" parent="CollisionSamples"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D10"]
 position = Vector2( 175.013, 350.628 )
 shape = SubResource( 9 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="InteractableSamples/lamp" method="trigger"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.298039, 0.298039, 0.298039, 1 )
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp3" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp2" method="trigger"]

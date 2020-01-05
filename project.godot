@@ -32,6 +32,10 @@ boot_splash/image="res://resources/bootsplash/bootsplash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://resources/icons/icon.png"
 
+[autoload]
+
+AudioHandler="*res://scripts/audiohandler.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "adbox" )

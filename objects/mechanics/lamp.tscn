@@ -38,8 +38,6 @@ texture = ExtResource( 2 )
 position = Vector2( 2.50405, 31.9862 )
 scale = Vector2( 0.238143, 0.219829 )
 texture = ExtResource( 3 )
-color = Color( 0.780392, 0.721569, 0.443137, 1 )
-energy = 1.5
 shadow_enabled = true
 
 [node name="off" type="Sprite" parent="."]
