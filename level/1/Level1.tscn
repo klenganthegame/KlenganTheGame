@@ -3,9 +3,9 @@
 [ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/backgrounds/Backstage_example.png" type="Texture" id=2]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.3257, 5.04416 )
@@ -47,35 +47,35 @@ position = Vector2( -978.208, 146.405 )
 [node name="Klengan" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1236.59, 519.245 )
 
+[node name="KlenganKlon_test" parent="." instance=ExtResource( 4 )]
+position = Vector2( -289.972, 510.139 )
+
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="lamp" parent="Lights" instance=ExtResource( 4 )]
+[node name="lamp" parent="Lights" instance=ExtResource( 5 )]
 position = Vector2( -981.215, 317.911 )
 
-[node name="lamp2" parent="Lights" instance=ExtResource( 4 )]
+[node name="lamp2" parent="Lights" instance=ExtResource( 5 )]
 position = Vector2( 639.393, 291.682 )
 
-[node name="lamp3" parent="Lights" instance=ExtResource( 4 )]
+[node name="lamp3" parent="Lights" instance=ExtResource( 5 )]
 position = Vector2( -284.197, 299.272 )
 
 [node name="InteractableSamples" type="Node2D" parent="."]
 
-[node name="Lightswitch" parent="InteractableSamples" instance=ExtResource( 5 )]
+[node name="Lightswitch" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -1044.55, 618.629 )
 dialogue = [ "Oh! ein Lichtschalter..." ]
 
-[node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 5 )]
+[node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( 1849.11, 623.509 )
 dialogue = [ "Klengan: Sieht aus wie eine Tür..." ]
 
-[node name="Interactable5" parent="InteractableSamples" instance=ExtResource( 5 )]
+[node name="Interactable5" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( 1509.8, 625.267 )
 dialogue = [ "Klengan: Hm...", "Ein Haufen Beschallungsgeräte..." ]
 
-[node name="KlenganKlon_test" parent="InteractableSamples" instance=ExtResource( 6 )]
-position = Vector2( -289.972, 510.139 )
-
-[node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 5 )]
+[node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -670.33, 649.227 )
 dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...", "Ich möchte ja nicht so enden wie der liebe Apo... oder Leon Marscher...." ]
 
@@ -150,6 +150,6 @@ shape = SubResource( 9 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.298039, 0.298039, 0.298039, 1 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp3" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp3" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp2" method="trigger"]

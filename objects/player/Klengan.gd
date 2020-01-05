@@ -34,6 +34,7 @@ func _process(delta):
 		var interactable = area.get_parent()
 		if interactable.is_in_group("Interactable"):
 			$CanvasLayer/DialogueBox.talk(interactable.dialogue)
+			print(interactable.name)
 			last_action_interactable = true
 
 func _physics_process(delta):
