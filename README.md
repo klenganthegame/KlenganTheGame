@@ -51,6 +51,7 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 * Leo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### weitere Organisation
+* Nachwahl ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
 
 ### Grafiken
 * Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
@@ -61,7 +62,7 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 ### Entwicklung
 * [PonySchreck](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
 * [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
-* [FluentCoding](https://github.com/FluentCoding) ![aktivität](https://img.shields.io/badge/Aktivität-ausgetreten-inactive.svg)
+* [FluentCoding](https://github.com/FluentCoding) ![aktivität](https://img.shields.io/badge/Aktivität-ausgeschlossen-inactive.svg)
 
 ### Storywriting
 
