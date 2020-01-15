@@ -1,7 +1,7 @@
 ---
 name: Bug
 about: Erstelle ein Bugreport um uns zu helfen.
-title: 'Bug: '
+title: 'Bug-Report: '
 labels: bug, help wanted
 assignees: ''
 
