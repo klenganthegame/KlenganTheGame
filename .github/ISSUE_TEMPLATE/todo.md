@@ -1,7 +1,7 @@
 ---
 name: ToDo
 about: An Issuetemplate for Todos
-title: 'ToDo: '
+title: ''
 labels: ToDo
 assignees:
 
