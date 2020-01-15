@@ -47,21 +47,21 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 (unvollständig)
 
 ### Projektleitung
-* [PonySchreck](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
+* [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 * Leo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### weitere Organisation
-* Nachwahl ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
+* Nachwahl ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 
 ### Grafiken
-* Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 * Vablo ![aktivität](https://img.shields.io/badge/Aktivität-als_Grafiker_ausgetreten-inactive.svg)
 * EnLo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 * KeksMandarine![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### Entwicklung
-* [PonySchreck](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
-* [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-greeb.svg)
+* [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 * [FluentCoding](https://github.com/FluentCoding) ![aktivität](https://img.shields.io/badge/Aktivität-ausgeschlossen-inactive.svg)
 
 ### Storywriting
