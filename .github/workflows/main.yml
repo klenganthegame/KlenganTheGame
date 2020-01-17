@@ -1,0 +1,15 @@
+name: KTG
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: josephbmanley/build-godot-action@[VERSION]
+      with:
+        name: KTG
+        preset: HTML5
+        package: true
