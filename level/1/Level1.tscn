@@ -4,7 +4,7 @@
 [ext_resource path="res://sprites/test/Backstage_example.png" type="Texture" id=2]
 [ext_resource path="res://sprites/klengan/Walk/6658c1c8d437455b869f1be0ff25527f-7.png" type="Texture" id=3]
 [ext_resource path="res://sprites/test/light.png" type="Texture" id=4]
-[ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/player/Klengan_v2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/test/KlenganKlon_test.tscn" type="PackedScene" id=7]
 
@@ -52,10 +52,10 @@ texture = ExtResource( 4 )
 color = Color( 1, 0.921569, 0.572549, 1 )
 shadow_enabled = true
 
-[node name="Klengan" parent="." instance=ExtResource( 5 )]
-position = Vector2( -1266.74, 528.765 )
+[node name="Klengan_v2" parent="." instance=ExtResource( 5 )]
 
 [node name="InteractableSamples" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Interactable7" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -380.802, 396.121 )
@@ -93,6 +93,7 @@ position = Vector2( -677.146, 606.057 )
 dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...", "Ich möchte ja nicht so enden wie der liebe Apo... oder Leon Marscher...." ]
 
 [node name="CollisionSamples" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true

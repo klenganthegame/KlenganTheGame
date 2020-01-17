@@ -1,0 +1,1 @@
+extends "res://objects/mechanics/finite_state_machine/states_Klengan/motion/motion.gd"
