@@ -11,5 +11,5 @@ jobs:
     - uses: josephbmanley/build-godot-action@v1.3.1
       with:
         name: KTG
-        preset: windows_64_release
+        preset: windows_64_release.exe
         package: true
