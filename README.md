@@ -9,7 +9,7 @@
 Ein Webgame für den YouTuber Klengan und seine Community.
 Momentante Idee ist ein Jump and Run mit einer kleinen Story mit Anspielungen auf Klengan und YouTube Deutschland. 
 
-![](https://img.shields.io/badge/Engine-Godot-blue.svg)
+![](https://img.shields.io/badge/Engine-Godot_3.1.2-blue.svg)
 ![](https://img.shields.io/badge/Version-0.0-green.svg) 
 ![](https://img.shields.io/badge/License-GNU_GPLv2-green.svg)
 <br>
@@ -48,10 +48,10 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 
 ### Projektleitung
 * [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
-* Leo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### weitere Organisation
 * Nachwahl ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* Leo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 
 ### Grafiken
 * Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
@@ -66,6 +66,9 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 * [FluentCoding](https://github.com/FluentCoding) ![aktivität](https://img.shields.io/badge/Aktivität-ausgeschlossen-inactive.svg)
 
 ### Storywriting
+* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* keggi 
+* Blum
 
 #### Core-Story 
 * Blutlauch ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
