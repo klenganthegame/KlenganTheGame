@@ -57,14 +57,18 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 * Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 * Vablo ![aktivität](https://img.shields.io/badge/Aktivität-als_Grafiker_ausgetreten-inactive.svg)
 * EnLo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
-* KeksMandarine![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* KeksMandarine ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### Entwicklung
 * [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 * [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* eisclimber ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 * [FluentCoding](https://github.com/FluentCoding) ![aktivität](https://img.shields.io/badge/Aktivität-ausgeschlossen-inactive.svg)
 
 ### Storywriting
+
+#### Core-Story 
+* Blutlauch ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### Sound-Design 
 
