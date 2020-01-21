@@ -8,6 +8,7 @@ var attacks : Array
 var to_heal : int = 0
 
 func _process(delta):
+	# TODO: time-dependency?
 	if to_heal >= 0:
 		to_heal -= 1
 		if actual_life < max_life:
