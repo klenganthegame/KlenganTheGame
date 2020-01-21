@@ -2,7 +2,8 @@ extends NinePatchRect
 
 export var wait_time = 0.2
 export var block_time = 0.3
-var time : float
+
+var text_speed : float = 0.01
 
 var text = []
 var num : int
@@ -17,11 +18,12 @@ var block_box_timer : bool
 
 signal dialogue_exit()
 
+
 func _ready():
 	audio = AudioStreamPlayer.new()
 	add_child(audio)
 	audio.stream = load("res://audio/ui/Message.ogg")
-	pass
+
 
 func talk(textarray : Array):
 	"""
@@ -33,6 +35,7 @@ func talk(textarray : Array):
 	$RichTextLabel.text = text[num]
 	show()
 	to_beginning()
+
 
 func _process(delta):
 	if hidden:
@@ -57,7 +60,9 @@ func _process(delta):
 				$InputBlocker.wait_time = block_time
 				$InputBlocker.start()
 
+
 func to_beginning():
+	text_speed = 1.0 / $RichTextLabel.text.length()
 	$Timer.wait_time = wait_time
 	$RichTextLabel.percent_visible = 0.05
 	
@@ -67,13 +72,15 @@ func to_beginning():
 	
 	$Timer.start()
 
+
 func _on_Timer_timeout():
 	if $RichTextLabel.percent_visible < 1:
-		$RichTextLabel.percent_visible += .01
+		$RichTextLabel.percent_visible += text_speed
 	else:
 		audioShouldPlay = false
 		audio.stop()
 	wait = true
+
 
 func _on_InputBlocker_timeout():
 	hidden = true

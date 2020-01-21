@@ -4,7 +4,6 @@
 [ext_resource path="res://objects/mechanics/DialogueBox.gd" type="Script" id=2]
 [ext_resource path="res://sprites/font/PressStart2P.ttf" type="DynamicFontData" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 3 )
@@ -36,7 +35,7 @@ margin_right = 719.0
 margin_bottom = 143.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-visible_characters = 2
+visible_characters = 0
 percent_visible = 0.05
 text = "Hallo ich bin Klengan
 wie geht es dir?

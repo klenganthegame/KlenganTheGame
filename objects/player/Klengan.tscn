@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://sprites/klengan/idle/dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
@@ -19,6 +19,11 @@
 [ext_resource path="res://sprites/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=17]
 [ext_resource path="res://sprites/mobilebuttons/original/LeftPressed.png" type="Texture" id=18]
 [ext_resource path="res://objects/mechanics/DialogueBox.tscn" type="PackedScene" id=19]
+[ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=20]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/idle.gd" type="Script" id=21]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=22]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=23]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -99,6 +104,20 @@ action = "walk_left"
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 19 )]
 visible = false
 wait_time = 0.01
+
+[node name="StateController" type="Node" parent="."]
+script = ExtResource( 20 )
+START_STATE = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateController"]
+script = ExtResource( 21 )
+
+[node name="Move" type="Node" parent="StateController"]
+script = ExtResource( 22 )
+
+[node name="Jump" type="Node" parent="StateController"]
+script = ExtResource( 23 )
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
