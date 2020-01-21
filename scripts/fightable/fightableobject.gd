@@ -34,8 +34,8 @@ func contains_attack(attack : Attack):
 			return true
 	return false
 
-func attack(damage : int, enemy : FightableObject):
-	enemy.actual_life -= damage
+func attack(attack_id : int, enemy : FightableObject):
+	enemy.actual_life -= get_attack(attack_id).atk
 
 func heal(heal : int):
 	if to_heal == 0:
