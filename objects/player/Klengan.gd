@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends FightableObject
 
 export var speed : int = 200
 export var GRAVITY : int = 20
@@ -21,14 +21,27 @@ var last_action_interactable : bool = false
 signal dialogue_exit()
 
 func _ready():
+	max_life = 100
+	actual_life = 50
+	
 	spawn = transform.get_origin()
-	pass
+	
+	$CanvasLayer/Health.max_value = max_life
+	$CanvasLayer/Health.value = actual_life
+	
 
 func _process(delta):
+	
+	$CanvasLayer/Health.value = actual_life
+	
 	can_move = !$CanvasLayer/DialogueBox.block_walk
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
 		talk(["Gott: Uff... Was tust du..."])
+		
+		# for debug
+		heal(40)
+		#actual_life -= 30
 		
 	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden and area != null:
 		var interactable = area.get_parent()

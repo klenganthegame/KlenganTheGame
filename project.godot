@@ -36,6 +36,11 @@ config/icon="res://resources/icons/icon.png"
 
 AudioHandler="*res://scripts/audiohandler.gd"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "adbox" )
@@ -76,6 +81,5 @@ accept={
 [rendering]
 
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.278431, 0.278431, 0.278431, 1 )
 environment/default_environment="res://default_env.tres"
