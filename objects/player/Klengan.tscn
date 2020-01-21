@@ -56,7 +56,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 6
+frame = 8
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -123,7 +123,7 @@ font = SubResource( 4 )
 action_name = "accept"
 wait_time = 0.05
 
-[node name="TextureProgress" type="TextureProgress" parent="CanvasLayer"]
+[node name="Health" type="TextureProgress" parent="CanvasLayer"]
 margin_left = 31.8766
 margin_top = 26.1569
 margin_right = 46.8766
