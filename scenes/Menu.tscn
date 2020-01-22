@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=2]
 [ext_resource path="res://resources/bootsplash/bootsplash.png" type="Texture" id=3]
-[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/icons/youtube.png" type="Texture" id=4]
+[ext_resource path="res://resources/icons/reddit.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -37,6 +39,7 @@ rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -70,10 +73,30 @@ margin_bottom = 414.0
 focus_neighbour_bottom = NodePath("../NewGame")
 text = "Spiel verlassen"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -152.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 95.0
+alignment = 1
+
+[node name="Youtube" type="TextureButton" parent="HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 75.0
+texture_normal = ExtResource( 4 )
+
+[node name="Reddit" type="TextureButton" parent="HBoxContainer"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 75.0
+texture_normal = ExtResource( 5 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 1 )
 
-[node name="Krebshilfe" parent="." instance=ExtResource( 4 )]
+[node name="Krebshilfe" parent="." instance=ExtResource( 6 )]
 margin_left = -10.0
 margin_top = 503.0
 margin_right = 9.0
@@ -82,3 +105,5 @@ margin_bottom = 616.0
 [connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="HBoxContainer/Youtube" to="." method="_on_Youtube_pressed"]
+[connection signal="pressed" from="HBoxContainer/Reddit" to="." method="_on_Reddit_pressed"]
