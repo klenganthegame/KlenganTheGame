@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://sprites/klengan/idle/dc8e1c008cb14966e26f05868829106c-1.png" type="Texture" id=2]
@@ -23,7 +23,7 @@
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/idle.gd" type="Script" id=21]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=22]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=23]
-
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/stagger.gd" type="Script" id=24]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -71,7 +71,6 @@ position = Vector2( -2.39494, 90.9944 )
 shape = SubResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 890, 481.042 )
@@ -106,6 +105,7 @@ visible = false
 wait_time = 0.01
 
 [node name="StateController" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 20 )
 START_STATE = NodePath("Idle")
 
@@ -118,6 +118,8 @@ script = ExtResource( 22 )
 [node name="Jump" type="Node" parent="StateController"]
 script = ExtResource( 23 )
 
+[node name="Stagger" type="Node" parent="StateController"]
+script = ExtResource( 24 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateController/Stagger" method="_on_DialogueBox_dialogue_exit"]

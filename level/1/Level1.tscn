@@ -111,6 +111,7 @@ position = Vector2( 1369.74, 566.398 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D"]
 position = Vector2( 339.388, 645.869 )
@@ -159,9 +160,8 @@ position = Vector2( -382.579, 444.331 )
 shape = SubResource( 8 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 
-[node name="StaticBody2D10" type="StaticBody2D" parent="CollisionSamples"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSamples/StaticBody2D9"]
 position = Vector2( 175.013, 350.628 )
 shape = SubResource( 9 )

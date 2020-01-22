@@ -15,14 +15,24 @@ func _ready():
 
 func _process(delta):
 	can_move = !$CanvasLayer/DialogueBox.block_walk
-	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
+	if transform.origin.y > spawn.y + 1000 and !is_on_floor():
 		transform.origin = spawn
 		talk(["GameMaster: Uff... Das nächste Mal helfe ich dir nicht mehr aus der Patsche..."])
 	
-	if Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden and area != null:
+	if Input.is_action_just_pressed("accept"):
+		talk_to_active_interactable()
+
+
+func talk(text : Array):
+	$CanvasLayer/DialogueBox.talk(text)
+	$StateController._change_state("stagger")
+
+
+func talk_to_active_interactable():
+	if $CanvasLayer/DialogueBox.hidden and area != null: 
 		var interactable = area.get_parent()
 		if interactable.is_in_group("Interactable"):
-			$CanvasLayer/DialogueBox.talk(interactable.dialogue)
+			talk(interactable.dialogue)
 
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):
@@ -36,15 +46,11 @@ func set_looking_right(_looking_right):
 	$AnimatedSprite.flip_h = !looking_right
 
 
-func talk(text : Array):
-	$CanvasLayer/DialogueBox.talk(text)
-
-
 func _on_Area2D_area_entered(_area):
 	area = _area
 
 
-func _on_Area2D_area_exited(area):
+func _on_Area2D_area_exited(_area):
 	area = null
 
 

@@ -4,12 +4,10 @@ func initialize_state_map():
 	states_map = {
 		"idle": $Idle,
 		"move": $Move,
-		"jump": $Jump
+		"jump": $Jump,
+		"stagger": $Stagger
 	}
 
-
-func _unhandled_input(event):
-	current_state.handle_input(event)
 
 
 
