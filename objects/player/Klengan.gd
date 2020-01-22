@@ -28,8 +28,8 @@ func _ready():
 	
 	spawn = transform.get_origin()
 	
-	$CanvasLayer/Health.max_value = max_life
-	$CanvasLayer/Health.value = actual_life
+	$CanvasLayer/UI/Health.max_value = max_life
+	$CanvasLayer/UI/Health.value = actual_life
 
 func _process(delta):
 
@@ -37,7 +37,7 @@ func _process(delta):
 		get_tree().change_scene("res://scenes/GameOver.tscn")
 		pass
 
-	$CanvasLayer/Health.value = actual_life
+	$CanvasLayer/UI/Health.value = actual_life
 	
 	can_move = !$CanvasLayer/DialogueBox.block_walk
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
@@ -120,4 +120,5 @@ func _on_DialogueBox_dialogue_exit():
 	emit_signal("dialogue_exit")
 
 func change_score_in_ui(score : int):
-	$CanvasLayer/ScoreLabel.text = "score: " + str(score)
+	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
+
