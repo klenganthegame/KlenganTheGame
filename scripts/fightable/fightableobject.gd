@@ -35,7 +35,7 @@ func contains_attack(attack : Attack):
 	return false
 
 func attack(attack_id : int, enemy : FightableObject):
-	enemy.actual_life -= get_attack(attack_id).atk
+	enemy.hit(get_attack(attack_id).atk)
 
 func heal(heal : int):
 	if to_heal == 0:
@@ -45,3 +45,9 @@ func get_attack(id : int):
 	for a in attacks:
 		if a.id == id:
 			return a
+			
+func hit(damage : int):
+	# Play standartizied hit animation
+	# rückstoß
+	self.actual_life -= damage
+	
