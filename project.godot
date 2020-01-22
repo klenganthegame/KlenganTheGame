@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://scripts/fightable/attack.gd"
+}, {
 "base": "NinePatchRect",
 "class": "DialogueBox",
 "language": "GDScript",
 "path": "res://addons/adbox/DialogueBox.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "FightableObject",
+"language": "GDScript",
+"path": "res://scripts/fightable/fightableobject.gd"
 }, {
 "base": "Node2D",
 "class": "InteractableObject",
@@ -20,7 +30,9 @@ _global_script_classes=[ {
 "path": "res://objects/mechanics/Interactable.gd"
 } ]
 _global_script_class_icons={
+"Attack": "",
 "DialogueBox": "res://addons/adbox/icon.png",
+"FightableObject": "",
 "InteractableObject": ""
 }
 
