@@ -104,17 +104,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -130.0
-margin_top = -208.908
+margin_top = -214.359
 margin_right = 550.0
-margin_bottom = 167.092
+margin_bottom = 161.641
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 
-[node name="Button" type="Button" parent="CanvasLayer/Control"]
-margin_right = 12.0
-margin_bottom = 20.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+margin_left = 330.572
+margin_top = 278.878
+margin_right = 706.572
+margin_bottom = 390.878
+
+[node name="Load" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+margin_right = 376.0
+margin_bottom = 54.0
 theme = ExtResource( 3 )
-text = "adsasd"
+text = "Letzter Speicherpunkt"
+
+[node name="Menu" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+margin_top = 61.0
+margin_right = 376.0
+margin_bottom = 112.0
+theme = ExtResource( 3 )
+text = "Zurück zum Menü"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 1 )
@@ -127,5 +140,7 @@ position = Vector2( -43.6553, 484.276 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 4 )
 animation = "walk"
-frame = 5
+frame = 9
 playing = true
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Menu" to="." method="_on_Menu_pressed"]
