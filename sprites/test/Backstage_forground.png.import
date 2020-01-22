@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walk6.png-286bafe452e8977efd07138edba34e90.stex"
+path="res://.import/Backstage_forground.png-fcca9fbfa51178c4e527d280290f30b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/klengan/Walk/walk6.png"
-dest_files=[ "res://.import/walk6.png-286bafe452e8977efd07138edba34e90.stex" ]
+source_file="res://sprites/test/Backstage_forground.png"
+dest_files=[ "res://.import/Backstage_forground.png-fcca9fbfa51178c4e527d280290f30b8.stex" ]
 
 [params]
 

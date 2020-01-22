@@ -150,6 +150,6 @@ shape = SubResource( 9 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.298039, 0.298039, 0.298039, 1 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp3" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp2" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp3" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp" method="trigger"]

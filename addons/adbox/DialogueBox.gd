@@ -147,8 +147,8 @@ func to_beginning():
 func _on_Timer_timeout():
 	if TextBox.percent_visible < 1:
 		TextBox.percent_visible += percent_addition 
-		if is_visible():
-			audio.play(0)
+#		if is_visible():
+#			audio.play(0)
 	else:
 		audioShouldPlay = false
 		audio.stop()
