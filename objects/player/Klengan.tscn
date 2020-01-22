@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_02.png" type="Texture" id=2]
@@ -12,13 +12,13 @@
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_09.png" type="Texture" id=10]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_00.png" type="Texture" id=11]
 [ext_resource path="res://objects/player/CanvasLayer.gd" type="Script" id=12]
-[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=13]
-[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=14]
-[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=15]
-[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=16]
-[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=17]
-[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=18]
-[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=19]
+[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=13]
+[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=14]
+[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=15]
+[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=16]
+[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=17]
+[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=18]
+[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=19]
 [ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=20]
 [ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=21]
 [ext_resource path="res://resources/audio/text_beep.wav" type="AudioStream" id=22]
@@ -32,6 +32,7 @@
 [ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=30]
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=31]
 [ext_resource path="res://resources/shader/white.png" type="Texture" id=32]
+[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=33]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -127,7 +128,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 8
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -149,40 +150,57 @@ shape = SubResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 12 )
 
-[node name="Up" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 890, 481.042 )
+[node name="Arrows" type="Control" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -120.0
+margin_right = 265.0
+margin_bottom = -21.0
+
+[node name="Right" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
+position = Vector2( 150, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 13 )
-pressed = ExtResource( 13 )
-action = "jump"
-
-[node name="Okay" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 790.815, 480 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 14 )
-pressed = ExtResource( 15 )
-action = "accept"
-
-[node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 150, 480 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 16 )
-pressed = ExtResource( 17 )
+pressed = ExtResource( 14 )
 action = "walk_right"
 
-[node name="Left" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2( 35, 480 )
+[node name="Left" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
+position = Vector2( 35, 0 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 18 )
-pressed = ExtResource( 19 )
+normal = ExtResource( 15 )
+pressed = ExtResource( 16 )
 action = "walk_left"
 
+[node name="Interaction" type="Control" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -271.0
+margin_top = -120.0
+margin_right = -40.0
+margin_bottom = -18.0
+
+[node name="Okay" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( 35, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 17 )
+pressed = ExtResource( 18 )
+action = "accept"
+
+[node name="Up" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( 150, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 19 )
+pressed = ExtResource( 19 )
+action = "jump"
+
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
-visible = false
-margin_left = 131.58
-margin_top = 47.0
-margin_right = 891.58
-margin_bottom = 210.0
+anchor_right = 1.0
+margin_left = 173.0
+margin_top = 50.0
+margin_right = -168.0
+margin_bottom = 240.0
 texture = ExtResource( 20 )
 region_rect = Rect2( -2.28871, -3.69064, 28.5712, 30.4968 )
 patch_margin_left = 8
@@ -255,6 +273,7 @@ anims/in = SubResource( 5 )
 anims/out = SubResource( 6 )
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 24 )
@@ -303,31 +322,18 @@ margin_bottom = 228.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
 
-[node name="Krebshilfe" type="Button" parent="CanvasLayer/Pause"]
-anchor_left = 1.0
+[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 33 )]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -168.0
-margin_top = -52.0
-margin_right = 80.0
-margin_bottom = 10.0
-rect_scale = Vector2( 0.6, 0.6 )
-text = "Krebshilfe.de"
-
-[node name="Label" type="Label" parent="CanvasLayer/Pause"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -73.0
-margin_right = 1044.0
-rect_scale = Vector2( 0.8, 0.8 )
-text = "Wir verlangen nichts für dieses Spiel.Es ist komplett Kostenlos.
-Wenn du jedoch uns und anderen Menschen eine Freude bereiten
-willst, dann spende doch bitte an die Krebshilfe. Sehe es gerne
-als Preis für dieses Spiel."
+margin_top = -118.0
+margin_right = 0.0
+margin_bottom = 0.0
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="_on_Pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Back" to="CanvasLayer" method="_on_Back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Save" to="CanvasLayer" method="_on_Save_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/BackToMenu" to="CanvasLayer" method="_on_BackToMenu_pressed"]

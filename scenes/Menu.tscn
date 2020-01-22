@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/Menu.gd" type="Script" id=2]
+[ext_resource path="res://resources/bootsplash/bootsplash.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Splash:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 60.421, 30 ), Vector2( 60.421, 60 ) ]
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Splash" type="TextureRect" parent="."]
+margin_left = 60.421
+margin_top = 30.9305
+margin_right = 860.421
+margin_bottom = 630.931
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -350.0
+margin_right = -70.0
+alignment = 1
+
+[node name="NewGame" type="Button" parent="VBoxContainer"]
+margin_top = 186.0
+margin_right = 280.0
+margin_bottom = 240.0
+focus_neighbour_top = NodePath("../Exit")
+text = "Neues Spiel"
+
+[node name="LoadGame" type="Button" parent="VBoxContainer"]
+margin_top = 244.0
+margin_right = 280.0
+margin_bottom = 298.0
+text = "Spiel Laden"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+margin_top = 302.0
+margin_right = 280.0
+margin_bottom = 356.0
+text = "Mitwirkende"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+margin_top = 360.0
+margin_right = 280.0
+margin_bottom = 414.0
+focus_neighbour_bottom = NodePath("../NewGame")
+text = "Spiel verlassen"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 1 )
+
+[node name="Krebshilfe" parent="." instance=ExtResource( 4 )]
+margin_left = -10.4286
+margin_top = 502.585
+margin_right = 1015.57
+margin_bottom = 615.585
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

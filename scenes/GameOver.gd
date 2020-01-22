@@ -11,4 +11,5 @@ func _on_Load_pressed():
 
 
 func _on_Menu_pressed():
+	get_tree().change_scene(SCENES.Menu)
 	pass # Replace with function body.
