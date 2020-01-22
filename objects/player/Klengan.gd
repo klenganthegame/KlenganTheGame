@@ -24,18 +24,19 @@ func _ready():
 	max_life = 100
 	actual_life = 50
 	
+	change_score_in_ui(500)
+	
 	spawn = transform.get_origin()
 	
 	$CanvasLayer/Health.max_value = max_life
 	$CanvasLayer/Health.value = actual_life
-	
 
 func _process(delta):
-	
+
 	if actual_life <= 0:
 		get_tree().change_scene("res://scenes/GameOver.tscn")
 		pass
-	
+
 	$CanvasLayer/Health.value = actual_life
 	
 	can_move = !$CanvasLayer/DialogueBox.block_walk
@@ -99,20 +100,16 @@ func _physics_process(delta):
 
 func talk(text : Array):
 	$CanvasLayer/DialogueBox.talk(text)
-	pass
-	
 
 func _on_Area2D_area_entered(_area):
 	can_interact = true
 	area = _area
 	pass
 
-
 func _on_Area2D_area_exited(area):
 	can_interact = false
 	area = null
 	pass
-
 
 func _on_DialogueBox_dialogue_exit():
 	
@@ -121,4 +118,6 @@ func _on_DialogueBox_dialogue_exit():
 		interactable.interacted()
 		last_action_interactable = false
 	emit_signal("dialogue_exit")
-	pass
+
+func change_score_in_ui(score : int):
+	$CanvasLayer/ScoreLabel.text = "score: " + str(score)

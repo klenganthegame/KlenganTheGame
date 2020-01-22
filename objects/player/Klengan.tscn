@@ -60,7 +60,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 7
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -157,7 +157,7 @@ texture_under = ExtResource( 27 )
 texture_progress = ExtResource( 28 )
 fill_mode = 3
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
 margin_left = 20.0
 margin_top = 10.0
 margin_right = 212.0
