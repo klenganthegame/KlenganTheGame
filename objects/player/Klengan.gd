@@ -16,22 +16,23 @@ func _ready():
 	max_life = 100
 	actual_life = 50
 	
+	change_score_in_ui(500)
+	
 	spawn = transform.get_origin()
 	
-	$CanvasLayer/Health.max_value = max_life
-	$CanvasLayer/Health.value = actual_life
-	
+	$CanvasLayer/UI/Health.max_value = max_life
+	$CanvasLayer/UI/Health.value = actual_life
 
 func _process(delta):
-	$CanvasLayer/Health.value = actual_life
+	$CanvasLayer/UI/Health.value = actual_life
 	
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
 		talk(["Gott: Uff... Was tust du..."])
 		
 		# for debug
-		heal(40)
-		#actual_life -= 30
+		#heal(40)
+		hit(30)
 		
 	if Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden and area != null:
 		talk_to_interactable()
@@ -62,10 +63,13 @@ func _on_Area2D_area_entered(_area):
 func _on_Area2D_area_exited(_area):
 	area = null
 
-
 func _on_DialogueBox_dialogue_exit():
 	if last_action_interactable:
 		var interactable = area.get_parent()
 		interactable.interacted()
 		last_action_interactable = false
 	emit_signal("dialogue_exit")
+
+func change_score_in_ui(score : int):
+	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
+
