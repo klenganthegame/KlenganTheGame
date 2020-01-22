@@ -3,10 +3,8 @@
 [ext_resource path="res://scenes/Krebshilfe.gd" type="Script" id=1]
 
 [node name="Krebshilfe" type="Control"]
-margin_left = -2.27209
-margin_top = -2.27208
-margin_right = 1023.73
-margin_bottom = 110.728
+anchor_right = 1.0
+margin_bottom = 98.0
 script = ExtResource( 1 )
 
 [node name="LinkButton" type="Button" parent="."]
@@ -29,8 +27,8 @@ margin_top = -36.5
 margin_right = 1054.0
 margin_bottom = 36.5
 rect_scale = Vector2( 0.8, 0.8 )
-text = "Wir verlangen nichts für dieses Spiel. Es ist komplett Kostenlos.
+text = "Wir verlangen nichts für dieses Spiel. Es ist komplett kostenlos.
 Wenn du jedoch uns und anderen Menschen eine Freude bereiten
 willst, dann spende doch bitte an die Krebshilfe. Sehe es gerne
-als Preis für dieses Spiel an. Euer ktg-Team."
+als Preis für dieses Spiel an. Euer KTG-Team."
 [connection signal="pressed" from="LinkButton" to="." method="_on_LinkButton_pressed"]

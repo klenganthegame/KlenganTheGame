@@ -128,7 +128,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 8
+frame = 9
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -196,6 +196,7 @@ pressed = ExtResource( 19 )
 action = "jump"
 
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 margin_left = 173.0
 margin_top = 50.0
@@ -324,10 +325,8 @@ text = "Zurück zum Menü"
 
 [node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 33 )]
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -118.0
-margin_right = 0.0
 margin_bottom = 0.0
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
