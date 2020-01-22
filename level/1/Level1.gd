@@ -1,4 +1,4 @@
-extends Node2D
+﻿extends Node2D
 
 func _ready():
 	$Klengan.talk(["Klengan: Okay... ",

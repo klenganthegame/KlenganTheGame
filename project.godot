@@ -90,6 +90,11 @@ accept={
  ]
 }
 
+[network]
+
+limits/debugger_stdout/max_messages_per_frame=20
+limits/debugger_stdout/max_errors_per_frame=20
+
 [rendering]
 
 vram_compression/import_etc=true
