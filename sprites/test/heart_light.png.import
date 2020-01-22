@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LeftPressed.png-d381de9a807f9b4f1bca266d269b0a55.stex"
+path="res://.import/heart_light.png-a742165b3936dfbdc5401af6745caa3d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/mobilebuttons/original/LeftPressed.png"
-dest_files=[ "res://.import/LeftPressed.png-d381de9a807f9b4f1bca266d269b0a55.stex" ]
+source_file="res://sprites/test/heart_light.png"
+dest_files=[ "res://.import/heart_light.png-a742165b3936dfbdc5401af6745caa3d.stex" ]
 
 [params]
 

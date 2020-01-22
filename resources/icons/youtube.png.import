@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Icon120.png-bcac16b762bd8ceac6f90626db246a25.stex"
+path="res://.import/youtube.png-3f8bc074a4e8cc7080ab7ec91b8ee15e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/Icon120.png"
-dest_files=[ "res://.import/Icon120.png-bcac16b762bd8ceac6f90626db246a25.stex" ]
+source_file="res://resources/icons/youtube.png"
+dest_files=[ "res://.import/youtube.png-3f8bc074a4e8cc7080ab7ec91b8ee15e.stex" ]
 
 [params]
 
