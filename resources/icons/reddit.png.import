@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JumpPressed.png-4e0c6c49ab201994058e340c2adfeebd.stex"
+path="res://.import/reddit.png-c25b46ea2171765da9d5008a622ff372.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/mobilebuttons/original/JumpPressed.png"
-dest_files=[ "res://.import/JumpPressed.png-4e0c6c49ab201994058e340c2adfeebd.stex" ]
+source_file="res://resources/icons/reddit.png"
+dest_files=[ "res://.import/reddit.png-c25b46ea2171765da9d5008a622ff372.stex" ]
 
 [params]
 

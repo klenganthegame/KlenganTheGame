@@ -59,6 +59,9 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 * EnLo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 * KeksMandarine ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
+#### extern
+Youtube / Reddit Icon by [Freepik](https://www.flaticon.com/authors/freepik)
+
 ### Entwicklung
 * [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 * [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
