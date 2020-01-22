@@ -25,12 +25,6 @@
 [ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=23]
 [ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=24]
 [ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=25]
-[ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=26]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/idle.gd" type="Script" id=27]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=28]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=29]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/stagger.gd" type="Script" id=30]
-
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -140,24 +134,6 @@ texture_under = ExtResource( 23 )
 texture_over = ExtResource( 24 )
 texture_progress = ExtResource( 25 )
 fill_mode = 4
-wait_time = 0.01
-
-[node name="StateController" type="Node" parent="."]
-editor/display_folded = true
-script = ExtResource( 20 )
-START_STATE = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="StateController"]
-script = ExtResource( 21 )
-
-[node name="Move" type="Node" parent="StateController"]
-script = ExtResource( 22 )
-
-[node name="Jump" type="Node" parent="StateController"]
-script = ExtResource( 23 )
-
-[node name="Stagger" type="Node" parent="StateController"]
-script = ExtResource( 24 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateController/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
