@@ -128,7 +128,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 9
+frame = 4
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -262,9 +262,9 @@ anchor_bottom = 1.0
 margin_left = 41.0
 margin_top = 130.0
 margin_right = 46.0
-margin_bottom = 130.0
+margin_bottom = -430.0
 rect_scale = Vector2( 5, 5 )
-value = 100.0
+value = 80.0
 texture_under = ExtResource( 29 )
 texture_progress = ExtResource( 30 )
 fill_mode = 3
