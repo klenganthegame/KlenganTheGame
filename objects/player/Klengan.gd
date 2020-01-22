@@ -32,6 +32,10 @@ func _ready():
 
 func _process(delta):
 	
+	if actual_life <= 0:
+		get_tree().change_scene("res://scenes/GameOver.tscn")
+		pass
+	
 	$CanvasLayer/Health.value = actual_life
 	
 	can_move = !$CanvasLayer/DialogueBox.block_walk
@@ -40,8 +44,8 @@ func _process(delta):
 		talk(["Gott: Uff... Was tust du..."])
 		
 		# for debug
-		heal(40)
-		#actual_life -= 30
+		#heal(40)
+		hit(30)
 		
 	if can_interact and Input.is_action_pressed("accept") and $CanvasLayer/DialogueBox.hidden and area != null:
 		var interactable = area.get_parent()
