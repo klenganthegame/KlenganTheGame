@@ -48,6 +48,7 @@ config/icon="res://resources/icons/icon.png"
 
 AudioHandler="*res://scripts/audiohandler.gd"
 SCENES="*res://scripts/scene_paths.gd"
+SaveGame="*res://scripts/SaveGame.gd"
 
 [display]
 
