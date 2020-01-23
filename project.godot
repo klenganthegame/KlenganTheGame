@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="KlenganTheGame"
-run/main_scene="res://scenes/Menu.tscn"
+run/main_scene="res://level/1/Level1.tscn"
 boot_splash/image="res://resources/bootsplash/bootsplash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://resources/icons/icon.png"

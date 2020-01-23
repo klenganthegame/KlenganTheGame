@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_02.png" type="Texture" id=2]
@@ -33,25 +33,11 @@
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=31]
 [ext_resource path="res://resources/shader/white.png" type="Texture" id=32]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=33]
-[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=12]
-[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=13]
-[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=14]
-[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=15]
-[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=16]
-[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=17]
-[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=18]
-[ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=19]
-[ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=20]
-[ext_resource path="res://resources/audio/text_beep.wav" type="AudioStream" id=21]
-[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=22]
-[ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=23]
-[ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=24]
-[ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=25]
-[ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=26]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/idle.gd" type="Script" id=27]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=28]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=29]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/stagger.gd" type="Script" id=30]
+[ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=34]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/idle.gd" type="Script" id=35]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=36]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=37]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/stagger.gd" type="Script" id=38]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -147,7 +133,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -350,26 +336,26 @@ margin_top = -118.0
 margin_bottom = 0.0
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource( 26 )
+script = ExtResource( 34 )
 START_STATE = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource( 27 )
+script = ExtResource( 35 )
 
 [node name="Move" type="Node" parent="StateMachine"]
-script = ExtResource( 28 )
+script = ExtResource( 36 )
 
 [node name="Jump" type="Node" parent="StateMachine"]
-script = ExtResource( 29 )
+script = ExtResource( 37 )
 
 [node name="Stagger" type="Node" parent="StateMachine"]
-script = ExtResource( 30 )
+script = ExtResource( 38 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="_on_Pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Back" to="CanvasLayer" method="_on_Back_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/BackToMenu" to="CanvasLayer" method="_on_BackToMenu_pressed"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]

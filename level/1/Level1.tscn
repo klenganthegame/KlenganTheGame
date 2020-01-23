@@ -51,6 +51,7 @@ position = Vector2( -1236.59, 519.245 )
 position = Vector2( -289.972, 510.139 )
 
 [node name="Lights" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="lamp" parent="Lights" instance=ExtResource( 5 )]
 position = Vector2( -981.215, 317.911 )
@@ -62,6 +63,7 @@ position = Vector2( 639.393, 291.682 )
 position = Vector2( -284.197, 299.272 )
 
 [node name="InteractableSamples" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Lightswitch" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( -1044.55, 618.629 )
@@ -150,6 +152,6 @@ shape = SubResource( 9 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.298039, 0.298039, 0.298039, 1 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp2" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp3" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp3" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/lamp2" method="trigger"]
