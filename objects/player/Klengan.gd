@@ -59,7 +59,6 @@ func talk_to_interactable():
 func _on_Area2D_area_entered(_area):
 	area = _area
 
-
 func _on_Area2D_area_exited(_area):
 	area = null
 
@@ -72,4 +71,3 @@ func _on_DialogueBox_dialogue_exit():
 
 func change_score_in_ui(score : int):
 	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
-
