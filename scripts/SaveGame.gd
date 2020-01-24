@@ -5,7 +5,7 @@ const SCORE = "score"
 const LEVELSTATE = "levelstate"
 const save_const = "data"
 
-const path = "usr://save.data"
+const path = "user://save.data"
 
 func save_level(life: int, score : int, levelstate : int) -> bool:
 	var savedict = to_dict(life, score, levelstate)
