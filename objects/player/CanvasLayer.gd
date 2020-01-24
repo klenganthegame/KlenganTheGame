@@ -37,3 +37,11 @@ func trigger_pause():
 	else:
 		$PauseMenu.play("in")
 
+
+
+func _on_Donations_toggled(button_pressed):
+	if button_pressed:
+		$Pause/Krebshilfe.show()
+	else:
+		$Pause/Krebshilfe.hide()
+	pass # Replace with function body.

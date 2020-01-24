@@ -288,7 +288,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 6
+frame = 5
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -466,7 +466,6 @@ margin_bottom = 155.0
 rect_min_size = Vector2( 300, 200 )
 
 [node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -498,6 +497,7 @@ focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -507,20 +507,23 @@ margin_top = 27.0
 margin_right = 493.0
 margin_bottom = 81.0
 toggle_mode = true
+pressed = true
 text = "Musik: an"
 
-[node name="Musik2" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+[node name="SFX" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 margin_top = 85.0
 margin_right = 493.0
 margin_bottom = 139.0
 toggle_mode = true
+pressed = true
 text = "SFX: an"
 
-[node name="Musik3" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+[node name="Rumble" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 margin_top = 143.0
 margin_right = 493.0
 margin_bottom = 197.0
 toggle_mode = true
+pressed = true
 text = "Controller-Rumble: an"
 
 [node name="Donations" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
@@ -528,6 +531,7 @@ margin_top = 201.0
 margin_right = 493.0
 margin_bottom = 255.0
 toggle_mode = true
+pressed = true
 text = "Spendenaufruf: an"
 
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
@@ -550,4 +554,5 @@ margin_bottom = 0.0
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/BackToMenu" to="CanvasLayer" method="_on_BackToMenu_pressed"]
+[connection signal="toggled" from="CanvasLayer/Pause/Panel/Settings/Donations" to="CanvasLayer" method="_on_Donations_toggled"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/Settings/Back" to="CanvasLayer" method="_on_BackToPause_pressed"]
