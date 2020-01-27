@@ -55,7 +55,7 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 
 ### Grafiken
 * Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
-* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-als_Grafiker_ausgetreten-inactive.svg)
+* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
 * EnLo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 * KeksMandarine ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
