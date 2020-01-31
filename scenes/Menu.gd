@@ -19,8 +19,7 @@ func _on_Credits_pressed():
 
 
 func _on_Exit_pressed():
-	#get_tree().change_scene(SCENES.Meni)
-	pass # Replace with function body.
+	get_tree().quit()
 
 
 func _on_Reddit_pressed():

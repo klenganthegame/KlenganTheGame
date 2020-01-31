@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Loading.gd" type="Script" id=1]
+
+[node name="Loading" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Texture" type="ColorRect" parent="VBox"]
+margin_top = 180.0
+margin_right = 200.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="VBox"]
+margin_top = 400.0
+margin_right = 1024.0
+margin_bottom = 420.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_vertical = 1

@@ -9,8 +9,8 @@ func enter():
 
 
 func exit():
-	.exit()
 	set_ascending(false)
+	.exit()
 
 
 func update(delta):
@@ -26,7 +26,8 @@ func apply_forces():
 	.apply_forces()
 	var input_direction = get_input_direction()
 	velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
-	owner.play_directional_animation("walk", (input_direction.x > 0))
+	if input_direction != Vector2():
+		owner.play_directional_animation("walk", (input_direction.x > 0))
 
 
 func set_ascending(_ascending):

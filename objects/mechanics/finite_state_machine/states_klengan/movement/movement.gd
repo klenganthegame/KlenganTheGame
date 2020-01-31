@@ -16,7 +16,7 @@ func exit():
 	owner.velocity = velocity
 
 
-func update(delta):
+func update(_delta):
 	apply_forces()
 	velocity = owner.move_and_slide(velocity, Vector2(0, -1))
 	if Input.is_action_pressed("jump") and owner.is_on_floor():

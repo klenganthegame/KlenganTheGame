@@ -133,7 +133,7 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -142,7 +142,6 @@ current = true
 smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 90 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -245,7 +244,6 @@ enabled_focus_mode = 0
 text = "||"
 
 [node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
-editor/display_folded = true
 margin_left = 16.0
 margin_top = 41.0
 margin_right = 31.0
@@ -352,8 +350,8 @@ script = ExtResource( 37 )
 script = ExtResource( 38 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="_on_Pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Back" to="CanvasLayer" method="_on_Back_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Save" to="CanvasLayer" method="_on_Save_pressed"]

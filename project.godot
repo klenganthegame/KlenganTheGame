@@ -48,6 +48,7 @@ config/icon="res://resources/icons/icon.png"
 
 AudioHandler="*res://scripts/audiohandler.gd"
 SCENES="*res://scripts/scene_paths.gd"
+LevelChanger="*res://scripts/LevelChanger.gd"
 
 [display]
 
@@ -90,6 +91,11 @@ accept={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+
+[network]
+
+limits/debugger_stdout/max_messages_per_frame=32
+limits/debugger_stdout/max_errors_per_frame=32
 
 [rendering]
 
