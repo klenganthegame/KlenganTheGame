@@ -5,7 +5,7 @@ var velocity : Vector2 = Vector2()
 var looking_right : bool = true
 var can_interact = false
 var area : Area2D
-
+var paused: bool = false
 var spawn : Vector2
 
 var last_action_interactable : bool = false

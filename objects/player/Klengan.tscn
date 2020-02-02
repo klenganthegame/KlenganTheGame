@@ -1,6 +1,7 @@
 [gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
+
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/idle.gd" type="Script" id=3]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=4]
@@ -50,6 +51,11 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 14.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -288,8 +294,8 @@ position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 5
-playing = true
+
+frame = 8
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -50 )
@@ -377,6 +383,7 @@ action_name = "accept"
 wait_time = 0.05
 
 [node name="UI" type="Control" parent="CanvasLayer"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 29 )
@@ -441,6 +448,9 @@ anims/settings_out = SubResource( 9 )
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
+
+editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 29 )
@@ -545,6 +555,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -118.0
 margin_bottom = 0.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
