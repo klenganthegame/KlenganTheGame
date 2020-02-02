@@ -23,6 +23,22 @@ func _on_BackToMenu_pressed():
 
 func go_to_Menu():
 	get_tree().change_scene(SCENES.Menu)
+  
+func _on_Pause_pressed():
+	$PauseMenu.play("in")
+	get_parent().paused = true 
+
+func _unhandled_key_input(event):
+	if Input.is_action_just_pressed("pause"):
+		if get_parent().paused == true :
+			$PauseMenu.play("out")
+		else:
+			$PauseMenu.play("in")
+		get_parent().paused = !get_parent().paused 
+
+func _on_Back_pressed():
+	get_parent().paused = false 
+	$PauseMenu.play("out")
 
 func _on_OptionButton_item_selected(ID):
 	get_node("Colorblindness").Type = ID
@@ -37,11 +53,8 @@ func trigger_pause():
 	else:
 		$PauseMenu.play("in")
 
-
-
 func _on_Donations_toggled(button_pressed):
 	if button_pressed:
 		$Pause/Krebshilfe.show()
 	else:
 		$Pause/Krebshilfe.hide()
-	pass # Replace with function body.
