@@ -1,0 +1,214 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://level/1/Level1inpseudo3d.gd" type="Script" id=1]
+[ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://resources/sprites/tutorial_level_backstage/normal_stonewall.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/tutorial_level_backstage/ladder.png" type="Texture" id=8]
+[ext_resource path="res://resources/sprites/tutorial_level_backstage/box.png" type="Texture" id=9]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -444.125, -32.0158 )
+b = Vector2( 956.738, -32.0158 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.4149, 5.36293 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 12.4149, 10.9342 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+follow_viewport_scale = 0.8
+
+[node name="Background" type="TextureRect" parent="Background"]
+margin_left = -60.0
+margin_top = 216.181
+margin_right = 218.0
+margin_bottom = 285.181
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layer1" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+follow_viewport_scale = 0.9
+
+[node name="Ground" type="TextureRect" parent="Layer1"]
+self_modulate = Color( 0.505882, 0.505882, 0.505882, 1 )
+margin_left = -60.0
+margin_top = 472.0
+margin_right = 218.0
+margin_bottom = 485.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="NinePatchRect" parent="Layer1"]
+margin_left = 495.85
+margin_top = 421.2
+margin_right = 522.85
+margin_bottom = 434.2
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 13.8538, 15.2491 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box2" type="NinePatchRect" parent="Layer1"]
+margin_left = 669.85
+margin_top = 421.2
+margin_right = 694.85
+margin_bottom = 434.2
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 13.8538, 15.2491 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box6" type="NinePatchRect" parent="Layer1"]
+margin_left = 831.85
+margin_top = 402.85
+margin_right = 860.85
+margin_bottom = 420.85
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 13.8538, 15.2491 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="Ground" type="TextureRect" parent="GameLayer"]
+self_modulate = Color( 0.505882, 0.505882, 0.505882, 1 )
+margin_left = -60.0
+margin_top = 472.0
+margin_right = 218.0
+margin_bottom = 485.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GameLayer"]
+position = Vector2( 379.646, 502.885 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLayer/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Interactable" parent="GameLayer" instance=ExtResource( 5 )]
+position = Vector2( 249.349, 459.609 )
+
+[node name="Lamp_Right" parent="GameLayer" instance=ExtResource( 4 )]
+position = Vector2( 482.77, 215.956 )
+
+[node name="Lamp_Right2" parent="GameLayer" instance=ExtResource( 4 )]
+position = Vector2( 649.791, 221.231 )
+
+[node name="Lamp_Right3" parent="GameLayer" instance=ExtResource( 4 )]
+position = Vector2( 822.085, 219.472 )
+
+[node name="Box3" type="NinePatchRect" parent="GameLayer"]
+margin_left = 793.2
+margin_top = 419.3
+margin_right = 818.2
+margin_bottom = 432.3
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 13.8538, 15.2491 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="GameLayer/Box3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLayer/Box3/StaticBody2D3"]
+position = Vector2( 12.5354, 5.41653 )
+shape = SubResource( 2 )
+
+[node name="Box4" type="NinePatchRect" parent="GameLayer"]
+margin_left = 927.95
+margin_top = 377.6
+margin_right = 952.95
+margin_bottom = 401.6
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 13.8538, 15.2491 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="GameLayer/Box4"]
+position = Vector2( -26, 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLayer/Box4/StaticBody2D2"]
+position = Vector2( 38.5347, -0.309517 )
+shape = SubResource( 3 )
+
+[node name="Klengan" parent="GameLayer" instance=ExtResource( 3 )]
+position = Vector2( 379.646, 362.885 )
+
+[node name="Layer3" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+follow_viewport_scale = 1.1
+
+[node name="Ground" type="TextureRect" parent="Layer3"]
+self_modulate = Color( 0.505882, 0.505882, 0.505882, 1 )
+margin_left = -60.0
+margin_top = 472.0
+margin_right = 218.0
+margin_bottom = 485.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ladder" type="Sprite" parent="Layer3"]
+position = Vector2( 684.541, 405.327 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+follow_viewport_scale = 1.2
+[connection signal="interacted" from="GameLayer/Interactable" to="GameLayer/Lamp_Right2" method="trigger"]
+[connection signal="interacted" from="GameLayer/Interactable" to="GameLayer/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="GameLayer/Interactable" to="GameLayer/Lamp_Right3" method="trigger"]
