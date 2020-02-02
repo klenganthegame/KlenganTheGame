@@ -39,7 +39,9 @@ _global_script_class_icons={
 [application]
 
 config/name="KlenganTheGame"
-run/main_scene="res://level/1/Level1.tscn"
+run/main_scene="res://scenes/Menu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="KlenganTheGame"
 boot_splash/image="res://resources/bootsplash/bootsplash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://resources/icons/icon.png"
@@ -48,6 +50,7 @@ config/icon="res://resources/icons/icon.png"
 
 AudioHandler="*res://scripts/audiohandler.gd"
 SCENES="*res://scripts/scene_paths.gd"
+SaveGame="*res://scripts/SaveGame.gd"
 
 [display]
 
@@ -56,7 +59,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "adbox" )
+enabled=PoolStringArray( "adbox", "paulloz.colorblindness" )
 
 [input]
 

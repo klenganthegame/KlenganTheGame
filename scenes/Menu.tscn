@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=2]
@@ -24,6 +24,50 @@ tracks/0/keys = {
 "values": [ Vector2( 60.421, 30 ), Vector2( 60.421, 60 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1, 0.2, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "load_game"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "load_level_one"
+} ]
+}
+
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -39,7 +83,6 @@ rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,28 +91,34 @@ margin_right = -70.0
 alignment = 1
 
 [node name="NewGame" type="Button" parent="VBoxContainer"]
-margin_top = 186.0
+margin_top = 157.0
 margin_right = 280.0
-margin_bottom = 240.0
+margin_bottom = 211.0
 focus_neighbour_top = NodePath("../Exit")
 text = "Neues Spiel"
 
 [node name="LoadGame" type="Button" parent="VBoxContainer"]
-margin_top = 244.0
+margin_top = 215.0
 margin_right = 280.0
-margin_bottom = 298.0
+margin_bottom = 269.0
 text = "Spiel Laden"
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
-margin_top = 302.0
+[node name="Settings" type="Button" parent="VBoxContainer"]
+margin_top = 273.0
 margin_right = 280.0
-margin_bottom = 356.0
+margin_bottom = 327.0
+text = "Einstellungen"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+margin_top = 331.0
+margin_right = 280.0
+margin_bottom = 385.0
 text = "Mitwirkende"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
-margin_top = 360.0
+margin_top = 389.0
 margin_right = 280.0
-margin_bottom = 414.0
+margin_bottom = 443.0
 focus_neighbour_bottom = NodePath("../NewGame")
 text = "Spiel verlassen"
 
@@ -93,14 +142,20 @@ margin_right = 132.0
 margin_bottom = 75.0
 texture_normal = ExtResource( 5 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 1 )
-
 [node name="Krebshilfe" parent="." instance=ExtResource( 6 )]
 margin_left = -10.0
 margin_top = 503.0
 margin_right = 9.0
 margin_bottom = 616.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 1 )
+
+[node name="FadeIn" type="AnimationPlayer" parent="."]
+anims/in = SubResource( 2 )
+anims/load_game = SubResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]

@@ -1,13 +1,19 @@
 extends Control
 
+func _enter_tree():
+	$CanvasModulate.color = 0x000000
+
 func _ready():
+	$FadeIn.play("in")
 	$AnimationPlayer.play("idle")
 	pass
 
 
 func _on_NewGame_pressed():
+	$FadeIn.play("load_game")
+
+func load_level_one():
 	get_tree().change_scene(SCENES.Level1)
-	pass # Replace with function body.
 
 
 func _on_LoadGame_pressed():
