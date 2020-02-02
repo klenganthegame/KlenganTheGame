@@ -22,6 +22,7 @@ extents = Vector2( 12.4149, 10.9342 )
 script = ExtResource( 1 )
 
 [node name="Background" type="CanvasLayer" parent="."]
+layer = 0
 follow_viewport_enable = true
 follow_viewport_scale = 0.8
 
@@ -38,6 +39,7 @@ __meta__ = {
 }
 
 [node name="Layer1" type="CanvasLayer" parent="."]
+layer = 0
 follow_viewport_enable = true
 follow_viewport_scale = 0.9
 
@@ -103,6 +105,7 @@ __meta__ = {
 }
 
 [node name="GameLayer" type="CanvasLayer" parent="."]
+layer = 0
 follow_viewport_enable = true
 
 [node name="Ground" type="TextureRect" parent="GameLayer"]
@@ -135,6 +138,7 @@ position = Vector2( 649.791, 221.231 )
 
 [node name="Lamp_Right3" parent="GameLayer" instance=ExtResource( 4 )]
 position = Vector2( 822.085, 219.472 )
+is_on = true
 
 [node name="Box3" type="NinePatchRect" parent="GameLayer"]
 margin_left = 793.2
@@ -185,6 +189,7 @@ shape = SubResource( 3 )
 position = Vector2( 379.646, 362.885 )
 
 [node name="Layer3" type="CanvasLayer" parent="."]
+layer = 0
 follow_viewport_enable = true
 follow_viewport_scale = 1.1
 
@@ -207,6 +212,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 8 )
 
 [node name="Foreground" type="CanvasLayer" parent="."]
+layer = 0
 follow_viewport_enable = true
 follow_viewport_scale = 1.2
 [connection signal="interacted" from="GameLayer/Interactable" to="GameLayer/Lamp_Right2" method="trigger"]
