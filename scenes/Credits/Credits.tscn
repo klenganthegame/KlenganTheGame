@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Credits/RedditPost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Credits/RedditPostBodyFont.res" type="DynamicFont" id=2]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_right = -35.0
+scroll_horizontal_enabled = false
+scroll_deadzone = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 957.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+
+[node name="RedditPost" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 957.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 800, 300 )
+size_flags_vertical = 3
+header = "Max Schmitt, 1 nicer Projectmanagementer!"
+username = "ponyschreck"
+likes = 23
+comments = 23
+Projectmanagement = true
+Organisation = true
+Programming = true
+Musik = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/RedditPost"]
+margin_left = 49.0
+margin_top = 72.0
+margin_right = 942.0
+margin_bottom = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/RedditPost/VBoxContainer"]
+margin_right = 893.0
+margin_bottom = 173.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 2 )
+text = "Hey ihr frohlockenden Gamer!
+Ich bin Max und freue mich,  dieses Projekt leiten zu dürfen! Ich habe parallel zu meinem Informatik-Studium das Software-Startup \"Divirad\" gegründet, weshalb sich meine Erfahrung für Projektleitung bei diesem Projekt sehr angeboten hat. Mein Startup hat unteranderem das Publishing im Google-PlayStore ermöglicht- Dafür wollte ich mich noch einmal bedanken! Ich hoffe sehr, dass durch dieses Projekt einige Spenden für die Krebshilfe zusammen kommen.
+Zudem bin ich mit einem Duo \"20three\" auch ein wenig als singer/songwriter musikalisch unterwegs und poste auf meiner eigenen Insta-Seite ab und zu kleinere kurze Cover. Falls es euch etwas davon interessiert, lass ich euch gerne die links unter diesem Post :)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/RedditPost/VBoxContainer"]
+margin_top = 177.0
+margin_right = 893.0
+margin_bottom = 198.0
+
+[node name="20three" type="LinkButton" parent="ScrollContainer/VBoxContainer/RedditPost/VBoxContainer/HBoxContainer"]
+margin_right = 170.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0.133333, 0.996078, 1 )
+text = "Instagram: kurodevs"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="20three2" type="LinkButton" parent="ScrollContainer/VBoxContainer/RedditPost/VBoxContainer/HBoxContainer"]
+margin_left = 174.0
+margin_right = 334.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0.133333, 0.996078, 1 )
+text = "Instagram: 20three"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="divirad" type="LinkButton" parent="ScrollContainer/VBoxContainer/RedditPost/VBoxContainer/HBoxContainer"]
+margin_left = 338.0
+margin_right = 432.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0.133333, 0.996078, 1 )
+text = "divirad.com"
+__meta__ = {
+"_edit_use_anchors_": false
+}

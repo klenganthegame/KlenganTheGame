@@ -1,0 +1,339 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://resources/sprites/credits/redditpost.png" type="Texture" id=1]
+[ext_resource path="res://resources/font/Verdana_reddit.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/Credits/RedditPost.gd" type="Script" id=3]
+[ext_resource path="res://resources/font/verdana_reddit_b.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://resources/sprites/credits/speechbubble.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/credits/award.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/credits/share.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/credits/save.png" type="Texture" id=8]
+[ext_resource path="res://scenes/Credits/RedditPost_miniheader.tres" type="DynamicFont" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 11
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.356863, 0.141176, 0.141176, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.458824, 0.235294, 0.235294, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.603922, 0.0941176, 0.0941176, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.156863, 0.196078, 0.631373, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.156863, 0.47451, 0.0901961, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.47451, 0.0901961, 0.341176, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.329412, 0.027451, 0.117647, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.772549, 0.870588, 0.137255, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=11]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color( 0.909804, 0.870588, 0.294118, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+extra_spacing_space = -5
+font_data = ExtResource( 2 )
+
+[node name="RedditPost" type="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 800, 78 )
+texture = ExtResource( 1 )
+patch_margin_left = 47
+patch_margin_top = 70
+patch_margin_right = 3
+patch_margin_bottom = 8
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Likes" type="Label" parent="."]
+margin_top = 30.0
+margin_right = 38.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.843137, 0.854902, 0.862745, 1 )
+text = "234"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_left = 53.0
+margin_top = 5.0
+margin_bottom = 29.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Postedby" type="Label" parent="HBoxContainer2"]
+margin_top = 6.0
+margin_right = 57.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.458824, 0.466667, 0.470588, 1 )
+text = "Posted by u/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Projectmanagement" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 160.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 9 )
+text = "Projectmanagement"
+
+[node name="Organisation" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 126.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = ExtResource( 9 )
+text = "Organisation"
+
+[node name="Gruppenleiter" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 131.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = ExtResource( 9 )
+text = "Gruppenleiter"
+
+[node name="Programming" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 166.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 9 )
+text = "Software Entwicklung"
+
+[node name="Designer" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 156.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 9 )
+text = "Designer / Grafiken"
+
+[node name="Storywriting" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 124.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = ExtResource( 9 )
+text = "Storywriting"
+
+[node name="Voiceactor" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 115.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = ExtResource( 9 )
+text = "Voiceactor"
+
+[node name="Musik" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 95.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Musik"
+
+[node name="SFX" type="Button" parent="HBoxContainer2"]
+visible = false
+margin_left = 61.0
+margin_right = 155.0
+margin_bottom = 24.0
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SFX / Sounddesign"
+
+[node name="Timeago" type="Label" parent="HBoxContainer2"]
+margin_left = 61.0
+margin_top = 6.0
+margin_right = 97.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.458824, 0.466667, 0.470588, 1 )
+text = "12 days"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 50.0
+margin_top = 34.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.843137, 0.854902, 0.862745, 1 )
+text = "1 Nice Überschrift!!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 48.0
+margin_top = -19.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="comsprite" type="TextureRect" parent="HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 19.0
+texture = ExtResource( 5 )
+
+[node name="cnumber" type="Label" parent="HBoxContainer"]
+margin_left = 20.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.458824, 0.466667, 0.470588, 1 )
+text = "23"
+
+[node name="Comments2" type="Label" parent="HBoxContainer"]
+margin_left = 36.0
+margin_top = 3.0
+margin_right = 85.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.458824, 0.466667, 0.470588, 1 )
+text = "Comments"
+
+[node name="awardsprite" type="TextureRect" parent="HBoxContainer"]
+margin_left = 89.0
+margin_right = 106.0
+margin_bottom = 19.0
+texture = ExtResource( 6 )
+
+[node name="GiveAward" type="Label" parent="HBoxContainer"]
+margin_left = 110.0
+margin_top = 3.0
+margin_right = 160.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.458824, 0.466667, 0.470588, 1 )
+text = "Give Award"
+
+[node name="sharesprite" type="TextureRect" parent="HBoxContainer"]
+margin_left = 164.0
+margin_right = 179.0
+margin_bottom = 19.0
+texture = ExtResource( 7 )
+
+[node name="Share" type="Label" parent="HBoxContainer"]
+margin_left = 183.0
+margin_top = 3.0
+margin_right = 209.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.458824, 0.466667, 0.470588, 1 )
+text = "Share"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_left = 213.0
+margin_right = 225.0
+margin_bottom = 19.0
+texture = ExtResource( 8 )
+
+[node name="Save" type="Label" parent="HBoxContainer"]
+margin_left = 229.0
+margin_top = 3.0
+margin_right = 250.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.458824, 0.466667, 0.470588, 1 )
+text = "Save"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
