@@ -18,7 +18,6 @@ func _process(_delta):
 		$Area2D/CollisionShape2D.disabled = false
 
 func _on_Area2D_area_entered(_area):
-	print(name)
 	if is_active:
 		$Sprite.show()
 
