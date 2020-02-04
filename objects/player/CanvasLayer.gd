@@ -11,6 +11,7 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		trigger_pause()
 	pass
+
 func _on_Save_pressed():
 	SaveGame.save_level(last_save_life, last_save_score, level_state)
 

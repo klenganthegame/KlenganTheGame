@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/backgrounds/Backstage_example.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Backstage_background.png" type="Texture" id=6]
-[ext_resource path="res://objects/mechanics/Teleportation.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -77.6234, -27.7552 )
@@ -81,7 +80,7 @@ position = Vector2( -1044.55, 618.629 )
 dialogue = [ "Oh! ein Lichtschalter..." ]
 
 [node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 5 )]
-position = Vector2( 1675, 623 )
+position = Vector2( 1849.11, 623.509 )
 dialogue = [ "Klengan: Sieht aus wie eine Tür..." ]
 
 [node name="Interactable5" parent="InteractableSamples" instance=ExtResource( 5 )]
@@ -91,9 +90,6 @@ dialogue = [ "Klengan: Hm...", "Ein Haufen Beschallungsgeräte..." ]
 [node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 5 )]
 position = Vector2( -670.33, 649.227 )
 dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...", "Ich möchte ja nicht so enden wie der liebe Apo... oder Leon Marscher...." ]
-
-[node name="Teleportation" parent="InteractableSamples" instance=ExtResource( 7 )]
-position = Vector2( 1800, 623 )
 
 [node name="CollisionSamples" type="Node2D" parent="."]
 
@@ -169,5 +165,5 @@ scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 6 )
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walk7.png-20bba7415774f83d47beaad731139a19.stex"
+path="res://.import/walk7.png-3478d2c38ce046daca7b7ce9207201a4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/klengan/walk/walk7.png"
-dest_files=[ "res://.import/walk7.png-20bba7415774f83d47beaad731139a19.stex" ]
+source_file="res://sprites/klengan/Walk/walk7.png"
+dest_files=[ "res://.import/walk7.png-3478d2c38ce046daca7b7ce9207201a4.stex" ]
 
 [params]
 

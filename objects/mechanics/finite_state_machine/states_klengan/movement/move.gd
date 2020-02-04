@@ -15,3 +15,4 @@ func apply_forces():
 	else:
 		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
 		owner.play_directional_animation("walk", (input_direction.x > 0))
+

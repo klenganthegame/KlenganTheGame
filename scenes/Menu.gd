@@ -6,14 +6,14 @@ func _enter_tree():
 func _ready():
 	$FadeIn.play("in")
 	$AnimationPlayer.play("idle")
-	pass
 
 
 func _on_NewGame_pressed():
 	$FadeIn.play("load_game")
 
+
 func load_level_one():
-	get_tree().change_scene(SCENES.Level1)
+	LevelChanger.change_level_to(SCENES.Level1)
 
 
 func _on_LoadGame_pressed():
@@ -25,8 +25,7 @@ func _on_Credits_pressed():
 
 
 func _on_Exit_pressed():
-	#get_tree().change_scene(SCENES.Meni)
-	pass # Replace with function body.
+	get_tree().quit()
 
 
 func _on_Reddit_pressed():

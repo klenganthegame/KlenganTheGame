@@ -8,6 +8,7 @@
 
 config_version=4
 
++-config_version=4
 _global_script_classes=[ {
 "base": "Reference",
 "class": "Attack",
@@ -50,6 +51,7 @@ config/icon="res://resources/icons/icon.png"
 
 AudioHandler="*res://scripts/audiohandler.gd"
 SCENES="*res://scripts/scene_paths.gd"
+LevelChanger="*res://scripts/LevelChanger.gd"
 SaveGame="*res://scripts/SaveGame.gd"
 
 [display]
@@ -59,7 +61,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "adbox", "paulloz.colorblindness" )
+enabled=PoolStringArray( "adbox" )
 
 [input]
 
@@ -97,6 +99,11 @@ accept={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[network]
+
+limits/debugger_stdout/max_messages_per_frame=32
+limits/debugger_stdout/max_errors_per_frame=32
 
 [rendering]
 
