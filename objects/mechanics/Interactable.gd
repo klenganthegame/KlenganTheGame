@@ -11,17 +11,17 @@ func _ready():
 	$AnimationPlayer.play("exclamation")
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if !is_active:
 		$Area2D/CollisionShape2D.disabled = true
 	else:
 		$Area2D/CollisionShape2D.disabled = false
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	if is_active:
 		$Sprite.show()
 
-func _on_Area2D_area_exited(area):
+func _on_Area2D_area_exited(_area):
 	if is_active:
 		$Sprite.hide()
 

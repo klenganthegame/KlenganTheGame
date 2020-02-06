@@ -5,12 +5,12 @@ var ascending = true
 func enter():
 	.enter()
 	set_ascending(true)
-	velocity.y = JUMP_VELOCITY
+	velocity.y = -JUMP_VELOCITY
 
 
 func exit():
-	.exit()
 	set_ascending(false)
+	.exit()
 
 
 func update(delta):
@@ -25,10 +25,15 @@ func update(delta):
 func apply_forces():
 	.apply_forces()
 	var input_direction = get_input_direction()
-	velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
-	owner.play_directional_animation("walk", (input_direction.x > 0))
+	if !sneak:
+		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
+	else:
+		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)*0.75
+	if input_direction != Vector2():
+		owner.play_directional_animation("walk", (input_direction.x > 0))
 
 
 func set_ascending(_ascending):
 	ascending = _ascending
 	owner.get_node("CollisionShape2D").disabled = ascending
+	

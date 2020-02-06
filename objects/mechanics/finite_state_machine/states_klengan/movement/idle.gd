@@ -8,5 +8,7 @@ func enter():
 
 func update(delta):
 	.update(delta)
-	if get_input_direction() != Vector2():
+	if get_input_direction() != Vector2() && !sneak:
 		emit_signal("finished", "move")
+	elif get_input_direction() != Vector2() && sneak:
+		emit_signal("finished","sneak")

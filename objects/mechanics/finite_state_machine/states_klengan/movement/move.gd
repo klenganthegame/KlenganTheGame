@@ -3,8 +3,11 @@ extends "res://objects/mechanics/finite_state_machine/states_klengan/movement/mo
 
 func update(delta):
 	.update(delta)
-	if velocity == Vector2():
+	if velocity == Vector2() && !sneak:
 		emit_signal("finished", "idle")
+	elif sneak:
+		emit_signal("finished","sneak")
+	
 
 
 func apply_forces():
@@ -15,3 +18,4 @@ func apply_forces():
 	else:
 		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
 		owner.play_directional_animation("walk", (input_direction.x > 0))
+

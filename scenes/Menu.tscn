@@ -79,9 +79,9 @@ __meta__ = {
 
 [node name="Splash" type="TextureRect" parent="."]
 margin_left = 60.421
-margin_top = 30.9305
+margin_top = 30.0
 margin_right = 860.421
-margin_bottom = 630.931
+margin_bottom = 630.001
 rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
 

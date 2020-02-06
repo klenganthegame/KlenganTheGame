@@ -1,11 +1,8 @@
 extends Node2D
 
-
-
 export var is_on : bool = false
 
 func _ready():
-
 	if is_on:
 		on()
 	else:

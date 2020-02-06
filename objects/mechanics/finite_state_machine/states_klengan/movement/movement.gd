@@ -4,7 +4,8 @@ export var GRAVITY : int = 40
 export var ACCELERATON : int = 50
 export var MAX_SPEED : int = 400
 export var JUMP_VELOCITY : int = -1000
-
+var sneak : bool = false
+export var slowDown : float = 0.75
 var velocity
 
 
@@ -16,7 +17,7 @@ func exit():
 	owner.velocity = velocity
 
 
-func update(delta):
+func update(_delta):
 	apply_forces()
 	velocity = owner.move_and_slide(velocity, Vector2(0, -1))
 	if Input.is_action_pressed("jump") and owner.is_on_floor():
@@ -25,6 +26,7 @@ func update(delta):
 
 func get_input_direction():
 	var direction = Vector2()
+	sneak = Input.is_action_pressed("sneak")
 	direction.x = int(Input.is_action_pressed("walk_right")) - int(Input.is_action_pressed("walk_left")) 
 	return direction
 

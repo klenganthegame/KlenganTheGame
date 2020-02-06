@@ -19,7 +19,7 @@ func load_level() -> Dictionary:
 	var file = File.new()
 	var error = file.open(path, file.READ)
 	var text = file.get_as_text()
-	var r : JSONParseResult = JSON.parse(text)
+	var r = JSON.parse(text)
 	return r[save_const]
 
 func to_dict(life: int, score : int, levelstate : int) -> Dictionary:

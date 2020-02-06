@@ -31,7 +31,7 @@ tracks/0/keys = {
 "values": [ Vector2( 382, 112 ), Vector2( 382, 82 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "walk_in"
 length = 5.0
 tracks/0/type = "value"
@@ -71,22 +71,22 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "walk",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "cry",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
 } ]
 
 [node name="GameOver" type="Node2D"]
@@ -123,7 +123,7 @@ theme = ExtResource( 3 )
 text = "Letzter Speicherpunkt"
 
 [node name="Menu" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
-margin_top = 61.0
+margin_top = 58.0
 margin_right = 376.0
 margin_bottom = 112.0
 theme = ExtResource( 3 )
@@ -133,14 +133,14 @@ text = "Zurück zum Menü"
 anims/idle = SubResource( 1 )
 
 [node name="Klengan" type="AnimationPlayer" parent="."]
-anims/walk_in = SubResource( 3 )
+anims/walk_in = SubResource( 2 )
 
 [node name="KlenganSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -43.6553, 484.276 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 4 )
+frames = SubResource( 3 )
 animation = "walk"
-frame = 9
+frame = 1
 playing = true
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Menu" to="." method="_on_Menu_pressed"]
