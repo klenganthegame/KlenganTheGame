@@ -7,6 +7,7 @@ var can_interact = false
 var area : Area2D
 var paused: bool = false
 var spawn : Vector2
+var dash: float = 0.01
 
 var last_action_interactable : bool = false
 
@@ -24,8 +25,14 @@ func _ready():
 	$CanvasLayer/UI/Health.value = actual_life
 
 func _process(_delta):
+	if Input.is_action_pressed("sneak") && dash < 1:
+		dash *= 1.03
+	elif dash > 0.01:
+		dash -= 0.01
+	else:
+		dash = 0.01
+	$CanvasLayer/UI/StabiloDash.value = 100*dash
 	$CanvasLayer/UI/Health.value = actual_life
-	
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
 		talk(["Gott: Uff... Was tust du..."])

@@ -4,7 +4,7 @@ export var GRAVITY : int = 40
 export var ACCELERATON : int = 50
 export var MAX_SPEED : int = 400
 export var JUMP_VELOCITY : int = -1000
-
+var sneak : bool = false
 var velocity
 
 
@@ -25,6 +25,7 @@ func update(_delta):
 
 func get_input_direction():
 	var direction = Vector2()
+	sneak = Input.is_action_pressed("sneak")
 	direction.x = int(Input.is_action_pressed("walk_right")) - int(Input.is_action_pressed("walk_left")) 
 	return direction
 
