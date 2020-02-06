@@ -322,18 +322,6 @@ script = ExtResource( 18 )
 [node name="UI" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 29 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
-margin_left = 20.0
-margin_top = 10.0
-margin_right = 212.0
-margin_bottom = 26.0
-theme = ExtResource( 29 )
-text = "score: 00000"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -346,8 +334,12 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = 95.0
 focus_mode = 0
+theme = ExtResource( 30 )
 enabled_focus_mode = 0
 text = "||"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
 margin_left = 16.0
@@ -356,7 +348,6 @@ margin_right = 31.0
 margin_bottom = 54.0
 rect_scale = Vector2( 5, 5 )
 value = 30.0
-texture_under = ExtResource( 30 )
 texture_over = ExtResource( 31 )
 texture_progress = ExtResource( 32 )
 fill_mode = 4
@@ -367,6 +358,12 @@ position = Vector2( 7.28657, 6.32776 )
 scale = Vector2( 0.145363, 0.139511 )
 texture = ExtResource( 33 )
 
+[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
+show_behind_parent = true
+position = Vector2( 7.28657, 6.32776 )
+scale = Vector2( 0.145363, 0.139511 )
+texture = ExtResource( 34 )
+
 [node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
 anchor_bottom = 1.0
 margin_left = 41.0
@@ -374,10 +371,33 @@ margin_top = 130.0
 margin_right = 46.0
 margin_bottom = -430.0
 rect_scale = Vector2( 5, 5 )
-value = 80.0
-texture_under = ExtResource( 34 )
-texture_progress = ExtResource( 35 )
+value = 34.0
+texture_under = ExtResource( 35 )
+texture_progress = ExtResource( 36 )
 fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 212.0
+margin_bottom = 26.0
+theme = ExtResource( 30 )
+text = "score: 00000"
+
+[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
+margin_left = 16.0
+margin_top = 41.0
+margin_right = 31.0
+margin_bottom = 54.0
+rect_scale = Vector2( 5, 5 )
+value = 30.0
+texture_under = ExtResource( 31 )
+texture_over = ExtResource( 32 )
+texture_progress = ExtResource( 33 )
+fill_mode = 4
 
 [node name="Arrows" type="Control" parent="CanvasLayer"]
 anchor_top = 1.0
@@ -457,54 +477,9 @@ wait_time = 0.05
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 30 )
-
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
-margin_left = 20.0
-margin_top = 10.0
-margin_right = 212.0
-margin_bottom = 26.0
-theme = ExtResource( 30 )
-text = "score: 00000"
-
-[node name="Pause" type="Button" parent="CanvasLayer/UI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -107.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = 95.0
-focus_mode = 0
-enabled_focus_mode = 0
-text = "||"
-
-[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
-margin_left = 16.0
-margin_top = 41.0
-margin_right = 31.0
-margin_bottom = 54.0
-rect_scale = Vector2( 5, 5 )
-value = 30.0
-texture_under = ExtResource( 31 )
-texture_over = ExtResource( 32 )
-texture_progress = ExtResource( 33 )
-fill_mode = 4
-
-[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
-show_behind_parent = true
-position = Vector2( 7.28657, 6.32776 )
-scale = Vector2( 0.145363, 0.139511 )
-texture = ExtResource( 34 )
-
-[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
-anchor_bottom = 1.0
-margin_left = 41.0
-margin_top = 130.0
-margin_right = 46.0
-margin_bottom = -430.0
-rect_scale = Vector2( 5, 5 )
-texture_under = ExtResource( 35 )
-texture_progress = ExtResource( 36 )
-fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PauseMenu" type="AnimationPlayer" parent="CanvasLayer"]
 anims/backtomenu = SubResource( 5 )
@@ -637,8 +612,6 @@ margin_top = -118.0
 margin_bottom = 0.0
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="trigger_pause"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
