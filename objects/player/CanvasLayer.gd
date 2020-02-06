@@ -29,7 +29,7 @@ func _on_Pause_pressed():
 	$PauseMenu.play("in")
 	get_parent().paused = true 
 
-func _unhandled_key_input(event):
+func _unhandled_key_input(_event):
 	if Input.is_action_just_pressed("pause"):
 		if get_parent().paused == true :
 			$PauseMenu.play("out")

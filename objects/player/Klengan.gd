@@ -1,8 +1,7 @@
 extends FightableObject
 
-
 var velocity : Vector2 = Vector2()
-var looking_right : bool = true
+var looking_right : bool = true setget set_looking_right
 var can_interact = false
 var area : Area2D
 var paused: bool = false
@@ -25,7 +24,6 @@ func _ready():
 
 func _process(_delta):
 	$CanvasLayer/UI/Health.value = actual_life
-	
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
 		talk(["Gott: Uff... Was tust du..."])
@@ -40,14 +38,19 @@ func _process(_delta):
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):
 	$AnimatedSprite.play(_anim_name)
+	set_looking_right(_looking_right)
+
+
+func set_looking_right(_looking_right):
 	looking_right = _looking_right
-	$AnimatedSprite.flip_h = !_looking_right
+	# Flipping the scale of the sprite to change scale of its children
+	$AnimatedSprite.scale = $AnimatedSprite.scale.abs() * Vector2(int(pow(-1, int(!_looking_right))), 1)
 
 
 func talk(text : Array):
 	if $CanvasLayer/DialogueBox.hidden:
 		$CanvasLayer/DialogueBox.talk(text)
-		$StateMachine._change_state("stagger")
+		$StateMachine._change_state("talk")
 
 
 func interact():
@@ -76,6 +79,10 @@ func _on_DialogueBox_dialogue_exit():
 		interactable.interacted()
 		last_action_interactable = false
 	emit_signal("dialogue_exit")
+
+
+func set_AttackCollision_disabled(_disabled):
+	$AnimatedSprite/AttackArea/AttackCollision.disabled = _disabled
 
 
 func change_score_in_ui(score : int):
