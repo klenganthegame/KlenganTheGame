@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -33,7 +33,6 @@
 [ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=31]
 [ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=32]
 [ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=33]
-[ext_resource path="res://sprites/test/heart_light.png" type="Texture" id=34]
 [ext_resource path="res://sprites/test/stabilodash.png" type="Texture" id=35]
 [ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=36]
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=37]
@@ -320,6 +319,7 @@ shape = SubResource( 3 )
 script = ExtResource( 18 )
 
 [node name="UI" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -340,29 +340,6 @@ text = "||"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
-margin_left = 16.0
-margin_top = 41.0
-margin_right = 31.0
-margin_bottom = 54.0
-rect_scale = Vector2( 5, 5 )
-value = 30.0
-texture_over = ExtResource( 31 )
-texture_progress = ExtResource( 32 )
-fill_mode = 4
-
-[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
-show_behind_parent = true
-position = Vector2( 7.28657, 6.32776 )
-scale = Vector2( 0.145363, 0.139511 )
-texture = ExtResource( 33 )
-
-[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
-show_behind_parent = true
-position = Vector2( 7.28657, 6.32776 )
-scale = Vector2( 0.145363, 0.139511 )
-texture = ExtResource( 34 )
 
 [node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
 anchor_bottom = 1.0
@@ -398,6 +375,15 @@ texture_under = ExtResource( 31 )
 texture_over = ExtResource( 32 )
 texture_progress = ExtResource( 33 )
 fill_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heart_light2" type="Sprite" parent="CanvasLayer/UI/Health"]
+show_behind_parent = true
+position = Vector2( 7.28657, 6.32776 )
+scale = Vector2( 0.145363, 0.139511 )
+texture = ExtResource( 33 )
 
 [node name="Arrows" type="Control" parent="CanvasLayer"]
 anchor_top = 1.0
@@ -492,7 +478,6 @@ anims/settings_out = SubResource( 9 )
 visible = false
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 30 )
