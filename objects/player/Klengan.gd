@@ -25,11 +25,11 @@ func _ready():
 	$CanvasLayer/UI/Health.value = actual_life
 
 func _process(_delta):
-	if Input.is_action_pressed("sneak") && dash < 1:
+	if Input.is_action_pressed("sneak") && dash < 1 && $StateMachine.current_state != $StateMachine.states_map["stagger"]:
 		dash *= 1.03
-	elif dash > 0.01:
+	elif dash > 0.01 && $StateMachine.current_state != $StateMachine.states_map["stagger"] :
 		dash -= 0.01
-	else:
+	elif $StateMachine.current_state != $StateMachine.states_map["stagger"]:
 		dash = 0.01
 	$CanvasLayer/UI/StabiloDash.value = 100*dash
 	$CanvasLayer/UI/Health.value = actual_life
