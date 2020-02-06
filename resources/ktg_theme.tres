@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=2]
+[gd_resource type="Theme" load_steps=22 format=2]
 
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_disabled.png" type="Texture" id=1]
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_selected.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://resources/sprites/ui/theme/ud_arrows.png" type="Texture" id=6]
 [ext_resource path="res://resources/sprites/ui/theme/popup_selected.png" type="Texture" id=7]
 [ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://resources/sprites/ui/theme/loadingbar.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/ui/theme/loadingbar_full.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -74,6 +76,22 @@ margin_right = 11.9747
 margin_top = 14.4957
 margin_bottom = 13.8655
 
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 160, 16 )
+margin_left = 17.1475
+margin_right = 20.7575
+margin_top = 6.3175
+margin_bottom = 7.22
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 160, 16 )
+margin_left = 17.1475
+margin_right = 49.7575
+margin_top = 6.3175
+margin_bottom = 7.22
+
 [sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 8 )
 
@@ -124,3 +142,8 @@ PopupMenu/styles/labeled_separator_right = null
 PopupMenu/styles/panel = SubResource( 8 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = null
+ProgressBar/styles/bg = SubResource( 10 )
+ProgressBar/styles/fg = SubResource( 11 )
