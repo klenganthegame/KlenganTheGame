@@ -39,7 +39,7 @@ func _process(_delta):
 		
 		# for debug
 		#heal(40)
-		hit(30)
+		hit(10)
 		
 	if Input.is_action_just_pressed("accept"):
 		interact()

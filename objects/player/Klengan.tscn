@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=4]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=5]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/stagger.gd" type="Script" id=6]
-[ext_resource path="res://objects/player/Sneak.gd" type="Script" id=7]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/Sneak.gd" type="Script" id=7]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_00.png" type="Texture" id=8]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_01.png" type="Texture" id=9]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_02.png" type="Texture" id=10]
@@ -38,7 +38,12 @@
 [ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=36]
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=37]
 [ext_resource path="res://resources/shader/white.png" type="Texture" id=38]
-[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=39]
+[ext_resource path="res://objects/player/Sounds.gd" type="Script" id=39]
+[ext_resource path="res://objects/player/Musik.gd" type="Script" id=40]
+[ext_resource path="res://objects/player/SFX.gd" type="Script" id=41]
+[ext_resource path="res://objects/player/Rumble.gd" type="Script" id=42]
+[ext_resource path="res://objects/player/Donations.gd" type="Script" id=43]
+[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=44]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -315,7 +320,6 @@ shape = SubResource( 3 )
 script = ExtResource( 18 )
 
 [node name="Arrows" type="Control" parent="CanvasLayer"]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -120.0
@@ -337,7 +341,6 @@ pressed = ExtResource( 22 )
 action = "walk_left"
 
 [node name="Interaction" type="Control" parent="CanvasLayer"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -443,7 +446,6 @@ anims/settings_out = SubResource( 9 )
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -464,9 +466,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -246.0
-margin_top = -186.0
+margin_top = -255.0
 margin_right = 247.0
-margin_bottom = 155.0
+margin_bottom = 174.0
 rect_min_size = Vector2( 300, 200 )
 
 [node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
@@ -475,76 +477,88 @@ anchor_bottom = 1.0
 alignment = 1
 
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
-margin_top = 56.0
+margin_top = 100.0
 margin_right = 493.0
-margin_bottom = 110.0
+margin_bottom = 154.0
 focus_neighbour_top = NodePath("../BackToMenu")
 text = "Zurück zum Spiel"
 
 [node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
-margin_top = 114.0
+margin_top = 158.0
 margin_right = 493.0
-margin_bottom = 168.0
+margin_bottom = 212.0
 text = "Speichern"
 
 [node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
-margin_top = 172.0
+margin_top = 216.0
 margin_right = 493.0
-margin_bottom = 226.0
+margin_bottom = 270.0
 text = "Einstellungen"
 
 [node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
-margin_top = 230.0
+margin_top = 274.0
 margin_right = 493.0
-margin_bottom = 284.0
+margin_bottom = 328.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
 
-[node name="Musik" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
-margin_top = 27.0
+[node name="Sounds" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+margin_top = 42.0
 margin_right = 493.0
-margin_bottom = 81.0
+margin_bottom = 96.0
+toggle_mode = true
+pressed = true
+text = "Sounds: an"
+script = ExtResource( 39 )
+
+[node name="Musik" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+margin_top = 100.0
+margin_right = 493.0
+margin_bottom = 154.0
 toggle_mode = true
 pressed = true
 text = "Musik: an"
+script = ExtResource( 40 )
 
 [node name="SFX" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
-margin_top = 85.0
+margin_top = 158.0
 margin_right = 493.0
-margin_bottom = 139.0
+margin_bottom = 212.0
 toggle_mode = true
 pressed = true
 text = "SFX: an"
+script = ExtResource( 41 )
 
 [node name="Rumble" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
-margin_top = 143.0
+margin_top = 216.0
 margin_right = 493.0
-margin_bottom = 197.0
+margin_bottom = 270.0
 toggle_mode = true
 pressed = true
 text = "Controller-Rumble: an"
+script = ExtResource( 42 )
 
 [node name="Donations" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
-margin_top = 201.0
+margin_top = 274.0
 margin_right = 493.0
-margin_bottom = 255.0
+margin_bottom = 328.0
 toggle_mode = true
 pressed = true
 text = "Spendenaufruf: an"
+script = ExtResource( 43 )
 
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
-margin_top = 259.0
+margin_top = 353.0
 margin_right = 493.0
-margin_bottom = 313.0
+margin_bottom = 407.0
 text = "Zurück"
 
-[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 39 )]
+[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 44 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -118.0

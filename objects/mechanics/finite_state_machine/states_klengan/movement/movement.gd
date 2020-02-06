@@ -5,6 +5,7 @@ export var ACCELERATON : int = 50
 export var MAX_SPEED : int = 400
 export var JUMP_VELOCITY : int = -1000
 var sneak : bool = false
+export var slowDown : float = 0.75
 var velocity
 
 
