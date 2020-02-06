@@ -351,18 +351,25 @@ margin_right = -40.0
 margin_bottom = -18.0
 
 [node name="Okay" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 35, 0 )
+position = Vector2( -50, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 23 )
 pressed = ExtResource( 24 )
 action = "accept"
 
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 150, 0 )
+position = Vector2( 130, -5 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 25 )
 pressed = ExtResource( 25 )
 action = "jump"
+
+[node name="Sneak" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( 130, 85 )
+rotation = 3.14159
+scale = Vector2( 5, 5 )
+normal = ExtResource( 25 )
+action = "sneak"
 
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
 visible = false
