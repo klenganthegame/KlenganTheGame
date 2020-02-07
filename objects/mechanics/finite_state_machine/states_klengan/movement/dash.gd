@@ -2,14 +2,18 @@ extends "res://objects/mechanics/finite_state_machine/states_klengan/movement/mo
 
 func enter():
 	.enter()
-	velocity.y += -JUMP_VELOCITY
+	if owner.is_on_floor():
+		velocity.y = 0
+		velocity.y += -JUMP_VELOCITY*1.2
+	else:
+		velocity.y = JUMP_VELOCITY
 	set_ascending(true)
 
 
 func update(delta):
 	.update(delta)
-	if Input.is_action_pressed("sneak"):
-		emit_signal("finished","dash")
+	if Input.is_action_just_pressed("sneak"):
+		velocity.y = JUMP_VELOCITY
 	if owner.is_on_floor() and velocity == Vector2():
 		emit_signal("finished", "idle")
 	elif owner.is_on_floor():

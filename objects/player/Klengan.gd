@@ -6,6 +6,7 @@ var can_interact = false
 var area : Area2D
 var paused: bool = false
 var spawn : Vector2
+var dashed : bool = false
 var dash: float = 0.01
 
 var last_action_interactable : bool = false
@@ -24,13 +25,19 @@ func _ready():
 	$CanvasLayer/UI/Health.value = actual_life
 
 func _process(_delta):
-	if Input.is_action_pressed("sneak") && dash < 1 && $StateMachine.current_state != $StateMachine.states_map["stagger"]:
+	if dash <=0.01:
+		dash = 0.01
+		dashed = false
+	if Input.is_action_pressed("sneak") && dash < 1 && $StateMachine.current_state != $StateMachine.states_map["stagger"] && !dashed:
 		dash *= 1.03
-	elif dash > 0.01 && $StateMachine.current_state != $StateMachine.states_map["stagger"] :
+	elif dash > 0.01 && $StateMachine.current_state != $StateMachine.states_map["stagger"] || dashed:
 		dash -= 0.01
 	elif $StateMachine.current_state != $StateMachine.states_map["stagger"]:
 		dash = 0.01
 	$CanvasLayer/UI/StabiloDash.value = 100*dash
+	if Input.is_action_just_pressed("jump") && dash >= 0.94 && is_on_floor():
+		$StateMachine._change_state("dash")
+		dashed = true
 	$CanvasLayer/UI/Health.value = actual_life
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
