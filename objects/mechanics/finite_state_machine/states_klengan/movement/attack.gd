@@ -22,11 +22,12 @@ func _on_animation_finished(_anim_name):
 		emit_signal("finished", "idle")
 
 func update(delta):
-	.update(delta)
+	.update(delta)#
+	var input_direction = get_input_direction()
 	if velocity == Vector2() && !sneak:
 		velocity.x = 0
 	elif sneak:
-		velocity.x = MAX_SPEED*0.5
+		velocity.x = MAX_SPEED*0.25*input_direction.x
 
 
 func apply_forces():
