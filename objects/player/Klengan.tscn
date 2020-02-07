@@ -309,11 +309,11 @@ script = ExtResource( 6 )
 [node name="Sneak" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
 ACCELERATON = 30
-MAX_SPEED = 200
+MAX_SPEED = 150
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource( 8 )
-LERP_FACTOR = 0.2
+LERP_FACTOR = 0.01
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource( 9 )
