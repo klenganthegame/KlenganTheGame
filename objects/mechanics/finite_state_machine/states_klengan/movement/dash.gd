@@ -15,6 +15,8 @@ func update(_delta):
 		velocity.y = JUMP_VELOCITY
 	if owner.is_on_floor() and velocity == Vector2():
 		emit_signal("finished", "idle")
-	elif owner.is_on_floor():
+	elif owner.is_on_floor() and !Input.is_action_pressed("sneak"):
 		emit_signal("finished", "move")
+	elif owner.is_on_floor() and Input.is_action_pressed("sneak"):
+		emit_signal("finished","sneak")
 
