@@ -26,4 +26,8 @@ func _on_animation_finished(_anim_name):
 
 func apply_forces():
 	.apply_forces()
-	velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
+	var input_direction = get_input_direction()
+	if (velocity.x < 0 and input_direction.x < 0) or (velocity.x > 0 and input_direction.x > 0):
+		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
+	else:
+		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))

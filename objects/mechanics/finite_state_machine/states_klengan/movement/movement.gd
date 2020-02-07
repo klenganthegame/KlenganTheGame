@@ -1,11 +1,11 @@
 extends "res://objects/mechanics/finite_state_machine/states_klengan/state_klengan.gd"
 
-export var GRAVITY : int = 40
-export var ACCELERATON : int = 50
-export var MAX_SPEED : int = 400
-export var JUMP_VELOCITY : int = 1000
-export var LERP_FACTOR : float = 0.4
-var velocity = Vector2()
+export(int) var GRAVITY = 40
+export(int) var ACCELERATON = 50
+export(int) var MAX_SPEED = 400
+export(int)  var JUMP_VELOCITY = 1000
+export(float, 0, 1) var LERP_FACTOR = 0.4
+var velocity : Vector2 = Vector2()
 
 
 func enter():
