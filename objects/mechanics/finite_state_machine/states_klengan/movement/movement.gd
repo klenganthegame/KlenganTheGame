@@ -10,7 +10,6 @@ var velocity = Vector2()
 
 func enter():
 	velocity = owner.velocity
-	set_ascending(false)
 
 
 func exit():
@@ -19,6 +18,8 @@ func exit():
 
 func update(_delta):
 	apply_forces()
+	if velocity.y >= 0:
+		set_ascending(false)
 	velocity = owner.move_and_slide(velocity, Vector2(0, -1))
 	if Input.is_action_pressed("jump") and owner.is_on_floor():
 		emit_signal("finished", "jump")
