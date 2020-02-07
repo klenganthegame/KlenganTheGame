@@ -66,7 +66,6 @@ texture = SubResource( 1 )
 position = Vector2( -1200, 545 )
 
 [node name="Lights" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Lamp_Left" parent="Lights" instance=ExtResource( 3 )]
 position = Vector2( -980.374, 318.156 )
@@ -99,7 +98,6 @@ dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...
 position = Vector2( 1800, 623 )
 
 [node name="CollisionSamples" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Left_Box" type="StaticBody2D" parent="CollisionSamples"]
 position = Vector2( -800, 600 )
@@ -173,5 +171,5 @@ scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 6 )
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]

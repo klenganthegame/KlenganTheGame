@@ -1,11 +1,11 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/idle.gd" type="Script" id=3]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=4]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=5]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/stagger.gd" type="Script" id=6]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/stagger/stagger.gd" type="Script" id=6]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/Sneak.gd" type="Script" id=7]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_00.png" type="Texture" id=8]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_01.png" type="Texture" id=9]
@@ -44,6 +44,12 @@
 [ext_resource path="res://objects/player/Rumble.gd" type="Script" id=42]
 [ext_resource path="res://objects/player/Donations.gd" type="Script" id=43]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=44]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/attack.gd" type="Script" id=45]
+[ext_resource path="res://resources/sprites/klengan/attackcycle/attack_00.png" type="Texture" id=46]
+[ext_resource path="res://resources/sprites/klengan/attackcycle/attack_01.png" type="Texture" id=47]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.3377, 6.71835 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -56,13 +62,18 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 14.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": false,
+"name": "attack",
+"speed": 2.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 12, 16 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24.9137, 10 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 34.3377, 6.71835 )
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 29 )
@@ -271,7 +282,13 @@ shader = ExtResource( 37 )
 shader_param/amount = 2.647
 
 [node name="Klengan" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 9
 script = ExtResource( 1 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0434299, 81.9697 )
+shape = SubResource( 3 )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -285,7 +302,6 @@ script = ExtResource( 4 )
 
 [node name="Jump" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
-JUMP_VELOCITY = 700
 
 [node name="Stagger" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
@@ -293,28 +309,37 @@ script = ExtResource( 6 )
 [node name="Sneak" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
 
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 45 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
-animation = "walk"
-frame = 8
+animation = "attack"
+
+[node name="AttackArea" type="Area2D" parent="AnimatedSprite"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
+position = Vector2( 12, 0 )
+shape = SubResource( 11 )
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -50 )
 current = true
 smoothing_enabled = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="interactionArea" type="Area2D" parent="."]
 position = Vector2( 0, 90 )
+collision_layer = 0
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="InteractionCollision" type="CollisionShape2D" parent="interactionArea"]
 position = Vector2( 3.41373, -11.2166 )
 shape = SubResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0434299, 81.9697 )
-shape = SubResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 18 )
@@ -571,10 +596,11 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -118.0
 margin_bottom = 0.0
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
+[connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="trigger_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="trigger_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]

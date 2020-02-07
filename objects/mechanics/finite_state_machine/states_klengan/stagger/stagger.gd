@@ -10,5 +10,4 @@ func exit():
 
 
 func _on_DialogueBox_dialogue_exit():
-	velocity.x = 0
 	emit_signal("finished", "idle")

@@ -58,7 +58,7 @@ func set_looking_right(_looking_right):
 func talk(text : Array):
 	if $CanvasLayer/DialogueBox.hidden:
 		$CanvasLayer/DialogueBox.talk(text)
-		$StateMachine._change_state("talk")
+		$StateMachine._change_state("stagger")
 
 
 func interact():

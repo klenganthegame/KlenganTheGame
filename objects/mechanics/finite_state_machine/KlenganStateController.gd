@@ -9,4 +9,3 @@ func initialize_state_map():
 		"stagger": $Stagger,
 		"sneak": $Sneak
 	}
-

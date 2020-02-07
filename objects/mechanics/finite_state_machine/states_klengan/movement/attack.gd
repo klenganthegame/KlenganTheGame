@@ -8,8 +8,8 @@ func enter():
 
 
 func exit():
-	owner.set_AttackCollision_disabled(true)
 	.exit()
+	owner.set_AttackCollision_disabled(true)
 
 
 func _on_animation_finished(_anim_name):
