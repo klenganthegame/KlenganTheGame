@@ -46,18 +46,18 @@ func _on_animation_finished(anim_name = ""):
 		current_state._on_animation_finished(anim_name)
 
 
-func _change_state(state_name):
-#	print("StateController.gd: Changing to ", state_name)
+func _change_state(_state_name):
+#	print("StateController.gd: Changing to ", _state_name)
 	if active:
 		current_state.exit()
 		
-		if state_name == "previous":
+		if _state_name == "previous":
 			states_stack.pop_front()
 		else:
-			states_stack[0] = states_map[state_name]
+			states_stack[0] = states_map[_state_name]
 
 		current_state = states_stack[0]
 		emit_signal("state_changed", current_state)
 		
-		if state_name != "previous":
+		if _state_name != "previous":
 			current_state.enter()

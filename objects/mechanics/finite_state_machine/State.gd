@@ -1,6 +1,6 @@
 extends Node
 
-signal finished(next_state)
+signal finished(_next_state)
 
 func enter():
 	pass

@@ -5,9 +5,11 @@ func enter():
 	.enter()
 	owner.set_AttackCollision_disabled(false)
 	if velocity.x != 0:
-		owner.play_directional_animation("attack") #replace with move attack anim
+		#replace with move attack anim
+		owner.play_directional_animation("attack") 
 	else:
-		owner.play_directional_animation("attack") #replace with idle attack anim
+		#replace with idle attack anim
+		owner.play_directional_animation("attack") 
 
 
 func exit():
@@ -16,24 +18,12 @@ func exit():
 
 
 func _on_animation_finished(_anim_name):
-	if velocity.x != 0:
+	if Input.is_action_pressed("sneak"):
+		emit_signal("finished", "sneak")
+	else:
 		emit_signal("finished", "move")
-	else: 
-		emit_signal("finished", "idle")
-
-func update(delta):
-	.update(delta)#
-	var input_direction = get_input_direction()
-	if velocity == Vector2() && !sneak:
-		velocity.x = 0
-	elif sneak:
-		velocity.x = MAX_SPEED*0.25*input_direction.x
 
 
 func apply_forces():
 	.apply_forces()
-	var input_direction = get_input_direction()
-	if input_direction == Vector2():
-		velocity.x = int(lerp(velocity.x, 0, 0.4))
-	else:
-		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
+	velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))

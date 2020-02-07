@@ -59,15 +59,15 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "attack",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "walk",
 "speed": 14.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": false,
-"name": "attack",
-"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -300,19 +300,24 @@ script = ExtResource( 4 )
 
 [node name="Jump" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
-JUMP_VELOCITY = 700
+JUMP_VELOCITY = 800
+LERP_FACTOR = 0.01
 
 [node name="Stagger" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 
 [node name="Sneak" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
+ACCELERATON = 30
+MAX_SPEED = 200
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource( 8 )
+LERP_FACTOR = 0.2
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource( 9 )
+MAX_SPEED = 300
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 1 )
@@ -601,8 +606,8 @@ margin_bottom = 0.0
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="trigger_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="trigger_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]

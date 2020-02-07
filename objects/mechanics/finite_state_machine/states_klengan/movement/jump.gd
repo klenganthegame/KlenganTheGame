@@ -9,9 +9,7 @@ func enter():
 func update(delta):
 	.update(delta)
 	if Input.is_action_pressed("sneak"):
-		emit_signal("finished","dash")
-	if owner.is_on_floor() and velocity == Vector2():
-		emit_signal("finished", "idle")
+		emit_signal("finished", "dash")
 	elif owner.is_on_floor():
 		emit_signal("finished", "move")
 
@@ -19,9 +17,8 @@ func update(delta):
 func apply_forces():
 	.apply_forces()
 	var input_direction = get_input_direction()
-	if !sneak:
-		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
+	if input_direction == Vector2():
+		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
 	else:
-		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)*0.75
-	if input_direction != Vector2():
+		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
 		owner.play_directional_animation("walk", (input_direction.x > 0))
