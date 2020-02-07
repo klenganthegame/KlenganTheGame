@@ -5,7 +5,7 @@ var ascending = true
 func enter():
 	.enter()
 	set_ascending(true)
-	velocity.y = -JUMP_VELOCITY
+	velocity.y += -JUMP_VELOCITY
 
 
 func exit():
@@ -35,5 +35,4 @@ func apply_forces():
 
 func set_ascending(_ascending):
 	ascending = _ascending
-	owner.get_node("CollisionShape2D").disabled = ascending
-	
+	.set_ascending(_ascending)

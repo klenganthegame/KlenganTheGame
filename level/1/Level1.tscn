@@ -78,7 +78,6 @@ position = Vector2( 639.393, 291.682 )
 position = Vector2( -285.355, 300.03 )
 
 [node name="InteractableSamples" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Lightswitch" parent="InteractableSamples" instance=ExtResource( 4 )]
 position = Vector2( -1044.55, 618.629 )
@@ -103,7 +102,6 @@ position = Vector2( 1800, 623 )
 editor/display_folded = true
 
 [node name="Left_Box" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( -800, 600 )
 
 [node name="Left_Bottom_Box" type="CollisionShape2D" parent="CollisionSamples/Left_Box"]
@@ -113,14 +111,12 @@ shape = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Floor" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 0, 700 )
 
 [node name="Floor" type="CollisionShape2D" parent="CollisionSamples/Floor"]
 shape = SubResource( 4 )
 
 [node name="Ladder" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( -375, 550 )
 
 [node name="LadderBottom" type="CollisionShape2D" parent="CollisionSamples/Ladder"]
@@ -131,21 +127,18 @@ position = Vector2( 0, -100 )
 shape = SubResource( 5 )
 
 [node name="Middle_Box" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 75, 600 )
 
 [node name="Middle_Box" type="CollisionShape2D" parent="CollisionSamples/Middle_Box"]
 shape = SubResource( 6 )
 
 [node name="Scaffolding" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 150, 375 )
 
 [node name="Scaffolding" type="CollisionShape2D" parent="CollisionSamples/Scaffolding"]
 shape = SubResource( 7 )
 
 [node name="Box_Right" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 600, 600 )
 
 [node name="Box_Right_Left" type="CollisionShape2D" parent="CollisionSamples/Box_Right"]
@@ -159,7 +152,6 @@ position = Vector2( 0, -105 )
 shape = SubResource( 9 )
 
 [node name="Casess" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 1500, 600 )
 
 [node name="BottomCase" type="CollisionShape2D" parent="CollisionSamples/Casess"]
@@ -180,6 +172,6 @@ position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 6 )
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
