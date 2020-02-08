@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/mechanics/Teleportation.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Backstage_background.png" type="Texture" id=6]
+[ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=7]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -66,7 +67,6 @@ texture = SubResource( 1 )
 position = Vector2( -1200, 545 )
 
 [node name="Lights" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Lamp_Left" parent="Lights" instance=ExtResource( 3 )]
 position = Vector2( -980.374, 318.156 )
@@ -78,7 +78,6 @@ position = Vector2( 639.393, 291.682 )
 position = Vector2( -285.355, 300.03 )
 
 [node name="InteractableSamples" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Lightswitch" parent="InteractableSamples" instance=ExtResource( 4 )]
 position = Vector2( -1044.55, 618.629 )
@@ -100,11 +99,11 @@ dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...
 position = Vector2( 1800, 623 )
 
 [node name="CollisionSamples" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Left_Box" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
 position = Vector2( -800, 600 )
+collision_layer = 2
 
 [node name="Left_Bottom_Box" type="CollisionShape2D" parent="CollisionSamples/Left_Box"]
 shape = SubResource( 2 )
@@ -120,8 +119,8 @@ position = Vector2( 0, 700 )
 shape = SubResource( 4 )
 
 [node name="Ladder" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( -375, 550 )
+collision_layer = 2
 
 [node name="LadderBottom" type="CollisionShape2D" parent="CollisionSamples/Ladder"]
 shape = SubResource( 5 )
@@ -133,6 +132,7 @@ shape = SubResource( 5 )
 [node name="Middle_Box" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
 position = Vector2( 75, 600 )
+collision_layer = 2
 
 [node name="Middle_Box" type="CollisionShape2D" parent="CollisionSamples/Middle_Box"]
 shape = SubResource( 6 )
@@ -140,6 +140,7 @@ shape = SubResource( 6 )
 [node name="Scaffolding" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
 position = Vector2( 150, 375 )
+collision_layer = 2
 
 [node name="Scaffolding" type="CollisionShape2D" parent="CollisionSamples/Scaffolding"]
 shape = SubResource( 7 )
@@ -147,6 +148,7 @@ shape = SubResource( 7 )
 [node name="Box_Right" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
 position = Vector2( 600, 600 )
+collision_layer = 2
 
 [node name="Box_Right_Left" type="CollisionShape2D" parent="CollisionSamples/Box_Right"]
 shape = SubResource( 8 )
@@ -158,17 +160,18 @@ shape = SubResource( 9 )
 position = Vector2( 0, -105 )
 shape = SubResource( 9 )
 
-[node name="Casess" type="StaticBody2D" parent="CollisionSamples"]
+[node name="Cases" type="StaticBody2D" parent="CollisionSamples"]
 editor/display_folded = true
 position = Vector2( 1500, 600 )
+collision_layer = 2
 
-[node name="BottomCase" type="CollisionShape2D" parent="CollisionSamples/Casess"]
+[node name="BottomCase" type="CollisionShape2D" parent="CollisionSamples/Cases"]
 shape = SubResource( 10 )
 
-[node name="Top_Case_Right" type="CollisionShape2D" parent="CollisionSamples/Casess"]
+[node name="Top_Case_Right" type="CollisionShape2D" parent="CollisionSamples/Cases"]
 shape = SubResource( 11 )
 
-[node name="Top_Case_Left" type="CollisionShape2D" parent="CollisionSamples/Casess"]
+[node name="Top_Case_Left" type="CollisionShape2D" parent="CollisionSamples/Cases"]
 shape = SubResource( 12 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -180,6 +183,12 @@ position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 6 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
+
+[node name="Backstage_forground!" type="Sprite" parent="."]
+position = Vector2( 334, 455 )
+scale = Vector2( 5, 5 )
+z_index = -1
+texture = ExtResource( 7 )
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]

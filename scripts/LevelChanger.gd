@@ -2,7 +2,7 @@ extends Node
 
 signal load_progress(_progress_percentage)
 
-const WAIT_FREEZE_FRAMES = 2
+const WAIT_FREEZE_FRAMES = 1
 
 var loader = null
 var wait_frames = 0

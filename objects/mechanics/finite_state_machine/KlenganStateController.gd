@@ -5,10 +5,9 @@ func initialize_state_map():
 		"idle": $Idle,
 		"move": $Move,
 		"jump": $Jump,
+		"attack": $Attack,
 		"stagger": $Stagger,
-		"sneak": $Sneak
+		"sneak": $Sneak,
+		"dash": $Dash,
+		"doubleJump": $DoubleJump
 	}
-
-
-
-
