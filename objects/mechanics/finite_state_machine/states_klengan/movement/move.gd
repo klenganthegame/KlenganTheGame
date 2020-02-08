@@ -7,7 +7,6 @@ func update(delta):
 		emit_signal("finished", "idle")
 	elif Input.is_action_just_pressed("sneak"):
 		emit_signal("finished","sneak")
-	
 
 
 func apply_forces():

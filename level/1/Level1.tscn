@@ -101,7 +101,9 @@ position = Vector2( 1800, 623 )
 [node name="CollisionSamples" type="Node2D" parent="."]
 
 [node name="Left_Box" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 position = Vector2( -800, 600 )
+collision_layer = 2
 
 [node name="Left_Bottom_Box" type="CollisionShape2D" parent="CollisionSamples/Left_Box"]
 shape = SubResource( 2 )
@@ -110,6 +112,7 @@ shape = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Floor" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 position = Vector2( 0, 700 )
 
 [node name="Floor" type="CollisionShape2D" parent="CollisionSamples/Floor"]
@@ -117,6 +120,7 @@ shape = SubResource( 4 )
 
 [node name="Ladder" type="StaticBody2D" parent="CollisionSamples"]
 position = Vector2( -375, 550 )
+collision_layer = 2
 
 [node name="LadderBottom" type="CollisionShape2D" parent="CollisionSamples/Ladder"]
 shape = SubResource( 5 )
@@ -126,19 +130,25 @@ position = Vector2( 0, -100 )
 shape = SubResource( 5 )
 
 [node name="Middle_Box" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 position = Vector2( 75, 600 )
+collision_layer = 2
 
 [node name="Middle_Box" type="CollisionShape2D" parent="CollisionSamples/Middle_Box"]
 shape = SubResource( 6 )
 
 [node name="Scaffolding" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 position = Vector2( 150, 375 )
+collision_layer = 2
 
 [node name="Scaffolding" type="CollisionShape2D" parent="CollisionSamples/Scaffolding"]
 shape = SubResource( 7 )
 
 [node name="Box_Right" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 position = Vector2( 600, 600 )
+collision_layer = 2
 
 [node name="Box_Right_Left" type="CollisionShape2D" parent="CollisionSamples/Box_Right"]
 shape = SubResource( 8 )
@@ -150,16 +160,18 @@ shape = SubResource( 9 )
 position = Vector2( 0, -105 )
 shape = SubResource( 9 )
 
-[node name="Casess" type="StaticBody2D" parent="CollisionSamples"]
+[node name="Cases" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 position = Vector2( 1500, 600 )
+collision_layer = 2
 
-[node name="BottomCase" type="CollisionShape2D" parent="CollisionSamples/Casess"]
+[node name="BottomCase" type="CollisionShape2D" parent="CollisionSamples/Cases"]
 shape = SubResource( 10 )
 
-[node name="Top_Case_Right" type="CollisionShape2D" parent="CollisionSamples/Casess"]
+[node name="Top_Case_Right" type="CollisionShape2D" parent="CollisionSamples/Cases"]
 shape = SubResource( 11 )
 
-[node name="Top_Case_Left" type="CollisionShape2D" parent="CollisionSamples/Casess"]
+[node name="Top_Case_Left" type="CollisionShape2D" parent="CollisionSamples/Cases"]
 shape = SubResource( 12 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

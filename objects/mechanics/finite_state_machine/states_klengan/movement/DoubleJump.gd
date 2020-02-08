@@ -2,7 +2,7 @@ extends "res://objects/mechanics/finite_state_machine/states_klengan/movement/mo
 
 func enter():
 	.enter()
-	velocity.y += -JUMP_VELOCITY
+	velocity.y = -500
 	set_ascending(true)
 
 
@@ -10,8 +10,6 @@ func update(delta):
 	.update(delta)
 	if Input.is_action_pressed("sneak"):
 		emit_signal("finished", "dash")
-	elif Input.is_action_just_pressed("jump"):
-		emit_signal("finished","doubleJump")
 	elif owner.is_on_floor():
 		emit_signal("finished", "move")
 
