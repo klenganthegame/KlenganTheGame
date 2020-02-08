@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/mechanics/Teleportation.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Backstage_background.png" type="Texture" id=6]
+[ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=7]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -170,6 +171,12 @@ position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 6 )
+
+[node name="Backstage_forground!" type="Sprite" parent="."]
+position = Vector2( 334, 455 )
+scale = Vector2( 5, 5 )
+z_index = -1
+texture = ExtResource( 7 )
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
