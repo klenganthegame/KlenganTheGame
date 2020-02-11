@@ -59,6 +59,11 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "attack",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "walk",
@@ -367,7 +372,6 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = 95.0
 focus_mode = 0
-theme = ExtResource( 30 )
 enabled_focus_mode = 0
 text = "||"
 __meta__ = {
@@ -394,7 +398,6 @@ margin_left = 20.0
 margin_top = 10.0
 margin_right = 212.0
 margin_bottom = 26.0
-theme = ExtResource( 30 )
 text = "score: 00000"
 
 [node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
@@ -404,9 +407,6 @@ margin_right = 31.0
 margin_bottom = 54.0
 rect_scale = Vector2( 5, 5 )
 value = 30.0
-texture_under = ExtResource( 31 )
-texture_over = ExtResource( 32 )
-texture_progress = ExtResource( 33 )
 fill_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
@@ -416,7 +416,54 @@ __meta__ = {
 show_behind_parent = true
 position = Vector2( 7.28657, 6.32776 )
 scale = Vector2( 0.145363, 0.139511 )
-texture = ExtResource( 33 )
+
+[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
+show_behind_parent = true
+position = Vector2( 7.28657, 6.32776 )
+scale = Vector2( 0.145363, 0.139511 )
+texture = ExtResource( 38 )
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 212.0
+margin_bottom = 26.0
+theme = ExtResource( 34 )
+text = "score: 00000"
+
+[node name="Pause" type="Button" parent="CanvasLayer/UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -107.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 95.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "||"
+
+[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
+margin_left = 16.0
+margin_top = 41.0
+margin_right = 31.0
+margin_bottom = 54.0
+rect_scale = Vector2( 5, 5 )
+value = 30.0
+texture_under = ExtResource( 35 )
+texture_over = ExtResource( 36 )
+texture_progress = ExtResource( 37 )
+fill_mode = 4
+
+[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
+anchor_bottom = 1.0
+margin_left = 41.0
+margin_top = 130.0
+margin_right = 46.0
+margin_bottom = -430.0
+rect_scale = Vector2( 5, 5 )
+texture_under = ExtResource( 39 )
+texture_progress = ExtResource( 40 )
+fill_mode = 3
 
 [node name="Arrows" type="Control" parent="CanvasLayer"]
 anchor_top = 1.0
@@ -497,54 +544,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 34 )
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
-margin_left = 20.0
-margin_top = 10.0
-margin_right = 212.0
-margin_bottom = 26.0
-theme = ExtResource( 34 )
-text = "score: 00000"
-
-[node name="Pause" type="Button" parent="CanvasLayer/UI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -107.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = 95.0
-focus_mode = 0
-enabled_focus_mode = 0
-text = "||"
-
-[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
-margin_left = 16.0
-margin_top = 41.0
-margin_right = 31.0
-margin_bottom = 54.0
-rect_scale = Vector2( 5, 5 )
-value = 30.0
-texture_under = ExtResource( 35 )
-texture_over = ExtResource( 36 )
-texture_progress = ExtResource( 37 )
-fill_mode = 4
-
-[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
-show_behind_parent = true
-position = Vector2( 7.28657, 6.32776 )
-scale = Vector2( 0.145363, 0.139511 )
-texture = ExtResource( 38 )
-
-[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
-anchor_bottom = 1.0
-margin_left = 41.0
-margin_top = 130.0
-margin_right = 46.0
-margin_bottom = -430.0
-rect_scale = Vector2( 5, 5 )
-texture_under = ExtResource( 39 )
-texture_progress = ExtResource( 40 )
-fill_mode = 3
-
 [node name="PauseMenu" type="AnimationPlayer" parent="CanvasLayer"]
 anims/backtomenu = SubResource( 6 )
 anims/in = SubResource( 7 )
@@ -556,6 +555,7 @@ anims/settings_out = SubResource( 10 )
 visible = false
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 34 )
