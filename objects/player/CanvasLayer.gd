@@ -7,21 +7,13 @@ var level_state = 0
 func _ready():
 	pass
 
-func _input(_event):
-	if Input.is_action_just_pressed("ui_cancel"):
-		toggle_pause()
-
-
-func _unhandled_key_input(_event):
-	if Input.is_action_just_pressed("pause"):
-		toggle_pause()
-
 
 func toggle_pause():
 	if $Pause.visible:
 		$PauseMenu.play("out")
 	else:
 		$PauseMenu.play("in")
+	$Pause.visible = !$Pause.visible
 	get_tree().paused = !get_tree().paused
 
 
@@ -40,10 +32,7 @@ func _on_Settings_pressed():
 
 func _on_BackToMenu_pressed():
 	$PauseMenu.play("backtomenu")
-  
-
-func _on_Pause_pressed():
-	toggle_pause()
+	
 
 func _on_OptionButton_item_selected(ID):
 	get_node("Colorblindness").Type = ID

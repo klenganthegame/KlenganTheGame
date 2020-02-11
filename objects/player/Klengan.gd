@@ -25,6 +25,8 @@ func _ready():
 	$CanvasLayer/UI/Health.value = actual_life
 
 func _process(_delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		$CanvasLayer.toggle_pause()
 	if dash <= 0.01:
 		dash = 0.01
 		dashed = false
@@ -35,7 +37,7 @@ func _process(_delta):
 	elif $StateMachine.current_state != $StateMachine.states_map["stagger"]:
 		dash = 0.01
 	$CanvasLayer/UI/StabiloDash.value = 100 * dash
-	if Input.is_action_just_pressed("jump") && dash >= 0.94 && is_on_floor():
+	if Input.is_action_pressed("jump") && dash >= 0.94 && is_on_floor():
 		$StateMachine._change_state("dash")
 		dashed = true
 	$CanvasLayer/UI/Health.value = actual_life
