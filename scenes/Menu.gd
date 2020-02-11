@@ -1,5 +1,8 @@
 extends Control
 
+func _enter_tree():
+	$CanvasModulate.color = 0x000000
+
 func _ready():
 	$FadeIn.play("in")
 	$AnimationPlayer.play("idle")

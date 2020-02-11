@@ -25,9 +25,7 @@ func _ready():
 	$CanvasLayer/UI/Health.value = actual_life
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		$CanvasLayer.toggle_pause()
-	if dash <= 0.01:
+	if dash <=0.01:
 		dash = 0.01
 		dashed = false
 	if Input.is_action_pressed("sneak") && dash < 1 && $StateMachine.current_state != $StateMachine.states_map["stagger"] && !dashed:
@@ -36,8 +34,8 @@ func _process(_delta):
 		dash -= 0.01
 	elif $StateMachine.current_state != $StateMachine.states_map["stagger"]:
 		dash = 0.01
-	$CanvasLayer/UI/StabiloDash.value = 100 * dash
-	if Input.is_action_pressed("jump") && dash >= 0.94 && is_on_floor():
+	$CanvasLayer/UI/StabiloDash.value = 100*dash
+	if Input.is_action_just_pressed("jump") && dash >= 0.94 && is_on_floor():
 		$StateMachine._change_state("dash")
 		dashed = true
 	$CanvasLayer/UI/Health.value = actual_life
@@ -49,10 +47,8 @@ func _process(_delta):
 		#heal(40)
 		hit(10)
 		
-	if Input.is_action_just_pressed("accept") and is_on_floor():
+	if Input.is_action_just_pressed("accept"):
 		interact()
-#	elif Input.is_action_just_pressed("ui_cancel"):
-#		get_tree().paused = true
 
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):
@@ -81,6 +77,7 @@ func interact():
 		elif interactable.is_in_group("Interactable"):
 			talk(interactable.dialogue)
 			last_action_interactable = true
+			$StateMachine._change_state("stagger")
 
 
 func _on_Area2D_area_entered(_area):
@@ -106,4 +103,3 @@ func set_AttackCollision_disabled(_disabled):
 
 func change_score_in_ui(score : int):
 	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
-
