@@ -81,7 +81,6 @@ func interact():
 		elif interactable.is_in_group("Interactable"):
 			talk(interactable.dialogue)
 			last_action_interactable = true
-			$StateMachine._change_state("stagger")
 
 
 func _on_Area2D_area_entered(_area):
