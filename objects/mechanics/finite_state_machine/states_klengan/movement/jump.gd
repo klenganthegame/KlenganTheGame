@@ -3,7 +3,6 @@ extends "res://objects/mechanics/finite_state_machine/states_klengan/movement/mo
 func enter():
 	.enter()
 	velocity.y += -JUMP_VELOCITY
-	set_ascending(true)
 
 
 func update(delta):

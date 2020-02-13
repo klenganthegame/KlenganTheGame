@@ -49,8 +49,6 @@ func _process(_delta):
 		
 	if Input.is_action_just_pressed("accept") and is_on_floor():
 		interact()
-#	elif Input.is_action_just_pressed("ui_cancel"):
-#		get_tree().paused = true
 
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):

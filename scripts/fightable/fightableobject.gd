@@ -21,7 +21,7 @@ func is_dead() -> bool:
 		return false
 
 func is_alive() -> bool:
-		return !is_dead()
+	return !is_dead()
 
 func add_attack(attack : Attack):
 	if contains_attack(attack):
@@ -45,7 +45,7 @@ func get_attack(id : int):
 	for a in attacks:
 		if a.id == id:
 			return a
-			
+
 func hit(damage : int):
 	# Play standartizied hit animation
 	# rückstoß

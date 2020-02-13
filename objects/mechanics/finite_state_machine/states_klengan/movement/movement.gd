@@ -18,8 +18,6 @@ func exit():
 
 func update(_delta):
 	apply_forces()
-	if velocity.y >= 0:
-		set_ascending(false)
 	velocity = owner.move_and_slide(velocity, Vector2(0, -1))
 	if Input.is_action_pressed("jump") and owner.is_on_floor():
 		emit_signal("finished", "jump")
@@ -47,5 +45,5 @@ func apply_forces():
 		velocity.y += GRAVITY
 
 
-func set_ascending(_ascending):
-	owner.get_node("Collision").disabled = _ascending
+#func set_ascending(_ascending):
+#	owner.get_node("Collision").disabled = _ascending
