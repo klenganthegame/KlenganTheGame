@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://objects/mechanics/finite_state_machine/EnemyStateController.gd" type="Script" id=1]
+[ext_resource path="res://objects/enemy/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://resources/sprites/enemy/walk_cycle/walk_01.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/enemy/walk_cycle/walk_00.png" type="Texture" id=4]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/idle.gd" type="Script" id=5]
+[ext_resource path="res://resources/sprites/enemy/walk_cycle/walk_02.png" type="Texture" id=6]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/move.gd" type="Script" id=7]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/damage.gd" type="Script" id=8]
+[ext_resource path="res://objects/enemy/Jump.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12, 12 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 40, 60 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 36, 16 )
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "move"
+
+[node name="AttackArea" type="Area2D" parent="AnimatedSprite"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
+position = Vector2( 12, 0 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="DetectionArea" type="Area2D" parent="AnimatedSprite"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="DetectionCollision" type="CollisionShape2D" parent="AnimatedSprite/DetectionArea"]
+position = Vector2( 40, 0 )
+rotation = -1.5708
+shape = SubResource( 3 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 1 )
+START_STATE = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource( 9 )
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
+
+[node name="Damage" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+[connection signal="body_entered" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_body_exited"]
+[connection signal="body_entered" from="AnimatedSprite/DetectionArea" to="StateMachine" method="_on_DetectionArea_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite/DetectionArea" to="StateMachine" method="_on_DetectionArea_body_exited"]
