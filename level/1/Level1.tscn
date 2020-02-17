@@ -5,9 +5,9 @@
 [ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/mechanics/Teleportation.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Backstage_background.png" type="Texture" id=6]
-[ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=7]
-[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Backstage_background.png" type="Texture" id=7]
+[ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=8]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -196,7 +196,7 @@ one_way_collision = true
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( -500, 620 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -207,13 +207,13 @@ light_mask = 1023
 position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Backstage_forground!" type="Sprite" parent="."]
 position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
-texture = ExtResource( 7 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
+texture = ExtResource( 8 )
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
