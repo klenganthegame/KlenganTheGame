@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=2]
@@ -56,6 +56,14 @@ b = Vector2( 126.887, -117.986 )
 a = Vector2( 21.8916, -147.826 )
 b = Vector2( -53.1497, -147.826 )
 
+[sub_resource type="SegmentShape2D" id=13]
+a = Vector2( -266.05, -17.6522 )
+b = Vector2( 137.642, -15.1295 )
+
+[sub_resource type="SegmentShape2D" id=14]
+a = Vector2( -137.853, 1.69434 )
+b = Vector2( 263.025, -1.42151 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -65,7 +73,7 @@ position = Vector2( 339.318, 485.442 )
 texture = SubResource( 1 )
 
 [node name="Klengan" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1200, 545 )
+position = Vector2( -954.227, 545 )
 
 [node name="Lights" type="Node2D" parent="."]
 
@@ -124,6 +132,7 @@ collision_mask = 20
 shape = SubResource( 4 )
 
 [node name="Ladder" type="StaticBody2D" parent="CollisionSamples"]
+editor/display_folded = true
 position = Vector2( -375, 550 )
 collision_layer = 2
 collision_mask = 20
@@ -192,6 +201,21 @@ one_way_collision = true
 
 [node name="Top_Case_Left" type="CollisionShape2D" parent="CollisionSamples/Cases"]
 shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="Walls" type="StaticBody2D" parent="CollisionSamples"]
+position = Vector2( 0, 500 )
+
+[node name="Left" type="CollisionShape2D" parent="CollisionSamples/Walls"]
+position = Vector2( -1340, 0 )
+rotation = 1.5708
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="Right" type="CollisionShape2D" parent="CollisionSamples/Walls"]
+position = Vector2( 2000, 0 )
+rotation = -1.5708
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="Enemies" type="Node2D" parent="."]
