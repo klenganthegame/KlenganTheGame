@@ -230,7 +230,6 @@ texture = ExtResource( 7 )
 [node name="KLengan_entwurf_schuhe_3x" type="Sprite" parent="Backstage_background"]
 position = Vector2( -258.601, 21.9585 )
 scale = Vector2( 0.0838118, 0.0838118 )
-texture = ExtResource( 8 )
 
 [node name="Backstage_forground!" type="Sprite" parent="."]
 position = Vector2( 334, 455 )

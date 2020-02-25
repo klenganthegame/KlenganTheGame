@@ -11,3 +11,4 @@ func initialize_state_map():
 		"dash": $Dash,
 		"doubleJump": $DoubleJump
 	}
+

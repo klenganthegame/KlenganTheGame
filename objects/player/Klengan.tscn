@@ -398,7 +398,6 @@ margin_right = 46.0
 margin_bottom = -430.0
 rect_scale = Vector2( 5, 5 )
 value = 34.0
-texture_under = ExtResource( 35 )
 texture_progress = ExtResource( 36 )
 fill_mode = 3
 __meta__ = {
@@ -435,12 +434,18 @@ position = Vector2( 7.28657, 6.32776 )
 scale = Vector2( 0.145363, 0.139511 )
 texture = ExtResource( 38 )
 
+[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
+pause_mode = 2
+show_behind_parent = true
+position = Vector2( 7.28657, 6.32776 )
+scale = Vector2( 0.145363, 0.139511 )
+texture = ExtResource( 39 )
+
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
 margin_left = 20.0
 margin_top = 10.0
 margin_right = 212.0
 margin_bottom = 26.0
-theme = ExtResource( 34 )
 text = "score: 00000"
 
 [node name="Pause" type="Button" parent="CanvasLayer/UI"]
@@ -461,7 +466,6 @@ margin_right = 31.0
 margin_bottom = 54.0
 rect_scale = Vector2( 5, 5 )
 value = 30.0
-texture_under = ExtResource( 35 )
 texture_over = ExtResource( 36 )
 texture_progress = ExtResource( 37 )
 fill_mode = 4
@@ -475,6 +479,51 @@ margin_bottom = -430.0
 rect_scale = Vector2( 5, 5 )
 texture_under = ExtResource( 39 )
 texture_progress = ExtResource( 40 )
+fill_mode = 3
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
+pause_mode = 2
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 212.0
+margin_bottom = 26.0
+theme = ExtResource( 35 )
+text = "score: 00000"
+
+[node name="Pause" type="Button" parent="CanvasLayer/UI"]
+pause_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -107.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 95.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "||"
+
+[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
+pause_mode = 2
+margin_left = 16.0
+margin_top = 41.0
+margin_right = 31.0
+margin_bottom = 54.0
+rect_scale = Vector2( 5, 5 )
+value = 30.0
+texture_under = ExtResource( 36 )
+texture_over = ExtResource( 37 )
+texture_progress = ExtResource( 38 )
+fill_mode = 4
+
+[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
+anchor_bottom = 1.0
+margin_left = 41.0
+margin_top = 130.0
+margin_right = 46.0
+margin_bottom = -430.0
+rect_scale = Vector2( 5, 5 )
+texture_under = ExtResource( 40 )
+texture_progress = ExtResource( 41 )
 fill_mode = 3
 
 [node name="Arrows" type="Control" parent="CanvasLayer"]
@@ -566,58 +615,6 @@ margin_left = -0.989746
 margin_right = -0.989746
 theme = ExtResource( 35 )
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
-pause_mode = 2
-margin_left = 20.0
-margin_top = 10.0
-margin_right = 212.0
-margin_bottom = 26.0
-theme = ExtResource( 35 )
-text = "score: 00000"
-
-[node name="Pause" type="Button" parent="CanvasLayer/UI"]
-pause_mode = 2
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -107.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = 95.0
-focus_mode = 0
-enabled_focus_mode = 0
-text = "||"
-
-[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
-pause_mode = 2
-margin_left = 16.0
-margin_top = 41.0
-margin_right = 31.0
-margin_bottom = 54.0
-rect_scale = Vector2( 5, 5 )
-value = 30.0
-texture_under = ExtResource( 36 )
-texture_over = ExtResource( 37 )
-texture_progress = ExtResource( 38 )
-fill_mode = 4
-
-[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
-pause_mode = 2
-show_behind_parent = true
-position = Vector2( 7.28657, 6.32776 )
-scale = Vector2( 0.145363, 0.139511 )
-texture = ExtResource( 39 )
-
-[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
-anchor_bottom = 1.0
-margin_left = 41.0
-margin_top = 130.0
-margin_right = 46.0
-margin_bottom = -430.0
-rect_scale = Vector2( 5, 5 )
-texture_under = ExtResource( 40 )
-texture_progress = ExtResource( 41 )
-fill_mode = 3
-
 [node name="PauseMenu" type="AnimationPlayer" parent="CanvasLayer"]
 pause_mode = 2
 anims/backtomenu = SubResource( 7 )
@@ -627,11 +624,9 @@ anims/settings_in = SubResource( 10 )
 anims/settings_out = SubResource( 11 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
-visible = false
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 35 )
@@ -666,15 +661,15 @@ alignment = 1
 
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
-margin_top = 100.0
+margin_top = 104.0
 margin_right = 493.0
-margin_bottom = 154.0
+margin_bottom = 156.0
 focus_neighbour_top = NodePath("../BackToMenu")
 text = "Zurück zum Spiel"
 
 [node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
-margin_top = 158.0
+margin_top = 160.0
 margin_right = 493.0
 margin_bottom = 212.0
 text = "Speichern"
@@ -683,14 +678,14 @@ text = "Speichern"
 pause_mode = 2
 margin_top = 216.0
 margin_right = 493.0
-margin_bottom = 270.0
+margin_bottom = 268.0
 text = "Einstellungen"
 
 [node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
-margin_top = 274.0
+margin_top = 272.0
 margin_right = 493.0
-margin_bottom = 328.0
+margin_bottom = 324.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
 
@@ -767,9 +762,9 @@ margin_bottom = 0.0
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="toggle_pause"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]

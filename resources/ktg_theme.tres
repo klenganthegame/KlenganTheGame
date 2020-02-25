@@ -74,7 +74,7 @@ margin_right = 11.9747
 margin_top = 14.4957
 margin_bottom = 13.8655
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 160, 16 )
 margin_left = 17.1475
@@ -131,5 +131,5 @@ PopupMenu/styles/separator = null
 ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = null
-ProgressBar/styles/bg = SubResource( 10 )
+ProgressBar/styles/bg = SubResource( 9 )
 ProgressBar/styles/fg = null
