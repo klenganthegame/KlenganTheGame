@@ -110,7 +110,6 @@ position = Vector2( 1800, 623 )
 [node name="CollisionSamples" type="Node2D" parent="."]
 
 [node name="Left_Box" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( -800, 600 )
 collision_layer = 2
 collision_mask = 20
@@ -124,7 +123,6 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="Floor" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 0, 700 )
 collision_mask = 20
 
@@ -132,7 +130,6 @@ collision_mask = 20
 shape = SubResource( 4 )
 
 [node name="Ladder" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( -375, 550 )
 collision_layer = 2
 collision_mask = 20
@@ -147,7 +144,6 @@ shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="Middle_Box" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 75, 600 )
 collision_layer = 2
 collision_mask = 20
@@ -157,7 +153,6 @@ shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="Scaffolding" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 150, 375 )
 collision_layer = 2
 collision_mask = 20
@@ -167,7 +162,6 @@ shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="Box_Right" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 600, 600 )
 collision_layer = 2
 collision_mask = 20
@@ -186,7 +180,6 @@ shape = SubResource( 9 )
 one_way_collision = true
 
 [node name="Cases" type="StaticBody2D" parent="CollisionSamples"]
-editor/display_folded = true
 position = Vector2( 1500, 600 )
 collision_layer = 2
 collision_mask = 20
@@ -238,6 +231,6 @@ position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 8 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]

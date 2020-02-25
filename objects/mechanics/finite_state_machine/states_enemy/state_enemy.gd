@@ -1,7 +1,6 @@
 extends "res://objects/mechanics/finite_state_machine/State.gd"
 
 func _on_Player_detected(_player, _entered):
-	print(_player.name)
 	if _entered:
 		owner.focused_body = _player
 	else:
