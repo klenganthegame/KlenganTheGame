@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=2]
+[gd_resource type="Theme" load_steps=20 format=2]
 
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_disabled.png" type="Texture" id=1]
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_selected.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_pressed.png" type="Texture" id=5]
 [ext_resource path="res://resources/sprites/ui/theme/ud_arrows.png" type="Texture" id=6]
 [ext_resource path="res://resources/sprites/ui/theme/popup_selected.png" type="Texture" id=7]
+[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://resources/sprites/ui/theme/loadingbar_full.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxTexture" id=1]
@@ -82,7 +83,11 @@ margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
 
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 8 )
+
 [resource]
+default_font = SubResource( 10 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )

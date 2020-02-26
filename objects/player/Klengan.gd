@@ -13,6 +13,10 @@ var last_action_interactable : bool = false
 
 signal dialogue_exit()
 
+func _enter_tree():
+	attacks = [Attack.new(KLENGAN_ATTACKS.NORMAL, 1, 5, 50)]
+	pass
+
 func _ready():
 	max_life = 100
 	actual_life = 50

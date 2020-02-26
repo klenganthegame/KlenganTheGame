@@ -15,6 +15,11 @@ func enter():
 func exit():
 	.exit()
 	owner.set_AttackCollision_disabled(true)
+	print("attack")
+	for enemy in get_parent().attackable_enemies:
+		print(enemy.name)
+		pass
+	#attack(KLENGAN_ATTACKS.NORMAL, ):
 
 
 func _on_animation_finished(_anim_name):

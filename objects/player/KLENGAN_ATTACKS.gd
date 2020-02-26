@@ -1,0 +1,7 @@
+class_name KLENGAN_ATTACKS
+
+enum{
+	NORMAL,
+	STAGGER,
+	DASH
+}

@@ -5,6 +5,7 @@ export(int) var ACCELERATON = 50
 export(int) var MAX_SPEED = 200
 export(int)  var JUMP_VELOCITY = 800
 export(float, 0, 1) var LERP_FACTOR = 0.4
+var ATTACKS : Array = []
 
 var velocity = Vector2()
 
@@ -26,7 +27,6 @@ func update(_delta):
 func apply_forces():
 	if !owner.is_on_floor():
 		velocity.y += GRAVITY
-
 
 func _on_Player_detected(_player, _entered):
 	._on_Player_detected(_player, _entered)

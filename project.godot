@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "InteractableObject",
 "language": "GDScript",
 "path": "res://objects/mechanics/Interactable.gd"
+}, {
+"base": "Reference",
+"class": "KLENGAN_ATTACKS",
+"language": "GDScript",
+"path": "res://objects/player/KLENGAN_ATTACKS.gd"
 } ]
 _global_script_class_icons={
 "Attack": "",
 "DialogueBox": "res://addons/adbox/icon.png",
 "FightableObject": "",
-"InteractableObject": ""
+"InteractableObject": "",
+"KLENGAN_ATTACKS": ""
 }
 
 [application]
@@ -127,7 +133,8 @@ sneak={
 }
 attack={
 "deadzone": 0.5,
-"events": [  ]
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
+ ]
 }
 
 [input_devices]
