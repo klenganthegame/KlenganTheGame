@@ -4,6 +4,7 @@ extends "res://objects/mechanics/finite_state_machine/states_klengan/movement/mo
 func enter():
 	.enter()
 	owner.set_AttackCollision_disabled(false)
+	owner.get_node("AnimatedSprite").stop()
 	if velocity.x != 0:
 		#replace with move attack anim
 		owner.play_directional_animation("attack") 
@@ -40,3 +41,5 @@ func attack():
 	var enemies = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
 	for enemy in enemies:
 		enemy.hit(30)
+
+
