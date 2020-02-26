@@ -23,8 +23,10 @@ func _on_DetectionArea_body_exited(_body):
 func _on_AttackArea_body_entered(_body):
 	if active:
 		current_state._on_Player_attackable(_body, true)
+		owner.start_attack_cooldown()
 
 
 func _on_AttackArea_body_exited(_body):
 	if active:
 		current_state._on_Player_attackable(_body, false)
+		owner.stop_attack_cooldown()

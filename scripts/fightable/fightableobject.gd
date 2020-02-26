@@ -1,8 +1,10 @@
 extends KinematicBody2D
 class_name FightableObject
 
-export var max_life : int
-export var actual_life : int
+signal die()
+
+export(int) var max_life = 100
+export(int) var actual_life = 100
 var attacks : Array
 
 var to_heal : int = 0
@@ -50,4 +52,9 @@ func hit(damage : int):
 	# Play standartizied hit animation
 	# rückstoß
 	self.actual_life -= damage
-	
+	if !is_alive():
+		die()
+
+func die():
+	print("fightableobject.gd: ", self.name, " is dead.")
+	emit_signal("die")

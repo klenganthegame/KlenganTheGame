@@ -211,7 +211,7 @@ scale = Vector2( 0.0838118, 0.0838118 )
 position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
-texture = ExtResource( 7 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
+texture = ExtResource( 8 )
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
