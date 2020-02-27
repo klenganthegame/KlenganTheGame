@@ -46,6 +46,8 @@ func normal_attack():
 	if !enemies.empty():
 		Input.start_joy_vibration(0, 1, 0, 0.2)
 	for enemy in enemies:
+		if enemy is Brokable:
+			continue
 		klengan_node.attack(KLENGAN_ATTACKS.NORMAL, enemy)
 		enemy.update_life()
 

@@ -102,7 +102,9 @@ func _on_Area2D_area_exited(_area):
 
 
 func _on_DialogueBox_dialogue_exit():
-	if last_action_interactable:
+	#if area.get_parent() == null:
+	#	return
+	if last_action_interactable and area != null:
 		var interactable = area.get_parent()
 		interactable.interacted()
 		last_action_interactable = false
