@@ -66,7 +66,7 @@ position = Vector2( 339.318, 485.442 )
 texture = SubResource( 1 )
 
 [node name="Klengan" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1200, 545 )
+position = Vector2( -1000, 545 )
 
 [node name="Lights" type="Node2D" parent="."]
 

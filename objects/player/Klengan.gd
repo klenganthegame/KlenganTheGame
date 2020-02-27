@@ -115,6 +115,9 @@ func set_AttackCollision_disabled(_disabled):
 	$AnimatedSprite/AttackArea/AttackCollision.disabled = _disabled
 
 
+func set_DashCollision_disabled(_disabled):
+	$AnimatedSprite/DashArea/DashCollision.disabled = _disabled
+
 func change_score_in_ui(score : int):
 	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
 

@@ -341,7 +341,7 @@ visible = false
 collision_layer = 0
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Dash Area"]
+[node name="DashCollision" type="CollisionShape2D" parent="AnimatedSprite/DashArea"]
 position = Vector2( 0, 12 )
 shape = SubResource( 3 )
 disabled = true
