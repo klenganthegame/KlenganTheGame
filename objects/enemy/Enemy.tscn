@@ -3,15 +3,15 @@
 [ext_resource path="res://objects/enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/enemy/walk_cycle/walk_00.png" type="Texture" id=2]
 [ext_resource path="res://resources/sprites/enemy/walk_cycle/walk_02.png" type="Texture" id=3]
-[ext_resource path="res://resources/sprites/enemy/walk_cycle/walk_01.png" type="Texture" id=4]
-[ext_resource path="res://objects/mechanics/finite_state_machine/EnemyStateController.gd" type="Script" id=5]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/idle.gd" type="Script" id=6]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/move.gd" type="Script" id=7]
-[ext_resource path="res://objects/enemy/Jump.gd" type="Script" id=8]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/damage.gd" type="Script" id=9]
-[ext_resource path="res://objects/enemy/Attack.gd" type="Script" id=10]
-[ext_resource path="res://resources/sprites/enemy/attack_cycle/attack_00.png" type="Texture" id=11]
-[ext_resource path="res://resources/sprites/enemy/attack_cycle/attack_01.png" type="Texture" id=12]
+[ext_resource path="res://resources/sprites/enemy/attack_cycle/attack_00.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/enemy/attack_cycle/attack_01.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/enemy/walk_cycle/walk_01.png" type="Texture" id=6]
+[ext_resource path="res://objects/mechanics/finite_state_machine/EnemyStateController.gd" type="Script" id=7]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/idle.gd" type="Script" id=8]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/move.gd" type="Script" id=9]
+[ext_resource path="res://objects/enemy/Jump.gd" type="Script" id=10]
+[ext_resource path="res://objects/enemy/Attack.gd" type="Script" id=11]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/damage.gd" type="Script" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -20,12 +20,12 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": false,
 "name": "attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "move",
 "speed": 5.0
@@ -74,24 +74,24 @@ one_way_collision = true
 [node name="AttackCooldown" type="Timer" parent="."]
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 START_STATE = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 
 [node name="Move" type="Node" parent="StateMachine"]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 IDLING_MOVE_PCT = 0.001
 
 [node name="Jump" type="Node" parent="StateMachine"]
-script = ExtResource( 8 )
-
-[node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource( 10 )
 
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 11 )
+
 [node name="Damage" type="Node" parent="StateMachine"]
-script = ExtResource( 9 )
+script = ExtResource( 12 )
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="body_entered" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_body_exited"]
