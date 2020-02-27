@@ -5,10 +5,10 @@
 [ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/mechanics/Teleportation.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Backstage_background.png" type="Texture" id=6]
-[ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=7]
-[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/mechanics/Brokable/Brokable.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/mechanics/Brokable/Brokable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Backstage_background.png" type="Texture" id=8]
+[ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=9]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -191,33 +191,33 @@ one_way_collision = true
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( -500, 620 )
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( -200.619, 578.989 )
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 410.445, 523.624 )
 
-[node name="Brokable" parent="Enemies" instance=ExtResource( 9 )]
+[node name="Brokable" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 503.997, 339.897 )
 
-[node name="Brokable2" parent="Enemies" instance=ExtResource( 9 )]
+[node name="Brokable2" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 604.656, 339.157 )
 
-[node name="Brokable3" parent="Enemies" instance=ExtResource( 9 )]
+[node name="Brokable3" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 706.774, 339.704 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.298039, 0.298039, 0.298039, 1 )
+color = Color( 0.431373, 0.431373, 0.431373, 1 )
 
 [node name="Backstage_background" type="Sprite" parent="."]
 light_mask = 1023
 position = Vector2( 339.618, 456.798 )
 scale = Vector2( 5, 5 )
 z_index = -1
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="KLengan_entwurf_schuhe_3x" type="Sprite" parent="Backstage_background"]
 position = Vector2( -258.601, 21.9585 )
@@ -227,7 +227,7 @@ scale = Vector2( 0.0838118, 0.0838118 )
 position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
-texture = ExtResource( 7 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
+texture = ExtResource( 9 )
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
