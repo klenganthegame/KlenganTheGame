@@ -39,8 +39,12 @@ func contains_attack(attack : Attack):
 			return true
 	return false
 
-func attack(attack_id : int, enemy : FightableObject):
-	enemy.hit(get_attack(attack_id).atk)
+func attack(attack_id : int, enemy : FightableObject, percent = null):
+	if percent == null:
+		enemy.hit(get_attack(attack_id).atk)
+	else: 
+		enemy.hit(get_attack(attack_id).atk * percent)
+	enemy.update_life()
 
 func heal(heal : int):
 	if to_heal == 0:
