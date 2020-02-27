@@ -8,11 +8,14 @@ func enter():
 
 func _on_animation_finished(_anim_name):
 	._on_animation_finished(_anim_name)
-	attack()
+	attack(ENEMY_ATTACKS.NORMAL)
 	emit_signal("finished", "move")
 
 
-func attack():
+func attack(attack_id):
 	var players = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
+	var enemy_node = get_parent().get_parent()
+	if !players.empty():
+		RumbleHandler.rumble_hit()
 	for player in players:
-		player.hit(10)
+		enemy_node.attack(attack_id, player)
