@@ -8,6 +8,9 @@ var focused_body = null
 var can_attack_player = false
 var velocity = Vector2()
 
+func _ready():
+	$LifeBar.max_value = max_life
+	$LifeBar.value = actual_life
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):
 	$AnimatedSprite.play(_anim_name)
@@ -32,3 +35,11 @@ func stop_attack_cooldown():
 func _on_AttackCooldown_timeout():
 	$StateMachine._change_state("attack")
 
+func update_life():
+	$LifeBar.value = actual_life
+
+func dying():
+	print("dead")
+	# Play animation
+	get_parent().queue_free()
+	get_parent().remove_child(self)
