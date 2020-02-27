@@ -10,4 +10,6 @@ func _on_Player_detected(_player, _entered):
 
 
 func _on_Player_attackable(_player, _attackable):
+	if owner == null:
+		return
 	owner.can_attack_player = _attackable
