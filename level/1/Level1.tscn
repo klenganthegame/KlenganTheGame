@@ -193,6 +193,12 @@ one_way_collision = true
 [node name="Enemy" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( -500, 620 )
 
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( -200.619, 578.989 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 410.445, 523.624 )
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.298039, 0.298039, 0.298039, 1 )
 
@@ -212,6 +218,6 @@ position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 7 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
