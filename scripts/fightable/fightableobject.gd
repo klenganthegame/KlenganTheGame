@@ -3,11 +3,14 @@ class_name FightableObject
 
 signal die()
 
-export(int) var max_life = 100
-export(int) var actual_life = 100
+export(int) var max_life = 10
+export(int) var actual_life = 10
 var attacks : Array
 
 var to_heal : int = 0
+
+func _ready():
+	connect("die", self, "dying")
 
 func _process(_delta):
 	# TODO: time-dependency?
@@ -36,8 +39,12 @@ func contains_attack(attack : Attack):
 			return true
 	return false
 
-func attack(attack_id : int, enemy : FightableObject):
-	enemy.hit(get_attack(attack_id).atk)
+func attack(attack_id : int, enemy : FightableObject, percent = null):
+	if percent == null:
+		enemy.hit(get_attack(attack_id).atk)
+	else: 
+		enemy.hit(get_attack(attack_id).atk * percent)
+	enemy.update_life()
 
 func heal(heal : int):
 	if to_heal == 0:

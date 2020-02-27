@@ -3,6 +3,8 @@ extends Control
 func _ready():
 	$FadeIn.play("in")
 	$AnimationPlayer.play("idle")
+	if Input.get_joy_name(0) != "":
+		$VBoxContainer/NewGame.grab_focus()
 
 
 func _on_NewGame_pressed():
@@ -32,3 +34,20 @@ func _on_Reddit_pressed():
 func _on_Youtube_pressed():
 	OS.shell_open("https://www.youtube.com/channel/UC9N0MRIXnKo03d0mmZ3BwPA")
 	pass # Replace with function body.
+
+func toggle_menu():
+	if $Pause.visible:
+		$SettingsMenu.play("out")
+		$VBoxContainer/NewGame.grab_focus()
+	else:
+		$SettingsMenu.play("in")
+		if Input.get_joy_name(0) != "":
+			$Pause/PausePanel/Settings/Sounds.grab_focus()
+	$Pause.visible = !$Pause.visible
+
+
+func _on_Settings_pressed():
+	toggle_menu()
+	
+func _on_Back_pressed():
+	toggle_menu()

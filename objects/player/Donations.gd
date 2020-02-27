@@ -14,3 +14,8 @@ func _process(_delta):
 		text = "Spendenaufruf: an"
 	else:
 		text = "Spendenaufruf: aus"
+	
+	if pressed:
+		get_parent().get_parent().get_parent().get_node("Krebshilfe").show()
+	else:
+		get_parent().get_parent().get_parent().get_node("Krebshilfe").hide()

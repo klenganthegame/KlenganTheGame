@@ -13,16 +13,25 @@ var last_action_interactable : bool = false
 
 signal dialogue_exit()
 
+func _enter_tree():
+	# TODO: Optimize
+	attacks = [
+		# ID, ATK, RELOAD_TIME, DISTANCE
+		Attack.new(KLENGAN_ATTACKS.NORMAL, 1, 5, 50),
+		Attack.new(KLENGAN_ATTACKS.DASH, 10, 5, 50),
+		Attack.new(KLENGAN_ATTACKS.HARPUNE, 1, 5, 50),
+		]
+	pass
+
 func _ready():
-	max_life = 100
-	actual_life = 50
+	update_life()
+	update_life()
+	max_life = 10
+	actual_life = 10
 	
 	change_score_in_ui(500)
 	
 	spawn = transform.get_origin()
-	
-	$CanvasLayer/UI/Health.max_value = max_life
-	$CanvasLayer/UI/Health.value = actual_life
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -43,13 +52,12 @@ func _process(_delta):
 	$CanvasLayer/UI/Health.value = actual_life
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
-		talk(["Gott: Uff... Was tust du..."])
+		talk(["Gott: Uff... Spring doch nicht... diesmal habe ich dich gerettet...", "Bei hilfe ruf bitte 0800-1110111 an...."])
 		
-		# for debug
-		#heal(40)
-		hit(10)
+		hit(1)
 		
-	if Input.is_action_just_pressed("accept") and is_on_floor():
+	if Input.is_action_just_pressed("accept") and is_on_floor() \
+	and !Input.is_action_pressed("walk_left") and !Input.is_action_pressed("walk_right"):
 		interact()
 
 
@@ -91,7 +99,9 @@ func _on_Area2D_area_exited(_area):
 
 
 func _on_DialogueBox_dialogue_exit():
-	if last_action_interactable:
+	#if area.get_parent() == null:
+	#	return
+	if last_action_interactable and area != null:
 		var interactable = area.get_parent()
 		interactable.interacted()
 		last_action_interactable = false
@@ -108,3 +118,12 @@ func set_DashCollision_disabled(_disabled):
 func change_score_in_ui(score : int):
 	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
 
+func dying():
+	$CanvasLayer/PauseMenu.play("die")
+
+func die():
+	get_tree().change_scene(SCENES.GameOver)
+
+func update_life():
+	$CanvasLayer/UI/Health.max_value = max_life
+	$CanvasLayer/UI/Health.value = actual_life

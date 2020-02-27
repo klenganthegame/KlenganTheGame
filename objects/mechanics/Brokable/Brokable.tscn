@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/mechanics/Brokable/Brokable.gd" type="Script" id=3]
+[ext_resource path="res://resources/sprites/test/cobble.jpeg" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 254.298, 24.453 )
+
+[node name="Brokable" type="KinematicBody2D"]
+collision_layer = 20
+collision_mask = 31
+script = ExtResource( 3 )
+
+[node name="Texture" type="Sprite" parent="."]
+position = Vector2( 0, 4.34811 )
+scale = Vector2( 0.2, 0.0172106 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.263519, 4.47987 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 1 )

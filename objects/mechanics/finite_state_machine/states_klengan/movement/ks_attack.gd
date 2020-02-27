@@ -16,10 +16,12 @@ func enter():
 func exit():
 	.exit()
 	owner.set_AttackCollision_disabled(true)
+	for enemy in get_parent().attackable_enemies:
+		print(enemy.name)
 
 
 func _on_animation_finished(_anim_name):
-	attack()
+	normal_attack()
 	if Input.is_action_pressed("sneak"):
 		emit_signal("finished", "sneak")
 	else:
@@ -37,9 +39,15 @@ func apply_forces():
 		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
 
 
-func attack():
+func normal_attack():
 	var enemies = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
+	var klengan_node = get_parent().get_parent()
+	#slow , strong
+	if !enemies.empty():
+		Input.start_joy_vibration(0, 1, 0, 0.2)
 	for enemy in enemies:
-		enemy.hit(30)
+		if enemy is Brokable:
+			continue
+		klengan_node.attack(KLENGAN_ATTACKS.NORMAL, enemy)
 
 
