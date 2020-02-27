@@ -24,8 +24,8 @@ func _enter_tree():
 	pass
 
 func _ready():
-	max_life = 100
-	actual_life = 50
+	max_life = 10
+	actual_life = 10
 	
 	change_score_in_ui(500)
 	
