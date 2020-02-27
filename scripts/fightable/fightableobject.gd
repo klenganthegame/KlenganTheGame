@@ -9,6 +9,9 @@ var attacks : Array
 
 var to_heal : int = 0
 
+func _ready():
+	connect("die", self, "dying")
+
 func _process(_delta):
 	# TODO: time-dependency?
 	if to_heal > 0:
