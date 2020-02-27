@@ -14,7 +14,13 @@ var last_action_interactable : bool = false
 signal dialogue_exit()
 
 func _enter_tree():
-	attacks = [Attack.new(KLENGAN_ATTACKS.NORMAL, 1, 5, 50)]
+	# TODO: Optimize
+	attacks = [
+		# ID, ATK, RELOAD_TIME, DISTANCE
+		Attack.new(KLENGAN_ATTACKS.NORMAL, 1, 5, 50),
+		Attack.new(KLENGAN_ATTACKS.DASH, 1, 5, 50),
+		Attack.new(KLENGAN_ATTACKS.HARPUNE, 1, 5, 50),
+		]
 	pass
 
 func _ready():
@@ -109,3 +115,5 @@ func set_AttackCollision_disabled(_disabled):
 func change_score_in_ui(score : int):
 	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
 
+func dying():
+	pass
