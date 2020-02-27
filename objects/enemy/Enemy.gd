@@ -46,5 +46,5 @@ func update_life():
 func dying():
 	print("dead")
 	# Play animation
-	get_parent().queue_free()
-	get_parent().remove_child(self)
+	queue_free()
+	remove_child(self)
