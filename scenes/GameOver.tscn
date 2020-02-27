@@ -140,7 +140,7 @@ position = Vector2( -43.6553, 484.276 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 1
+frame = 6
 playing = true
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Menu" to="." method="_on_Menu_pressed"]
