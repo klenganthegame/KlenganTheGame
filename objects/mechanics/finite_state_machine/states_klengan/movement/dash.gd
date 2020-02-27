@@ -18,15 +18,21 @@ func update(_delta):
 	if !Input.is_action_pressed("sneak"):
 		owner.set_collision_mask_bit(1,true)
 	
+	var rumble = false
 	if owner.is_on_floor() and velocity == Vector2():
 		owner.set_collision_mask_bit(1,true)
+		rumble = true
 		emit_signal("finished", "idle")
 	elif owner.is_on_floor() and !Input.is_action_pressed("sneak"):
 		owner.set_collision_mask_bit(1,true)
+		rumble = true
 		emit_signal("finished", "move")
 	elif owner.is_on_floor() and Input.is_action_pressed("sneak"):
 		owner.set_collision_mask_bit(1,true)
+		rumble = true
 		emit_signal("finished","sneak")
 	elif Input.is_action_just_pressed("jump"):
+		rumble = true
 		emit_signal("finished","doubleJump")
-
+	if rumble:
+		RumbleHandler.rumble_dash()
