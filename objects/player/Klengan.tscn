@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=5]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/stagger/stagger.gd" type="Script" id=6]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/Sneak.gd" type="Script" id=7]
-[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/attack.gd" type="Script" id=8]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/mealy_attack.gd" type="Script" id=8]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/dash.gd" type="Script" id=9]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/DoubleJump.gd" type="Script" id=10]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_00.png" type="Texture" id=11]
@@ -38,7 +38,6 @@
 [ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=36]
 [ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=37]
 [ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=38]
-[ext_resource path="res://sprites/test/heart_light.png" type="Texture" id=39]
 [ext_resource path="res://sprites/test/stabilodash.png" type="Texture" id=40]
 [ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=41]
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=42]
@@ -370,7 +369,6 @@ shape = SubResource( 5 )
 script = ExtResource( 23 )
 
 [node name="UI" type="Control" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -391,64 +389,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
-anchor_bottom = 1.0
-margin_left = 41.0
-margin_top = 130.0
-margin_right = 46.0
-margin_bottom = -430.0
-rect_scale = Vector2( 5, 5 )
-value = 34.0
-texture_progress = ExtResource( 36 )
-fill_mode = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
-margin_left = 20.0
-margin_top = 10.0
-margin_right = 212.0
-margin_bottom = 26.0
-text = "score: 00000"
-
-[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
-margin_left = 16.0
-margin_top = 41.0
-margin_right = 31.0
-margin_bottom = 54.0
-rect_scale = Vector2( 5, 5 )
-value = 30.0
-fill_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="heart_light2" type="Sprite" parent="CanvasLayer/UI/Health"]
-show_behind_parent = true
-position = Vector2( 7.28657, 6.32776 )
-scale = Vector2( 0.145363, 0.139511 )
-
-[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
-show_behind_parent = true
-position = Vector2( 7.28657, 6.32776 )
-scale = Vector2( 0.145363, 0.139511 )
-texture = ExtResource( 38 )
-
-[node name="heart_light" type="Sprite" parent="CanvasLayer/UI/Health"]
-pause_mode = 2
-show_behind_parent = true
-position = Vector2( 7.28657, 6.32776 )
-scale = Vector2( 0.145363, 0.139511 )
-texture = ExtResource( 39 )
-
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
-margin_left = 20.0
-margin_top = 10.0
-margin_right = 212.0
-margin_bottom = 26.0
-text = "score: 00000"
-
 [node name="Pause" type="Button" parent="CanvasLayer/UI"]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -459,28 +399,6 @@ margin_bottom = 95.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "||"
-
-[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
-margin_left = 16.0
-margin_top = 41.0
-margin_right = 31.0
-margin_bottom = 54.0
-rect_scale = Vector2( 5, 5 )
-value = 30.0
-texture_over = ExtResource( 36 )
-texture_progress = ExtResource( 37 )
-fill_mode = 4
-
-[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
-anchor_bottom = 1.0
-margin_left = 41.0
-margin_top = 130.0
-margin_right = 46.0
-margin_bottom = -430.0
-rect_scale = Vector2( 5, 5 )
-texture_under = ExtResource( 39 )
-texture_progress = ExtResource( 40 )
-fill_mode = 3
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
 pause_mode = 2
@@ -526,6 +444,9 @@ rect_scale = Vector2( 5, 5 )
 texture_under = ExtResource( 40 )
 texture_progress = ExtResource( 41 )
 fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Arrows" type="Control" parent="CanvasLayer"]
 anchor_top = 1.0
