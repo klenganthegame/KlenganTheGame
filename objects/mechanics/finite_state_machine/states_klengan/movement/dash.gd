@@ -44,15 +44,10 @@ func update(_delta):
 func do_damage():
 	if owner.is_on_floor() and damage:
 		RumbleHandler.rumble_dash()
-		print(dashDamage)
-		print(dashHeight)
 		damage = false
 		dashHeight -= owner.position.y
-		print(dashHeight)
 		dashDamage *= (sqrt(pow(-dashHeight,2)/4000)/10 - 0.1) / 5
 		var enemies = owner.get_node("AnimatedSprite/DashArea").get_overlapping_bodies()
 		for enemy in enemies:
-			enemy.hit(dashDamage)
-			print(enemy)
-		print(dashDamage)
+			get_parent().get_parent().attack(KLENGAN_ATTACKS.DASH, enemy, dashDamage * 0.01)
 		owner.set_DashCollision_disabled(true)
