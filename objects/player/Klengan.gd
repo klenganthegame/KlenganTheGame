@@ -59,7 +59,8 @@ func _process(_delta):
 		#heal(40)
 		hit(10)
 		
-	if Input.is_action_just_pressed("accept") and is_on_floor():
+	if Input.is_action_just_pressed("accept") and is_on_floor() \
+	and !Input.is_action_pressed("walk_left") and !Input.is_action_pressed("walk_right"):
 		interact()
 
 
