@@ -43,6 +43,7 @@ func update(_delta):
 
 func do_damage():
 	if owner.is_on_floor() and damage:
+		RumbleHandler.rumble_dash()
 		print(dashDamage)
 		print(dashHeight)
 		damage = false
