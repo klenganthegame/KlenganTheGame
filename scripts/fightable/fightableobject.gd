@@ -3,8 +3,8 @@ class_name FightableObject
 
 signal die()
 
-export(int) var max_life = 100
-export(int) var actual_life = 100
+export(int) var max_life = 10
+export(int) var actual_life = 10
 var attacks : Array
 
 var to_heal : int = 0
