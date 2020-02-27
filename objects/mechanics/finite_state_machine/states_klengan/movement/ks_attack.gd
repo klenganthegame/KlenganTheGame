@@ -24,7 +24,7 @@ func exit():
 
 
 func _on_animation_finished(_anim_name):
-	attack()
+	normal_attack()
 	if Input.is_action_pressed("sneak"):
 		emit_signal("finished", "sneak")
 	else:
@@ -42,9 +42,11 @@ func apply_forces():
 		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
 
 
-func attack():
+func normal_attack():
 	var enemies = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
+	var klengan_node = get_parent().get_parent()
 	for enemy in enemies:
-		enemy.hit(30)
+		klengan_node.attack(KLENGAN_ATTACKS.NORMAL, enemy)
+		enemy.update_life()
 
 
