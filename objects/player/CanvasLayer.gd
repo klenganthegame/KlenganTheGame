@@ -29,6 +29,7 @@ func _on_Save_pressed():
 
 
 func _on_Settings_pressed():
+	$Pause/Panel/Settings/Sounds.grab_focus()
 	$PauseMenu.play("settings_in")
 
 
@@ -41,8 +42,7 @@ func _on_Donations_toggled(button_pressed):
 	else:
 		$Pause/Krebshilfe.hide()
 
-
-
 func _on_Back_pressed():
+	$Pause/Panel/PauseMenu/Back.grab_focus()
 	$PauseMenu.play("settings_out")
 	pass # Replace with function body.
