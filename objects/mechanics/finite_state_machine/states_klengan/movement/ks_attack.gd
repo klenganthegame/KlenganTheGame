@@ -16,11 +16,8 @@ func enter():
 func exit():
 	.exit()
 	owner.set_AttackCollision_disabled(true)
-	print("attack")
 	for enemy in get_parent().attackable_enemies:
 		print(enemy.name)
-		pass
-	#attack(KLENGAN_ATTACKS.NORMAL, ):
 
 
 func _on_animation_finished(_anim_name):
@@ -45,6 +42,9 @@ func apply_forces():
 func normal_attack():
 	var enemies = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
 	var klengan_node = get_parent().get_parent()
+	#slow , strong
+	if !enemies.empty():
+		Input.start_joy_vibration(0, 1, 0, 0.2)
 	for enemy in enemies:
 		klengan_node.attack(KLENGAN_ATTACKS.NORMAL, enemy)
 		enemy.update_life()
