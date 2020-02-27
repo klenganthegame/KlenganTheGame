@@ -49,6 +49,5 @@ func normal_attack():
 		if enemy is Brokable:
 			continue
 		klengan_node.attack(KLENGAN_ATTACKS.NORMAL, enemy)
-		enemy.update_life()
 
 
