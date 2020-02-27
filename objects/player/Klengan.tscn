@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -106,6 +106,36 @@ tracks/1/keys = {
 "values": [ {
 "args": [  ],
 "method": "go_to_Menu"
+} ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "die"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
 } ]
 }
 
@@ -336,7 +366,7 @@ position = Vector2( 19.25, 0 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="Dash Area" type="Area2D" parent="AnimatedSprite"]
+[node name="DashArea" type="Area2D" parent="AnimatedSprite"]
 visible = false
 collision_layer = 0
 collision_mask = 16
@@ -514,23 +544,14 @@ font = SubResource( 6 )
 action_name = "accept"
 wait_time = 0.05
 
-[node name="UI" type="Control" parent="CanvasLayer"]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -0.989746
-margin_right = -0.989746
-theme = ExtResource( 35 )
-
 [node name="PauseMenu" type="AnimationPlayer" parent="CanvasLayer"]
 pause_mode = 2
 anims/backtomenu = SubResource( 7 )
+anims/die = SubResource( 13 )
 anims/in = SubResource( 8 )
 anims/out = SubResource( 9 )
 anims/settings_in = SubResource( 10 )
 anims/settings_out = SubResource( 11 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
 pause_mode = 2
@@ -563,7 +584,6 @@ rect_min_size = Vector2( 300, 200 )
 
 [node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -600,6 +620,7 @@ text = "Zurück zum Menü"
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -660,14 +681,16 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -118.0
 margin_bottom = 0.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_entered"]
 [connection signal="area_exited" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_exited"]
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="toggle_pause"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
