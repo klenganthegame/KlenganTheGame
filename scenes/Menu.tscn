@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://resources/icons/youtube.png" type="Texture" id=4]
 [ext_resource path="res://resources/icons/reddit.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/player/Sounds.gd" type="Script" id=7]
+[ext_resource path="res://objects/player/Donations.gd" type="Script" id=8]
+[ext_resource path="res://objects/player/Musik.gd" type="Script" id=9]
+[ext_resource path="res://objects/player/Rumble.gd" type="Script" id=11]
+[ext_resource path="res://resources/shader/blur.shader" type="Shader" id=12]
+[ext_resource path="res://resources/shader/white.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -68,6 +74,40 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pause:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "out (copy)"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pause:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 12 )
+shader_param/amount = 2.647
+
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -84,6 +124,9 @@ margin_right = 860.421
 margin_bottom = 630.001
 rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 1.0
@@ -92,6 +135,9 @@ anchor_bottom = 1.0
 margin_left = -350.0
 margin_right = -70.0
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NewGame" type="Button" parent="VBoxContainer"]
 margin_top = 157.0
@@ -149,10 +195,11 @@ margin_bottom = 75.0
 texture_normal = ExtResource( 5 )
 
 [node name="Krebshilfe" parent="." instance=ExtResource( 6 )]
+anchor_right = 0.0
 margin_left = -10.0
 margin_top = 503.0
-margin_right = 9.0
-margin_bottom = 616.0
+margin_right = -10.0
+margin_bottom = 578.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 1 )
@@ -162,10 +209,108 @@ anims/in = SubResource( 2 )
 anims/load_game = SubResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0, 0, 0, 1 )
+visible = false
+
+[node name="SettingsMenu" type="AnimationPlayer" parent="."]
+anims/out = SubResource( 6 )
+"anims/out (copy)" = SubResource( 7 )
+
+[node name="Pause" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blur" type="TextureRect" parent="Pause"]
+pause_mode = 2
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PausePanel" type="Panel" parent="Pause"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -244.0
+margin_top = 95.0
+margin_right = 249.0
+margin_bottom = 524.0
+rect_min_size = Vector2( 300, 200 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="VBoxContainer" parent="Pause/PausePanel"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sounds" type="Button" parent="Pause/PausePanel/Settings"]
+pause_mode = 2
+margin_top = 71.0
+margin_right = 493.0
+margin_bottom = 125.0
+focus_neighbour_top = NodePath("../Back")
+toggle_mode = true
+pressed = true
+text = "Sounds: an"
+script = ExtResource( 7 )
+
+[node name="Musik" type="Button" parent="Pause/PausePanel/Settings"]
+pause_mode = 2
+margin_top = 129.0
+margin_right = 493.0
+margin_bottom = 183.0
+toggle_mode = true
+pressed = true
+text = "Musik: an"
+script = ExtResource( 9 )
+
+[node name="Rumble" type="Button" parent="Pause/PausePanel/Settings"]
+pause_mode = 2
+margin_top = 187.0
+margin_right = 493.0
+margin_bottom = 241.0
+toggle_mode = true
+pressed = true
+text = "Controller-Rumble: an"
+script = ExtResource( 11 )
+
+[node name="Donations" type="Button" parent="Pause/PausePanel/Settings"]
+pause_mode = 2
+margin_top = 245.0
+margin_right = 493.0
+margin_bottom = 299.0
+toggle_mode = true
+pressed = true
+text = "Spendenaufruf: an"
+script = ExtResource( 8 )
+
+[node name="Back" type="Button" parent="Pause/PausePanel/Settings"]
+pause_mode = 2
+margin_top = 303.0
+margin_right = 493.0
+margin_bottom = 357.0
+focus_neighbour_bottom = NodePath("../Sounds")
+text = "Zurück"
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="HBoxContainer/Youtube" to="." method="_on_Youtube_pressed"]
 [connection signal="pressed" from="HBoxContainer/Reddit" to="." method="_on_Reddit_pressed"]
+[connection signal="pressed" from="Pause/PausePanel/Settings/Back" to="." method="_on_Back_pressed"]
