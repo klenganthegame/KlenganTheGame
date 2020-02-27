@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://level/1/Level1inpseudo3d.gd" type="Script" id=1]
+[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=5]
@@ -188,6 +189,14 @@ shape = SubResource( 3 )
 [node name="Klengan" parent="GameLayer" instance=ExtResource( 3 )]
 position = Vector2( 379.646, 362.885 )
 
+[node name="Node2D" type="Node2D" parent="GameLayer"]
+
+[node name="Enemy2" parent="GameLayer/Node2D" instance=ExtResource( 2 )]
+position = Vector2( 185.454, 377.091 )
+
+[node name="Enemy" parent="GameLayer/Node2D" instance=ExtResource( 2 )]
+position = Vector2( 15.4545, 401.818 )
+
 [node name="Layer3" type="CanvasLayer" parent="."]
 layer = 0
 follow_viewport_enable = true
@@ -215,6 +224,6 @@ texture = ExtResource( 8 )
 layer = 0
 follow_viewport_enable = true
 follow_viewport_scale = 1.2
-[connection signal="interacted" from="GameLayer/Interactable" to="GameLayer/Lamp_Right2" method="trigger"]
 [connection signal="interacted" from="GameLayer/Interactable" to="GameLayer/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="GameLayer/Interactable" to="GameLayer/Lamp_Right2" method="trigger"]
 [connection signal="interacted" from="GameLayer/Interactable" to="GameLayer/Lamp_Right3" method="trigger"]
