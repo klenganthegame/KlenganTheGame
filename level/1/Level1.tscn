@@ -210,7 +210,8 @@ position = Vector2( 604.656, 339.157 )
 position = Vector2( 706.774, 339.704 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.431373, 0.431373, 0.431373, 1 )
+visible = false
+color = Color( 0.298039, 0.298039, 0.298039, 1 )
 
 [node name="Backstage_background" type="Sprite" parent="."]
 light_mask = 1023
@@ -230,4 +231,5 @@ z_index = -1
 texture = ExtResource( 9 )
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
+[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
 [connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
