@@ -3,7 +3,7 @@ extends "res://objects/mechanics/finite_state_machine/states_enemy/movement/move
 
 func enter():
 	.enter()
-	owner.play_directional_animation("attack")
+	owner.play_directional_animation("idle")
 
 
 func _on_animation_finished(_anim_name):

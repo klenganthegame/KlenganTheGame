@@ -23,30 +23,30 @@
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_08.png" type="Texture" id=21]
 [ext_resource path="res://resources/sprites/klengan/walkcycle/walk_09.png" type="Texture" id=22]
 [ext_resource path="res://objects/player/CanvasLayer.gd" type="Script" id=23]
-[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=24]
-[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=25]
-[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=26]
-[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=27]
-[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=28]
-[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=29]
-[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=30]
-[ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=31]
-[ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=32]
-[ext_resource path="res://resources/audio/text_beep.wav" type="AudioStream" id=33]
-[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=34]
-[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=35]
-[ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=36]
-[ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=37]
-[ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=38]
-[ext_resource path="res://sprites/test/stabilodash.png" type="Texture" id=40]
-[ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=41]
-[ext_resource path="res://resources/shader/blur.shader" type="Shader" id=42]
-[ext_resource path="res://resources/shader/white.png" type="Texture" id=43]
-[ext_resource path="res://objects/player/Sounds.gd" type="Script" id=44]
-[ext_resource path="res://objects/player/Musik.gd" type="Script" id=45]
-[ext_resource path="res://objects/player/Rumble.gd" type="Script" id=47]
-[ext_resource path="res://objects/player/Donations.gd" type="Script" id=48]
-[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=49]
+[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=24]
+[ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=25]
+[ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=26]
+[ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=27]
+[ext_resource path="res://sprites/test/stabilodash.png" type="Texture" id=28]
+[ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=29]
+[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=30]
+[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=31]
+[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=32]
+[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=33]
+[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=34]
+[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=35]
+[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=36]
+[ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=37]
+[ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=38]
+[ext_resource path="res://resources/audio/text_beep.wav" type="AudioStream" id=39]
+[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=40]
+[ext_resource path="res://resources/shader/blur.shader" type="Shader" id=41]
+[ext_resource path="res://resources/shader/white.png" type="Texture" id=42]
+[ext_resource path="res://objects/player/Sounds.gd" type="Script" id=43]
+[ext_resource path="res://objects/player/Musik.gd" type="Script" id=44]
+[ext_resource path="res://objects/player/Rumble.gd" type="Script" id=45]
+[ext_resource path="res://objects/player/Donations.gd" type="Script" id=46]
+[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=47]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -79,7 +79,7 @@ extents = Vector2( 34.3377, 6.71835 )
 extents = Vector2( 24.9137, 10 )
 
 [sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 34 )
+font_data = ExtResource( 40 )
 
 [sub_resource type="Animation" id=7]
 tracks/0/type = "value"
@@ -109,7 +109,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=8]
 resource_name = "die"
 length = 2.0
 tracks/0/type = "value"
@@ -139,7 +139,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause:modulate")
@@ -168,7 +168,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause:modulate")
@@ -197,7 +197,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause/Panel/PauseMenu:modulate")
@@ -252,7 +252,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause/Panel/PauseMenu:modulate")
@@ -307,8 +307,8 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="ShaderMaterial" id=12]
-shader = ExtResource( 42 )
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 41 )
 shader_param/amount = 2.647
 
 [node name="Klengan" type="KinematicBody2D"]
@@ -400,7 +400,7 @@ script = ExtResource( 23 )
 [node name="UI" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 35 )
+theme = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -425,7 +425,7 @@ margin_left = 20.0
 margin_top = 10.0
 margin_right = 212.0
 margin_bottom = 26.0
-theme = ExtResource( 35 )
+theme = ExtResource( 24 )
 text = "score: 00000"
 
 [node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
@@ -436,9 +436,9 @@ margin_right = 31.0
 margin_bottom = 54.0
 rect_scale = Vector2( 5, 5 )
 value = 30.0
-texture_under = ExtResource( 36 )
-texture_over = ExtResource( 37 )
-texture_progress = ExtResource( 38 )
+texture_under = ExtResource( 25 )
+texture_over = ExtResource( 26 )
+texture_progress = ExtResource( 27 )
 fill_mode = 4
 
 [node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
@@ -448,8 +448,8 @@ margin_top = 130.0
 margin_right = 46.0
 margin_bottom = -430.0
 rect_scale = Vector2( 5, 5 )
-texture_under = ExtResource( 40 )
-texture_progress = ExtResource( 41 )
+texture_under = ExtResource( 28 )
+texture_progress = ExtResource( 29 )
 fill_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -468,16 +468,16 @@ __meta__ = {
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
 position = Vector2( 180, 0 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 24 )
-pressed = ExtResource( 25 )
+normal = ExtResource( 30 )
+pressed = ExtResource( 31 )
 action = "walk_right"
 visibility_mode = 1
 
 [node name="Left" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
 position = Vector2( 40, 0 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 26 )
-pressed = ExtResource( 27 )
+normal = ExtResource( 32 )
+pressed = ExtResource( 33 )
 action = "walk_left"
 visibility_mode = 1
 
@@ -497,16 +497,16 @@ __meta__ = {
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
 position = Vector2( 55, -5 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 28 )
-pressed = ExtResource( 28 )
+normal = ExtResource( 34 )
+pressed = ExtResource( 34 )
 action = "jump"
 visibility_mode = 1
 
 [node name="Okay" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
 position = Vector2( -50, 0 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 29 )
-pressed = ExtResource( 30 )
+normal = ExtResource( 35 )
+pressed = ExtResource( 36 )
 action = "accept"
 visibility_mode = 1
 
@@ -514,14 +514,14 @@ visibility_mode = 1
 position = Vector2( 250, 85 )
 rotation = 3.14159
 scale = Vector2( 5, 5 )
-normal = ExtResource( 28 )
+normal = ExtResource( 34 )
 action = "sneak"
 visibility_mode = 1
 
 [node name="attack" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
 position = Vector2( 160, -100 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 29 )
+normal = ExtResource( 35 )
 action = "attack"
 
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
@@ -532,14 +532,14 @@ margin_left = 173.0
 margin_top = 50.0
 margin_right = -168.0
 margin_bottom = 240.0
-texture = ExtResource( 31 )
+texture = ExtResource( 37 )
 region_rect = Rect2( -2.28871, -3.69064, 28.5712, 30.4968 )
 patch_margin_left = 8
 patch_margin_top = 10
 patch_margin_right = 12
 patch_margin_bottom = 13
-script = ExtResource( 32 )
-message_sound = ExtResource( 33 )
+script = ExtResource( 38 )
+message_sound = ExtResource( 39 )
 font = SubResource( 6 )
 action_name = "accept"
 wait_time = 0.05
@@ -547,27 +547,27 @@ wait_time = 0.05
 [node name="PauseMenu" type="AnimationPlayer" parent="CanvasLayer"]
 pause_mode = 2
 anims/backtomenu = SubResource( 7 )
-anims/die = SubResource( 13 )
-anims/in = SubResource( 8 )
-anims/out = SubResource( 9 )
-anims/settings_in = SubResource( 10 )
-anims/settings_out = SubResource( 11 )
+anims/die = SubResource( 8 )
+anims/in = SubResource( 9 )
+anims/out = SubResource( 10 )
+anims/settings_in = SubResource( 11 )
+anims/settings_out = SubResource( 12 )
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
 pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 35 )
+theme = ExtResource( 24 )
 
 [node name="Blur" type="TextureRect" parent="CanvasLayer/Pause"]
 pause_mode = 2
-material = SubResource( 12 )
+material = SubResource( 13 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture = ExtResource( 43 )
+texture = ExtResource( 42 )
 expand = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Pause"]
@@ -636,7 +636,7 @@ margin_bottom = 125.0
 toggle_mode = true
 pressed = true
 text = "Sounds: an"
-script = ExtResource( 44 )
+script = ExtResource( 43 )
 
 [node name="Musik" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
@@ -646,7 +646,7 @@ margin_bottom = 183.0
 toggle_mode = true
 pressed = true
 text = "Musik: an"
-script = ExtResource( 45 )
+script = ExtResource( 44 )
 
 [node name="Rumble" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
@@ -656,7 +656,7 @@ margin_bottom = 241.0
 toggle_mode = true
 pressed = true
 text = "Controller-Rumble: an"
-script = ExtResource( 47 )
+script = ExtResource( 45 )
 
 [node name="Donations" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
@@ -666,7 +666,7 @@ margin_bottom = 299.0
 toggle_mode = true
 pressed = true
 text = "Spendenaufruf: an"
-script = ExtResource( 48 )
+script = ExtResource( 46 )
 
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
@@ -675,7 +675,7 @@ margin_right = 493.0
 margin_bottom = 357.0
 text = "Zurück"
 
-[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 49 )]
+[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 47 )]
 pause_mode = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -689,8 +689,8 @@ margin_bottom = 0.0
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="toggle_pause"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]

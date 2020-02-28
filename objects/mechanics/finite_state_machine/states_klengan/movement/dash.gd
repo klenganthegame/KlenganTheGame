@@ -18,10 +18,11 @@ func enter():
 func update(_delta):
 	.update(_delta)
 	if Input.is_action_just_pressed("sneak"):
+		dashHeight = owner.position.y
+		dashDamage = JUMP_VELOCITY*3
 		velocity.y = JUMP_VELOCITY*3
 		damage = true
 		owner.set_collision_mask_bit(1,false)
-		dashHeight = owner.position.y
 	if !Input.is_action_pressed("sneak"):
 		owner.set_collision_mask_bit(1,true)
 	if owner.is_on_floor() and velocity == Vector2():
@@ -37,7 +38,6 @@ func update(_delta):
 		do_damage()
 		emit_signal("finished","sneak")
 	elif Input.is_action_just_pressed("jump"):
-		do_damage()
 		emit_signal("finished","doubleJump")
 	dashDamage = velocity.y
 
