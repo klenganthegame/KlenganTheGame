@@ -7,8 +7,8 @@
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_pressed.png" type="Texture" id=5]
 [ext_resource path="res://resources/sprites/ui/theme/ud_arrows.png" type="Texture" id=6]
 [ext_resource path="res://resources/sprites/ui/theme/popup_selected.png" type="Texture" id=7]
-[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://resources/sprites/ui/theme/loadingbar_full.png" type="Texture" id=10]
+[ext_resource path="res://resources/sprites/ui/theme/loadingbar_full.png" type="Texture" id=8]
+[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -76,7 +76,7 @@ margin_top = 14.4957
 margin_bottom = 13.8655
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 160, 16 )
 margin_left = 17.1475
 margin_right = 49.7575
@@ -84,7 +84,7 @@ margin_top = 6.3175
 margin_bottom = 7.22
 
 [sub_resource type="DynamicFont" id=10]
-font_data = ExtResource( 8 )
+font_data = ExtResource( 9 )
 
 [resource]
 default_font = SubResource( 10 )

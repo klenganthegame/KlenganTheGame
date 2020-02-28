@@ -1,7 +1,7 @@
 extends FightableObject
 
-export(float) var min_attack_cooldown = 0.5
-export(float) var attack_cooldown_range = 1.5
+export(float) var min_attack_cooldown = 0
+export(float) var attack_cooldown_range = 1
 
 var looking_right = true
 var focused_body = null
