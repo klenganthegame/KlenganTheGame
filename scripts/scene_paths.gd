@@ -1,3 +1,6 @@
+"""
+Has all paths as constants to all scenes for LevelChanger
+"""
 extends Node 
 
 const Menu = "res://scenes/Menu.tscn"
