@@ -1,3 +1,7 @@
+"""
+Handles LevelChanging with fancy Loadingscreen
+"""
+
 extends Node
 
 signal load_progress(_progress_percentage)
