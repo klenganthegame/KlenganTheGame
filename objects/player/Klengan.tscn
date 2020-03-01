@@ -1,0 +1,698 @@
+[gd_scene load_steps=61 format=2]
+
+[ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
+[ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/idle.gd" type="Script" id=3]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/move.gd" type="Script" id=4]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/jump.gd" type="Script" id=5]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/stagger/stagger.gd" type="Script" id=6]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/Sneak.gd" type="Script" id=7]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/ks_attack.gd" type="Script" id=8]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/dash.gd" type="Script" id=9]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/DoubleJump.gd" type="Script" id=10]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_00.png" type="Texture" id=11]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_01.png" type="Texture" id=12]
+[ext_resource path="res://resources/sprites/klengan/attackcycle/attack_00.png" type="Texture" id=13]
+[ext_resource path="res://resources/sprites/klengan/attackcycle/attack_01.png" type="Texture" id=14]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_02.png" type="Texture" id=15]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_03.png" type="Texture" id=16]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_04.png" type="Texture" id=17]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_05.png" type="Texture" id=18]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_06.png" type="Texture" id=19]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_07.png" type="Texture" id=20]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_08.png" type="Texture" id=21]
+[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_09.png" type="Texture" id=22]
+[ext_resource path="res://objects/player/CanvasLayer.gd" type="Script" id=23]
+[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=24]
+[ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=25]
+[ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=26]
+[ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=27]
+[ext_resource path="res://sprites/test/stabilodash.png" type="Texture" id=28]
+[ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=29]
+[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=30]
+[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=31]
+[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=32]
+[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=33]
+[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=34]
+[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=35]
+[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=36]
+[ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=37]
+[ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=38]
+[ext_resource path="res://resources/audio/text_beep.wav" type="AudioStream" id=39]
+[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=40]
+[ext_resource path="res://resources/shader/blur.shader" type="Shader" id=41]
+[ext_resource path="res://resources/shader/white.png" type="Texture" id=42]
+[ext_resource path="res://objects/player/Sounds.gd" type="Script" id=43]
+[ext_resource path="res://objects/player/Musik.gd" type="Script" id=44]
+[ext_resource path="res://objects/player/Rumble.gd" type="Script" id=45]
+[ext_resource path="res://objects/player/Donations.gd" type="Script" id=46]
+[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=47]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walk",
+"speed": 14.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19.8874, 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.1829, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 34.3377, 6.71835 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 24.9137, 10 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 40 )
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "go_to_Menu"
+} ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "die"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pause:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Pause")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pause:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Pause")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pause/Panel/PauseMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Pause/Panel/PauseMenu")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Pause/Panel/Settings")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Pause/Panel/Settings:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pause/Panel/PauseMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Pause/Panel/PauseMenu")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Pause/Panel/Settings")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Pause/Panel/Settings:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 41 )
+shader_param/amount = 2.647
+
+[node name="Klengan" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource( 1 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 2 )
+START_STATE = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 3 )
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource( 4 )
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
+JUMP_VELOCITY = 800
+LERP_FACTOR = 0.01
+
+[node name="Stagger" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
+
+[node name="Sneak" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
+ACCELERATON = 30
+MAX_SPEED = 150
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+LERP_FACTOR = 0.05
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource( 9 )
+MAX_SPEED = 300
+
+[node name="DoubleJump" type="Node" parent="StateMachine"]
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, 5.5548 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "attack"
+frame = 1
+
+[node name="AttackArea" type="Area2D" parent="AnimatedSprite"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
+position = Vector2( 19.25, 0 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="DashArea" type="Area2D" parent="AnimatedSprite"]
+visible = false
+collision_layer = 0
+collision_mask = 16
+
+[node name="DashCollision" type="CollisionShape2D" parent="AnimatedSprite/DashArea"]
+position = Vector2( 0, 12 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0434299, 81.9697 )
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -50 )
+current = true
+smoothing_enabled = true
+
+[node name="interactionArea" type="Area2D" parent="."]
+position = Vector2( 0, 90 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="InteractionCollision" type="CollisionShape2D" parent="interactionArea"]
+position = Vector2( 3.41373, -11.2166 )
+shape = SubResource( 5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 23 )
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Button" parent="CanvasLayer/UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -107.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 95.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "||"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
+pause_mode = 2
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 212.0
+margin_bottom = 26.0
+theme = ExtResource( 24 )
+text = "score: 00000"
+
+[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
+pause_mode = 2
+margin_left = 16.0
+margin_top = 41.0
+margin_right = 31.0
+margin_bottom = 54.0
+rect_scale = Vector2( 5, 5 )
+value = 30.0
+texture_under = ExtResource( 25 )
+texture_over = ExtResource( 26 )
+texture_progress = ExtResource( 27 )
+fill_mode = 4
+
+[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
+anchor_bottom = 1.0
+margin_left = 41.0
+margin_top = 130.0
+margin_right = 46.0
+margin_bottom = -430.0
+rect_scale = Vector2( 5, 5 )
+texture_under = ExtResource( 28 )
+texture_progress = ExtResource( 29 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrows" type="Control" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -120.0
+margin_right = 265.0
+margin_bottom = -21.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
+position = Vector2( 180, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 30 )
+pressed = ExtResource( 31 )
+action = "walk_right"
+visibility_mode = 1
+
+[node name="Left" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
+position = Vector2( 40, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 32 )
+pressed = ExtResource( 33 )
+action = "walk_left"
+visibility_mode = 1
+
+[node name="Interaction" type="Control" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -271.0
+margin_top = -120.0
+margin_right = -40.0
+margin_bottom = -18.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( 55, -5 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 34 )
+pressed = ExtResource( 34 )
+action = "jump"
+visibility_mode = 1
+
+[node name="Okay" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( -50, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 35 )
+pressed = ExtResource( 36 )
+action = "accept"
+visibility_mode = 1
+
+[node name="Sneak" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( 250, 85 )
+rotation = 3.14159
+scale = Vector2( 5, 5 )
+normal = ExtResource( 34 )
+action = "sneak"
+visibility_mode = 1
+
+[node name="attack" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( 160, -100 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 35 )
+action = "attack"
+
+[node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+margin_left = 173.0
+margin_top = 50.0
+margin_right = -168.0
+margin_bottom = 240.0
+texture = ExtResource( 37 )
+region_rect = Rect2( -2.28871, -3.69064, 28.5712, 30.4968 )
+patch_margin_left = 8
+patch_margin_top = 10
+patch_margin_right = 12
+patch_margin_bottom = 13
+script = ExtResource( 38 )
+message_sound = ExtResource( 39 )
+font = SubResource( 6 )
+action_name = "accept"
+wait_time = 0.05
+
+[node name="PauseMenu" type="AnimationPlayer" parent="CanvasLayer"]
+pause_mode = 2
+anims/backtomenu = SubResource( 7 )
+anims/die = SubResource( 8 )
+anims/in = SubResource( 9 )
+anims/out = SubResource( 10 )
+anims/settings_in = SubResource( 11 )
+anims/settings_out = SubResource( 12 )
+
+[node name="Pause" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 24 )
+
+[node name="Blur" type="TextureRect" parent="CanvasLayer/Pause"]
+pause_mode = 2
+material = SubResource( 13 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Pause"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -246.0
+margin_top = -255.0
+margin_right = 247.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 300, 200 )
+
+[node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+pause_mode = 2
+margin_top = 100.0
+margin_right = 493.0
+margin_bottom = 154.0
+focus_neighbour_top = NodePath("../BackToMenu")
+text = "Zurück zum Spiel"
+
+[node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+pause_mode = 2
+margin_top = 158.0
+margin_right = 493.0
+margin_bottom = 212.0
+text = "Speichern"
+
+[node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+pause_mode = 2
+margin_top = 216.0
+margin_right = 493.0
+margin_bottom = 270.0
+text = "Einstellungen"
+
+[node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+pause_mode = 2
+margin_top = 274.0
+margin_right = 493.0
+margin_bottom = 328.0
+focus_neighbour_bottom = NodePath("../Back")
+text = "Zurück zum Menü"
+
+[node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sounds" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+pause_mode = 2
+margin_top = 71.0
+margin_right = 493.0
+margin_bottom = 125.0
+toggle_mode = true
+pressed = true
+text = "Sounds: an"
+script = ExtResource( 43 )
+
+[node name="Musik" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+pause_mode = 2
+margin_top = 129.0
+margin_right = 493.0
+margin_bottom = 183.0
+toggle_mode = true
+pressed = true
+text = "Musik: an"
+script = ExtResource( 44 )
+
+[node name="Rumble" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+pause_mode = 2
+margin_top = 187.0
+margin_right = 493.0
+margin_bottom = 241.0
+toggle_mode = true
+pressed = true
+text = "Controller-Rumble: an"
+script = ExtResource( 45 )
+
+[node name="Donations" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+pause_mode = 2
+margin_top = 245.0
+margin_right = 493.0
+margin_bottom = 299.0
+toggle_mode = true
+pressed = true
+text = "Spendenaufruf: an"
+script = ExtResource( 46 )
+
+[node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+pause_mode = 2
+margin_top = 303.0
+margin_right = 493.0
+margin_bottom = 357.0
+text = "Zurück"
+
+[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 47 )]
+pause_mode = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -118.0
+margin_bottom = 0.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+[connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
+[connection signal="area_entered" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_entered"]
+[connection signal="area_exited" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_exited"]
+[connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
+[connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="toggle_pause"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
+[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/BackToMenu" to="CanvasLayer" method="_on_BackToMenu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Panel/Settings/Back" to="CanvasLayer" method="_on_Back_pressed"]
