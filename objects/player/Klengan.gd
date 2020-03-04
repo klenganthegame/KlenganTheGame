@@ -55,10 +55,6 @@ func _process(_delta):
 		talk(["Gott: Uff... Spring doch nicht... diesmal habe ich dich gerettet...", "Bei hilfe ruf bitte 0800-1110111 an...."])
 		
 		hit(1)
-		
-	if Input.is_action_just_pressed("accept") and is_on_floor() \
-	and !Input.is_action_pressed("walk_left") and !Input.is_action_pressed("walk_right"):
-		interact()
 
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):
@@ -72,9 +68,9 @@ func set_looking_right(_looking_right):
 	$AnimatedSprite.scale = $AnimatedSprite.scale.abs() * Vector2(int(pow(-1, int(!_looking_right))), 1)
 
 
-func talk(text : Array):
-	if $CanvasLayer/DialogueBox.hidden:
-		$CanvasLayer/DialogueBox.talk(text)
+func talk(_text : Array):
+	if !$CanvasLayer/DialogueBox.visible:
+		$CanvasLayer/DialogueBox.talk(_text)
 		$StateMachine._change_state("stagger")
 
 

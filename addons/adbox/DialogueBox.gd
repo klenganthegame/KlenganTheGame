@@ -39,9 +39,7 @@ var time : float
 
 var text = []
 var num : int
-var wait : bool = false
-var block_walk : bool
-var hidden : bool = true
+var initial_blocked : bool = true
 
 var audio : AudioStreamPlayer
 var audioShouldPlay : bool = true
@@ -69,9 +67,6 @@ func _enter_tree():
 	container.margin_bottom = -margin_top_bottom
 	
 	InputBlocker = Timer.new()
-	
-	#InputBlocker.autostart = true
-	#InputBlocker.one_shot = true
 	InputBlocker.wait_time = block_time
 
 	ShowTimer = Timer.new()
@@ -86,7 +81,7 @@ func _enter_tree():
 	container.add_child(ShowTimer)
 	
 	InputBlocker.connect("timeout", self, "_on_InputBlocker_timeout")
-	ShowTimer.connect("timeout", self, "_on_Timer_timeout")
+	ShowTimer.connect("timeout", self, "_on_ShowTimer_timeout")
 	hide()
 
 func _ready():
@@ -99,12 +94,8 @@ func _ready():
 	add_child(audio)
 
 func _process(delta):
-	if hidden:
-		return
-
-func _input(event):
 	if Input.is_action_just_pressed(action_name):
-		if wait == true:
+		if !initial_blocked:
 			if TextBox.percent_visible != 1:
 				TextBox.percent_visible = 1
 				return
@@ -112,12 +103,15 @@ func _input(event):
 				num += 1
 				TextBox.text = text[num]
 				to_beginning()
-			elif TextBox.percent_visible == 1:
+			elif TextBox.percent_visible == 1.0:
 				num = 0
 				TextBox.percent_visible = .05
 				hide()
 				InputBlocker.wait_time = block_time
 				InputBlocker.start()
+		else:
+			initial_blocked = false
+
 
 func talk(textarray : Array):
 	"""
@@ -126,11 +120,11 @@ func talk(textarray : Array):
 	if textarray.empty():
 		return
 	text = textarray
-	block_walk = true
 	num = 0
 	TextBox.text = text[num]
-	show()
+	initial_blocked = true
 	to_beginning()
+
 
 func to_beginning():
 	percent_addition = 1 / float(TextBox.text.length())
@@ -138,13 +132,13 @@ func to_beginning():
 	ShowTimer.wait_time = wait_time
 	TextBox.percent_visible = 0.01
 	
-	wait = false
-	hidden = false
+	show()
 	audioShouldPlay = true
 	
 	ShowTimer.start()
 
-func _on_Timer_timeout():
+
+func _on_ShowTimer_timeout():
 	if TextBox.percent_visible < 1:
 		TextBox.percent_visible += percent_addition 
 #		if is_visible():
@@ -153,11 +147,11 @@ func _on_Timer_timeout():
 		audioShouldPlay = false
 		audio.stop()
 		ShowTimer.stop()
-	wait = true
+
 
 func _on_InputBlocker_timeout():
-	hidden = true
-	block_walk = false
+	hide()
+	ShowTimer.stop()
 	InputBlocker.stop()
 	audio.stop()
 	emit_signal("dialogue_exit")
