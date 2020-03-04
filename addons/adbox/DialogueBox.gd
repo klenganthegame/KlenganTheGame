@@ -94,6 +94,8 @@ func _ready():
 	add_child(audio)
 
 func _process(delta):
+	if !is_visible():
+		return
 	if Input.is_action_just_pressed(action_name):
 		if !initial_blocked:
 			if TextBox.percent_visible != 1:
