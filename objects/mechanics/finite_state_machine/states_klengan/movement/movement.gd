@@ -23,6 +23,9 @@ func update(_delta):
 		emit_signal("finished", "jump")
 	elif Input.is_action_just_pressed("attack"):
 		emit_signal("finished", "attack")
+	elif Input.is_action_just_pressed("accept") and owner.is_on_floor() \
+	and !Input.is_action_pressed("walk_left") and !Input.is_action_pressed("walk_right"):
+		owner.interact()
 
 
 func get_input_direction():
