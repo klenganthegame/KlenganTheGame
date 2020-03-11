@@ -12,7 +12,10 @@ func update(delta):
 	elif Input.is_action_just_pressed("jump"):
 		emit_signal("finished","doubleJump")
 	elif owner.is_on_floor():
-		emit_signal("finished", "move")
+		if Input.is_action_pressed("sneak"):
+			emit_signal("finished", "sneak")
+		else:
+			emit_signal("finished", "move")
 
 
 func apply_forces():
