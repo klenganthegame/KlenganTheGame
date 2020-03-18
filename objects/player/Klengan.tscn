@@ -466,10 +466,11 @@ __meta__ = {
 }
 
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
-position = Vector2( 180, 0 )
+position = Vector2( 140, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 30 )
 pressed = ExtResource( 31 )
+passby_press = true
 action = "walk_right"
 visibility_mode = 1
 
@@ -478,6 +479,7 @@ position = Vector2( 40, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 32 )
 pressed = ExtResource( 33 )
+passby_press = true
 action = "walk_left"
 visibility_mode = 1
 
@@ -495,15 +497,16 @@ __meta__ = {
 }
 
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 55, -5 )
+position = Vector2( 55, -100 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 34 )
 pressed = ExtResource( 34 )
+passby_press = true
 action = "jump"
 visibility_mode = 1
 
 [node name="Okay" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( -50, 0 )
+position = Vector2( 160, -100 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 35 )
 pressed = ExtResource( 36 )
@@ -511,7 +514,7 @@ action = "accept"
 visibility_mode = 1
 
 [node name="Sneak" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 250, 85 )
+position = Vector2( 145, 85 )
 rotation = 3.14159
 scale = Vector2( 5, 5 )
 normal = ExtResource( 34 )
@@ -519,9 +522,10 @@ action = "sneak"
 visibility_mode = 1
 
 [node name="attack" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 160, -100 )
+position = Vector2( 160, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 35 )
+passby_press = true
 action = "attack"
 
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
