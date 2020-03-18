@@ -66,14 +66,14 @@ animations = [ {
 "speed": 14.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 19.8874, 16 )
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( -10, -10, 25, -10, 30, 0, 15, 20, 0, 30, -10, 30 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 34.1829, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 34.3377, 6.71835 )
+extents = Vector2( 34.3377, 77.261 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24.9137, 10 )
@@ -362,11 +362,12 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
-position = Vector2( 19.25, 0 )
-shape = SubResource( 2 )
+position = Vector2( 5.82794, -8.96276 )
+shape = SubResource( 14 )
 disabled = true
 
 [node name="DashArea" type="Area2D" parent="AnimatedSprite"]
+editor/display_folded = true
 visible = false
 collision_layer = 0
 collision_mask = 16
@@ -377,7 +378,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0434299, 81.9697 )
+position = Vector2( 0.0434299, 11.9697 )
 shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -398,8 +399,11 @@ shape = SubResource( 5 )
 script = ExtResource( 23 )
 
 [node name="UI" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 0.176605
+margin_bottom = 0.176636
 theme = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false

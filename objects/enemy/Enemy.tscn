@@ -25,13 +25,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 12, 12 )
+extents = Vector2( 8.44902, 12 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 40, 60 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 36, 16 )
+extents = Vector2( 61.3382, 16 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 16
@@ -56,7 +56,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
-position = Vector2( 10, 0 )
+position = Vector2( 6.88552, -0.838509 )
 shape = SubResource( 2 )
 
 [node name="DetectionArea" type="Area2D" parent="AnimatedSprite"]
@@ -64,6 +64,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="DetectionCollision" type="CollisionShape2D" parent="AnimatedSprite/DetectionArea"]
+visible = false
 position = Vector2( 35, 0 )
 rotation = -1.5708
 shape = SubResource( 3 )
