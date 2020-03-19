@@ -315,6 +315,8 @@ shader_param/amount = 2.647
 collision_layer = 4
 collision_mask = 11
 script = ExtResource( 1 )
+max_life = 50
+actual_life = 50
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -368,7 +370,6 @@ disabled = true
 
 [node name="DashArea" type="Area2D" parent="AnimatedSprite"]
 editor/display_folded = true
-visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -399,7 +400,6 @@ shape = SubResource( 5 )
 script = ExtResource( 23 )
 
 [node name="UI" type="Control" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 0.176605

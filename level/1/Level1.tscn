@@ -82,7 +82,7 @@ position = Vector2( 0, -130 )
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="Lightswitch" parent="Lights" instance=ExtResource( 3 )]
-position = Vector2( -1044.55, 618.629 )
+position = Vector2( -1050, 600 )
 dialogue = [ "Oh! ein Lichtschalter..." ]
 
 [node name="Lamp_Mid" parent="Lights/Lightswitch" instance=ExtResource( 5 )]
@@ -241,6 +241,6 @@ scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 10 )
 [connection signal="interacted" from="Doors/DoorOpener" to="Doors/DoorOpener/Door1" method="trigger"]
-[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Mid" method="trigger"]
 [connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Right" method="trigger"]
 [connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Left" method="trigger"]
+[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Mid" method="trigger"]
