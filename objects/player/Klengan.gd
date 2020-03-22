@@ -19,7 +19,7 @@ func _enter_tree():
 		# ID, ATK, RELOAD_TIME, DISTANCE
 		Attack.new(KLENGAN_ATTACKS.NORMAL, 1, 5, 50),
 		Attack.new(KLENGAN_ATTACKS.DASH, 10, 5, 50),
-		Attack.new(KLENGAN_ATTACKS.HARPUNE, 1, 5, 50),
+		Attack.new(KLENGAN_ATTACKS.HARPUNE, 10, 5, 50),
 		]
 	pass
 

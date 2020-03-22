@@ -112,7 +112,6 @@ dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...
 position = Vector2( 1800, 623 )
 
 [node name="CollisionSamples" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Left_Box" type="StaticBody2D" parent="CollisionSamples"]
 position = Vector2( -800, 600 )
@@ -241,6 +240,6 @@ scale = Vector2( 5, 5 )
 z_index = -1
 texture = ExtResource( 10 )
 [connection signal="interacted" from="Doors/DoorOpener" to="Doors/DoorOpener/Door1" method="trigger"]
-[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Right" method="trigger"]
 [connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Left" method="trigger"]
 [connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Mid" method="trigger"]
+[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Right" method="trigger"]

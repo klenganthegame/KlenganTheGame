@@ -170,6 +170,11 @@ attack={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+attack2={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [input_devices]
 
@@ -182,6 +187,7 @@ pointing/emulate_touch_from_mouse=true
 2d_render/layer_3="player"
 2d_render/layer_4="interactable"
 2d_render/layer_5="enemy"
+2d_render/layer_6="projectile"
 
 [network]
 

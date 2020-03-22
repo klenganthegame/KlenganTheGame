@@ -8,6 +8,7 @@ func initialize_state_map():
 		"move": $Move,
 		"jump": $Jump,
 		"attack": $Attack,
+		"ranged": $Ranged,
 		"stagger": $Stagger,
 		"sneak": $Sneak,
 		"dash": $Dash,

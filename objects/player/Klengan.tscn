@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -47,6 +47,7 @@
 [ext_resource path="res://objects/player/Rumble.gd" type="Script" id=45]
 [ext_resource path="res://objects/player/Donations.gd" type="Script" id=46]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=47]
+[ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/ks_ranged.gd" type="Script" id=48]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -55,18 +56,18 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": false,
-"name": "attack",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk",
 "speed": 14.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "attack",
+"speed": 10.0
 } ]
 
-[sub_resource type="ConvexPolygonShape2D" id=14]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( -10, -10, 25, -10, 30, 0, 15, 20, 0, 30, -10, 30 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -345,6 +346,9 @@ MAX_SPEED = 150
 script = ExtResource( 8 )
 LERP_FACTOR = 0.05
 
+[node name="Ranged" type="Node" parent="StateMachine"]
+script = ExtResource( 48 )
+
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource( 9 )
 MAX_SPEED = 300
@@ -365,11 +369,10 @@ collision_mask = 16
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
 position = Vector2( 5.82794, -8.96276 )
-shape = SubResource( 14 )
+shape = SubResource( 2 )
 disabled = true
 
 [node name="DashArea" type="Area2D" parent="AnimatedSprite"]
-editor/display_folded = true
 collision_layer = 0
 collision_mask = 16
 

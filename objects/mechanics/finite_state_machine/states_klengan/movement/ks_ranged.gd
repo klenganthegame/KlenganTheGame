@@ -1,5 +1,6 @@
 extends "res://objects/mechanics/finite_state_machine/states_klengan/movement/movement.gd"
 
+onready var Harpune = preload("res://objects/mechanics/Harpune.tscn")
 
 func enter():
 	.enter()
@@ -21,7 +22,7 @@ func exit():
 
 
 func _on_animation_finished(_anim_name):
-	normal_attack()
+	shoot_harpune()
 	if Input.is_action_pressed("sneak"):
 		emit_signal("finished", "sneak")
 	else:
@@ -39,15 +40,16 @@ func apply_forces():
 		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
 
 
-func normal_attack():
+func shoot_harpune():
 	var enemies = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
 	var klengan_node = get_parent().get_parent()
 	#slow , strong
 	if !enemies.empty():
 		Input.start_joy_vibration(0, 1, 0, 0.2)
-	for enemy in enemies:
-		if enemy is Brokable:
-			continue
-		klengan_node.attack(KLENGAN_ATTACKS.NORMAL, enemy)
+	
+	var harpune = Harpune.instance()
+	
+	get_tree().current_scene.add_child(harpune)
+	harpune.start(owner, owner.position, owner.looking_right)
 
 

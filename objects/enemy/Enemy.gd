@@ -40,11 +40,9 @@ func stop_attack_cooldown():
 func _on_AttackCooldown_timeout():
 	$StateMachine._change_state("attack")
 
+
 func update_life():
 	$LifeBar.value = actual_life
 
-func dying():
-	print("dead")
-	# Play animation
-	queue_free()
-	remove_child(self)
+
+

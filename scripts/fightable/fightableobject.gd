@@ -65,3 +65,7 @@ func hit(damage : int):
 func die():
 	print("fightableobject.gd: ", self.name, " is dead.")
 	emit_signal("die")
+
+func dying():
+	# Play animation
+	queue_free()
