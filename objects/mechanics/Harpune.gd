@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const START_GRAVITY = 4
-const GRAVITY_FACTOR = 1.1
+var START_GRAVITY = -200
+const GRAVITY = 10
 
 var speed = 750
 var velocity = Vector2()
@@ -21,7 +21,7 @@ func start(_klengan_node, _position, _looking_right):
 
 
 func _physics_process(_delta):
-	velocity.y = velocity.y * GRAVITY_FACTOR
+	velocity.y += GRAVITY
 	rotation = velocity.angle()
 	var collision = move_and_collide(velocity * _delta)
 	if collision != null:
