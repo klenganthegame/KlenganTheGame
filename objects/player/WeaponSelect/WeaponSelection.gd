@@ -1,6 +1,8 @@
-extends Node2D
+extends Control
 
 export var unlocked_weapons = [1, 2]
+
+#var keys = [KEY_0, KEY_1, KEY_2 , KEY_3 , KEY_4 , KEY_5 , KEY_6 , KEY_7 , KEY_8 , KEY_9]
 var selected_weapon = 1
 var is_there = false
 
@@ -11,6 +13,7 @@ func _ready():
 	for weapon_button in $WeaponMenu.get_children():
 		for i in unlocked_weapons:
 			get_weapon(i).unlock()
+	select_weapon(1)
 
 func get_weapon(i) -> WeaponButton:
 	for weapon_button in $WeaponMenu.get_children():
@@ -31,12 +34,11 @@ func _input(event):
 				selected_weapon = 0
 			else:
 				var calced = input_key - 48 
-				if calced <= 9 and input_key != 48:
+				if calced <= 9 and input_key != 48 and unlocked_weapons.has(calced):
 					selected_weapon = calced
 					select_weapon(selected_weapon)
 
 func select_weapon(i : int):
-	
 	$Timer.start()
 	# check if weapon is avaiable
 	
@@ -60,7 +62,6 @@ func select_weapon(i : int):
 		if !is_there:
 			$AnimationPlayer.play("fade_in")
 			is_there = true
-	
 	emit_signal("weapon_selected", selected_weapon)
 
 func _on_Timer_timeout():
