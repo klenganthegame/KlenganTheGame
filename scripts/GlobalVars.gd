@@ -8,5 +8,8 @@ var sfx : bool = true
 var lifes : int = 10
 var touch_devices = ["Android", "iOS"]
 
+func is_touch()->bool:
+	return touch_devices.has(OS.get_name())
+
 func _ready():
 	pass
