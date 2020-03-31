@@ -9,11 +9,8 @@ var can_attack_player = false
 var velocity = Vector2()
 
 func _ready():
-	attacks = [
-		Attack.new(ENEMY_ATTACKS.NORMAL, 1, 5, 50),
-		Attack.new(ENEMY_ATTACKS.DISTANCE, 1, 5, 50),
-		
-	]
+	add_attack(Attack.new(ENEMY_ATTACKS.NORMAL, 1, 5, 50))
+	add_attack(Attack.new(ENEMY_ATTACKS.DISTANCE, 1, 5, 50))
 	$LifeBar.max_value = max_life
 	$LifeBar.value = actual_life
 

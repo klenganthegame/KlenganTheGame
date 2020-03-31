@@ -1,3 +1,6 @@
+"""
+Handles Game Saving and Loading
+"""
 extends Node
 
 const LIFE = "life"
@@ -8,6 +11,9 @@ const save_const = "data"
 const path = "user://save.data"
 
 func save_level(life: int, score : int, levelstate : int) -> bool:
+	"""
+	Saves Game-State into file
+	"""
 	var savedict = to_dict(life, score, levelstate)
 	var file = File.new()
 	file.open(path, file.WRITE)
@@ -16,6 +22,9 @@ func save_level(life: int, score : int, levelstate : int) -> bool:
 	return true
 
 func load_level() -> Dictionary:
+	"""
+	Loads a level and returns a dictionary
+	"""
 	var file = File.new()
 	var error = file.open(path, file.READ)
 	var text = file.get_as_text()
@@ -23,6 +32,9 @@ func load_level() -> Dictionary:
 	return r[save_const]
 
 func to_dict(life: int, score : int, levelstate : int) -> Dictionary:
+	"""
+	Converts parameters into Ditionary
+	"""
 	var result = {
 		save_const : {
 			LIFE : life,
