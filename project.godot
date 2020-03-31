@@ -77,6 +77,7 @@ SCENES="*res://scripts/scene_paths.gd"
 SaveGame="*res://scripts/SaveGame.gd"
 LevelChanger="*res://scripts/LevelChanger.gd"
 RumbleHandler="*res://scripts/RumbleHandler.gd"
+GlobalVars="*res://scripts/GlobalVars.gd"
 
 [display]
 
@@ -195,6 +196,7 @@ last_weapon={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [layer_names]
 
