@@ -3,7 +3,7 @@ extends FightableObject
 export(float) var min_attack_cooldown = 0
 export(float) var attack_cooldown_range = 1
 
-var looking_right = true
+var looking_right = false
 var focused_body = null
 var can_attack_player = false
 var velocity = Vector2()
@@ -37,11 +37,9 @@ func stop_attack_cooldown():
 func _on_AttackCooldown_timeout():
 	$StateMachine._change_state("attack")
 
+
 func update_life():
 	$LifeBar.value = actual_life
 
-func dying():
-	print("dead")
-	# Play animation
-	queue_free()
-	remove_child(self)
+
+

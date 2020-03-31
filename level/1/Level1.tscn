@@ -1,14 +1,15 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://level/1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/mechanics/Teleportation.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/mechanics/Brokable/Brokable.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Backstage_background.png" type="Texture" id=8]
-[ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=9]
+[ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/mechanics/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/mechanics/Teleportation.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/mechanics/Brokable/Brokable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Backstage_background.png" type="Texture" id=9]
+[ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=10]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -68,36 +69,46 @@ texture = SubResource( 1 )
 [node name="Klengan" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1000, 545 )
 
+[node name="Doors" type="Node2D" parent="."]
+position = Vector2( 0, 10 )
+
+[node name="DoorOpener" parent="Doors" instance=ExtResource( 3 )]
+position = Vector2( -600, 600 )
+dialogue = [ "Oh...eine Tür!" ]
+
+[node name="Door1" parent="Doors/DoorOpener" instance=ExtResource( 4 )]
+position = Vector2( 0, -130 )
+
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="Lamp_Left" parent="Lights" instance=ExtResource( 3 )]
-position = Vector2( -980.374, 318.156 )
+[node name="Lightswitch" parent="Lights" instance=ExtResource( 3 )]
+position = Vector2( -1050, 600 )
+dialogue = [ "Oh! ein Lichtschalter..." ]
 
-[node name="Lamp_Right" parent="Lights" instance=ExtResource( 3 )]
-position = Vector2( 639.393, 291.682 )
+[node name="Lamp_Mid" parent="Lights/Lightswitch" instance=ExtResource( 5 )]
+position = Vector2( 759.195, -318.599 )
 
-[node name="Lamp_Mid" parent="Lights" instance=ExtResource( 3 )]
-position = Vector2( -285.355, 300.03 )
+[node name="Lamp_Right" parent="Lights/Lightswitch" instance=ExtResource( 5 )]
+position = Vector2( 1683.94, -326.947 )
+
+[node name="Lamp_Left" parent="Lights/Lightswitch" instance=ExtResource( 5 )]
+position = Vector2( 64.176, -300.473 )
 
 [node name="InteractableSamples" type="Node2D" parent="."]
 
-[node name="Lightswitch" parent="InteractableSamples" instance=ExtResource( 4 )]
-position = Vector2( -1044.55, 618.629 )
-dialogue = [ "Oh! ein Lichtschalter..." ]
-
-[node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 4 )]
+[node name="Interactable6" parent="InteractableSamples" instance=ExtResource( 3 )]
 position = Vector2( 1675, 623 )
 dialogue = [ "Klengan: Sieht aus wie eine Tür..." ]
 
-[node name="Interactable5" parent="InteractableSamples" instance=ExtResource( 4 )]
+[node name="Interactable5" parent="InteractableSamples" instance=ExtResource( 3 )]
 position = Vector2( 1509.8, 625.267 )
 dialogue = [ "Klengan: Hm...", "Ein Haufen Beschallungsgeräte..." ]
 
-[node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 4 )]
-position = Vector2( -670.33, 649.227 )
+[node name="Interactable8" parent="InteractableSamples" instance=ExtResource( 3 )]
+position = Vector2( -782.33, 613.227 )
 dialogue = [ "Klengan: Lalala .... okay... ich lass das mit dem Singen lieber...", "Ich möchte ja nicht so enden wie der liebe Apo... oder Leon Marscher...." ]
 
-[node name="Teleportation" parent="InteractableSamples" instance=ExtResource( 5 )]
+[node name="Teleportation" parent="InteractableSamples" instance=ExtResource( 6 )]
 position = Vector2( 1800, 623 )
 
 [node name="CollisionSamples" type="Node2D" parent="."]
@@ -191,22 +202,22 @@ one_way_collision = true
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource( 6 )]
+[node name="Enemy" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( -500, 620 )
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 6 )]
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( -200.619, 578.989 )
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 6 )]
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 410.445, 523.624 )
 
-[node name="Brokable" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Brokable" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 503.997, 339.897 )
 
-[node name="Brokable2" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Brokable2" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 604.656, 339.157 )
 
-[node name="Brokable3" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Brokable3" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 706.774, 339.704 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -215,10 +226,10 @@ color = Color( 0.298039, 0.298039, 0.298039, 1 )
 
 [node name="Backstage_background" type="Sprite" parent="."]
 light_mask = 1023
-position = Vector2( 339.618, 456.798 )
+position = Vector2( 339.618, 456.449 )
 scale = Vector2( 5, 5 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="KLengan_entwurf_schuhe_3x" type="Sprite" parent="Backstage_background"]
 position = Vector2( -258.601, 21.9585 )
@@ -228,7 +239,8 @@ scale = Vector2( 0.0838118, 0.0838118 )
 position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
-texture = ExtResource( 9 )
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Mid" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Right" method="trigger"]
-[connection signal="interacted" from="InteractableSamples/Lightswitch" to="Lights/Lamp_Left" method="trigger"]
+texture = ExtResource( 10 )
+[connection signal="interacted" from="Doors/DoorOpener" to="Doors/DoorOpener/Door1" method="trigger"]
+[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Mid" method="trigger"]
+[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Left" method="trigger"]

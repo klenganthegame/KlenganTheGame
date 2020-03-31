@@ -6,6 +6,11 @@ func enter():
 	owner.play_directional_animation("idle")
 
 
+func update(_delta):
+	.update(_delta)
+	velocity = owner.move_and_slide(velocity, Vector2(0, -1))
+
+
 func _on_animation_finished(_anim_name):
 	._on_animation_finished(_anim_name)
 	attack(ENEMY_ATTACKS.NORMAL)

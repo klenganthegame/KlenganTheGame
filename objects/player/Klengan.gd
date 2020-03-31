@@ -15,11 +15,13 @@ signal dialogue_exit()
 
 func _enter_tree():
 	# TODO: Optimize
-	
-	# ID, ATK, RELOAD_TIME, DISTANCE
-	add_attack(Attack.new(KLENGAN_ATTACKS.NORMAL, 1, 5, 50))
-	add_attack(Attack.new(KLENGAN_ATTACKS.DASH, 10, 5, 50))
-	add_attack(Attack.new(KLENGAN_ATTACKS.HARPUNE, 1, 5, 50))
+	attacks = [
+		# ID, ATK, RELOAD_TIME, DISTANCE
+		Attack.new(KLENGAN_ATTACKS.NORMAL, 1, 5, 50),
+		Attack.new(KLENGAN_ATTACKS.DASH, 10, 5, 50),
+		Attack.new(KLENGAN_ATTACKS.HARPUNE, 10, 5, 50),
+		]
+	pass
 
 func _ready():
 	update_life()
@@ -38,7 +40,7 @@ func _process(_delta):
 		dash = 0.01
 		dashed = false
 	if Input.is_action_pressed("sneak") && dash < 1 && $StateMachine.current_state != $StateMachine.states_map["stagger"] && !dashed:
-		dash *= 1.03
+		dash *= 1.02
 	elif dash > 0.01 && $StateMachine.current_state != $StateMachine.states_map["stagger"] || dashed:
 		dash -= 0.01
 	elif $StateMachine.current_state != $StateMachine.states_map["stagger"]:

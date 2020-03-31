@@ -7,7 +7,7 @@ func enter():
 
 func update(delta):
 	.update(delta)
-	if Input.is_action_pressed("sneak"):
+	if Input.is_action_just_pressed("sneak"):
 		emit_signal("finished", "dash")
 	elif owner.is_on_floor():
 		emit_signal("finished", "move")
