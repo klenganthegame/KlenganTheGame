@@ -1,8 +1,7 @@
 extends Control
 
-export var unlocked_weapons = [1, 2]
+export var unlocked_weapons = [1, 2, 3]
 
-#var keys = [KEY_0, KEY_1, KEY_2 , KEY_3 , KEY_4 , KEY_5 , KEY_6 , KEY_7 , KEY_8 , KEY_9]
 var selected_weapon = 1
 var is_there = false
 
@@ -24,19 +23,44 @@ func get_weapon(i) -> WeaponButton:
 	return null
 
 func _input(event):
-	
+	# Handle Controller
+	if event is InputEventJoypadButton:
+		
+		if Input.is_action_pressed("next_weapon"):
+			select_increment(1)
+
+		if Input.is_action_just_pressed("last_weapon"):
+			select_increment(-1)
+			pass
+
+		
+
 	# Handle Keyboard
 	if event is InputEventKey:
 		if event.pressed:
 			var input_key = event.scancode
 			var selected
-			if input_key == 48:
-				selected_weapon = 0
-			else:
-				var calced = input_key - 48 
-				if calced <= 9 and input_key != 48 and unlocked_weapons.has(calced):
-					selected_weapon = calced
-					select_weapon(selected_weapon)
+			
+			var calced = input_key - 48 
+			if calced <= 9 and input_key != 48 and unlocked_weapons.has(calced):
+				selected_weapon = calced
+				select_weapon(selected_weapon)
+
+func select_increment(i : int):
+	var select = selected_weapon
+	select += i
+	
+	var selected = selected_weapon
+	selected += i
+	while !unlocked_weapons.has(selected):
+		select += i
+		if selected > unlocked_weapons.max():
+			selected = 1
+			
+		if selected <= 0:
+			selected = unlocked_weapons.max()
+	selected_weapon = selected
+	select_weapon(selected_weapon)
 
 func select_weapon(i : int):
 	$Timer.start()
