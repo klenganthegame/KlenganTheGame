@@ -9,7 +9,7 @@ func enter():
 	owner.set_DashCollision_disabled(false)
 	dashHeight = 0
 	if owner.is_on_floor():
-		velocity.y = -JUMP_VELOCITY * 1.2
+		velocity.y = -JUMP_VELOCITY * 1.5
 		trueDash =true
 	else:
 		velocity.y = JUMP_VELOCITY
