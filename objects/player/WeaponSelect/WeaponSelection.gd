@@ -7,6 +7,11 @@ var is_there = false
 
 signal weapon_selected(id)
 
+func _enter_tree():
+	for weapon_button in $WeaponMenu.get_children():
+		if weapon_button is WeaponButton:
+			weapon_button.connect("selected_self", self, "touch_button")
+		
 func _ready():
 	$Timer.stop()
 	for weapon_button in $WeaponMenu.get_children():
@@ -24,17 +29,11 @@ func get_weapon(i) -> WeaponButton:
 
 func _input(event):
 	# Handle Controller
-	if event is InputEventJoypadButton:
-		
-		if Input.is_action_pressed("next_weapon"):
-			select_increment(1)
-
-		if Input.is_action_just_pressed("last_weapon"):
-			select_increment(-1)
-			pass
-
-		
-
+	if Input.is_action_just_pressed("next_weapon"):
+		select_increment(1)
+	if Input.is_action_just_pressed("last_weapon"):
+		select_increment(-1)
+	
 	# Handle Keyboard
 	if event is InputEventKey:
 		if event.pressed:
@@ -46,6 +45,13 @@ func _input(event):
 				selected_weapon = calced
 				select_weapon(selected_weapon)
 
+func touch_button(id):
+	if is_touch():
+		select_weapon(id)
+
+func is_touch()->bool:
+	return GlobalVars.touch_devices.has(OS.get_name())
+	
 func select_increment(i : int):
 	var select = selected_weapon
 	select += i
@@ -83,7 +89,7 @@ func select_weapon(i : int):
 	if w != null:
 		w.pressed = true
 		w.select()
-		if !is_there:
+		if !is_there :
 			$AnimationPlayer.play("fade_in")
 			is_there = true
 	emit_signal("weapon_selected", selected_weapon)
