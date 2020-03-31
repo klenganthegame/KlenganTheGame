@@ -4,7 +4,7 @@ onready var Harpune = preload("res://objects/mechanics/Harpune.tscn")
 
 func enter():
 	.enter()
-	if owner.attacks.has(KLENGAN_ATTACKS.HARPUNE):
+	if owner.contains_attack(Attack.new(KLENGAN_ATTACKS.HARPUNE,0,0,0)):
 		owner.set_AttackCollision_disabled(false)
 		owner.get_node("AnimatedSprite").stop()
 		if velocity.x != 0:
@@ -15,6 +15,7 @@ func enter():
 			owner.play_directional_animation("attack") 
 	else:
 		emit_signal("finished","attack")
+		print("test")
 
 
 func exit():
