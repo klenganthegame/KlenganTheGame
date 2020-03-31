@@ -30,22 +30,27 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
 }
 
-[node name="WeaponSelection" type="Node2D"]
+[node name="WeaponSelection" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="WeaponMenu" type="HBoxContainer" parent="."]
-margin_right = 158.0
+margin_right = 248.0
 margin_bottom = 91.0
-rect_scale = Vector2( 1e-05, 1e-05 )
 theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
