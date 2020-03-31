@@ -71,7 +71,7 @@ animations = [ {
 points = PoolVector2Array( -10, -10, 25, -10, 30, 0, 15, 20, 0, 30, -10, 30 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 34.1829, 10 )
+extents = Vector2( 20.4573, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 34.3377, 77.261 )
@@ -325,15 +325,12 @@ START_STATE = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
-JUMP_VELOCITY = 800
 
 [node name="Move" type="Node" parent="StateMachine"]
 script = ExtResource( 4 )
-JUMP_VELOCITY = 800
 
 [node name="Jump" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
-JUMP_VELOCITY = 800
 
 [node name="Stagger" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
@@ -342,21 +339,17 @@ script = ExtResource( 6 )
 script = ExtResource( 7 )
 ACCELERATON = 30
 MAX_SPEED = 150
-JUMP_VELOCITY = 800
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource( 8 )
-JUMP_VELOCITY = 800
 LERP_FACTOR = 0.05
 
 [node name="Ranged" type="Node" parent="StateMachine"]
 script = ExtResource( 9 )
-JUMP_VELOCITY = 800
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource( 10 )
 MAX_SPEED = 300
-JUMP_VELOCITY = 800
 
 [node name="DoubleJump" type="Node" parent="StateMachine"]
 script = ExtResource( 11 )
@@ -705,8 +698,8 @@ margin_bottom = 0.0
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="toggle_pause"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
