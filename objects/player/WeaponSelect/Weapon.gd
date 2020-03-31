@@ -23,4 +23,3 @@ func unselect():
 
 func _on_Weapon_pressed():
 	emit_signal("selected_self", key_id)
-	pass # Replace with function body.

@@ -13,7 +13,8 @@ func _enter_tree():
 			weapon_button.connect("selected_self", self, "touch_button")
 		
 func _ready():
-	$Timer.stop()
+	if !is_touch():
+		$Timer.stop()
 	for weapon_button in $WeaponMenu.get_children():
 		for i in unlocked_weapons:
 			get_weapon(i).unlock()
@@ -69,7 +70,8 @@ func select_increment(i : int):
 	select_weapon(selected_weapon)
 
 func select_weapon(i : int):
-	$Timer.start()
+	if !is_touch():
+		$Timer.start()
 	# check if weapon is avaiable
 	
 	if unlocked_weapons.has(i):
@@ -95,5 +97,6 @@ func select_weapon(i : int):
 	emit_signal("weapon_selected", selected_weapon)
 
 func _on_Timer_timeout():
-	$AnimationPlayer.play("fade_out")
-	is_there = false
+	if !is_touch():
+		$AnimationPlayer.play("fade_out")
+		is_there = false
