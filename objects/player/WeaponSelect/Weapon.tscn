@@ -64,3 +64,4 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/select = SubResource( 1 )
 anims/unselect = SubResource( 2 )
+[connection signal="pressed" from="." to="." method="_on_Weapon_pressed"]

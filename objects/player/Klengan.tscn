@@ -72,7 +72,7 @@ animations = [ {
 points = PoolVector2Array( -10, -10, 25, -10, 30, 0, 15, 20, 0, 30, -10, 30 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 20.4573, 10 )
+extents = Vector2( 34.1829, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 34.3377, 77.261 )
@@ -520,7 +520,7 @@ action = "jump"
 visibility_mode = 1
 
 [node name="Okay" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 160, -100 )
+position = Vector2( -40, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 36 )
 pressed = ExtResource( 37 )
@@ -541,6 +541,24 @@ scale = Vector2( 5, 5 )
 normal = ExtResource( 36 )
 passby_press = true
 action = "attack"
+
+[node name="R" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( 160.909, -190.056 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 31 )
+pressed = ExtResource( 32 )
+passby_press = true
+action = "last_weapon"
+visibility_mode = 1
+
+[node name="L" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
+position = Vector2( 60.9089, -190.056 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 34 )
+passby_press = true
+action = "next_weapon"
+visibility_mode = 1
 
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
 pause_mode = 2
