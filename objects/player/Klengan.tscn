@@ -411,20 +411,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pause" type="Button" parent="CanvasLayer/UI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -107.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = 95.0
-focus_mode = 0
-enabled_focus_mode = 0
-text = "||"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
 pause_mode = 2
 margin_left = 20.0
@@ -468,97 +454,6 @@ margin_left = -123.5
 margin_top = 30.0
 margin_right = 123.5
 margin_bottom = 139.0
-
-[node name="Arrows" type="Control" parent="CanvasLayer"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -120.0
-margin_right = 265.0
-margin_bottom = -21.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Right" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
-position = Vector2( 140, 0 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 31 )
-pressed = ExtResource( 32 )
-passby_press = true
-action = "walk_right"
-visibility_mode = 1
-
-[node name="Left" type="TouchScreenButton" parent="CanvasLayer/Arrows"]
-position = Vector2( 40, 0 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 33 )
-pressed = ExtResource( 34 )
-passby_press = true
-action = "walk_left"
-visibility_mode = 1
-
-[node name="Interaction" type="Control" parent="CanvasLayer"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -271.0
-margin_top = -120.0
-margin_right = -40.0
-margin_bottom = -18.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Up" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 55, -100 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 35 )
-pressed = ExtResource( 35 )
-passby_press = true
-action = "jump"
-visibility_mode = 1
-
-[node name="Okay" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( -40, 0 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 36 )
-pressed = ExtResource( 37 )
-action = "accept"
-visibility_mode = 1
-
-[node name="Sneak" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 145, 85 )
-rotation = 3.14159
-scale = Vector2( 5, 5 )
-normal = ExtResource( 35 )
-action = "sneak"
-visibility_mode = 1
-
-[node name="attack" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 160, 0 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 36 )
-passby_press = true
-action = "attack"
-
-[node name="R" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 160.909, -190.056 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 31 )
-pressed = ExtResource( 32 )
-passby_press = true
-action = "last_weapon"
-visibility_mode = 1
-
-[node name="L" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 60.9089, -190.056 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 33 )
-pressed = ExtResource( 34 )
-passby_press = true
-action = "next_weapon"
-visibility_mode = 1
 
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
 pause_mode = 2
@@ -719,12 +614,124 @@ margin_top = -118.0
 margin_bottom = 0.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+
+[node name="TouchControlls" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Button" parent="CanvasLayer/TouchControlls"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -107.0
+margin_top = 20.1766
+margin_right = -20.0
+margin_bottom = 95.1766
+focus_mode = 0
+enabled_focus_mode = 0
+text = "||"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrows" type="Control" parent="CanvasLayer/TouchControlls"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -120.0
+margin_right = 265.0
+margin_bottom = -21.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Arrows"]
+position = Vector2( 140, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 31 )
+pressed = ExtResource( 32 )
+passby_press = true
+action = "walk_right"
+visibility_mode = 1
+
+[node name="Left" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Arrows"]
+position = Vector2( 40, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 34 )
+passby_press = true
+action = "walk_left"
+visibility_mode = 1
+
+[node name="Interaction" type="Control" parent="CanvasLayer/TouchControlls"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -271.0
+margin_top = -120.0
+margin_right = -40.0
+margin_bottom = -18.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+position = Vector2( 55, -100 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 35 )
+pressed = ExtResource( 35 )
+passby_press = true
+action = "jump"
+visibility_mode = 1
+
+[node name="Okay" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+position = Vector2( 160, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 36 )
+pressed = ExtResource( 37 )
+action = "accept"
+visibility_mode = 1
+
+[node name="Attack" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+position = Vector2( -40, 0 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 36 )
+passby_press = true
+action = "attack"
+
+[node name="Sneak" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+position = Vector2( 145, 85 )
+rotation = 3.14159
+scale = Vector2( 5, 5 )
+normal = ExtResource( 35 )
+action = "sneak"
+visibility_mode = 1
+
+[node name="R" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+position = Vector2( 160.909, -190.056 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 31 )
+pressed = ExtResource( 32 )
+passby_press = true
+action = "last_weapon"
+visibility_mode = 1
+
+[node name="L" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+position = Vector2( 60.9089, -190.056 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 34 )
+passby_press = true
+action = "next_weapon"
+visibility_mode = 1
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_entered"]
 [connection signal="area_exited" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_exited"]
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
-[connection signal="pressed" from="CanvasLayer/UI/Pause" to="CanvasLayer" method="toggle_pause"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
@@ -732,3 +739,4 @@ margin_bottom = 0.0
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/BackToMenu" to="CanvasLayer" method="_on_BackToMenu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/Settings/Back" to="CanvasLayer" method="_on_Back_pressed"]
+[connection signal="pressed" from="CanvasLayer/TouchControlls/Pause" to="CanvasLayer" method="toggle_pause"]
