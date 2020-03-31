@@ -543,7 +543,7 @@ passby_press = true
 action = "attack"
 
 [node name="R" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 156.909, -198.056 )
+position = Vector2( 160.909, -190.056 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 31 )
 pressed = ExtResource( 32 )
@@ -552,7 +552,7 @@ action = "last_weapon"
 visibility_mode = 1
 
 [node name="L" type="TouchScreenButton" parent="CanvasLayer/Interaction"]
-position = Vector2( 56.9089, -198.056 )
+position = Vector2( 60.9089, -190.056 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 33 )
 pressed = ExtResource( 34 )
