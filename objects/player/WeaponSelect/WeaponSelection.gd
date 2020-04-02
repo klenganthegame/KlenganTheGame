@@ -34,6 +34,8 @@ func _input(event):
 		select_increment(1)
 	if Input.is_action_just_pressed("last_weapon"):
 		select_increment(-1)
+	if Input.is_action_just_pressed("show_inventory"):
+		select_weapon(selected_weapon)
 	
 	# Handle Keyboard
 	if event is InputEventKey:
