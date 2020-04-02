@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -49,6 +49,7 @@
 [ext_resource path="res://objects/player/Donations.gd" type="Script" id=47]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=48]
 [ext_resource path="res://objects/player/WeaponSelect/WeaponSelection.tscn" type="PackedScene" id=49]
+[ext_resource path="res://scenes/Controls.tscn" type="PackedScene" id=50]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -603,6 +604,9 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Blur" type="TextureRect" parent="CanvasLayer/Pause"]
 pause_mode = 2
@@ -625,40 +629,52 @@ margin_top = -255.0
 margin_right = 247.0
 margin_bottom = 174.0
 rect_min_size = Vector2( 300, 200 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
-margin_top = 100.0
+margin_top = 71.0
 margin_right = 493.0
-margin_bottom = 154.0
+margin_bottom = 125.0
 focus_neighbour_top = NodePath("../BackToMenu")
 text = "Zurück zum Spiel"
 
 [node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
-margin_top = 158.0
+margin_top = 129.0
 margin_right = 493.0
-margin_bottom = 212.0
+margin_bottom = 183.0
 text = "Speichern"
 
 [node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
-margin_top = 216.0
+margin_top = 187.0
 margin_right = 493.0
-margin_bottom = 270.0
+margin_bottom = 241.0
 text = "Einstellungen"
+
+[node name="Controls" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+margin_top = 245.0
+margin_right = 493.0
+margin_bottom = 299.0
+text = "Steuerung"
 
 [node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
-margin_top = 274.0
+margin_top = 303.0
 margin_right = 493.0
-margin_bottom = 328.0
+margin_bottom = 357.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
 
@@ -726,7 +742,12 @@ anchor_bottom = 1.0
 margin_top = -118.0
 margin_bottom = 0.0
 
+[node name="Controlls" parent="CanvasLayer/Pause" instance=ExtResource( 50 )]
+visible = false
+
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+visible = false
+color = Color( 0, 0, 0, 1 )
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_entered"]
 [connection signal="area_exited" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_exited"]
@@ -738,5 +759,7 @@ margin_bottom = 0.0
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Controls" to="CanvasLayer" method="_on_Controls_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/BackToMenu" to="CanvasLayer" method="_on_BackToMenu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/Settings/Back" to="CanvasLayer" method="_on_Back_pressed"]
+[connection signal="closed" from="CanvasLayer/Pause/Controlls" to="CanvasLayer" method="_on_Controlls_closed"]

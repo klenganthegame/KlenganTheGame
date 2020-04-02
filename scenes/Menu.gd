@@ -51,3 +51,12 @@ func _on_Settings_pressed():
 	
 func _on_Back_pressed():
 	toggle_menu()
+
+
+func _on_Control_closed():
+	$VBoxContainer/Controlls.grab_focus()
+
+
+func _on_Controls_pressed():
+	$Controlls.show_controlls()
+	pass # Replace with function body.

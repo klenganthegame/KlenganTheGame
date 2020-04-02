@@ -1,0 +1,316 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=1]
+[ext_resource path="res://resources/sprites/ui/joypad.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Controls.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Animation" id=2]
+resource_name = "hide"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "show"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Controlls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Joypad" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_right = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Joypad"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 92.0
+margin_top = 76.0
+margin_right = -132.0
+margin_bottom = -38.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="weapon" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -569.945
+margin_top = -133.676
+margin_right = -329.945
+margin_bottom = -79.6759
+text = "L1:
+vorherige
+Waffe"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Walk" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -530.945
+margin_top = -26.6759
+margin_right = -328.945
+margin_bottom = -10.6759
+text = "Laufen"
+align = 2
+
+[node name="Walk2" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -545.445
+margin_top = 42.3241
+margin_right = -334.445
+margin_bottom = 58.3241
+text = "Laufen"
+align = 2
+
+[node name="Pause" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 296.0
+margin_top = -202.0
+margin_right = 424.0
+margin_bottom = -186.0
+text = "Pause"
+
+[node name="weapon_next" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 296.0
+margin_top = -178.0
+margin_right = 504.0
+margin_bottom = -124.0
+text = "R1: 
+nächste Waffe
+R2: Angriff"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 297.0
+margin_top = -108.0
+margin_right = 425.0
+margin_bottom = -92.0
+text = "Inventar"
+
+[node name="Attack" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 296.0
+margin_top = -75.0
+margin_right = 424.0
+margin_bottom = -59.0
+text = "Angriff"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Interact" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 294.0
+margin_top = -29.0
+margin_right = 486.0
+margin_bottom = -13.0
+text = "Interagieren/
+Sprechen"
+
+[node name="Jump" type="Label" parent="Joypad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 297.0
+margin_top = 51.0
+margin_right = 425.0
+margin_bottom = 67.0
+text = "Springen/
+Akzeptieren"
+
+[node name="Keyboard" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Keyboard"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -288.0
+margin_top = -74.5
+margin_right = 288.0
+margin_bottom = 74.5
+text = "WASD      - Laufen, Springen, Ducken
+Leertaste - Springen
+E         - Interagieren/Sprechen
+K         - Angreifen
+1 - 9     - Waffe wählen
+J         - Waffe zurück
+L         - nächste Waffe
+
+"
+
+[node name="JoyPadButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -138.0
+margin_top = 20.0
+margin_right = -2.0
+margin_bottom = 74.0
+focus_neighbour_left = NodePath("../Back")
+focus_neighbour_right = NodePath("../KeyboardButton")
+focus_neighbour_bottom = NodePath("../Back")
+focus_next = NodePath("../KeyboardButton")
+focus_previous = NodePath("../Back")
+text = "JoyPad"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyboardButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 2.0
+margin_top = 20.0
+margin_right = 170.0
+margin_bottom = 74.0
+focus_neighbour_left = NodePath("../JoyPadButton")
+focus_neighbour_right = NodePath("../Back")
+focus_neighbour_bottom = NodePath("../Back")
+focus_next = NodePath("../Back")
+focus_previous = NodePath("../JoyPadButton")
+text = "Keyboard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -64.0
+margin_right = 68.0
+margin_bottom = -10.0
+focus_neighbour_left = NodePath("../JoyPadButton")
+focus_neighbour_top = NodePath("../JoyPadButton")
+focus_neighbour_right = NodePath("../KeyboardButton")
+focus_next = NodePath("../JoyPadButton")
+focus_previous = NodePath("../KeyboardButton")
+text = "zurück"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hide = SubResource( 2 )
+anims/show = SubResource( 3 )
+[connection signal="pressed" from="JoyPadButton" to="." method="_on_JoyPad_pressed"]
+[connection signal="pressed" from="KeyboardButton" to="." method="_on_Keyboard_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
