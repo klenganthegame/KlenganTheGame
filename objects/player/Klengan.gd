@@ -34,8 +34,6 @@ func _ready():
 	spawn = transform.get_origin()
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		$CanvasLayer.toggle_pause()
 	if dash <= 0.01:
 		dash = 0.01
 		dashed = false
