@@ -12,7 +12,7 @@ func enter():
 		velocity.y = -JUMP_VELOCITY * 1.5
 		trueDash =true
 	else:
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY*1.5
 		damage = true
 		dashHeight = owner.position.y
 		owner.set_collision_mask_bit(1, false)
@@ -50,7 +50,7 @@ func do_damage():
 		RumbleHandler.rumble_dash()
 		damage = false
 		dashHeight -= owner.position.y
-		dashDamage = ((pow((-(dashHeight-owner.position.y)+50*dashDamage),2)/3000)*dashDamage-((50*pow(dashDamage,2))/60)*dashDamage)/1000
+		dashDamage = (((pow((-(dashHeight)+50*dashDamage),2)/3000)*dashDamage-((50*pow(dashDamage,2))/60)*dashDamage)/100)*rand_range(0.5, 1)
 		print(dashDamage)
 		var enemies = owner.get_node("AnimatedSprite/DashArea").get_overlapping_bodies()
 		for enemy in enemies:
