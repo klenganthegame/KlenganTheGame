@@ -16,7 +16,7 @@ func load_level_one():
 
 
 func _on_LoadGame_pressed():
-	pass # Replace with function body.
+	LevelChanger.change_level_to(SCENES.Level1)
 
 
 func _on_Credits_pressed():
@@ -29,11 +29,11 @@ func _on_Exit_pressed():
 
 func _on_Reddit_pressed():
 	OS.shell_open("https://www.reddit.com/r/Klengan/")
-	pass # Replace with function body.
+
 
 func _on_Youtube_pressed():
 	OS.shell_open("https://www.youtube.com/channel/UC9N0MRIXnKo03d0mmZ3BwPA")
-	pass # Replace with function body.
+
 
 func toggle_menu():
 	if $Pause.visible:
@@ -42,7 +42,7 @@ func toggle_menu():
 	else:
 		$SettingsMenu.play("in")
 		if Input.get_joy_name(0) != "":
-			$Pause/PausePanel/Settings/Sounds.grab_focus()
+			$Pause/PausePanel/Settings/MasterVolumeSlider.grab_focus()
 	$Pause.visible = !$Pause.visible
 
 

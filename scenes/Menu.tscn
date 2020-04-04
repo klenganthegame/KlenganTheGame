@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://resources/icons/youtube.png" type="Texture" id=4]
 [ext_resource path="res://resources/icons/reddit.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/player/Sounds.gd" type="Script" id=7]
+[ext_resource path="res://objects/mechanics/ui/BusVolumeSlider.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Donations.gd" type="Script" id=8]
-[ext_resource path="res://objects/player/Musik.gd" type="Script" id=9]
 [ext_resource path="res://scenes/Controls.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/player/Rumble.gd" type="Script" id=11]
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=12]
@@ -76,7 +75,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "out"
+resource_name = "in"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause:modulate")
 tracks/0/interp = 1
@@ -91,7 +90,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "out (copy)"
+resource_name = "out"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause:modulate")
 tracks/0/interp = 1
@@ -215,8 +214,8 @@ anims/in = SubResource( 2 )
 anims/load_game = SubResource( 3 )
 
 [node name="SettingsMenu" type="AnimationPlayer" parent="."]
-anims/out = SubResource( 4 )
-"anims/out (copy)" = SubResource( 5 )
+anims/in = SubResource( 4 )
+anims/out = SubResource( 5 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -268,32 +267,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sounds" type="Button" parent="Pause/PausePanel/Settings"]
-pause_mode = 2
-margin_top = 71.0
-margin_right = 493.0
-margin_bottom = 125.0
-focus_neighbour_top = NodePath("../Back")
-toggle_mode = true
-pressed = true
-text = "Sounds: an"
-script = ExtResource( 7 )
+[node name="MasterVolumeSlider" parent="Pause/PausePanel/Settings" instance=ExtResource( 7 )]
 
-[node name="Musik" type="Button" parent="Pause/PausePanel/Settings"]
-pause_mode = 2
-margin_top = 129.0
-margin_right = 493.0
-margin_bottom = 183.0
-toggle_mode = true
-pressed = true
-text = "Musik: an"
-script = ExtResource( 9 )
+[node name="SoundsVolumeSlider" parent="Pause/PausePanel/Settings" instance=ExtResource( 7 )]
+prefix = "Sounds: "
+audio_bus = "Sounds"
+
+[node name="MusicVolumeSlider" parent="Pause/PausePanel/Settings" instance=ExtResource( 7 )]
+prefix = "Music: "
+audio_bus = "Music"
 
 [node name="Rumble" type="Button" parent="Pause/PausePanel/Settings"]
 pause_mode = 2
-margin_top = 187.0
+margin_top = 207.0
 margin_right = 493.0
-margin_bottom = 241.0
+margin_bottom = 261.0
 toggle_mode = true
 pressed = true
 text = "Controller-Rumble: an"
@@ -301,9 +289,9 @@ script = ExtResource( 11 )
 
 [node name="Donations" type="Button" parent="Pause/PausePanel/Settings"]
 pause_mode = 2
-margin_top = 245.0
+margin_top = 265.0
 margin_right = 493.0
-margin_bottom = 299.0
+margin_bottom = 319.0
 toggle_mode = true
 pressed = true
 text = "Spendenaufruf: an"
@@ -311,9 +299,9 @@ script = ExtResource( 8 )
 
 [node name="Back" type="Button" parent="Pause/PausePanel/Settings"]
 pause_mode = 2
-margin_top = 303.0
+margin_top = 323.0
 margin_right = 493.0
-margin_bottom = 357.0
+margin_bottom = 377.0
 focus_neighbour_bottom = NodePath("../Sounds")
 text = "Zurück"
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
