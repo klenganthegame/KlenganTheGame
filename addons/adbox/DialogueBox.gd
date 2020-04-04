@@ -84,14 +84,17 @@ func _enter_tree():
 	ShowTimer.connect("timeout", self, "_on_ShowTimer_timeout")
 	hide()
 
+
 func _ready():
 	message_sound.loop_mode = message_sound.LOOP_DISABLED
 	message_sound.loop_begin = 0
 	message_sound.loop_end = 0
 	
 	audio = AudioStreamPlayer.new()
+	audio.bus = AudioHandler.BUS_DIALOGUE_SOUNDS
 	audio.stream = message_sound
 	add_child(audio)
+
 
 func _process(delta):
 	if !is_visible():
@@ -143,8 +146,8 @@ func to_beginning():
 func _on_ShowTimer_timeout():
 	if TextBox.percent_visible < 1:
 		TextBox.percent_visible += percent_addition 
-#		if is_visible():
-#			audio.play(0)
+		if is_visible():
+			audio.play(0)
 	else:
 		audioShouldPlay = false
 		audio.stop()

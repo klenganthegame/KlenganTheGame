@@ -26,7 +26,7 @@ func _physics_process(_delta):
 	var collision = move_and_collide(velocity * _delta)
 	if collision != null:
 		if collision.collider is FightableObject:
-			klengan_node.attack(KLENGAN_ATTACKS.HARPUNE, collision.collider)
+			klengan_node.attack(KLENGAN_ATTACKS.NORMAL, collision.collider)
 		queue_free()
 
 

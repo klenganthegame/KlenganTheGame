@@ -51,7 +51,7 @@ func _process(_delta):
 	$CanvasLayer/UI/Health.value = actual_life
 	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
 		transform.origin = spawn
-		talk(["Gott: Uff... Spring doch nicht... diesmal habe ich dich gerettet...", "Bei hilfe ruf bitte 0800-1110111 an...."])
+		talk(["Gott: Uff... Spring doch nicht... diesmal habe ich dich gerettet...", "Für Hilfe ruf bitte 0800-1110111 an...."])
 		
 		hit(1)
 
