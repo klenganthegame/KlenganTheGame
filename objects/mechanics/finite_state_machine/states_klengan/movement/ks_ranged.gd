@@ -4,18 +4,14 @@ onready var Harpune = preload("res://objects/mechanics/Harpune.tscn")
 
 func enter():
 	.enter()
-	if owner.contains_attack(Attack.new(KLENGAN_ATTACKS.HARPUNE,0,0,0)):
-		owner.set_AttackCollision_disabled(false)
-		owner.get_node("AnimatedSprite").stop()
-		if velocity.x != 0:
-			#replace with move attack anim
-			owner.play_directional_animation("attack") 
-		else:
-			#replace with idle attack anim
-			owner.play_directional_animation("attack") 
+	owner.set_AttackCollision_disabled(false)
+	owner.get_node("AnimatedSprite").stop()
+	if velocity.x != 0:
+		#replace with move attack anim
+		owner.play_directional_animation("attack") 
 	else:
-		emit_signal("finished","attack")
-		print("test")
+		#replace with idle attack anim
+		owner.play_directional_animation("attack") 
 
 
 func exit():

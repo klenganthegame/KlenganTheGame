@@ -9,10 +9,10 @@ func enter():
 	owner.set_DashCollision_disabled(false)
 	dashHeight = 0
 	if owner.is_on_floor():
-		velocity.y = -JUMP_VELOCITY * 1.5
+		velocity.y = -JUMP_VELOCITY * 1.2
 		trueDash =true
 	else:
-		velocity.y = JUMP_VELOCITY*1.5
+		velocity.y = JUMP_VELOCITY
 		damage = true
 		dashHeight = owner.position.y
 		owner.set_collision_mask_bit(1, false)
@@ -20,8 +20,7 @@ func enter():
 
 func update(_delta):
 	.update(_delta)
-	applyForces()
-	if Input.is_action_just_pressed("sneak") && trueDash: #if debug or test remove "just_"  
+	if Input.is_action_just_pressed("sneak") && trueDash:
 		dashHeight = owner.position.y
 		dashDamage = (JUMP_VELOCITY*3)/1000
 		velocity.y = JUMP_VELOCITY*3
@@ -50,20 +49,9 @@ func do_damage():
 		RumbleHandler.rumble_dash()
 		damage = false
 		dashHeight -= owner.position.y
-		dashDamage = (((pow((-(dashHeight)+50*dashDamage),2)/3000)*dashDamage-((50*pow(dashDamage,2))/60)*dashDamage)/100)*rand_range(0.5, 1)
+		dashDamage = ((pow((-(dashHeight-owner.position.y)+50*dashDamage),2)/3000)*dashDamage-((50*pow(dashDamage,2))/60)*dashDamage)/1000
 		print(dashDamage)
 		var enemies = owner.get_node("AnimatedSprite/DashArea").get_overlapping_bodies()
 		for enemy in enemies:
 			get_parent().get_parent().attack(KLENGAN_ATTACKS.DASH, enemy, dashDamage)
 		owner.set_DashCollision_disabled(true)
-
-func applyForces():
-	var input_direction = get_input_direction()
-	if input_direction == Vector2():
-		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
-	else:
-		if Input.is_action_pressed("sneak"):
-			velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED/4*1.5, MAX_SPEED/4*1.5)
-		else:
-			velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
-		owner.play_directional_animation("walk", (input_direction.x > 0))

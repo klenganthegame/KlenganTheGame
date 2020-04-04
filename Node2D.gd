@@ -24,6 +24,7 @@ func off():
 	$StaticBody2D/Door.disabled = false
 
 func trigger():
+	AudioHandler.play_sound("door")
 	isOpen = !isOpen
 	if isOpen:
 		on()

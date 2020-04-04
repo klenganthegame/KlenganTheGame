@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=20 format=2]
+[gd_resource type="Theme" load_steps=26 format=2]
 
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_disabled.png" type="Texture" id=1]
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_selected.png" type="Texture" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://resources/sprites/ui/theme/popup_selected.png" type="Texture" id=7]
 [ext_resource path="res://resources/sprites/ui/theme/loadingbar_full.png" type="Texture" id=8]
 [ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://resources/sprites/ui/theme/slider_background.png" type="Texture" id=10]
+[ext_resource path="res://resources/sprites/ui/theme/slider_grabber_disabled.png" type="Texture" id=11]
+[ext_resource path="res://resources/sprites/ui/theme/slider_grabber_highlighted.png" type="Texture" id=12]
+[ext_resource path="res://resources/sprites/ui/theme/slider_grabber.png" type="Texture" id=13]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -49,6 +53,16 @@ margin_left = 20.6611
 margin_right = 16.9917
 margin_top = 30.4756
 margin_bottom = 23.7336
+
+[sub_resource type="StyleBoxTexture" id=11]
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 48, 48 )
+margin_left = 12.2254
+margin_right = 9.25288
+margin_top = 12.2087
+margin_bottom = 9.12436
 
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 5 )
@@ -99,6 +113,12 @@ Button/styles/focus = SubResource( 2 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 4 )
 Button/styles/pressed = SubResource( 5 )
+HSlider/icons/grabber = ExtResource( 13 )
+HSlider/icons/grabber_disabled = ExtResource( 11 )
+HSlider/icons/grabber_highlight = ExtResource( 12 )
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource( 11 )
+HSlider/styles/slider = SubResource( 12 )
 OptionButton/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 OptionButton/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )

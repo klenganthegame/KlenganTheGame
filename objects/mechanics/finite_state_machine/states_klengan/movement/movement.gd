@@ -3,7 +3,7 @@ extends "res://objects/mechanics/finite_state_machine/states_klengan/state_kleng
 export(int) var GRAVITY = 40
 export(int) var ACCELERATON = 50
 export(int) var MAX_SPEED = 400
-export(int)  var JUMP_VELOCITY = 800
+export(int)  var JUMP_VELOCITY = 1000
 export(float, 0, 1) var LERP_FACTOR = 0.4
 var velocity : Vector2 = Vector2()
 
@@ -25,7 +25,8 @@ func update(_delta):
 		emit_signal("finished", "attack")
 	elif Input.is_action_just_pressed("attack2"):
 		emit_signal("finished", "ranged")
-	elif Input.is_action_just_pressed("accept") and owner.is_on_floor() :
+	elif Input.is_action_just_pressed("accept") and owner.is_on_floor() \
+	and !Input.is_action_pressed("walk_left") and !Input.is_action_pressed("walk_right"):
 		owner.interact()
 
 
