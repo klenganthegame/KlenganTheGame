@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/6658c1c8d437455b869f1be0ff25527f-3.png-b493721d583b6f159a000288dfebdbdb.stex"
+path="res://.import/klengan_walk_00004.png-01ae557d2bd311f5c48df421d4d3ae57.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/klengan/Walk/6658c1c8d437455b869f1be0ff25527f-3.png"
-dest_files=[ "res://.import/6658c1c8d437455b869f1be0ff25527f-3.png-b493721d583b6f159a000288dfebdbdb.stex" ]
+source_file="res://resources/sprites/klengan/walk/klengan_walk_00004.png"
+dest_files=[ "res://.import/klengan_walk_00004.png-01ae557d2bd311f5c48df421d4d3ae57.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

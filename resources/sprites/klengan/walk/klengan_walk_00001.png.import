@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walk_00.png-5e49b19dcc807214ccec03d2b519eb61.stex"
+path="res://.import/klengan_walk_00001.png-5135c3c325534991f166c59680a6abb7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/klengan/walkcycle/walk_00.png"
-dest_files=[ "res://.import/walk_00.png-5e49b19dcc807214ccec03d2b519eb61.stex" ]
+source_file="res://resources/sprites/klengan/walk/klengan_walk_00001.png"
+dest_files=[ "res://.import/klengan_walk_00001.png-5135c3c325534991f166c59680a6abb7.stex" ]
 
 [params]
 
