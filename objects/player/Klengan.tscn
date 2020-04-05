@@ -59,7 +59,7 @@
 
 [sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 56 )
-shader_param/outline_color = null
+shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -650,6 +650,8 @@ __meta__ = {
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 18.0
+margin_right = -11.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -658,49 +660,46 @@ __meta__ = {
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
 margin_top = 71.0
-margin_right = 493.0
+margin_right = 464.0
 margin_bottom = 125.0
 focus_neighbour_top = NodePath("../BackToMenu")
 text = "Zurück zum Spiel"
-script = ExtResource( 46 )
 
 [node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
 margin_top = 129.0
-margin_right = 493.0
+margin_right = 464.0
 margin_bottom = 183.0
 text = "Speichern"
-script = ExtResource( 46 )
 
 [node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
 margin_top = 187.0
-margin_right = 493.0
+margin_right = 464.0
 margin_bottom = 241.0
 text = "Einstellungen"
-script = ExtResource( 46 )
 
 [node name="Controls" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 margin_top = 245.0
-margin_right = 493.0
+margin_right = 464.0
 margin_bottom = 299.0
 text = "Steuerung"
-script = ExtResource( 46 )
 
 [node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
 margin_top = 303.0
-margin_right = 493.0
+margin_right = 464.0
 margin_bottom = 357.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
-script = ExtResource( 46 )
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
 pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 17.0
+margin_right = -11.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -708,20 +707,20 @@ __meta__ = {
 
 [node name="MasterVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 51.0
-margin_right = 493.0
+margin_right = 465.0
 margin_bottom = 99.0
 audio_bus = "Master"
 
 [node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 103.0
-margin_right = 493.0
+margin_right = 465.0
 margin_bottom = 151.0
 prefix = "Sounds: "
 audio_bus = "Sounds"
 
 [node name="MusicVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 155.0
-margin_right = 493.0
+margin_right = 465.0
 margin_bottom = 203.0
 prefix = "Music: "
 audio_bus = "Music"
@@ -729,7 +728,7 @@ audio_bus = "Music"
 [node name="Rumble" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
 margin_top = 207.0
-margin_right = 493.0
+margin_right = 465.0
 margin_bottom = 261.0
 toggle_mode = true
 pressed = true
@@ -739,7 +738,7 @@ script = ExtResource( 47 )
 [node name="Donations" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
 margin_top = 265.0
-margin_right = 493.0
+margin_right = 465.0
 margin_bottom = 319.0
 toggle_mode = true
 pressed = true
@@ -749,10 +748,9 @@ script = ExtResource( 48 )
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
 margin_top = 323.0
-margin_right = 493.0
+margin_right = 465.0
 margin_bottom = 377.0
 text = "Zurück"
-script = ExtResource( 46 )
 
 [node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 49 )]
 pause_mode = 2
