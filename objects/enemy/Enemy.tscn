@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://objects/enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/enemy/walk_cycle/walk_00.png" type="Texture" id=2]
@@ -10,8 +10,13 @@
 [ext_resource path="res://objects/enemy/Jump.gd" type="Script" id=8]
 [ext_resource path="res://objects/enemy/Attack.gd" type="Script" id=9]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_enemy/movement/damage.gd" type="Script" id=10]
+[ext_resource path="res://resources/shader/pixel_outline.shader" type="Shader" id=11]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 11 )
+shader_param/outline_color = Color( 0.529412, 0, 0, 1 )
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
@@ -24,13 +29,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.44902, 12 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 40, 60 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 61.3382, 16 )
 
 [node name="Enemy" type="KinematicBody2D"]
@@ -48,8 +53,9 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 
 [node name="AttackArea" type="Area2D" parent="AnimatedSprite"]
 collision_layer = 0
@@ -57,7 +63,7 @@ collision_mask = 4
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
 position = Vector2( 6.88552, -0.838509 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="DetectionArea" type="Area2D" parent="AnimatedSprite"]
 collision_layer = 0
@@ -67,10 +73,10 @@ collision_mask = 4
 visible = false
 position = Vector2( 35, 0 )
 rotation = -1.5708
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="AttackCooldown" type="Timer" parent="."]
 

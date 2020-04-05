@@ -51,7 +51,7 @@ func do_damage():
 		dashHeight -= owner.position.y
 		dashDamage = ((pow((-(dashHeight-owner.position.y)+50*dashDamage),2)/3000)*dashDamage-((50*pow(dashDamage,2))/60)*dashDamage)/1000
 		print(dashDamage)
-		var enemies = owner.get_node("AnimatedSprite/DashArea").get_overlapping_bodies()
+		var enemies = owner.get_node("DashArea").get_overlapping_bodies()
 		for enemy in enemies:
 			get_parent().get_parent().attack(KLENGAN_ATTACKS.DASH, enemy, dashDamage)
 		owner.set_DashCollision_disabled(true)
