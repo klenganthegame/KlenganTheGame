@@ -104,11 +104,11 @@ func _on_DialogueBox_dialogue_exit():
 
 
 func set_AttackCollision_disabled(_disabled):
-	$AnimatedSprite/AttackArea/AttackCollision.disabled = _disabled
+	$AttackArea/AttackCollision.disabled = _disabled
 
 
 func set_DashCollision_disabled(_disabled):
-	$AnimatedSprite/DashArea/DashCollision.disabled = _disabled
+	$DashArea/DashCollision.disabled = _disabled
 
 
 func change_score_in_ui(score : int):
