@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -11,18 +11,18 @@
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/ks_ranged.gd" type="Script" id=9]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/dash.gd" type="Script" id=10]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/DoubleJump.gd" type="Script" id=11]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_00.png" type="Texture" id=12]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_01.png" type="Texture" id=13]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00003.png" type="Texture" id=12]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00002.png" type="Texture" id=13]
 [ext_resource path="res://resources/sprites/klengan/attackcycle/attack_00.png" type="Texture" id=14]
 [ext_resource path="res://resources/sprites/klengan/attackcycle/attack_01.png" type="Texture" id=15]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_02.png" type="Texture" id=16]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_03.png" type="Texture" id=17]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_04.png" type="Texture" id=18]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_05.png" type="Texture" id=19]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_06.png" type="Texture" id=20]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_07.png" type="Texture" id=21]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_08.png" type="Texture" id=22]
-[ext_resource path="res://resources/sprites/klengan/walkcycle/walk_09.png" type="Texture" id=23]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00001.png" type="Texture" id=16]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00000.png" type="Texture" id=17]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00004.png" type="Texture" id=18]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00005.png" type="Texture" id=19]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00010.png" type="Texture" id=20]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00011.png" type="Texture" id=21]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00007.png" type="Texture" id=22]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00006.png" type="Texture" id=23]
 [ext_resource path="res://objects/player/CanvasLayer.gd" type="Script" id=24]
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=25]
 [ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=26]
@@ -45,14 +45,25 @@
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=43]
 [ext_resource path="res://resources/shader/white.png" type="Texture" id=44]
 [ext_resource path="res://objects/mechanics/ui/BusVolumeSlider.tscn" type="PackedScene" id=45]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00008.png" type="Texture" id=46]
 [ext_resource path="res://objects/player/Rumble.gd" type="Script" id=47]
 [ext_resource path="res://objects/player/Donations.gd" type="Script" id=48]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=49]
 [ext_resource path="res://scenes/Controls.tscn" type="PackedScene" id=50]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00009.png" type="Texture" id=51]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00014.png" type="Texture" id=52]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00013.png" type="Texture" id=53]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00015.png" type="Texture" id=54]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00012.png" type="Texture" id=55]
+[ext_resource path="res://resources/shader/pixel_outline.shader" type="Shader" id=56]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="ShaderMaterial" id=14]
+shader = ExtResource( 56 )
+shader_param/outline_color = null
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "idle",
 "speed": 1.0
@@ -62,23 +73,23 @@ animations = [ {
 "name": "attack",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ) ],
 "loop": true,
 "name": "walk",
-"speed": 14.0
+"speed": 20.0
 } ]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( -10, -10, 25, -10, 30, 0, 15, 20, 0, 30, -10, 30 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 35, 26 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 34.1829, 10 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 34.3377, 77.261 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24.9137, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 26, 94 )
 
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 42 )
@@ -356,47 +367,49 @@ MAX_SPEED = 300
 script = ExtResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1, 5.5548 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 1 )
-animation = "attack"
-frame = 1
+material = SubResource( 14 )
+position = Vector2( 7, -7 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 3 )
+animation = "idle"
 
-[node name="AttackArea" type="Area2D" parent="AnimatedSprite"]
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2( 7, 15 )
 collision_layer = 0
 collision_mask = 16
 
-[node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
-position = Vector2( 5.82794, -8.96276 )
+[node name="AttackCollision" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2( 28, -2 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="DashArea" type="Area2D" parent="."]
+position = Vector2( 0, 68 )
+collision_layer = 0
+collision_mask = 16
+
+[node name="DashCollision" type="CollisionShape2D" parent="DashArea"]
+position = Vector2( 0, 12 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="DashArea" type="Area2D" parent="AnimatedSprite"]
-collision_layer = 0
-collision_mask = 16
-
-[node name="DashCollision" type="CollisionShape2D" parent="AnimatedSprite/DashArea"]
-position = Vector2( 0, 12 )
-shape = SubResource( 3 )
-disabled = true
-
-[node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0434299, 11.9697 )
-shape = SubResource( 4 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -50 )
-current = true
-smoothing_enabled = true
-
 [node name="interactionArea" type="Area2D" parent="."]
-position = Vector2( 0, 90 )
+position = Vector2( 0, 91 )
 collision_layer = 0
 collision_mask = 8
 
 [node name="InteractionCollision" type="CollisionShape2D" parent="interactionArea"]
 position = Vector2( 3.41373, -11.2166 )
 shape = SubResource( 5 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 2, -4 )
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -50 )
+current = true
+smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -693,6 +706,7 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 493.0
 margin_bottom = 99.0
+audio_bus = "Master"
 
 [node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 103.0
@@ -749,8 +763,8 @@ visible = false
 visible = false
 color = Color( 0, 0, 0, 1 )
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
-[connection signal="area_entered" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_entered"]
-[connection signal="area_exited" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_area_exited"]
+[connection signal="area_entered" from="AttackArea" to="StateMachine" method="_on_AttackArea_area_entered"]
+[connection signal="area_exited" from="AttackArea" to="StateMachine" method="_on_AttackArea_area_exited"]
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CanvasLayer/TouchControlls/Pause" to="CanvasLayer" method="toggle_pause"]
