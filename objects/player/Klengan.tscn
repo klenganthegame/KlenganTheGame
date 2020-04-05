@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=43]
 [ext_resource path="res://resources/shader/white.png" type="Texture" id=44]
 [ext_resource path="res://objects/mechanics/ui/BusVolumeSlider.tscn" type="PackedScene" id=45]
+[ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=46]
 [ext_resource path="res://objects/player/Rumble.gd" type="Script" id=47]
 [ext_resource path="res://objects/player/Donations.gd" type="Script" id=48]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=49]
@@ -57,15 +58,15 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk",
-"speed": 14.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "attack",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk",
+"speed": 14.0
 } ]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
@@ -649,6 +650,7 @@ margin_right = 493.0
 margin_bottom = 125.0
 focus_neighbour_top = NodePath("../BackToMenu")
 text = "Zurück zum Spiel"
+script = ExtResource( 46 )
 
 [node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -656,6 +658,7 @@ margin_top = 129.0
 margin_right = 493.0
 margin_bottom = 183.0
 text = "Speichern"
+script = ExtResource( 46 )
 
 [node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -663,12 +666,14 @@ margin_top = 187.0
 margin_right = 493.0
 margin_bottom = 241.0
 text = "Einstellungen"
+script = ExtResource( 46 )
 
 [node name="Controls" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 margin_top = 245.0
 margin_right = 493.0
 margin_bottom = 299.0
 text = "Steuerung"
+script = ExtResource( 46 )
 
 [node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -677,6 +682,7 @@ margin_right = 493.0
 margin_bottom = 357.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
+script = ExtResource( 46 )
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
 pause_mode = 2
@@ -733,6 +739,7 @@ margin_top = 323.0
 margin_right = 493.0
 margin_bottom = 377.0
 text = "Zurück"
+script = ExtResource( 46 )
 
 [node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 49 )]
 pause_mode = 2

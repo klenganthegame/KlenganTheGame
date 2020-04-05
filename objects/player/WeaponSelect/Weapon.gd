@@ -1,4 +1,4 @@
-extends Button
+extends GameButton
 class_name WeaponButton
 
 export var key_id : int = 1

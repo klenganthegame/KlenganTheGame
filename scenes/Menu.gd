@@ -7,6 +7,14 @@ func _ready():
 		$VBoxContainer/NewGame.grab_focus()
 
 
+func _process(_delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		if $Pause.visible:
+			toggle_menu()
+		elif $Controls.visible:
+			$Controls.hide_controls()
+
+
 func _on_NewGame_pressed():
 	$FadeIn.play("load_game")
 
@@ -20,7 +28,7 @@ func _on_LoadGame_pressed():
 
 
 func _on_Credits_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene(SCENES.Credits)
 
 
 func _on_Exit_pressed():
@@ -48,15 +56,20 @@ func toggle_menu():
 
 func _on_Settings_pressed():
 	toggle_menu()
-	
+
+
 func _on_Back_pressed():
 	toggle_menu()
 
 
-func _on_Control_closed():
-	$VBoxContainer/Controlls.grab_focus()
+func _on_Controls_closed():
+	$VBoxContainer/Controls.grab_focus()
 
 
 func _on_Controls_pressed():
-	$Controlls.show_controlls()
-	pass # Replace with function body.
+	$Controls.show_controls()
+
+
+func _on_Donations_toggled(_button_pressed):
+	$Krebshilfe.visible = _button_pressed
+

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=1]
 [ext_resource path="res://resources/sprites/ui/joypad.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Controls.gd" type="Script" id=3]
+[ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -268,9 +269,7 @@ focus_neighbour_bottom = NodePath("../Back")
 focus_next = NodePath("../KeyboardButton")
 focus_previous = NodePath("../Back")
 text = "JoyPad"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource( 4 )
 
 [node name="KeyboardButton" type="Button" parent="."]
 anchor_left = 0.5
@@ -285,9 +284,7 @@ focus_neighbour_bottom = NodePath("../Back")
 focus_next = NodePath("../Back")
 focus_previous = NodePath("../JoyPadButton")
 text = "Keyboard"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource( 4 )
 
 [node name="Back" type="Button" parent="."]
 anchor_left = 0.5
@@ -304,9 +301,7 @@ focus_neighbour_right = NodePath("../KeyboardButton")
 focus_next = NodePath("../JoyPadButton")
 focus_previous = NodePath("../KeyboardButton")
 text = "zurück"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/hide = SubResource( 2 )

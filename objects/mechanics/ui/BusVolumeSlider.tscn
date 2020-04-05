@@ -10,4 +10,5 @@ postfix = "%"
 
 [node name="ValueLabel" parent="." index="0"]
 text = "Master: 100%"
+[connection signal="gui_input" from="." to="." method="_on_BusVolumeSlider_gui_input"]
 [connection signal="value_changed" from="." to="." method="_on_BusVolumeSlider_value_changed"]
