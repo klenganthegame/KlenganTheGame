@@ -110,14 +110,18 @@ func set_AttackCollision_disabled(_disabled):
 func set_DashCollision_disabled(_disabled):
 	$DashArea/DashCollision.disabled = _disabled
 
+
 func change_score_in_ui(score : int):
 	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
+
 
 func dying():
 	$CanvasLayer/PauseMenu.play("die")
 
+
 func die():
 	get_tree().change_scene(SCENES.GameOver)
+
 
 func update_life():
 	$CanvasLayer/UI/Health.max_value = max_life

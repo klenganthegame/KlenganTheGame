@@ -10,20 +10,27 @@ var lightswitch : AudioStreamSample = load("res://resources/audio/lightswitch.wa
 var menu_button : AudioStreamSample = load("res://resources/audio/menu_button.wav")
 var door : AudioStreamSample = load("res://resources/audio/door.wav")
 
-var sound_player : AudioStreamPlayer
+var sounds_player : AudioStreamPlayer
 var music_player : AudioStreamPlayer
 
 
 func _ready():
 	# Create Audio StreamPlayer
-	sound_player = AudioStreamPlayer.new()
+	sounds_player = AudioStreamPlayer.new()
 	music_player = AudioStreamPlayer.new()
+	
+	# Ensure sounds/music will be played when the game is paused
+	sounds_player.pause_mode = Node.PAUSE_MODE_PROCESS
+	music_player.pause_mode = Node.PAUSE_MODE_PROCESS
 	
 	lightswitch.loop_mode = AudioStreamSample.LOOP_DISABLED
 	menu_button.loop_mode = AudioStreamSample.LOOP_DISABLED
 	door.loop_mode = AudioStreamSample.LOOP_DISABLED
 	
-	add_child(sound_player)
+	sounds_player.bus = BUS_SOUNDS
+	music_player.bus = BUS_MUSIC
+	
+	add_child(sounds_player)
 	add_child(music_player)
 
 
@@ -39,13 +46,13 @@ func change_bus_volume(_bus_index, _volume_pct):
 func play_sound(_sound_name):
 	match (_sound_name):
 		"lightswitch":
-			sound_player.stream = lightswitch
+			sounds_player.stream = lightswitch
 		"menu_button":
-			sound_player.stream = menu_button
+			sounds_player.stream = menu_button
 		"door":
-			sound_player.stream = door
+			sounds_player.stream = door
 	
-	sound_player.play()
+	sounds_player.play()
 
 
 func play_music(_track):

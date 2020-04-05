@@ -6,13 +6,13 @@
 [ext_resource path="res://resources/icons/youtube.png" type="Texture" id=4]
 [ext_resource path="res://resources/icons/reddit.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/player/Sounds.gd" type="Script" id=7]
+[ext_resource path="res://objects/mechanics/ui/BusVolumeSlider.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Donations.gd" type="Script" id=8]
-[ext_resource path="res://objects/player/Musik.gd" type="Script" id=9]
 [ext_resource path="res://scenes/Controls.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/player/Rumble.gd" type="Script" id=11]
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=12]
 [ext_resource path="res://resources/shader/white.png" type="Texture" id=13]
+[ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -76,7 +76,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "out"
+resource_name = "in"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause:modulate")
 tracks/0/interp = 1
@@ -91,7 +91,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "out (copy)"
+resource_name = "out"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause:modulate")
 tracks/0/interp = 1
@@ -144,39 +144,43 @@ __meta__ = {
 margin_top = 128.0
 margin_right = 280.0
 margin_bottom = 182.0
-focus_neighbour_top = NodePath("../Exit")
 text = "Neues Spiel"
+script = ExtResource( 14 )
 
 [node name="LoadGame" type="Button" parent="VBoxContainer"]
 margin_top = 186.0
 margin_right = 280.0
 margin_bottom = 240.0
-text = "Spiel Laden"
+text = "Spiel laden"
+script = ExtResource( 14 )
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 margin_top = 244.0
 margin_right = 280.0
 margin_bottom = 298.0
 text = "Einstellungen"
+script = ExtResource( 14 )
 
-[node name="Controlls" type="Button" parent="VBoxContainer"]
+[node name="Controls" type="Button" parent="VBoxContainer"]
 margin_top = 302.0
 margin_right = 280.0
 margin_bottom = 356.0
 text = "Steuerung"
+script = ExtResource( 14 )
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
 margin_top = 360.0
 margin_right = 280.0
 margin_bottom = 414.0
 text = "Mitwirkende"
+script = ExtResource( 14 )
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 margin_top = 418.0
 margin_right = 280.0
 margin_bottom = 472.0
-focus_neighbour_bottom = NodePath("../NewGame")
-text = "Spiel verlassen"
+text = "Beemdem"
+script = ExtResource( 14 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 1.0
@@ -215,13 +219,13 @@ anims/in = SubResource( 2 )
 anims/load_game = SubResource( 3 )
 
 [node name="SettingsMenu" type="AnimationPlayer" parent="."]
-anims/out = SubResource( 4 )
-"anims/out (copy)" = SubResource( 5 )
+anims/in = SubResource( 4 )
+anims/out = SubResource( 5 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 
-[node name="Controlls" parent="." instance=ExtResource( 10 )]
+[node name="Controls" parent="." instance=ExtResource( 10 )]
 visible = false
 
 [node name="Pause" type="Control" parent="."]
@@ -268,32 +272,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sounds" type="Button" parent="Pause/PausePanel/Settings"]
-pause_mode = 2
-margin_top = 71.0
+[node name="MasterVolumeSlider" parent="Pause/PausePanel/Settings" instance=ExtResource( 7 )]
+margin_top = 51.0
 margin_right = 493.0
-margin_bottom = 125.0
-focus_neighbour_top = NodePath("../Back")
-toggle_mode = true
-pressed = true
-text = "Sounds: an"
-script = ExtResource( 7 )
+margin_bottom = 99.0
 
-[node name="Musik" type="Button" parent="Pause/PausePanel/Settings"]
-pause_mode = 2
-margin_top = 129.0
+[node name="SoundsVolumeSlider" parent="Pause/PausePanel/Settings" instance=ExtResource( 7 )]
+margin_top = 103.0
 margin_right = 493.0
-margin_bottom = 183.0
-toggle_mode = true
-pressed = true
-text = "Musik: an"
-script = ExtResource( 9 )
+margin_bottom = 151.0
+prefix = "Sounds: "
+audio_bus = "Sounds"
+
+[node name="MusicVolumeSlider" parent="Pause/PausePanel/Settings" instance=ExtResource( 7 )]
+margin_top = 155.0
+margin_right = 493.0
+margin_bottom = 203.0
+prefix = "Music: "
+audio_bus = "Music"
 
 [node name="Rumble" type="Button" parent="Pause/PausePanel/Settings"]
 pause_mode = 2
-margin_top = 187.0
+margin_top = 207.0
 margin_right = 493.0
-margin_bottom = 241.0
+margin_bottom = 261.0
 toggle_mode = true
 pressed = true
 text = "Controller-Rumble: an"
@@ -301,28 +303,28 @@ script = ExtResource( 11 )
 
 [node name="Donations" type="Button" parent="Pause/PausePanel/Settings"]
 pause_mode = 2
-margin_top = 245.0
+margin_top = 265.0
 margin_right = 493.0
-margin_bottom = 299.0
+margin_bottom = 319.0
 toggle_mode = true
 pressed = true
 text = "Spendenaufruf: an"
 script = ExtResource( 8 )
 
 [node name="Back" type="Button" parent="Pause/PausePanel/Settings"]
-pause_mode = 2
-margin_top = 303.0
-margin_right = 493.0
-margin_bottom = 357.0
-focus_neighbour_bottom = NodePath("../Sounds")
+margin_right = 40.0
+margin_bottom = 54.0
 text = "Zurück"
+script = ExtResource( 14 )
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Controlls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="HBoxContainer/Youtube" to="." method="_on_Youtube_pressed"]
 [connection signal="pressed" from="HBoxContainer/Reddit" to="." method="_on_Reddit_pressed"]
-[connection signal="closed" from="Controlls" to="." method="_on_Control_closed"]
+[connection signal="closed" from="Controls" to="." method="_on_Controls_closed"]
+[connection signal="pressed" from="Pause/PausePanel/Settings/Rumble" to="Pause/PausePanel/Settings/Rumble" method="_on_Rumble_pressed"]
+[connection signal="toggled" from="Pause/PausePanel/Settings/Donations" to="." method="_on_Donations_toggled"]
 [connection signal="pressed" from="Pause/PausePanel/Settings/Back" to="." method="_on_Back_pressed"]

@@ -662,6 +662,7 @@ margin_right = 493.0
 margin_bottom = 125.0
 focus_neighbour_top = NodePath("../BackToMenu")
 text = "Zurück zum Spiel"
+script = ExtResource( 46 )
 
 [node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -669,6 +670,7 @@ margin_top = 129.0
 margin_right = 493.0
 margin_bottom = 183.0
 text = "Speichern"
+script = ExtResource( 46 )
 
 [node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -676,12 +678,14 @@ margin_top = 187.0
 margin_right = 493.0
 margin_bottom = 241.0
 text = "Einstellungen"
+script = ExtResource( 46 )
 
 [node name="Controls" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 margin_top = 245.0
 margin_right = 493.0
 margin_bottom = 299.0
 text = "Steuerung"
+script = ExtResource( 46 )
 
 [node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -690,6 +694,7 @@ margin_right = 493.0
 margin_bottom = 357.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
+script = ExtResource( 46 )
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
 pause_mode = 2
@@ -747,6 +752,7 @@ margin_top = 323.0
 margin_right = 493.0
 margin_bottom = 377.0
 text = "Zurück"
+script = ExtResource( 46 )
 
 [node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 49 )]
 pause_mode = 2

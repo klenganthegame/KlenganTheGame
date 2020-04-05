@@ -11,17 +11,17 @@ func _ready():
 		
 	Input.connect("joy_connection_changed", self, "_on_joy_connection_changed")
 	
-func show_controlls():
+func show_controls():
 	if Input.get_joy_name(0) != "":
 		$Back.grab_focus()
 	$AnimationPlayer.play("show")
 
-func hide_controlls():
+func hide_controls():
 	$AnimationPlayer.play("hide")
 	emit_signal("closed")
 
 func _on_Back_pressed():
-	hide_controlls()
+	hide_controls()
 
 func _on_JoyPad_pressed():
 	$Joypad.show()

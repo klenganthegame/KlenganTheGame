@@ -52,13 +52,14 @@ func _on_Back_pressed():
 
 
 func _on_Controls_pressed():
-	$Pause/Controlls.show_controlls()
+	$Pause/Controlls.show_controls()
 
 
 func _on_Controlls_closed():
 	if Input.get_joy_name(0) != "":
 		$Pause/Panel/PauseMenu/Controls.grab_focus()
-		
+
+
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		self.toggle_pause()
