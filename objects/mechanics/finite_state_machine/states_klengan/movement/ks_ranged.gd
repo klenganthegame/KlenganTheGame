@@ -41,7 +41,7 @@ func apply_forces():
 
 
 func shoot_harpune():
-	var enemies = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
+	var enemies = owner.get_node("AttackArea").get_overlapping_bodies()
 	var klengan_node = get_parent().get_parent()
 	#slow , strong
 	if !enemies.empty():
