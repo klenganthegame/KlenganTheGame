@@ -11,81 +11,80 @@
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/ks_ranged.gd" type="Script" id=9]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/dash.gd" type="Script" id=10]
 [ext_resource path="res://objects/mechanics/finite_state_machine/states_klengan/movement/DoubleJump.gd" type="Script" id=11]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00003.png" type="Texture" id=12]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00002.png" type="Texture" id=13]
-[ext_resource path="res://resources/sprites/klengan/attackcycle/attack_00.png" type="Texture" id=14]
-[ext_resource path="res://resources/sprites/klengan/attackcycle/attack_01.png" type="Texture" id=15]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00001.png" type="Texture" id=16]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00000.png" type="Texture" id=17]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00004.png" type="Texture" id=18]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00005.png" type="Texture" id=19]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00010.png" type="Texture" id=20]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00011.png" type="Texture" id=21]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00007.png" type="Texture" id=22]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00006.png" type="Texture" id=23]
-[ext_resource path="res://objects/player/CanvasLayer.gd" type="Script" id=24]
-[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=25]
-[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=26]
-[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=27]
-[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=28]
-[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=29]
-[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=30]
-[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=31]
-[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=32]
-[ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=33]
-[ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=34]
-[ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=35]
-[ext_resource path="res://sprites/test/stabilodash.png" type="Texture" id=36]
-[ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=37]
-[ext_resource path="res://objects/player/WeaponSelect/WeaponSelection.tscn" type="PackedScene" id=38]
-[ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=39]
-[ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=40]
-[ext_resource path="res://resources/audio/sounds/text_beep.wav" type="AudioStream" id=41]
-[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=42]
-[ext_resource path="res://resources/shader/blur.shader" type="Shader" id=43]
-[ext_resource path="res://resources/shader/white.png" type="Texture" id=44]
-[ext_resource path="res://objects/mechanics/ui/BusVolumeSlider.tscn" type="PackedScene" id=45]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00008.png" type="Texture" id=46]
-[ext_resource path="res://objects/player/Rumble.gd" type="Script" id=47]
-[ext_resource path="res://objects/player/Donations.gd" type="Script" id=48]
-[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=49]
-[ext_resource path="res://scenes/Controls.tscn" type="PackedScene" id=50]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00009.png" type="Texture" id=51]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00014.png" type="Texture" id=52]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00013.png" type="Texture" id=53]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00015.png" type="Texture" id=54]
-[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00012.png" type="Texture" id=55]
-[ext_resource path="res://resources/shader/pixel_outline.shader" type="Shader" id=56]
-[ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=57]
-
+[ext_resource path="res://resources/shader/pixel_outline.shader" type="Shader" id=12]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00000.png" type="Texture" id=13]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00001.png" type="Texture" id=14]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00002.png" type="Texture" id=15]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00003.png" type="Texture" id=16]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00004.png" type="Texture" id=17]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00005.png" type="Texture" id=18]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00006.png" type="Texture" id=19]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00007.png" type="Texture" id=20]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00008.png" type="Texture" id=21]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00009.png" type="Texture" id=22]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00010.png" type="Texture" id=23]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00011.png" type="Texture" id=24]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00012.png" type="Texture" id=25]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00013.png" type="Texture" id=26]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00014.png" type="Texture" id=27]
+[ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00015.png" type="Texture" id=28]
+[ext_resource path="res://resources/sprites/klengan/attackcycle/attack_00.png" type="Texture" id=29]
+[ext_resource path="res://resources/sprites/klengan/attackcycle/attack_01.png" type="Texture" id=30]
+[ext_resource path="res://objects/player/CanvasLayer.gd" type="Script" id=31]
+[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=32]
+[ext_resource path="res://resources/mobilebuttons/original/RightUnpressed.png" type="Texture" id=33]
+[ext_resource path="res://resources/mobilebuttons/original/RightPressed.png" type="Texture" id=34]
+[ext_resource path="res://resources/mobilebuttons/original/LeftUnpressed.png" type="Texture" id=35]
+[ext_resource path="res://resources/mobilebuttons/original/LeftPressed.png" type="Texture" id=36]
+[ext_resource path="res://resources/mobilebuttons/original/JumpPressed.png" type="Texture" id=37]
+[ext_resource path="res://resources/mobilebuttons/original/EnterUnpressed.png" type="Texture" id=38]
+[ext_resource path="res://resources/mobilebuttons/original/EnterPressed.png" type="Texture" id=39]
+[ext_resource path="res://sprites/test/heart_empty.png" type="Texture" id=40]
+[ext_resource path="res://sprites/test/heart_outline.png" type="Texture" id=41]
+[ext_resource path="res://sprites/test/heart_full.png" type="Texture" id=42]
+[ext_resource path="res://sprites/test/stabilodash.png" type="Texture" id=43]
+[ext_resource path="res://sprites/test/stabilodash_full.png" type="Texture" id=44]
+[ext_resource path="res://objects/player/WeaponSelect/WeaponSelection.tscn" type="PackedScene" id=45]
+[ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=46]
+[ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=47]
+[ext_resource path="res://resources/audio/sounds/text_beep.wav" type="AudioStream" id=48]
+[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=49]
+[ext_resource path="res://resources/shader/blur.shader" type="Shader" id=50]
+[ext_resource path="res://resources/shader/white.png" type="Texture" id=51]
+[ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=52]
+[ext_resource path="res://objects/mechanics/ui/BusVolumeSlider.tscn" type="PackedScene" id=53]
+[ext_resource path="res://objects/player/Rumble.gd" type="Script" id=54]
+[ext_resource path="res://objects/player/Donations.gd" type="Script" id=55]
+[ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=56]
+[ext_resource path="res://scenes/Controls.tscn" type="PackedScene" id=57]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 56 )
+shader = ExtResource( 12 )
 shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "walk",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": false,
 "name": "attack",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ) ],
-"loop": true,
-"name": "walk",
-"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 35, 26 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 34.1829, 10 )
+extents = Vector2( 126.388, 69.2116 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24.9137, 10 )
@@ -94,7 +93,7 @@ extents = Vector2( 24.9137, 10 )
 extents = Vector2( 26, 94 )
 
 [sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 42 )
+font_data = ExtResource( 49 )
 
 [sub_resource type="Animation" id=8]
 tracks/0/type = "value"
@@ -322,7 +321,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="ShaderMaterial" id=14]
-shader = ExtResource( 43 )
+shader = ExtResource( 50 )
 shader_param/amount = 2.647
 
 [node name="Klengan" type="KinematicBody2D"]
@@ -414,12 +413,12 @@ smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
-script = ExtResource( 24 )
+script = ExtResource( 31 )
 
 [node name="TouchControlls" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 25 )
+theme = ExtResource( 32 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -451,8 +450,8 @@ __meta__ = {
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Arrows"]
 position = Vector2( 140, 0 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 26 )
-pressed = ExtResource( 27 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 34 )
 passby_press = true
 action = "walk_right"
 visibility_mode = 1
@@ -460,8 +459,8 @@ visibility_mode = 1
 [node name="Left" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Arrows"]
 position = Vector2( 40, 0 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 28 )
-pressed = ExtResource( 29 )
+normal = ExtResource( 35 )
+pressed = ExtResource( 36 )
 passby_press = true
 action = "walk_left"
 visibility_mode = 1
@@ -482,8 +481,8 @@ __meta__ = {
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
 position = Vector2( 55, -100 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 30 )
-pressed = ExtResource( 30 )
+normal = ExtResource( 37 )
+pressed = ExtResource( 37 )
 passby_press = true
 action = "jump"
 visibility_mode = 1
@@ -491,15 +490,15 @@ visibility_mode = 1
 [node name="Okay" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
 position = Vector2( 160, 0 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 31 )
-pressed = ExtResource( 32 )
+normal = ExtResource( 38 )
+pressed = ExtResource( 39 )
 action = "accept"
 visibility_mode = 1
 
 [node name="Attack" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
 position = Vector2( -40, 0 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 31 )
+normal = ExtResource( 38 )
 passby_press = true
 action = "attack"
 
@@ -507,15 +506,15 @@ action = "attack"
 position = Vector2( 145, 85 )
 rotation = 3.14159
 scale = Vector2( 5, 5 )
-normal = ExtResource( 30 )
+normal = ExtResource( 37 )
 action = "sneak"
 visibility_mode = 1
 
 [node name="R" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
 position = Vector2( 160.909, -190.056 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 26 )
-pressed = ExtResource( 27 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 34 )
 passby_press = true
 action = "last_weapon"
 visibility_mode = 1
@@ -523,8 +522,8 @@ visibility_mode = 1
 [node name="L" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
 position = Vector2( 60.9089, -190.056 )
 scale = Vector2( 5, 5 )
-normal = ExtResource( 28 )
-pressed = ExtResource( 29 )
+normal = ExtResource( 35 )
+pressed = ExtResource( 36 )
 passby_press = true
 action = "next_weapon"
 visibility_mode = 1
@@ -534,7 +533,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 0.176605
 margin_bottom = 0.176636
-theme = ExtResource( 25 )
+theme = ExtResource( 32 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -545,7 +544,7 @@ margin_left = 20.0
 margin_top = 10.0
 margin_right = 212.0
 margin_bottom = 26.0
-theme = ExtResource( 25 )
+theme = ExtResource( 32 )
 text = "score: 00000"
 
 [node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
@@ -556,9 +555,9 @@ margin_right = 31.0
 margin_bottom = 54.0
 rect_scale = Vector2( 5, 5 )
 value = 30.0
-texture_under = ExtResource( 33 )
-texture_over = ExtResource( 34 )
-texture_progress = ExtResource( 35 )
+texture_under = ExtResource( 40 )
+texture_over = ExtResource( 41 )
+texture_progress = ExtResource( 42 )
 fill_mode = 4
 
 [node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
@@ -568,14 +567,14 @@ margin_top = 130.0
 margin_right = 46.0
 margin_bottom = -430.0
 rect_scale = Vector2( 5, 5 )
-texture_under = ExtResource( 36 )
-texture_progress = ExtResource( 37 )
+texture_under = ExtResource( 43 )
+texture_progress = ExtResource( 44 )
 fill_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WeaponSelection" parent="CanvasLayer/UI" instance=ExtResource( 38 )]
+[node name="WeaponSelection" parent="CanvasLayer/UI" instance=ExtResource( 45 )]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -123.5
@@ -591,14 +590,14 @@ margin_left = 173.0
 margin_top = 50.0
 margin_right = -168.0
 margin_bottom = 240.0
-texture = ExtResource( 39 )
+texture = ExtResource( 46 )
 region_rect = Rect2( -2.28871, -3.69064, 28.5712, 30.4968 )
 patch_margin_left = 8
 patch_margin_top = 10
 patch_margin_right = 12
 patch_margin_bottom = 13
-script = ExtResource( 40 )
-message_sound = ExtResource( 41 )
+script = ExtResource( 47 )
+message_sound = ExtResource( 48 )
 font = SubResource( 7 )
 action_name = "accept"
 wait_time = 0.05
@@ -617,7 +616,7 @@ pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 25 )
+theme = ExtResource( 32 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -629,7 +628,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture = ExtResource( 44 )
+texture = ExtResource( 51 )
 expand = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Pause"]
@@ -665,7 +664,7 @@ margin_right = 464.0
 margin_bottom = 125.0
 focus_neighbour_top = NodePath("../BackToMenu")
 text = "Zurück zum Spiel"
-script = ExtResource( 57 )
+script = ExtResource( 52 )
 
 [node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -673,7 +672,7 @@ margin_top = 129.0
 margin_right = 464.0
 margin_bottom = 183.0
 text = "Speichern"
-script = ExtResource( 57 )
+script = ExtResource( 52 )
 
 [node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -681,14 +680,14 @@ margin_top = 187.0
 margin_right = 464.0
 margin_bottom = 241.0
 text = "Einstellungen"
-script = ExtResource( 57 )
+script = ExtResource( 52 )
 
 [node name="Controls" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 margin_top = 245.0
 margin_right = 464.0
 margin_bottom = 299.0
 text = "Steuerung"
-script = ExtResource( 57 )
+script = ExtResource( 52 )
 
 [node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -697,7 +696,7 @@ margin_right = 464.0
 margin_bottom = 357.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
-script = ExtResource( 57 )
+script = ExtResource( 52 )
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
 pause_mode = 2
@@ -711,19 +710,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MasterVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
+[node name="MasterVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 53 )]
 margin_top = 51.0
 margin_right = 465.0
 margin_bottom = 99.0
+audio_bus = "Master"
 
-[node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
+[node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 53 )]
 margin_top = 103.0
 margin_right = 465.0
 margin_bottom = 151.0
 prefix = "Sounds: "
 audio_bus = "Sounds"
 
-[node name="MusicVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
+[node name="MusicVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 53 )]
 margin_top = 155.0
 margin_right = 465.0
 margin_bottom = 203.0
@@ -738,7 +738,7 @@ margin_bottom = 261.0
 toggle_mode = true
 pressed = true
 text = "Controller-Rumble: an"
-script = ExtResource( 47 )
+script = ExtResource( 54 )
 
 [node name="Donations" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
@@ -748,7 +748,7 @@ margin_bottom = 319.0
 toggle_mode = true
 pressed = true
 text = "Spendenaufruf: an"
-script = ExtResource( 48 )
+script = ExtResource( 55 )
 
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
@@ -756,16 +756,16 @@ margin_top = 323.0
 margin_right = 465.0
 margin_bottom = 377.0
 text = "Zurück"
-script = ExtResource( 57 )
+script = ExtResource( 52 )
 
-[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 49 )]
+[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 56 )]
 pause_mode = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -118.0
 margin_bottom = 0.0
 
-[node name="Controlls" parent="CanvasLayer/Pause" instance=ExtResource( 50 )]
+[node name="Controlls" parent="CanvasLayer/Pause" instance=ExtResource( 57 )]
 visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
@@ -777,8 +777,8 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CanvasLayer/TouchControlls/Pause" to="CanvasLayer" method="toggle_pause"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
