@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -40,7 +40,7 @@
 [ext_resource path="res://objects/player/WeaponSelect/WeaponSelection.tscn" type="PackedScene" id=38]
 [ext_resource path="res://resources/sprites/ui/dialoguebox.png" type="Texture" id=39]
 [ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=40]
-[ext_resource path="res://resources/audio/text_beep.wav" type="AudioStream" id=41]
+[ext_resource path="res://resources/audio/sounds/text_beep.wav" type="AudioStream" id=41]
 [ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=42]
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=43]
 [ext_resource path="res://resources/shader/white.png" type="Texture" id=44]
@@ -56,12 +56,14 @@
 [ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00015.png" type="Texture" id=54]
 [ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00012.png" type="Texture" id=55]
 [ext_resource path="res://resources/shader/pixel_outline.shader" type="Shader" id=56]
+[ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=57]
 
-[sub_resource type="ShaderMaterial" id=14]
+
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 56 )
 shader_param/outline_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
@@ -79,22 +81,22 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 35, 26 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 34.1829, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24.9137, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 26, 94 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 42 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasModulate:color")
 tracks/0/interp = 1
@@ -122,8 +124,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "die"
+[sub_resource type="Animation" id=9]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasModulate:color")
@@ -152,7 +153,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause:modulate")
@@ -181,7 +182,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause:modulate")
@@ -210,7 +211,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause/Panel/PauseMenu:modulate")
@@ -265,7 +266,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pause/Panel/PauseMenu:modulate")
@@ -320,7 +321,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="ShaderMaterial" id=13]
+[sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 43 )
 shader_param/amount = 2.647
 
@@ -367,10 +368,10 @@ MAX_SPEED = 300
 script = ExtResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = SubResource( 14 )
+material = SubResource( 1 )
 position = Vector2( 7, -7 )
 scale = Vector2( 1.5, 1.5 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "idle"
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -380,7 +381,7 @@ collision_mask = 16
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2( 28, -2 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="DashArea" type="Area2D" parent="."]
@@ -390,7 +391,7 @@ collision_mask = 16
 
 [node name="DashCollision" type="CollisionShape2D" parent="DashArea"]
 position = Vector2( 0, 12 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="interactionArea" type="Area2D" parent="."]
@@ -404,7 +405,7 @@ shape = SubResource( 5 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 2, -4 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -50 )
@@ -598,18 +599,18 @@ patch_margin_right = 12
 patch_margin_bottom = 13
 script = ExtResource( 40 )
 message_sound = ExtResource( 41 )
-font = SubResource( 6 )
+font = SubResource( 7 )
 action_name = "accept"
 wait_time = 0.05
 
 [node name="PauseMenu" type="AnimationPlayer" parent="CanvasLayer"]
 pause_mode = 2
-anims/backtomenu = SubResource( 7 )
-anims/die = SubResource( 8 )
-anims/in = SubResource( 9 )
-anims/out = SubResource( 10 )
-anims/settings_in = SubResource( 11 )
-anims/settings_out = SubResource( 12 )
+anims/backtomenu = SubResource( 8 )
+anims/die = SubResource( 9 )
+anims/in = SubResource( 10 )
+anims/out = SubResource( 11 )
+anims/settings_in = SubResource( 12 )
+anims/settings_out = SubResource( 13 )
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
 pause_mode = 2
@@ -623,7 +624,7 @@ __meta__ = {
 
 [node name="Blur" type="TextureRect" parent="CanvasLayer/Pause"]
 pause_mode = 2
-material = SubResource( 13 )
+material = SubResource( 14 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 2
@@ -664,6 +665,7 @@ margin_right = 464.0
 margin_bottom = 125.0
 focus_neighbour_top = NodePath("../BackToMenu")
 text = "Zurück zum Spiel"
+script = ExtResource( 57 )
 
 [node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -671,6 +673,7 @@ margin_top = 129.0
 margin_right = 464.0
 margin_bottom = 183.0
 text = "Speichern"
+script = ExtResource( 57 )
 
 [node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -678,12 +681,14 @@ margin_top = 187.0
 margin_right = 464.0
 margin_bottom = 241.0
 text = "Einstellungen"
+script = ExtResource( 57 )
 
 [node name="Controls" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 margin_top = 245.0
 margin_right = 464.0
 margin_bottom = 299.0
 text = "Steuerung"
+script = ExtResource( 57 )
 
 [node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
 pause_mode = 2
@@ -692,6 +697,7 @@ margin_right = 464.0
 margin_bottom = 357.0
 focus_neighbour_bottom = NodePath("../Back")
 text = "Zurück zum Menü"
+script = ExtResource( 57 )
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
 pause_mode = 2
@@ -709,7 +715,6 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 465.0
 margin_bottom = 99.0
-audio_bus = "Master"
 
 [node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 103.0
@@ -751,6 +756,7 @@ margin_top = 323.0
 margin_right = 465.0
 margin_bottom = 377.0
 text = "Zurück"
+script = ExtResource( 57 )
 
 [node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 49 )]
 pause_mode = 2
