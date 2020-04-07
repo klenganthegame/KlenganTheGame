@@ -69,15 +69,15 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "attack",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ) ],
 "loop": true,
 "name": "walk",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "attack",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]

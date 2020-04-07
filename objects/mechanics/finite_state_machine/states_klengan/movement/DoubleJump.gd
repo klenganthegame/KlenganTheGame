@@ -19,5 +19,8 @@ func apply_forces():
 	if input_direction == Vector2():
 		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
 	else:
-		velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
+		if Input.is_action_pressed("sneak"):
+			velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED/4*1.5, MAX_SPEED/4*1.5)
+		else:
+			velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
 		owner.play_directional_animation("walk", (input_direction.x > 0))

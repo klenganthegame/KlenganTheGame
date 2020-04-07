@@ -5,13 +5,13 @@
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_hover.png" type="Texture" id=3]
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu.png" type="Texture" id=4]
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_pressed.png" type="Texture" id=5]
-[ext_resource path="res://resources/sprites/ui/theme/ud_arrows.png" type="Texture" id=6]
-[ext_resource path="res://resources/sprites/ui/theme/popup_selected.png" type="Texture" id=7]
-[ext_resource path="res://resources/sprites/ui/theme/loadingbar_full.png" type="Texture" id=8]
-[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://resources/sprites/ui/theme/slider_grabber_disabled.png" type="Texture" id=11]
-[ext_resource path="res://resources/sprites/ui/theme/slider_grabber_highlighted.png" type="Texture" id=12]
-[ext_resource path="res://resources/sprites/ui/theme/slider_grabber.png" type="Texture" id=13]
+[ext_resource path="res://resources/sprites/ui/theme/slider_grabber.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/ui/theme/slider_grabber_disabled.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/ui/theme/slider_grabber_highlighted.png" type="Texture" id=8]
+[ext_resource path="res://resources/sprites/ui/theme/loadingbar_full.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/ui/theme/ud_arrows.png" type="Texture" id=10]
+[ext_resource path="res://resources/sprites/ui/theme/popup_selected.png" type="Texture" id=11]
+[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -60,7 +60,7 @@ margin_top = 6.3175
 margin_bottom = 7.22
 
 [sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 160, 16 )
 margin_left = 17.1475
 margin_right = 49.7575
@@ -77,7 +77,7 @@ margin_bottom = 13.8655
 modulate_color = Color( 1, 0.635294, 0.635294, 1 )
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 110.024, 102 )
 margin_left = 10.0
 margin_right = 31.8884
@@ -93,7 +93,7 @@ margin_top = 14.4957
 margin_bottom = 13.8655
 
 [sub_resource type="DynamicFont" id=11]
-font_data = ExtResource( 9 )
+font_data = ExtResource( 12 )
 
 [resource]
 default_font = SubResource( 11 )
@@ -108,9 +108,9 @@ Button/styles/focus = SubResource( 2 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 4 )
 Button/styles/pressed = SubResource( 5 )
-HSlider/icons/grabber = ExtResource( 13 )
-HSlider/icons/grabber_disabled = ExtResource( 11 )
-HSlider/icons/grabber_highlight = ExtResource( 12 )
+HSlider/icons/grabber = ExtResource( 6 )
+HSlider/icons/grabber_disabled = ExtResource( 7 )
+HSlider/icons/grabber_highlight = ExtResource( 8 )
 HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource( 6 )
 HSlider/styles/slider = SubResource( 7 )
@@ -121,7 +121,7 @@ OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 OptionButton/constants/arrow_margin = 16
 OptionButton/constants/hseparation = 2
 OptionButton/fonts/font = null
-OptionButton/icons/arrow = ExtResource( 6 )
+OptionButton/icons/arrow = ExtResource( 10 )
 OptionButton/styles/disabled = null
 OptionButton/styles/focus = null
 OptionButton/styles/hover = null
