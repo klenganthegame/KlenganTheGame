@@ -17,8 +17,6 @@ func enter():
 func exit():
 	.exit()
 	owner.set_AttackCollision_disabled(true)
-#	for enemy in get_parent().attackable_enemies:
-#		print(enemy.name)
 
 
 func _on_animation_finished(_anim_name):
@@ -41,15 +39,9 @@ func apply_forces():
 
 
 func shoot_harpune():
-	var enemies = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
-	var klengan_node = get_parent().get_parent()
-	#slow , strong
-	if !enemies.empty():
-		Input.start_joy_vibration(0, 1, 0, 0.2)
-	
 	var harpune = Harpune.instance()
-	
 	get_tree().current_scene.add_child(harpune)
 	harpune.start(owner, owner.position, owner.looking_right)
-
+	
+	AudioHandler.play_sound("shoot_harpune")
 

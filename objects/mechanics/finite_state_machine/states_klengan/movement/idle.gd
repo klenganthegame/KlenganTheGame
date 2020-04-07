@@ -6,8 +6,8 @@ func enter():
 	owner.play_directional_animation("idle")
 
 
-func update(delta):
-	.update(delta)
+func update(_delta):
+	.update(_delta)
 	if get_input_direction() != Vector2() and Input.is_action_pressed("sneak"):
 		emit_signal("finished","sneak")
 	elif get_input_direction() != Vector2():

@@ -58,7 +58,6 @@
 [ext_resource path="res://resources/shader/pixel_outline.shader" type="Shader" id=56]
 [ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=57]
 
-
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 56 )
 shader_param/outline_color = Color( 0, 0, 0, 1 )
@@ -82,7 +81,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 35, 26 )
+extents = Vector2( 35, 64 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 34.1829, 10 )
@@ -369,23 +368,21 @@ script = ExtResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( 7, -7 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "idle"
 
 [node name="AttackArea" type="Area2D" parent="."]
-position = Vector2( 7, 15 )
+position = Vector2( 35, 13 )
 collision_layer = 0
 collision_mask = 16
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2( 28, -2 )
 shape = SubResource( 3 )
 disabled = true
 
 [node name="DashArea" type="Area2D" parent="."]
-position = Vector2( 0, 68 )
+position = Vector2( 0, 74 )
 collision_layer = 0
 collision_mask = 16
 
@@ -395,16 +392,15 @@ shape = SubResource( 4 )
 disabled = true
 
 [node name="interactionArea" type="Area2D" parent="."]
-position = Vector2( 0, 91 )
+position = Vector2( 0, 86 )
 collision_layer = 0
 collision_mask = 8
 
 [node name="InteractionCollision" type="CollisionShape2D" parent="interactionArea"]
-position = Vector2( 3.41373, -11.2166 )
 shape = SubResource( 5 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 2, -4 )
+position = Vector2( 0, 2 )
 shape = SubResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -547,6 +543,9 @@ margin_right = 212.0
 margin_bottom = 26.0
 theme = ExtResource( 25 )
 text = "score: 00000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
 pause_mode = 2
@@ -715,6 +714,7 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 465.0
 margin_bottom = 99.0
+audio_bus = "Master"
 
 [node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 103.0

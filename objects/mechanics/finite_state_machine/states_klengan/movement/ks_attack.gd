@@ -7,10 +7,12 @@ func enter():
 	owner.get_node("AnimatedSprite").stop()
 	if velocity.x != 0:
 		#replace with move attack anim
-		owner.play_directional_animation("attack") 
+		owner.play_directional_animation("attack")
 	else:
 		#replace with idle attack anim
-		owner.play_directional_animation("attack") 
+		owner.play_directional_animation("attack")
+	
+	AudioHandler.play_sound("klengan_melee")
 
 
 func exit():
@@ -21,7 +23,7 @@ func exit():
 
 
 func _on_animation_finished(_anim_name):
-	normal_attack()
+	attack()
 	if Input.is_action_pressed("sneak"):
 		emit_signal("finished", "sneak")
 	else:
@@ -39,7 +41,7 @@ func apply_forces():
 		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
 
 
-func normal_attack():
+func attack():
 	var enemies = owner.get_node("AttackArea").get_overlapping_bodies()
 	var klengan_node = get_parent().get_parent()
 	#slow , strong

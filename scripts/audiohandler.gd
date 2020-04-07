@@ -12,6 +12,7 @@ var sounds_dict = {}
 var music_dict = {}
 
 var sounds_player : AudioStreamPlayer
+var klegan_sounds_player : AudioStreamPlayer
 var music_player : AudioStreamPlayer
 
 # This is the sound library structure.
@@ -26,16 +27,20 @@ var music_player : AudioStreamPlayer
 func _ready():
 	# Create Audio StreamPlayer
 	sounds_player = AudioStreamPlayer.new()
+	klegan_sounds_player = AudioStreamPlayer.new()
 	music_player = AudioStreamPlayer.new()
 	
 	# Ensure sounds/music will be played when the game is paused
 	sounds_player.pause_mode = Node.PAUSE_MODE_PROCESS
+	klegan_sounds_player.pause_mode = Node.PAUSE_MODE_PROCESS
 	music_player.pause_mode = Node.PAUSE_MODE_PROCESS
 	
 	sounds_player.bus = BUS_SOUNDS
+	klegan_sounds_player.bus = BUS_SOUNDS
 	music_player.bus = BUS_MUSIC
 	
 	add_child(sounds_player)
+	add_child(klegan_sounds_player)
 	add_child(music_player)
 	
 	fill_audio_dict_from_path(sounds_dict, SOUNDS_PATH)
@@ -53,8 +58,12 @@ func change_bus_volume(_bus_index, _volume_pct):
 
 func play_sound(_sound_name):
 	if sounds_dict.has(_sound_name):
-		sounds_player.stream = load(sounds_dict[_sound_name])
-	sounds_player.play()
+		if _sound_name.begins_with("klengan"):
+			klegan_sounds_player.stream = load(sounds_dict[_sound_name])
+			klegan_sounds_player.play()
+		else:
+			sounds_player.stream = load(sounds_dict[_sound_name])
+			sounds_player.play()
 
 
 func play_music(_music_name):

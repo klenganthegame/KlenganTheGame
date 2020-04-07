@@ -26,6 +26,7 @@ func _physics_process(_delta):
 	var collision = move_and_collide(velocity * _delta)
 	if collision != null:
 		if collision.collider is FightableObject:
+			Input.start_joy_vibration(0, 1, 0, 0.2)
 			klengan_node.attack(KLENGAN_ATTACKS.NORMAL, collision.collider)
 		queue_free()
 

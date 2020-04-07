@@ -21,7 +21,7 @@ func _enter_tree():
 		Attack.new(KLENGAN_ATTACKS.DASH, 10, 5, 50),
 		Attack.new(KLENGAN_ATTACKS.HARPUNE, 10, 5, 50),
 		]
-	pass
+
 
 func _ready():
 	if !GlobalVars.is_touch():
@@ -32,6 +32,7 @@ func _ready():
 	change_score_in_ui(500)
 	
 	spawn = transform.get_origin()
+
 
 func _process(_delta):
 	if dash <= 0.01:
@@ -49,11 +50,6 @@ func _process(_delta):
 		$StateMachine._change_state("dash")
 		dashed = true
 	$CanvasLayer/UI/Health.value = actual_life
-	if transform.origin.y > spawn.y + 1000 && !is_on_floor():
-		transform.origin = spawn
-		talk(["Gott: Uff... Spring doch nicht... diesmal habe ich dich gerettet...", "Für Hilfe ruf bitte 0800-1110111 an...."])
-		
-		hit(1)
 
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):
@@ -63,8 +59,10 @@ func play_directional_animation(_anim_name, _looking_right = looking_right):
 
 func set_looking_right(_looking_right):
 	looking_right = _looking_right
-	# Flipping the scale of the sprite to change scale of its children
-	$AnimatedSprite.scale = $AnimatedSprite.scale.abs() * Vector2(int(pow(-1, int(!_looking_right))), 1)
+#	$AnimatedSprite.scale = $AnimatedSprite.scale.abs() * Vector2(int(pow(-1, int(!_looking_right))), 1)
+	$AnimatedSprite.flip_h = !looking_right
+	$Collision.position.x = pow(-1, int(!_looking_right)) * abs($Collision.position.x)
+	$AttackArea.position.x = pow(-1, int(!_looking_right)) * abs($AttackArea.position.x)
 
 
 func talk(_text : Array):
@@ -114,6 +112,10 @@ func set_DashCollision_disabled(_disabled):
 func change_score_in_ui(score : int):
 	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
 
+
+func hit(damage : int):
+	.hit(damage)
+	AudioHandler.play_sound("klengan_hurt")
 
 func dying():
 	$CanvasLayer/PauseMenu.play("die")

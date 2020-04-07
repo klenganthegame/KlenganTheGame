@@ -30,10 +30,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 8.44902, 12 )
+extents = Vector2( 36, 48 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 40, 60 )
+extents = Vector2( 120, 180 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 61.3382, 16 )
@@ -42,43 +42,6 @@ extents = Vector2( 61.3382, 16 )
 collision_layer = 16
 collision_mask = 43
 script = ExtResource( 1 )
-
-[node name="LifeBar" type="ProgressBar" parent="."]
-margin_left = -46.7184
-margin_top = -42.108
-margin_right = 46.2816
-margin_bottom = -28.108
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = SubResource( 1 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 2 )
-
-[node name="AttackArea" type="Area2D" parent="AnimatedSprite"]
-collision_layer = 0
-collision_mask = 4
-
-[node name="AttackCollision" type="CollisionShape2D" parent="AnimatedSprite/AttackArea"]
-position = Vector2( 6.88552, -0.838509 )
-shape = SubResource( 3 )
-
-[node name="DetectionArea" type="Area2D" parent="AnimatedSprite"]
-collision_layer = 0
-collision_mask = 4
-
-[node name="DetectionCollision" type="CollisionShape2D" parent="AnimatedSprite/DetectionArea"]
-visible = false
-position = Vector2( 35, 0 )
-rotation = -1.5708
-shape = SubResource( 4 )
-
-[node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource( 5 )
-
-[node name="AttackCooldown" type="Timer" parent="."]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -99,9 +62,47 @@ script = ExtResource( 9 )
 
 [node name="Damage" type="Node" parent="StateMachine"]
 script = ExtResource( 10 )
+LERP_FACTOR = 0.01
+
+[node name="LifeBar" type="ProgressBar" parent="."]
+margin_left = -46.7184
+margin_top = -42.108
+margin_right = 46.2816
+margin_bottom = -28.108
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 1 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 2 )
+
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2( 36, 0 )
+collision_layer = 0
+collision_mask = 4
+
+[node name="AttackCollision" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource( 3 )
+
+[node name="DetectionArea" type="Area2D" parent="."]
+visible = false
+position = Vector2( 80, 0 )
+collision_layer = 0
+collision_mask = 4
+
+[node name="DetectionCollision" type="CollisionShape2D" parent="DetectionArea"]
+rotation = -1.5708
+shape = SubResource( 4 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 5 )
+
+[node name="AttackCooldown" type="Timer" parent="."]
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
-[connection signal="body_entered" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_body_entered"]
-[connection signal="body_exited" from="AnimatedSprite/AttackArea" to="StateMachine" method="_on_AttackArea_body_exited"]
-[connection signal="body_entered" from="AnimatedSprite/DetectionArea" to="StateMachine" method="_on_DetectionArea_body_entered"]
-[connection signal="body_exited" from="AnimatedSprite/DetectionArea" to="StateMachine" method="_on_DetectionArea_body_exited"]
+[connection signal="body_entered" from="AttackArea" to="StateMachine" method="_on_AttackArea_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="StateMachine" method="_on_AttackArea_body_exited"]
+[connection signal="body_entered" from="DetectionArea" to="StateMachine" method="_on_DetectionArea_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="StateMachine" method="_on_DetectionArea_body_exited"]
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_AttackCooldown_timeout"]

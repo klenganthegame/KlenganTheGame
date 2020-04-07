@@ -39,13 +39,13 @@ func approach_player():
 	try_jump()
 
 
-func wander():
-	if rand_range(-1,1) < IDLING_MOVE_PCT:
-		velocity.x = clamp(velocity.x + rand_range(-0.8,0.8), -MAX_SPEED, MAX_SPEED)
-		
-		if velocity.x != 0:
-			owner.set_looking_right(velocity.x > 0)
-			owner.play_directional_animation("move")
-	else:
-		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
-		emit_signal("finished","idle")
+#func wander():
+#	if rand_range(-1,1) < IDLING_MOVE_PCT:
+#		velocity.x = clamp(velocity.x + rand_range(-0.8,0.8), -MAX_SPEED, MAX_SPEED)
+#
+#		if velocity.x != 0:
+#			owner.set_looking_right(velocity.x > 0)
+#			owner.play_directional_animation("move")
+#	else:
+#		velocity.x = int(lerp(velocity.x, 0, LERP_FACTOR))
+#		emit_signal("finished","idle")

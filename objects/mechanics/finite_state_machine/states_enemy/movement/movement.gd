@@ -19,6 +19,7 @@ func exit():
 
 
 func update(_delta):
+	.update(_delta)
 	apply_forces()
 	if velocity.x == 0 and owner.is_on_floor() and owner.focused_body == null:
 		emit_signal("finished", "idle")
@@ -28,7 +29,8 @@ func apply_forces():
 	if !owner.is_on_floor():
 		velocity.y += GRAVITY
 
+
 func _on_Player_detected(_player, _entered):
 	._on_Player_detected(_player, _entered)
-	if _entered:
+	if _entered and name != "Move":
 		emit_signal("finished", "move")
