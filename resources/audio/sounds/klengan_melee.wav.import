@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/klengan_melee.wav-0edd271e461e289047bc1153a7d2fa63.sample"
+
+[deps]
+
+source_file="res://resources/audio/sounds/klengan_melee.wav"
+dest_files=[ "res://.import/klengan_melee.wav-0edd271e461e289047bc1153a7d2fa63.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

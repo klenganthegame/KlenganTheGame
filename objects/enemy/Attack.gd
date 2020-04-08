@@ -4,6 +4,7 @@ extends "res://objects/mechanics/finite_state_machine/states_enemy/movement/move
 func enter():
 	.enter()
 	owner.play_directional_animation("idle")
+	AudioHandler.play_sound("enemy_attack")
 
 
 func update(_delta):
@@ -18,7 +19,7 @@ func _on_animation_finished(_anim_name):
 
 
 func attack(attack_id):
-	var players = owner.get_node("AnimatedSprite/AttackArea").get_overlapping_bodies()
+	var players = owner.get_node("AttackArea").get_overlapping_bodies()
 	var enemy_node = get_parent().get_parent()
 	if !players.empty():
 		RumbleHandler.rumble_hit()

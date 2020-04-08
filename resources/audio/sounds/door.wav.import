@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/door.wav-a1a3380aa4353a13d2bc65cb69bab0f6.sample"
+path="res://.import/door.wav-289383217cd40745f471e6f20164aef1.sample"
 
 [deps]
 
-source_file="res://resources/audio/door.wav"
-dest_files=[ "res://.import/door.wav-a1a3380aa4353a13d2bc65cb69bab0f6.sample" ]
+source_file="res://resources/audio/sounds/door.wav"
+dest_files=[ "res://.import/door.wav-289383217cd40745f471e6f20164aef1.sample" ]
 
 [params]
 

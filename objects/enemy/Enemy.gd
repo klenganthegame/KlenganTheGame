@@ -7,12 +7,16 @@ var looking_right = false
 var focused_body = null
 var can_attack_player = false
 var velocity = Vector2()
+var spawn = Vector2()
+
 
 func _ready():
 	add_attack(Attack.new(ENEMY_ATTACKS.NORMAL, 1, 5, 50))
 	add_attack(Attack.new(ENEMY_ATTACKS.DISTANCE, 1, 5, 50))
 	$LifeBar.max_value = max_life
 	$LifeBar.value = actual_life
+	spawn = transform.get_origin()
+
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):
 	$AnimatedSprite.play(_anim_name)
@@ -21,8 +25,10 @@ func play_directional_animation(_anim_name, _looking_right = looking_right):
 
 func set_looking_right(_looking_right):
 	looking_right = _looking_right
-	# Flipping the scale of the sprite to change scale of its children
-	$AnimatedSprite.scale = $AnimatedSprite.scale.abs() * Vector2(int(pow(-1, int(!_looking_right))), 1)
+	$AnimatedSprite.flip_h = !looking_right
+	$Collision.position.x = pow(-1, int(!_looking_right)) * abs($Collision.position.x)
+	$AttackArea.position.x = pow(-1, int(!_looking_right)) * abs($AttackArea.position.x)
+	$DetectionArea.position.x = pow(-1, int(!_looking_right)) * abs($DetectionArea.position.x)
 
 
 func start_attack_cooldown():
@@ -41,5 +47,10 @@ func _on_AttackCooldown_timeout():
 func update_life():
 	$LifeBar.value = actual_life
 
+
+func hit(damage : int):
+	.hit(damage)
+	AudioHandler.play_sound("enemy_hurt")
+	$StateMachine._change_state("damage")
 
 

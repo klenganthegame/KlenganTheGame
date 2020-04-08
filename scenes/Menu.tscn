@@ -325,6 +325,5 @@ script = ExtResource( 14 )
 [connection signal="pressed" from="HBoxContainer/Youtube" to="." method="_on_Youtube_pressed"]
 [connection signal="pressed" from="HBoxContainer/Reddit" to="." method="_on_Reddit_pressed"]
 [connection signal="closed" from="Controls" to="." method="_on_Controls_closed"]
-[connection signal="pressed" from="Pause/PausePanel/Settings/Rumble" to="Pause/PausePanel/Settings/Rumble" method="_on_Rumble_pressed"]
 [connection signal="toggled" from="Pause/PausePanel/Settings/Donations" to="." method="_on_Donations_toggled"]
 [connection signal="pressed" from="Pause/PausePanel/Settings/Back" to="." method="_on_Back_pressed"]
