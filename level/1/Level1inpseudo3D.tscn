@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://level/1/Level1inpseudo3d.gd" type="Script" id=1]
+[ext_resource path="res://level/1/Level1inpseudo3D.gd" type="Script" id=1]
 [ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=4]
