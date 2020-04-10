@@ -8,9 +8,11 @@ const BUS_AMBIENT = "Ambient"
 
 const SOUNDS_PATH = "res://resources/audio/sounds/"
 const MUSIC_PATH = "res://resources/audio/music/"
+const AMBIENT_PATH = "res://resources/audio/ambient/"
 
 var sounds_dict = {}
 var music_dict = {}
+var ambient_dict = {}
 
 var sounds_player : AudioStreamPlayer
 var klengan_sounds_player : AudioStreamPlayer
@@ -51,6 +53,7 @@ func _ready():
 	
 	fill_audio_dict_from_path(sounds_dict, SOUNDS_PATH)
 	fill_audio_dict_from_path(music_dict, MUSIC_PATH)
+	fill_audio_dict_from_path(ambient_dict, AMBIENT_PATH)
 
 
 func change_bus_volume(_bus_index, _volume_pct):
@@ -74,12 +77,14 @@ func play_sound(_sound_name):
 
 func play_music(_music_name):
 	if music_dict.has(_music_name):
-		if _music_name.begins_with("ambient"):
-			ambient_player.stream = load(music_dict[_music_name])
-			ambient_player.play()
-		else:
-			music_player.stream = load(music_dict[_music_name])
-			music_player.play()
+		music_player.stream = load(music_dict[_music_name])
+		music_player.play()
+
+
+func play_ambient(_ambient_name):
+	if ambient_dict.has(_ambient_name):
+		ambient_player.stream = load(ambient_dict[_ambient_name])
+		ambient_player.play()
 
 
 func fill_audio_dict_from_path(_dict, _path):
@@ -88,7 +93,7 @@ func fill_audio_dict_from_path(_dict, _path):
 		# removing all possible suffixes to get the name
 		var dict_name = audio.trim_suffix(".wav")
 		dict_name = dict_name.trim_suffix(".mp3")
-		dict_name = dict_name.rstrip(".ogg")
+		dict_name = dict_name.trim_suffix(".ogg")
 		_dict[dict_name] = _path + audio
 
 

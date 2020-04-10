@@ -49,7 +49,3 @@ func apply_horizontal_velocity(_move_anim):
 func apply_forces():
 	if !owner.is_on_floor():
 		velocity.y += GRAVITY
-
-
-#func set_ascending(_ascending):
-#	owner.get_node("Collision").disabled = _ascending
