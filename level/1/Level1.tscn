@@ -77,7 +77,8 @@ position = Vector2( -600, 600 )
 dialogue = [ "Oh...eine Tür!" ]
 
 [node name="Door1" parent="Doors/DoorOpener" instance=ExtResource( 4 )]
-position = Vector2( 0, -130 )
+position = Vector2( -5.26318, -218.422 )
+scale = Vector2( 1, 1.56 )
 
 [node name="Lights" type="Node2D" parent="."]
 

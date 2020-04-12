@@ -714,7 +714,6 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 465.0
 margin_bottom = 99.0
-audio_bus = "Master"
 
 [node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 103.0
