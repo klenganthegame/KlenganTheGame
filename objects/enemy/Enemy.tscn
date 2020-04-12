@@ -45,7 +45,7 @@ script = ExtResource( 1 )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 5 )
-START_STATE = NodePath("Idle")
+START_STATE = NodePath("Move")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )

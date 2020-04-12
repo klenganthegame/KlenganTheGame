@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Light_off.png-55858bac59761887c82ff29c233a8dbd.stex"
+path="res://.import/redditanswer.png-7a83503f84679faf6400d7bb0115e2e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/objects/light/Light_off.png"
-dest_files=[ "res://.import/Light_off.png-55858bac59761887c82ff29c233a8dbd.stex" ]
+source_file="res://resources/sprites/credits/redditanswer.png"
+dest_files=[ "res://.import/redditanswer.png-7a83503f84679faf6400d7bb0115e2e4.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

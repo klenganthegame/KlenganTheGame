@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mouse_released.wav-83b279623852e56f4c7e1e3287cb3222.sample"
+
+[deps]
+
+source_file="res://resources/audio/sounds/mouse_released.wav"
+dest_files=[ "res://.import/mouse_released.wav-83b279623852e56f4c7e1e3287cb3222.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
