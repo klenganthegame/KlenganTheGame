@@ -1,33 +1,38 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/LevelSelection/LoadButton.gd" type="Script" id=1]
-[ext_resource path="res://resources/sprites/level_selection/Locked.png" type="Texture" id=2]
-[ext_resource path="res://resources/sprites/level_selection/Coming_soon.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/level_selection/locked.png" type="Texture" id=2]
+[ext_resource path="res://resources/sprites/level_selection/coming_soon.png" type="Texture" id=3]
 [ext_resource path="res://objects/mechanics/ui/GameTextureButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/sprites/level_selection/pressed_background.tres" type="Texture" id=5]
-[ext_resource path="res://resources/sprites/level_selection/boss_level_1_unknown.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/level_selection/boss_level_0_unknown.png" type="Texture" id=6]
 [ext_resource path="res://resources/sprites/level_selection/background/active_flames_1.png" type="Texture" id=7]
 [ext_resource path="res://resources/sprites/level_selection/background/active_flames_0.png" type="Texture" id=8]
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=9]
+[ext_resource path="res://resources/shader/fireFX.shader" type="Shader" id=11]
 
-[sub_resource type="AnimatedTexture" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 11 )
+
+[sub_resource type="AnimatedTexture" id=2]
 frames = 2
 frame_0/texture = ExtResource( 8 )
 frame_1/texture = ExtResource( 7 )
 frame_1/delay_sec = 0.0
 
 [node name="LoadButton" instance=ExtResource( 4 )]
+material = SubResource( 1 )
 margin_right = -874.0
 margin_bottom = -450.0
 texture_hover = ExtResource( 5 )
-texture_focused = SubResource( 1 )
+texture_focused = SubResource( 2 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 1 )
-level_to_load = 1
 boss_portait = ExtResource( 6 )
 
 [node name="BossPortrait" type="TextureRect" parent="." index="0"]
+modulate = Color( 1, 1, 1, 0.941176 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
