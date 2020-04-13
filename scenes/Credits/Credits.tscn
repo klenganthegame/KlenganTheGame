@@ -40,9 +40,10 @@ unfolded = true
 [node name="ProgrammerPost" parent="ScrollContainer/Posts" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 821.0
-margin_right = 1012.0
-margin_bottom = 969.0
+margin_top = 192.0
+margin_right = 1024.0
+margin_bottom = 340.0
+likes = 7
 
 [node name="BackButton" type="Button" parent="."]
 anchor_left = 1.0
