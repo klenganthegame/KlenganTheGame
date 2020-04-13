@@ -75,8 +75,10 @@ func interact():
 	if area != null:
 		var interactable = area.get_parent()
 		if interactable.is_in_group("Teleportation"):
-			LevelChanger.change_level_to(interactable.target_level)
-			last_action_interactable = true
+			if SCENES.LEVELS.has(interactable.target_level):
+				var level_path = SCENES.LEVELS[interactable.target_level]["path"]
+				LevelChanger.change_level_to(level_path)
+				last_action_interactable = true
 		elif interactable.is_in_group("Interactable"):
 			talk(interactable.dialogue)
 			last_action_interactable = true
@@ -92,8 +94,6 @@ func _on_Area2D_area_exited(_area):
 
 
 func _on_DialogueBox_dialogue_exit():
-	#if area.get_parent() == null:
-	#	return
 	if last_action_interactable and area != null:
 		var interactable = area.get_parent()
 		interactable.interacted()

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stabilodash.png-5735cf62fe93e8e9473050a87eb97de9.stex"
+path="res://.import/stabilodash.png-ef8f2cbddc52aaf49cda8a520a3d9795.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/test/stabilodash.png"
-dest_files=[ "res://.import/stabilodash.png-5735cf62fe93e8e9473050a87eb97de9.stex" ]
+source_file="res://sprites/test/stabilodash.png"
+dest_files=[ "res://.import/stabilodash.png-ef8f2cbddc52aaf49cda8a520a3d9795.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/marki-clon9.png-01f6fef1f84af6d82ceea72d4909e94d.stex"
+path="res://.import/marki-clon9.png-3bcef2898cf860bac3d1d4a74e2880d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/test/marki-clon9.png"
-dest_files=[ "res://.import/marki-clon9.png-01f6fef1f84af6d82ceea72d4909e94d.stex" ]
+source_file="res://sprites/test/marki-clon9.png"
+dest_files=[ "res://.import/marki-clon9.png-3bcef2898cf860bac3d1d4a74e2880d3.stex" ]
 
 [params]
 

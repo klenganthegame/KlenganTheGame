@@ -5,6 +5,7 @@ class_name GameButton
 func _ready():
 	connect("button_up", self, "_on_GameButton_button_up")
 	connect("button_down", self, "_on_GameButton_button_down")
+	mouse_default_cursor_shape = CURSOR_POINTING_HAND
 
 
 func _on_GameButton_button_down():

@@ -144,6 +144,7 @@ __meta__ = {
 margin_top = 128.0
 margin_right = 280.0
 margin_bottom = 182.0
+mouse_default_cursor_shape = 2
 text = "Neues Spiel"
 script = ExtResource( 14 )
 
@@ -151,6 +152,7 @@ script = ExtResource( 14 )
 margin_top = 186.0
 margin_right = 280.0
 margin_bottom = 240.0
+mouse_default_cursor_shape = 2
 text = "Spiel laden"
 script = ExtResource( 14 )
 
@@ -158,6 +160,7 @@ script = ExtResource( 14 )
 margin_top = 244.0
 margin_right = 280.0
 margin_bottom = 298.0
+mouse_default_cursor_shape = 2
 text = "Einstellungen"
 script = ExtResource( 14 )
 
@@ -165,6 +168,7 @@ script = ExtResource( 14 )
 margin_top = 302.0
 margin_right = 280.0
 margin_bottom = 356.0
+mouse_default_cursor_shape = 2
 text = "Steuerung"
 script = ExtResource( 14 )
 
@@ -172,6 +176,7 @@ script = ExtResource( 14 )
 margin_top = 360.0
 margin_right = 280.0
 margin_bottom = 414.0
+mouse_default_cursor_shape = 2
 text = "Mitwirkende"
 script = ExtResource( 14 )
 
@@ -179,7 +184,8 @@ script = ExtResource( 14 )
 margin_top = 418.0
 margin_right = 280.0
 margin_bottom = 472.0
-text = "Beemdem"
+mouse_default_cursor_shape = 2
+text = "Beenden"
 script = ExtResource( 14 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -197,12 +203,14 @@ __meta__ = {
 [node name="Youtube" type="TextureButton" parent="HBoxContainer"]
 margin_right = 64.0
 margin_bottom = 75.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 4 )
 
 [node name="Reddit" type="TextureButton" parent="HBoxContainer"]
 margin_left = 68.0
 margin_right = 132.0
 margin_bottom = 75.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
 
 [node name="Krebshilfe" parent="." instance=ExtResource( 6 )]
@@ -314,6 +322,7 @@ script = ExtResource( 8 )
 [node name="Back" type="Button" parent="Pause/PausePanel/Settings"]
 margin_right = 40.0
 margin_bottom = 54.0
+mouse_default_cursor_shape = 2
 text = "Zurück"
 script = ExtResource( 14 )
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]

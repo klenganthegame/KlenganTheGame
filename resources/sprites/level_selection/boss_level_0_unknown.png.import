@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Robbe_5.png-cd5db62eac095224cdc89d1faaadb53e.stex"
+path="res://.import/boss_level_0_unknown.png-c6e43536b15a74da2999df8ee84141f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/robbe/Robbe_5.png"
-dest_files=[ "res://.import/Robbe_5.png-cd5db62eac095224cdc89d1faaadb53e.stex" ]
+source_file="res://resources/sprites/level_selection/boss_level_0_unknown.png"
+dest_files=[ "res://.import/boss_level_0_unknown.png-c6e43536b15a74da2999df8ee84141f0.stex" ]
 
 [params]
 
