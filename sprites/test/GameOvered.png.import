@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GameOvered.png-cf85a57a4b050ac14aae34654e1c4d62.stex"
+path="res://.import/GameOvered.png-43223afb195cfd2725f600aa480b5cdf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/test/GameOvered.png"
-dest_files=[ "res://.import/GameOvered.png-cf85a57a4b050ac14aae34654e1c4d62.stex" ]
+source_file="res://sprites/test/GameOvered.png"
+dest_files=[ "res://.import/GameOvered.png-43223afb195cfd2725f600aa480b5cdf.stex" ]
 
 [params]
 

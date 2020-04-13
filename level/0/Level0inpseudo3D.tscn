@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://level/1/Level1inpseudo3D.gd" type="Script" id=1]
+[ext_resource path="res://level/0/Level0inpseudo3D.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/backstage/backstage.tres" type="TileSet" id=2]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=3]
 

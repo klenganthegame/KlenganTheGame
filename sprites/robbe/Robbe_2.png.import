@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Robbe_2.png-9cb33334b3fc21b1dc9006d006bd11a6.stex"
+path="res://.import/Robbe_2.png-dc20c94c37b36a2aaf5209281c3733b1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/robbe/Robbe_2.png"
-dest_files=[ "res://.import/Robbe_2.png-9cb33334b3fc21b1dc9006d006bd11a6.stex" ]
+source_file="res://sprites/robbe/Robbe_2.png"
+dest_files=[ "res://.import/Robbe_2.png-dc20c94c37b36a2aaf5209281c3733b1.stex" ]
 
 [params]
 

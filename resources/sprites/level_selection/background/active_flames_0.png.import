@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Robbe_5.png-cd5db62eac095224cdc89d1faaadb53e.stex"
+path="res://.import/active_flames_0.png-ed1d87eda4a8a374d500d0a04f9edadc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/robbe/Robbe_5.png"
-dest_files=[ "res://.import/Robbe_5.png-cd5db62eac095224cdc89d1faaadb53e.stex" ]
+source_file="res://resources/sprites/level_selection/background/active_flames_0.png"
+dest_files=[ "res://.import/active_flames_0.png-ed1d87eda4a8a374d500d0a04f9edadc.stex" ]
 
 [params]
 

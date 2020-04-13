@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://objects/mechanics/ui/GameButton.gd"
 }, {
+"base": "TextureButton",
+"class": "GameTextureButton",
+"language": "GDScript",
+"path": "res://objects/mechanics/ui/GameTextureButton.gd"
+}, {
 "base": "LinkButton",
 "class": "HotlinkButton",
 "language": "GDScript",
@@ -64,6 +69,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://objects/mechanics/ui/LabeledHSlider.gd"
 }, {
+"base": "GameTextureButton",
+"class": "LoadButton",
+"language": "GDScript",
+"path": "res://scenes/LevelSelection/LoadButton.gd"
+}, {
 "base": "GameButton",
 "class": "WeaponButton",
 "language": "GDScript",
@@ -77,17 +87,19 @@ _global_script_class_icons={
 "ENEMY_ATTACKS": "",
 "FightableObject": "",
 "GameButton": "",
+"GameTextureButton": "",
 "HotlinkButton": "",
 "InteractableObject": "",
 "KLENGAN_ATTACKS": "",
 "LabeledHSlider": "",
+"LoadButton": "",
 "WeaponButton": ""
 }
 
 [application]
 
 config/name="KlenganTheGame"
-run/main_scene="res://level/1/Level1.tscn"
+run/main_scene="res://level/0/Level0.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="KlenganTheGame"
 boot_splash/image="res://resources/bootsplash/bootsplash.png"

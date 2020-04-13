@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/LevelSelection/LoadButton.gd" type="Script" id=1]
+[ext_resource path="res://resources/sprites/level_selection/Locked.png" type="Texture" id=2]
+[ext_resource path="res://resources/sprites/level_selection/Coming_soon.png" type="Texture" id=3]
+[ext_resource path="res://objects/mechanics/ui/GameTextureButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/sprites/level_selection/pressed_background.tres" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/level_selection/boss_level_1_unknown.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/level_selection/background/active_flames_1.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/level_selection/background/active_flames_0.png" type="Texture" id=8]
+[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=9]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 2
+frame_0/texture = ExtResource( 8 )
+frame_1/texture = ExtResource( 7 )
+frame_1/delay_sec = 0.0
+
+[node name="LoadButton" instance=ExtResource( 4 )]
+margin_right = -874.0
+margin_bottom = -450.0
+texture_hover = ExtResource( 5 )
+texture_focused = SubResource( 1 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 1 )
+level_to_load = 1
+boss_portait = ExtResource( 6 )
+
+[node name="BossPortrait" type="TextureRect" parent="." index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LockedOverlay" type="TextureRect" parent="." index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComingSoonOverlay" type="TextureRect" parent="." index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelLabel" type="Label" parent="." index="3"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+theme = ExtResource( 9 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="." to="." method="_on_LoadButton_button_up"]

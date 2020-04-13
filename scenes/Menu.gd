@@ -20,11 +20,11 @@ func _on_NewGame_pressed():
 
 
 func load_level_one():
-	LevelChanger.change_level_to(SCENES.Level1)
+	LevelChanger.change_level_to(SCENES.Level0)
 
 
 func _on_LoadGame_pressed():
-	LevelChanger.change_level_to(SCENES.Level1)
+	LevelChanger.change_level_to(SCENES.Level0)
 
 
 func _on_Credits_pressed():
