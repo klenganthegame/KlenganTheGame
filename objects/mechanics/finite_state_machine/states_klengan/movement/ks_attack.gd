@@ -18,8 +18,7 @@ func enter():
 func exit():
 	.exit()
 	owner.set_AttackCollision_disabled(true)
-#	for enemy in get_parent().attackable_enemies:
-#		print(enemy.name)
+
 
 
 func _on_animation_finished(_anim_name):

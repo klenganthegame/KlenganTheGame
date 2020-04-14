@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/LevelSelection/LoadButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/level_selection/locked.png" type="Texture" id=2]
@@ -9,7 +9,9 @@
 [ext_resource path="res://resources/sprites/level_selection/background/active_flames_1.png" type="Texture" id=7]
 [ext_resource path="res://resources/sprites/level_selection/background/active_flames_0.png" type="Texture" id=8]
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=9]
+[ext_resource path="res://resources/sprites/level_selection/load_button_border.png" type="Texture" id=10]
 [ext_resource path="res://resources/shader/fireFX.shader" type="Shader" id=11]
+[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 11 )
@@ -20,21 +22,34 @@ frame_0/texture = ExtResource( 8 )
 frame_1/texture = ExtResource( 7 )
 frame_1/delay_sec = 0.0
 
+[sub_resource type="DynamicFont" id=3]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
 [node name="LoadButton" instance=ExtResource( 4 )]
 material = SubResource( 1 )
+margin_left = 6.0
+margin_top = 6.0
 margin_right = -874.0
 margin_bottom = -450.0
+rect_min_size = Vector2( 150, 150 )
+size_flags_horizontal = 3
 texture_hover = ExtResource( 5 )
 texture_focused = SubResource( 2 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 1 )
-boss_portait = ExtResource( 6 )
 
 [node name="BossPortrait" type="TextureRect" parent="." index="0"]
 modulate = Color( 1, 1, 1, 0.941176 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 6 )
@@ -44,10 +59,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LockedOverlay" type="TextureRect" parent="." index="1"]
-visible = false
+[node name="Margin" type="MarginContainer" parent="." index="1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = -6
+custom_constants/margin_top = -6
+custom_constants/margin_left = -6
+custom_constants/margin_bottom = -6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="TextureRect" parent="Margin" index="0"]
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 156.0
+margin_bottom = 156.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LockedOverlay" type="TextureRect" parent="Margin" index="1"]
+visible = false
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 156.0
+margin_bottom = 156.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
@@ -57,10 +102,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ComingSoonOverlay" type="TextureRect" parent="." index="2"]
+[node name="ComingSoonOverlay" type="TextureRect" parent="Margin" index="2"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 156.0
+margin_bottom = 156.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -70,12 +118,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LevelLabel" type="Label" parent="." index="3"]
+[node name="LevelLabel" type="Label" parent="." index="2"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -14.0
+margin_top = -21.0
 theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 3 )
+text = "LEVEL 0"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

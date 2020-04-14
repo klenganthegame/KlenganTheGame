@@ -122,7 +122,7 @@ func dying():
 
 
 func die():
-	get_tree().change_scene(SCENES.GameOver)
+	get_tree().change_scene(SCENES.GAME_OVER)
 
 
 func update_life():

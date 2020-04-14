@@ -61,6 +61,8 @@ func change_bus_volume(_bus_index, _volume_pct):
 	
 	AudioServer.set_bus_mute(_bus_index, (_volume_pct == 0.0))
 	
+#	print(_bus_index, " ", _volume_pct)
+	
 	if _volume_pct != 0.0:
 		AudioServer.set_bus_volume_db(_bus_index, volume_db)
 

@@ -69,15 +69,15 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ) ],
-"loop": true,
-"name": "walk",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "attack",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "walk",
+"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -663,6 +663,7 @@ margin_top = 71.0
 margin_right = 464.0
 margin_bottom = 125.0
 focus_neighbour_top = NodePath("../BackToMenu")
+mouse_default_cursor_shape = 2
 text = "Zurück zum Spiel"
 script = ExtResource( 57 )
 
@@ -671,6 +672,7 @@ pause_mode = 2
 margin_top = 129.0
 margin_right = 464.0
 margin_bottom = 183.0
+mouse_default_cursor_shape = 2
 text = "Speichern"
 script = ExtResource( 57 )
 
@@ -679,6 +681,7 @@ pause_mode = 2
 margin_top = 187.0
 margin_right = 464.0
 margin_bottom = 241.0
+mouse_default_cursor_shape = 2
 text = "Einstellungen"
 script = ExtResource( 57 )
 
@@ -686,6 +689,7 @@ script = ExtResource( 57 )
 margin_top = 245.0
 margin_right = 464.0
 margin_bottom = 299.0
+mouse_default_cursor_shape = 2
 text = "Steuerung"
 script = ExtResource( 57 )
 
@@ -695,6 +699,7 @@ margin_top = 303.0
 margin_right = 464.0
 margin_bottom = 357.0
 focus_neighbour_bottom = NodePath("../Back")
+mouse_default_cursor_shape = 2
 text = "Zurück zum Menü"
 script = ExtResource( 57 )
 
@@ -754,6 +759,7 @@ pause_mode = 2
 margin_top = 323.0
 margin_right = 465.0
 margin_bottom = 377.0
+mouse_default_cursor_shape = 2
 text = "Zurück"
 script = ExtResource( 57 )
 

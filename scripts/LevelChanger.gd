@@ -12,7 +12,7 @@ var loader = null
 var wait_frames = 0
 
 func change_level_to(_level_name):
-	get_tree().change_scene(SCENES.Loading)
+	get_tree().change_scene(SCENES.LOADING)
 	load_level(_level_name)
 
 

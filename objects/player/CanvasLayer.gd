@@ -22,7 +22,7 @@ func toggle_pause():
 
 func go_to_Menu():
 	get_tree().paused = false
-	get_tree().change_scene(SCENES.Menu)
+	LevelChanger.change_level_to(SCENES.MENU)
 
 
 func _on_Save_pressed():
