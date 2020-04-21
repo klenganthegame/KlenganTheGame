@@ -4,16 +4,8 @@
 [ext_resource path="res://scenes/LevelSelection/LoadButton.tscn" type="PackedScene" id=2]
 
 [node name="LoadLevelGrid" type="GridContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 6.0
-margin_right = -6.0
-margin_bottom = -6.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/vseparation = 24
-custom_constants/hseparation = 24
+margin_right = 40.0
+margin_bottom = 40.0
 columns = 3
 script = ExtResource( 1 )
 __meta__ = {

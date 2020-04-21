@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialoguebox.png-19e15d70a4b996732a5c8b54302d9a3b.stex"
+path="res://.import/klengan_idle_0000.png-a9b4944eafaeda143da42b211d75cbf6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/ui/dialoguebox.png"
-dest_files=[ "res://.import/dialoguebox.png-19e15d70a4b996732a5c8b54302d9a3b.stex" ]
+source_file="res://resources/sprites/klengan/idle/klengan_idle_0000.png"
+dest_files=[ "res://.import/klengan_idle_0000.png-a9b4944eafaeda143da42b211d75cbf6.stex" ]
 
 [params]
 
