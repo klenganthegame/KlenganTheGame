@@ -3,6 +3,7 @@ extends Control
 func _ready():
 	$FadeIn.play("in")
 	$AnimationPlayer.play("idle")
+	AudioHandler.play_music("BackstageDancer")
 	if Input.get_joy_name(0) != "":
 		$VBoxContainer/NewGame.grab_focus()
 
@@ -20,15 +21,15 @@ func _on_NewGame_pressed():
 
 
 func load_level_one():
-	LevelChanger.change_level_to(SCENES.Level0)
+	LevelChanger.change_level_to(SCENES.LEVEL_0)
 
 
 func _on_LoadGame_pressed():
-	LevelChanger.change_level_to(SCENES.Level0)
+	get_tree().change_scene(SCENES.LEVEL_SELECTION)
 
 
 func _on_Credits_pressed():
-	get_tree().change_scene(SCENES.Credits)
+	get_tree().change_scene(SCENES.CREDITS)
 
 
 func _on_Exit_pressed():

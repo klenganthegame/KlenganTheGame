@@ -13,14 +13,12 @@ func _ready():
 
 func _on_BusVolumeSlider_value_changed(_value):
 	if !Engine.is_editor_hint():
-		AudioHandler.change_bus_volume(AudioServer.get_bus_index(audio_bus), value / 100.0)
+		AudioHandler.change_bus_volume(AudioServer.get_bus_index(audio_bus), _value / 100.0)
 
 
 func set_audio_bus(_audio_bus):
 	audio_bus = _audio_bus
 	set_prefix(_audio_bus + ": ")
-	if !Engine.is_editor_hint():
-		AudioHandler.change_bus_volume(AudioServer.get_bus_index(audio_bus), value / 100.0)
 
 
 func _on_BusVolumeSlider_gui_input(event):
