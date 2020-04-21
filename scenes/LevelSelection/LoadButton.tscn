@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/LevelSelection/LoadButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/level_selection/locked.png" type="Texture" id=2]
@@ -9,28 +9,23 @@
 [ext_resource path="res://resources/sprites/level_selection/background/active_flames_1.png" type="Texture" id=7]
 [ext_resource path="res://resources/sprites/level_selection/background/active_flames_0.png" type="Texture" id=8]
 [ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=9]
-[ext_resource path="res://resources/sprites/level_selection/load_button_border.png" type="Texture" id=10]
+[ext_resource path="res://resources/shader/white.png" type="Texture" id=10]
 [ext_resource path="res://resources/shader/fireFX.shader" type="Shader" id=11]
-[ext_resource path="res://resources/font/PressStart2P.ttf" type="DynamicFontData" id=12]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 11 )
 
-[sub_resource type="AnimatedTexture" id=2]
+[sub_resource type="AnimatedTexture" id=1]
 frames = 2
 frame_0/texture = ExtResource( 8 )
 frame_1/texture = ExtResource( 7 )
 frame_1/delay_sec = 0.0
 
-[sub_resource type="DynamicFont" id=3]
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 12 )
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 11 )
 
 [node name="LoadButton" instance=ExtResource( 4 )]
-material = SubResource( 1 )
-margin_left = 6.0
-margin_top = 6.0
+material = SubResource( 2 )
 margin_right = -874.0
 margin_bottom = -450.0
 rect_min_size = Vector2( 150, 150 )
@@ -41,15 +36,21 @@ expand = true
 stretch_mode = 5
 script = ExtResource( 1 )
 
-[node name="BossPortrait" type="TextureRect" parent="." index="0"]
-modulate = Color( 1, 1, 1, 0.941176 )
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+visible = false
+material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 6.0
-margin_right = -6.0
-margin_bottom = -6.0
-mouse_filter = 2
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BossPortrait" type="TextureRect" parent="." index="1"]
+modulate = Color( 1, 1, 1, 0.960784 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 6 )
@@ -59,7 +60,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Margin" type="MarginContainer" parent="." index="1"]
+[node name="LockedOverlay" type="TextureRect" parent="." index="2"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -102,7 +104,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ComingSoonOverlay" type="TextureRect" parent="Margin" index="2"]
+[node name="ComingSoonOverlay" type="TextureRect" parent="." index="3"]
 visible = false
 margin_left = -6.0
 margin_top = -6.0
@@ -118,7 +120,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LevelLabel" type="Label" parent="." index="2"]
+[node name="LevelLabel" type="Label" parent="." index="4"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

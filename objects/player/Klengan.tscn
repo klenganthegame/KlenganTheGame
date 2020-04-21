@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -57,6 +57,12 @@
 [ext_resource path="res://resources/sprites/klengan/walk/klengan_walk_00012.png" type="Texture" id=55]
 [ext_resource path="res://resources/shader/pixel_outline.shader" type="Shader" id=56]
 [ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=57]
+[ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0001.png" type="Texture" id=58]
+[ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0002.png" type="Texture" id=59]
+[ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0003.png" type="Texture" id=60]
+[ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0000.png" type="Texture" id=61]
+[ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0004.png" type="Texture" id=62]
+[ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0005.png" type="Texture" id=63]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 56 )
@@ -64,10 +70,10 @@ shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 61 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 63 ) ],
 "loop": true,
 "name": "idle",
-"speed": 1.0
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
@@ -584,7 +590,6 @@ margin_bottom = 139.0
 
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 margin_left = 173.0
 margin_top = 50.0

@@ -99,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="KlenganTheGame"
-run/main_scene="res://level/0/Level0.tscn"
+run/main_scene="res://level/1/Level1.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="KlenganTheGame"
 boot_splash/image="res://resources/bootsplash/bootsplash.png"
