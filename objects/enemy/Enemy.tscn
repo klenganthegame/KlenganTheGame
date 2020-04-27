@@ -100,6 +100,9 @@ shape = SubResource( 4 )
 shape = SubResource( 5 )
 
 [node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="EnemySoundsPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = "Sounds"
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="body_entered" from="AttackArea" to="StateMachine" method="_on_AttackArea_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="StateMachine" method="_on_AttackArea_body_exited"]

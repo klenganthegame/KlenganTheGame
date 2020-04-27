@@ -19,6 +19,9 @@ var klengan_sounds_player : AudioStreamPlayer
 var music_player : AudioStreamPlayer
 var ambient_player : AudioStreamPlayer
 
+
+var local_stereo_enabled = true
+
 # This is the sound library structure.
 # It features two AudioStreamPlayer, one for sounds and one for music
 # A sound can be played by calling a  play_sound/play_music and 
@@ -61,20 +64,24 @@ func change_bus_volume(_bus_index, _volume_pct):
 	
 	AudioServer.set_bus_mute(_bus_index, (_volume_pct == 0.0))
 	
-#	print(_bus_index, " ", _volume_pct)
-	
 	if _volume_pct != 0.0:
 		AudioServer.set_bus_volume_db(_bus_index, volume_db)
 
 
-func play_sound(_sound_name):
+func get_sound(_sound_name):
 	if sounds_dict.has(_sound_name):
-		if _sound_name.begins_with("klengan"):
-			klengan_sounds_player.stream = load(sounds_dict[_sound_name])
-			klengan_sounds_player.play()
-		else:
-			sounds_player.stream = load(sounds_dict[_sound_name])
-			sounds_player.play()
+		return load(sounds_dict[_sound_name])
+
+
+func play_sound(_sound_name):
+	var sound = get_sound(_sound_name)
+	
+	if sound != null and _sound_name.begins_with("klengan"):
+		klengan_sounds_player.stream = sound
+		klengan_sounds_player.play()
+	else:
+		sounds_player.stream = sound
+		sounds_player.play()
 
 
 func play_music(_music_name):

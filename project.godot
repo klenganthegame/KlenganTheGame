@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://objects/mechanics/ui/BusVolumeSlider.gd"
 }, {
+"base": "CheckButton",
+"class": "CheckGameButton",
+"language": "GDScript",
+"path": "res://objects/mechanics/ui/GameCheckButton.gd"
+}, {
 "base": "NinePatchRect",
 "class": "DialogueBox",
 "language": "GDScript",
@@ -83,6 +88,7 @@ _global_script_class_icons={
 "Attack": "",
 "Breakable": "",
 "BusVolumeSlider": "",
+"CheckGameButton": "",
 "DialogueBox": "res://addons/adbox/icon.png",
 "ENEMY_ATTACKS": "",
 "FightableObject": "",
