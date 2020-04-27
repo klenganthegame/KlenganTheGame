@@ -4,12 +4,16 @@
 [ext_resource path="res://sprites/backgrounds/backstage/Backstage_forground!.png" type="Texture" id=2]
 [ext_resource path="res://level/1/Level1.gd" type="Script" id=3]
 [ext_resource path="res://objects/mechanics/Door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/mechanics/Brokable/Brokable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/mechanics/Breakable/Breakable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/mechanics/Teleportation.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/mechanics/lamp.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/player/Klengan.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/mechanics/Interactable.tscn" type="PackedScene" id=10]
+
+
+
+
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4

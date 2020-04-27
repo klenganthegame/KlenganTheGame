@@ -43,11 +43,15 @@ func apply_forces():
 func attack():
 	var enemies = owner.get_node("AttackArea").get_overlapping_bodies()
 	var klengan_node = get_parent().get_parent()
+	
 	#slow , strong
 	if !enemies.empty():
 		Input.start_joy_vibration(0, 1, 0, 0.2)
+
 	for enemy in enemies:
-		if enemy is Brokable:
+		if enemy is Breakable:
+			print("ks_attack.gd :: breakable destroyed")
+			
 			continue
 		klengan_node.attack(KLENGAN_ATTACKS.NORMAL, enemy)
 

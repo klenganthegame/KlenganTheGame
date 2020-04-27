@@ -724,6 +724,7 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 465.0
 margin_bottom = 99.0
+audio_bus = "Master"
 
 [node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 103.0
@@ -787,8 +788,9 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CanvasLayer/TouchControlls/Pause" to="CanvasLayer" method="toggle_pause"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="weapon_selected" from="CanvasLayer/UI/WeaponSelection" to="." method="_on_WeaponSelection_weapon_selected"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
