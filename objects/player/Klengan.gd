@@ -8,6 +8,7 @@ var paused: bool = false
 var spawn : Vector2
 var dashed : bool = false
 var dash: float = 0.01
+var selected_weapon : int = KLENGAN_ATTACKS.NORMAL
 
 var last_action_interactable : bool = false
 
@@ -128,3 +129,7 @@ func die():
 func update_life():
 	$CanvasLayer/UI/Health.max_value = max_life
 	$CanvasLayer/UI/Health.value = actual_life
+
+
+func _on_WeaponSelection_weapon_selected(id):
+	selected_weapon = id

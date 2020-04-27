@@ -15,9 +15,9 @@ _global_script_classes=[ {
 "path": "res://scripts/fightable/attack.gd"
 }, {
 "base": "FightableObject",
-"class": "Brokable",
+"class": "Breakable",
 "language": "GDScript",
-"path": "res://objects/mechanics/Brokable/Brokable.gd"
+"path": "res://objects/mechanics/Breakable/Breakable.gd"
 }, {
 "base": "LabeledHSlider",
 "class": "BusVolumeSlider",
@@ -81,7 +81,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Attack": "",
-"Brokable": "",
+"Breakable": "",
 "BusVolumeSlider": "",
 "DialogueBox": "res://addons/adbox/icon.png",
 "ENEMY_ATTACKS": "",
