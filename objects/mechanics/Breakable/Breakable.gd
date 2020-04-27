@@ -11,9 +11,10 @@ func update_life():
 func dying():
 	print("destroyed") 
 	queue_free()
-	remove_child(self)
+
 
 func hit(damage : int):
 	.hit(damage)
 	AudioHandler.play_sound("enemy_hurt")
-	$StateMachine._change_state("damage")
+	if has_node("StateMachine"):
+		$StateMachine._change_state("damage")
