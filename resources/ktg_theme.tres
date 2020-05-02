@@ -53,7 +53,7 @@ margin_right = 16.9917
 margin_top = 30.4756
 margin_bottom = 23.7336
 
-[sub_resource type="StyleBoxTexture" id=13]
+[sub_resource type="StyleBoxTexture" id=6]
 content_margin_top = 12.0
 content_margin_bottom = 12.0
 texture = ExtResource( 4 )
@@ -63,13 +63,13 @@ margin_right = 23.0
 margin_top = 17.0
 margin_bottom = 21.0
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=7]
 margin_left = 17.1475
 margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 160, 16 )
 margin_left = 17.1475
@@ -77,7 +77,7 @@ margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 5 )
 region_rect = Rect2( 5.64667, 5.52916, 96.3533, 96.4708 )
 margin_left = 14.4957
@@ -86,7 +86,7 @@ margin_top = 14.4957
 margin_bottom = 13.8655
 modulate_color = Color( 1, 0.635294, 0.635294, 1 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 110.024, 102 )
 margin_left = 10.0
@@ -94,7 +94,7 @@ margin_right = 31.8884
 margin_top = 14.0
 margin_bottom = 16.0
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=11]
 texture = ExtResource( 5 )
 region_rect = Rect2( 5.64667, 5.52916, 96.3533, 96.4708 )
 margin_left = 14.4957
@@ -102,7 +102,7 @@ margin_right = 11.9747
 margin_top = 14.4957
 margin_bottom = 13.8655
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 160, 16 )
 margin_left = 17.1475
@@ -110,11 +110,11 @@ margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 font_data = ExtResource( 12 )
 
 [resource]
-default_font = SubResource( 12 )
+default_font = SubResource( 13 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -142,14 +142,14 @@ CheckButton/styles/disabled = null
 CheckButton/styles/focus = null
 CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
-CheckButton/styles/normal = SubResource( 13 )
+CheckButton/styles/normal = SubResource( 6 )
 CheckButton/styles/pressed = null
 HSlider/icons/grabber = ExtResource( 6 )
 HSlider/icons/grabber_disabled = ExtResource( 7 )
 HSlider/icons/grabber_highlight = ExtResource( 8 )
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 6 )
-HSlider/styles/slider = SubResource( 7 )
+HSlider/styles/grabber_area = SubResource( 7 )
+HSlider/styles/slider = SubResource( 8 )
 OptionButton/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 OptionButton/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -163,7 +163,7 @@ OptionButton/styles/focus = null
 OptionButton/styles/hover = null
 OptionButton/styles/normal = null
 OptionButton/styles/pressed = null
-Panel/styles/panel = SubResource( 8 )
+Panel/styles/panel = SubResource( 9 )
 Panel/styles/panelf = null
 Panel/styles/panelnc = null
 PopupMenu/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
@@ -178,14 +178,14 @@ PopupMenu/icons/radio_checked = null
 PopupMenu/icons/radio_unchecked = null
 PopupMenu/icons/submenu = null
 PopupMenu/icons/unchecked = null
-PopupMenu/styles/hover = SubResource( 9 )
+PopupMenu/styles/hover = SubResource( 10 )
 PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource( 10 )
+PopupMenu/styles/panel = SubResource( 11 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = null
-ProgressBar/styles/bg = SubResource( 11 )
+ProgressBar/styles/bg = SubResource( 12 )
 ProgressBar/styles/fg = null

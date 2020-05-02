@@ -207,12 +207,6 @@ position = Vector2( -500, 620 )
 [node name="Brokable" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( -1132.94, 439.621 )
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( -200.619, 578.989 )
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 410.445, 523.624 )
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color( 0.298039, 0.298039, 0.298039, 1 )
@@ -233,6 +227,6 @@ position = Vector2( 334, 455 )
 scale = Vector2( 5, 5 )
 z_index = -1
 [connection signal="interacted" from="Doors/DoorOpener" to="Doors/DoorOpener/Door1" method="trigger"]
-[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Mid" method="trigger"]
-[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Right" method="trigger"]
 [connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Left" method="trigger"]
+[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Right" method="trigger"]
+[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Mid" method="trigger"]

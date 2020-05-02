@@ -2,6 +2,11 @@ extends Node
 
 signal finished(_next_state)
 
+
+func _ready():
+	randomize()
+
+
 func enter():
 	pass
 
