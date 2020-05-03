@@ -1,8 +1,7 @@
-"""
-Handles Rumble of Phone and Mobile
-"""
-
 extends Node
+
+# designed as singleton
+# This class handles the Rumble on mobile devices and controller
 
 func rumble_normal_attack():
 	"""
