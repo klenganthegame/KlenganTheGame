@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Backstage.kiste.10.png-9257eed2b4f1f6e84dfceb1e1df58bfd.stex"
+path="res://.import/backstage.png-02ad069e2bf96a081252bde123c96378.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/backstage/drive-download-20200412T182543Z-001/Backstage.kiste.10.png"
-dest_files=[ "res://.import/Backstage.kiste.10.png-9257eed2b4f1f6e84dfceb1e1df58bfd.stex" ]
+source_file="res://resources/sprites/level1/backstage.png"
+dest_files=[ "res://.import/backstage.png-02ad069e2bf96a081252bde123c96378.stex" ]
 
 [params]
 
