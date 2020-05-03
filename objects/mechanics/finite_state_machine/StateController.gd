@@ -47,7 +47,7 @@ func _on_animation_finished(anim_name = ""):
 
 
 func _change_state(_state_name):
-#	print("StateController.gd: Changing to ", _state_name)
+#	print("StateController.gd: Changing ", current_state.name , " to ", _state_name)
 	if active:
 		current_state.exit()
 		

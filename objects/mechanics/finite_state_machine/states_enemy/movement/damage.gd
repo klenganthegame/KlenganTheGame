@@ -25,4 +25,4 @@ func update(_delta):
 
 
 func _on_StaggerTimer_timeout():
-	emit_signal("finished", "move")
+	emit_signal("finished", "approach")

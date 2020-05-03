@@ -32,5 +32,5 @@ func apply_forces():
 
 func _on_Player_detected(_player, _entered):
 	._on_Player_detected(_player, _entered)
-	if _entered and name != "Move":
-		emit_signal("finished", "move")
+	if _entered and name != "Approach":
+		emit_signal("finished", "approach")

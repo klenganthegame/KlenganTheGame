@@ -15,7 +15,7 @@ func update(_delta):
 func _on_animation_finished(_anim_name):
 	._on_animation_finished(_anim_name)
 	attack(ENEMY_ATTACKS.NORMAL)
-	emit_signal("finished", "move")
+	emit_signal("finished", "approach")
 
 
 func attack(attack_id):

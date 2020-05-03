@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://objects/player/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://objects/mechanics/finite_state_machine/KlenganStateController.gd" type="Script" id=2]
@@ -63,6 +63,7 @@
 [ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0000.png" type="Texture" id=61]
 [ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0004.png" type="Texture" id=62]
 [ext_resource path="res://resources/sprites/klengan/idle/klengan_idle_0005.png" type="Texture" id=63]
+[ext_resource path="res://objects/player/Stereo.gd" type="Script" id=64]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 56 )
@@ -75,15 +76,15 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "attack",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ) ],
 "loop": true,
 "name": "walk",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "attack",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -590,6 +591,7 @@ margin_bottom = 139.0
 
 [node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 margin_left = 173.0
 margin_top = 50.0
@@ -602,6 +604,9 @@ patch_margin_top = 10
 patch_margin_right = 12
 patch_margin_bottom = 13
 script = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 message_sound = ExtResource( 41 )
 font = SubResource( 7 )
 action_name = "accept"
@@ -721,50 +726,56 @@ __meta__ = {
 }
 
 [node name="MasterVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
-margin_top = 51.0
+margin_top = 19.0
 margin_right = 465.0
-margin_bottom = 99.0
-audio_bus = "Master"
+margin_bottom = 67.0
 
-[node name="SoundsVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
-margin_top = 103.0
+[node name="SoundsVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
+margin_top = 71.0
 margin_right = 465.0
-margin_bottom = 151.0
+margin_bottom = 119.0
 prefix = "Sounds: "
 audio_bus = "Sounds"
 
-[node name="MusicVolumeSlider2" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
-margin_top = 155.0
+[node name="MusicVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
+margin_top = 123.0
 margin_right = 465.0
-margin_bottom = 203.0
+margin_bottom = 171.0
 prefix = "Music: "
 audio_bus = "Music"
 
-[node name="Rumble" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+[node name="Stereo" type="CheckButton" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
-margin_top = 207.0
+margin_top = 175.0
 margin_right = 465.0
-margin_bottom = 261.0
-toggle_mode = true
+margin_bottom = 231.0
 pressed = true
-text = "Controller-Rumble: an"
+text = "Stereo"
+script = ExtResource( 64 )
+
+[node name="Rumble" type="CheckButton" parent="CanvasLayer/Pause/Panel/Settings"]
+pause_mode = 2
+margin_top = 235.0
+margin_right = 465.0
+margin_bottom = 291.0
+pressed = true
+text = "Controller-Rumble"
 script = ExtResource( 47 )
 
-[node name="Donations" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+[node name="Donations" type="CheckButton" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
-margin_top = 265.0
+margin_top = 295.0
 margin_right = 465.0
-margin_bottom = 319.0
-toggle_mode = true
+margin_bottom = 351.0
 pressed = true
-text = "Spendenaufruf: an"
+text = "Spendenaufruf"
 script = ExtResource( 48 )
 
 [node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
 pause_mode = 2
-margin_top = 323.0
+margin_top = 355.0
 margin_right = 465.0
-margin_bottom = 377.0
+margin_bottom = 409.0
 mouse_default_cursor_shape = 2
 text = "Zurück"
 script = ExtResource( 57 )
@@ -789,12 +800,13 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CanvasLayer/TouchControlls/Pause" to="CanvasLayer" method="toggle_pause"]
 [connection signal="weapon_selected" from="CanvasLayer/UI/WeaponSelection" to="." method="_on_WeaponSelection_weapon_selected"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Controls" to="CanvasLayer" method="_on_Controls_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/BackToMenu" to="CanvasLayer" method="_on_BackToMenu_pressed"]
+[connection signal="toggled" from="CanvasLayer/Pause/Panel/Settings/Stereo" to="CanvasLayer/Pause/Panel/Settings/Stereo" method="_on_Stereo_toggled"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/Settings/Back" to="CanvasLayer" method="_on_Back_pressed"]
 [connection signal="closed" from="CanvasLayer/Pause/Controlls" to="CanvasLayer" method="_on_Controlls_closed"]
