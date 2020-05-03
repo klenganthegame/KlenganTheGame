@@ -79,6 +79,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/LevelSelection/LoadButton.gd"
 }, {
+"base": "Reference",
+"class": "Profile",
+"language": "GDScript",
+"path": "res://scripts/Profile.gd"
+}, {
+"base": "Node",
+"class": "Settings",
+"language": "GDScript",
+"path": "res://scripts/Settings.gd"
+}, {
 "base": "GameButton",
 "class": "WeaponButton",
 "language": "GDScript",
@@ -99,6 +109,8 @@ _global_script_class_icons={
 "KLENGAN_ATTACKS": "",
 "LabeledHSlider": "",
 "LoadButton": "",
+"Profile": "",
+"Settings": "",
 "WeaponButton": ""
 }
 
@@ -116,10 +128,9 @@ config/icon="res://resources/icons/icon.png"
 
 AudioHandler="*res://scripts/AudioHandler.gd"
 SCENES="*res://scripts/scene_paths.gd"
-SaveGame="*res://scripts/SaveGame.gd"
+SaveGame="*res://scripts/GameSaver.gd"
 LevelChanger="*res://scripts/LevelChanger.gd"
 RumbleHandler="*res://scripts/RumbleHandler.gd"
-GlobalVars="*res://scripts/GlobalVars.gd"
 
 [display]
 

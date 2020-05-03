@@ -1,7 +1,3 @@
-"""
-Handles LevelChanging with fancy Loadingscreen
-"""
-
 extends Node
 
 signal load_progress(_progress_percentage)
@@ -10,6 +6,9 @@ const WAIT_FREEZE_FRAMES = 1
 
 var loader = null
 var wait_frames = 0
+
+# This class is designed as Singleton
+# Handles Levelchanging with loadingscreen
 
 func change_level_to(_level_name):
 	get_tree().change_scene(SCENES.LOADING)

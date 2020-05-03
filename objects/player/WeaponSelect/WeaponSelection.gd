@@ -13,7 +13,7 @@ func _enter_tree():
 			weapon_button.connect("selected_self", self, "touch_button")
 		
 func _ready():
-	if !is_touch():
+	if !SaveGame.settings.is_touch():
 		$Timer.stop()
 	for weapon_button in $WeaponMenu.get_children():
 		for i in unlocked_weapons:
@@ -53,7 +53,7 @@ func touch_button(id):
 		select_weapon(id)
 
 func is_touch()->bool:
-	return GlobalVars.touch_devices.has(OS.get_name())
+	return SaveGame.settings.is_touch()
 	
 func select_increment(i : int):
 	var select = selected_weapon

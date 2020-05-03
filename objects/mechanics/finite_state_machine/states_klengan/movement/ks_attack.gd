@@ -20,7 +20,6 @@ func exit():
 	owner.set_AttackCollision_disabled(true)
 
 
-
 func _on_animation_finished(_anim_name):
 	attack()
 	if Input.is_action_pressed("sneak"):
@@ -43,7 +42,7 @@ func apply_forces():
 func attack():
 	var enemies = owner.get_node("AttackArea").get_overlapping_bodies()
 	var klengan_node = get_parent().get_parent()
-	
+
 	#slow , strong
 	if !enemies.empty():
 		Input.start_joy_vibration(0, 1, 0, 0.2)
@@ -51,8 +50,6 @@ func attack():
 	for enemy in enemies:
 		if enemy is Breakable:
 			print("ks_attack.gd :: breakable destroyed")
-			
-			continue
-		klengan_node.attack(KLENGAN_ATTACKS.NORMAL, enemy)
-
-
+		else:
+			print("ks_attack.gd :: so much death, so much wow")
+		klengan_node.attack(get_parent().get_parent().selected_weapon, enemy)

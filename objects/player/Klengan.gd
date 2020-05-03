@@ -25,7 +25,7 @@ func _enter_tree():
 
 
 func _ready():
-	if !GlobalVars.is_touch():
+	if !SaveGame.settings.is_touch():
 		$CanvasLayer/TouchControlls.hide()
 	update_life()
 	update_life()
