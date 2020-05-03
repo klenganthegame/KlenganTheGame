@@ -17,9 +17,8 @@ func initialize_state_map():
 
 
 func _on_DetectionArea_body_entered(_body):
-	pass
-#	if active:
-#		current_state._on_Player_detected(_body, true)
+	if active:
+		current_state._on_Player_detected(_body, true)
 
 
 func _on_DetectionArea_body_exited(_body):

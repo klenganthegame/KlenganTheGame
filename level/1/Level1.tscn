@@ -228,5 +228,5 @@ scale = Vector2( 5, 5 )
 z_index = -1
 [connection signal="interacted" from="Doors/DoorOpener" to="Doors/DoorOpener/Door1" method="trigger"]
 [connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Left" method="trigger"]
-[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Right" method="trigger"]
 [connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Mid" method="trigger"]
+[connection signal="interacted" from="Lights/Lightswitch" to="Lights/Lightswitch/Lamp_Right" method="trigger"]
