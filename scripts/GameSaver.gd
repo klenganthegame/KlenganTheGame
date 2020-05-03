@@ -5,8 +5,8 @@ extends Node
 
 const path = "user://save.data"
 
-var profile : Profile
-var settings : Settings
+var profile : Profile = Profile.new()
+var settings : Settings = Settings.new()
 
 const GAMEDATA = "gamedata"
 const SETTINGS = "settings"
