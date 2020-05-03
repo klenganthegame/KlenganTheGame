@@ -91,7 +91,7 @@ animations = [ {
 extents = Vector2( 35, 64 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 34.1829, 10 )
+extents = Vector2( 34, 11 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24.9137, 10 )
@@ -389,7 +389,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="DashArea" type="Area2D" parent="."]
-position = Vector2( 0, 74 )
+position = Vector2( 0, 75 )
 collision_layer = 0
 collision_mask = 16
 
@@ -729,6 +729,7 @@ __meta__ = {
 margin_top = 19.0
 margin_right = 465.0
 margin_bottom = 67.0
+audio_bus = "Master"
 
 [node name="SoundsVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 71.0
