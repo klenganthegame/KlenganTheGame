@@ -59,22 +59,15 @@ margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=13]
+
+[sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 160, 16 )
 margin_left = 17.1475
 margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
-
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 5 )
-region_rect = Rect2( 5.64667, 5.52916, 96.3533, 96.4708 )
-margin_left = 14.4957
-margin_right = 11.9747
-margin_top = 14.4957
-margin_bottom = 13.8655
-modulate_color = Color( 1, 0.635294, 0.635294, 1 )
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 11 )
@@ -138,8 +131,8 @@ HSlider/icons/grabber = ExtResource( 6 )
 HSlider/icons/grabber_disabled = ExtResource( 7 )
 HSlider/icons/grabber_highlight = ExtResource( 8 )
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 7 )
-HSlider/styles/slider = SubResource( 8 )
+HSlider/styles/grabber_area = SubResource( 13 )
+HSlider/styles/slider = SubResource( 14 )
 OptionButton/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 OptionButton/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
