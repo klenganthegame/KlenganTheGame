@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=25 format=2]
+[gd_resource type="Theme" load_steps=26 format=2]
 
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_disabled.png" type="Texture" id=1]
 [ext_resource path="res://resources/sprites/ui/theme/button_for_menu_selected.png" type="Texture" id=2]
@@ -54,14 +54,22 @@ margin_top = 30.4756
 margin_bottom = 23.7336
 
 [sub_resource type="StyleBoxTexture" id=6]
+content_margin_top = 12.0
+content_margin_bottom = 12.0
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 102, 102 )
+margin_left = 17.0
+margin_right = 23.0
+margin_top = 17.0
+margin_bottom = 21.0
+
+[sub_resource type="StyleBoxTexture" id=7]
 margin_left = 17.1475
 margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
 
-[sub_resource type="StyleBoxTexture" id=13]
-
-[sub_resource type="StyleBoxTexture" id=14]
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 160, 16 )
 margin_left = 17.1475
@@ -70,6 +78,15 @@ margin_top = 6.3175
 margin_bottom = 7.22
 
 [sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 5 )
+region_rect = Rect2( 5.64667, 5.52916, 96.3533, 96.4708 )
+margin_left = 14.4957
+margin_right = 11.9747
+margin_top = 14.4957
+margin_bottom = 13.8655
+modulate_color = Color( 1, 0.635294, 0.635294, 1 )
+
+[sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 110.024, 102 )
 margin_left = 10.0
@@ -77,7 +94,7 @@ margin_right = 31.8884
 margin_top = 14.0
 margin_bottom = 16.0
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=11]
 texture = ExtResource( 5 )
 region_rect = Rect2( 5.64667, 5.52916, 96.3533, 96.4708 )
 margin_left = 14.4957
@@ -85,7 +102,7 @@ margin_right = 11.9747
 margin_top = 14.4957
 margin_bottom = 13.8655
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 160, 16 )
 margin_left = 17.1475
@@ -93,11 +110,11 @@ margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 font_data = ExtResource( 12 )
 
 [resource]
-default_font = SubResource( 12 )
+default_font = SubResource( 13 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -131,8 +148,8 @@ HSlider/icons/grabber = ExtResource( 6 )
 HSlider/icons/grabber_disabled = ExtResource( 7 )
 HSlider/icons/grabber_highlight = ExtResource( 8 )
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 13 )
-HSlider/styles/slider = SubResource( 14 )
+HSlider/styles/grabber_area = SubResource( 7 )
+HSlider/styles/slider = SubResource( 8 )
 OptionButton/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 OptionButton/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -170,5 +187,5 @@ PopupMenu/styles/separator = null
 ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = null
-ProgressBar/styles/bg = null
+ProgressBar/styles/bg = SubResource( 12 )
 ProgressBar/styles/fg = null
