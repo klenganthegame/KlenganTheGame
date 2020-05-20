@@ -1,22 +1,29 @@
 extends Node2D
 
-const SNAP_DISTANCE = 5
+const SNAP_DISTANCE = 30
 
-export(Vector2) var bullet_speed = Vector2(500, 500)
+export(Vector2) var bullet_speed = Vector2(800, 800)
 export(int) var shot_distance = 300 setget set_shot_distance
 
 var target_pos =  Vector2()
 var shooting = false
 var retrieving = false
 
+#############
+# Note: The Texture for the rope must be importet with repeat enabled.
+#############
 
 
 func _ready():
-	
 	$Line2D.add_point(Vector2())
 
 
 func _physics_process(_delta):
+	move_bullet(_delta)
+	draw_rope()
+
+
+func move_bullet(_delta):
 	if shooting or retrieving:
 		var move_delta = $BulletBody.position.direction_to(target_pos) * \
 		 bullet_speed * Vector2(_delta, _delta)
@@ -29,6 +36,12 @@ func _physics_process(_delta):
 			$BulletBody.position = target_pos
 			shooting = false
 			retrieving = false
+
+
+func draw_rope():
+	$Line2D.points = []
+	$Line2D.add_point(Vector2())
+	$Line2D.add_point($BulletBody.position)
 
 
 func _unhandled_input(event):
