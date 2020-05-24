@@ -69,6 +69,8 @@ margin_right = 49.7575
 margin_top = 6.3175
 margin_bottom = 7.22
 
+[sub_resource type="StyleBoxTexture" id=7]
+
 [sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 160, 16 )
