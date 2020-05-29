@@ -123,6 +123,7 @@ config/custom_user_dir_name="KlenganTheGame"
 boot_splash/image="res://resources/bootsplash/bootsplash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://resources/icons/icon.png"
+config/version="1.0-dev1"
 
 [autoload]
 

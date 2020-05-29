@@ -6,6 +6,7 @@ func _ready():
 	AudioHandler.play_music("BackstageDancer")
 	if Input.get_joy_name(0) != "":
 		$VBoxContainer/NewGame.grab_focus()
+	check_version()
 
 
 func _process(_delta):
@@ -74,3 +75,15 @@ func _on_Controls_pressed():
 func _on_Donations_toggled(_button_pressed):
 	$Krebshilfe.visible = _button_pressed
 
+
+func check_version():
+	$HTTPRequest.request("https://cdn.klenganthegame.de/version")
+
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	var json_result = JSON.parse(body.get_string_from_utf8()).result
+	if (json_result != null):
+		var current_version = json_result["version"]
+		var local_version = ProjectSettings.get_setting("application/config/version")
+		if local_version != current_version:
+			$VersionPopup.popup_centered()

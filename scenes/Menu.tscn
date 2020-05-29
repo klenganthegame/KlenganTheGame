@@ -326,6 +326,20 @@ margin_bottom = 54.0
 mouse_default_cursor_shape = 2
 text = "Zurück"
 script = ExtResource( 14 )
+
+[node name="VersionPopup" type="AcceptDialog" parent="."]
+margin_right = 496.0
+margin_bottom = 151.0
+window_title = "Warnung!"
+dialog_text = "Wir haben eine neue
+Version für dich!
+Mehr Kontent und weniger Bugs!
+Schnell Downloaden!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
@@ -337,3 +351,4 @@ script = ExtResource( 14 )
 [connection signal="closed" from="Controls" to="." method="_on_Controls_closed"]
 [connection signal="toggled" from="Pause/PausePanel/Settings/Donations" to="." method="_on_Donations_toggled"]
 [connection signal="pressed" from="Pause/PausePanel/Settings/Back" to="." method="_on_Back_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
