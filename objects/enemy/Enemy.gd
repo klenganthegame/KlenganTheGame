@@ -66,3 +66,6 @@ func hit(damage : int):
 		AudioHandler.play_sound("enemy_hurt")
 	$StateMachine._change_state("damage")
 
+func die():
+	$ItemFactory.spawn_item(0,2)
+	queue_free()

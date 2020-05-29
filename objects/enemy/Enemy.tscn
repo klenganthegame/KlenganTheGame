@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://objects/enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/enemy/bodyguard/walk/Bodyguard_walking_0002.png" type="Texture" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://resources/sprites/enemy/bodyguard/idle/bodyguardm_idle__0020.png" type="Texture" id=35]
 [ext_resource path="res://resources/sprites/enemy/bodyguard/idle/bodyguardm_idle__0023.png" type="Texture" id=36]
 [ext_resource path="res://resources/sprites/enemy/bodyguard/idle/bodyguardm_idle__0024.png" type="Texture" id=37]
+[ext_resource path="res://objects/enemy/ItemFactory.tscn" type="PackedScene" id=38]
 [ext_resource path="res://resources/sprites/enemy/bodyguard/walk/Bodyguard_walking_0005.png" type="Texture" id=40]
 [ext_resource path="res://resources/sprites/enemy/bodyguard/walk/Bodyguard_walking_0006.png" type="Texture" id=41]
 [ext_resource path="res://resources/sprites/enemy/bodyguard/walk/Bodyguard_walking_0007.png" type="Texture" id=42]
@@ -96,6 +97,8 @@ script = ExtResource( 9 )
 script = ExtResource( 10 )
 LERP_FACTOR = 0.01
 
+[node name="ItemFactory" parent="." instance=ExtResource( 38 )]
+
 [node name="LifeBar" type="ProgressBar" parent="."]
 margin_left = -46.7184
 margin_top = -252.108
@@ -111,7 +114,7 @@ position = Vector2( -4.41931, -107.116 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 6
+frame = 16
 playing = true
 
 [node name="AttackArea" type="Area2D" parent="."]
