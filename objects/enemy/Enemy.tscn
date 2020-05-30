@@ -114,7 +114,7 @@ position = Vector2( -4.41931, -107.116 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 16
+frame = 10
 playing = true
 
 [node name="AttackArea" type="Area2D" parent="."]

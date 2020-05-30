@@ -2,6 +2,7 @@ extends FightableObject
 
 export(float) var min_attack_cooldown = 0
 export(float) var attack_cooldown_range = 1
+export(Array) var item_list = [[0,2], [1,3]]
 
 onready var enemy_sound_player = $EnemySoundsPlayer
 
@@ -67,5 +68,6 @@ func hit(damage : int):
 	$StateMachine._change_state("damage")
 
 func die():
-	$ItemFactory.spawn_item(0,2)
+	$ItemFactory.spawn_item(item_list)
+	yield($ItemFactory, "spawned")
 	queue_free()
