@@ -91,7 +91,7 @@ func _ready():
 	message_sound.loop_end = 0
 	
 	audio = AudioStreamPlayer.new()
-	audio.bus = AudioHandler.BUS_DIALOGUE_SOUNDS
+	audio.bus = AudioLoader.BUS_DIALOGUE_SOUNDS
 	audio.stream = message_sound
 	add_child(audio)
 

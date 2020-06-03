@@ -22,10 +22,8 @@ var ambient_player : AudioStreamPlayer
 
 var local_stereo_enabled = true
 
-# This is the sound library structure.
+# This is the audio loader.
 # It features two AudioStreamPlayer, one for sounds and one for music
-# A sound can be played by calling a  play_sound/play_music and 
-# passing the name as an argument.
 # All audio is stored in dicts and will be loaded from the audio folder(s).
 # Currently the sounds will be loaded uppon playing it if that causes the sound
 # to lag, load the sound on _ready() (but it will consume more memory)
@@ -59,41 +57,9 @@ func _ready():
 	fill_audio_dict_from_path(ambient_dict, AMBIENT_PATH)
 
 
-func change_bus_volume(_bus_index, _volume_pct):
-	var volume_db = linear2db(_volume_pct)
-	
-	AudioServer.set_bus_mute(_bus_index, (_volume_pct == 0.0))
-	
-	if _volume_pct != 0.0:
-		AudioServer.set_bus_volume_db(_bus_index, volume_db)
-
-
 func get_sound(_sound_name):
 	if sounds_dict.has(_sound_name):
 		return load(sounds_dict[_sound_name])
-
-
-func play_sound(_sound_name):
-	var sound = get_sound(_sound_name)
-	
-	if sound != null and _sound_name.begins_with("klengan"):
-		klengan_sounds_player.stream = sound
-		klengan_sounds_player.play()
-	else:
-		sounds_player.stream = sound
-		sounds_player.play()
-
-
-func play_music(_music_name):
-	if music_dict.has(_music_name):
-		music_player.stream = load(music_dict[_music_name])
-		music_player.play()
-
-
-func play_ambient(_ambient_name):
-	if ambient_dict.has(_ambient_name):
-		ambient_player.stream = load(ambient_dict[_ambient_name])
-		ambient_player.play()
 
 
 func fill_audio_dict_from_path(_dict, _path):

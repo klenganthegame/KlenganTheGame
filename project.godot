@@ -123,11 +123,11 @@ config/custom_user_dir_name="KlenganTheGame"
 boot_splash/image="res://resources/bootsplash/bootsplash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://resources/icons/icon.png"
-config/version="1.0-dev1"
 
 [autoload]
 
-AudioHandler="*res://scripts/AudioHandler.gd"
+AudioLoader="*res://scripts/audio/AudioLoader.gd"
+AudioHandler="*res://scripts/audio/AudioHandler.gd"
 SCENES="*res://scripts/scene_paths.gd"
 SaveGame="*res://scripts/GameSaver.gd"
 LevelChanger="*res://scripts/LevelChanger.gd"

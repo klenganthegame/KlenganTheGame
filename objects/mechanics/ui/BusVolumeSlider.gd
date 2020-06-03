@@ -2,7 +2,7 @@ tool
 extends LabeledHSlider
 class_name BusVolumeSlider
 
-export(String) var audio_bus = AudioHandler.BUS_MASTER setget set_audio_bus
+export(String) var audio_bus = AudioLoader.BUS_MASTER setget set_audio_bus
 
 
 func _ready():
