@@ -36,7 +36,7 @@ func set_looking_right(_looking_right):
 
 
 func play_local_sound(_sound_name):
-	var sound = AudioHandler.get_sound(_sound_name)
+	var sound = AudioLoader.get_sound(_sound_name)
 	if sound != null:
 		enemy_sound_player.stream = sound
 		enemy_sound_player.play()
@@ -61,7 +61,7 @@ func update_life():
 
 func hit(damage : int):
 	.hit(damage)
-	if AudioHandler.local_stereo_enabled:
+	if AudioLoader.local_stereo_enabled:
 		play_local_sound("enemy_hurt")
 	else:
 		AudioHandler.play_sound("enemy_hurt")
