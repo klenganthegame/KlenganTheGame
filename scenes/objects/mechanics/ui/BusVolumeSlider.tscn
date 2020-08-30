@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/objects/mechanics/ui/LabeledHSlider.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/objects/mechanics/ui/BusVolumeSlider.gd" type="Script" id=2]
+
+
+[node name="BusVolumeSlider" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+prefix = "Master: "
+postfix = "%"
+
+[node name="ValueLabel" parent="." index="0"]
+text = "Master: 100%"
+[connection signal="gui_input" from="." to="." method="_on_BusVolumeSlider_gui_input"]
+[connection signal="value_changed" from="." to="." method="_on_BusVolumeSlider_value_changed"]

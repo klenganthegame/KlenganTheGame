@@ -1,13 +1,21 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://resources/sprites/ui/theme/reddit_style.tres" type="StyleBox" id=1]
-[ext_resource path="res://resources/font/Verdana_reddit.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://scenes/Credits/RedditMainPost.gd" type="Script" id=3]
-[ext_resource path="res://resources/sprites/credits/speechbubble.png" type="Texture" id=5]
-[ext_resource path="res://resources/sprites/credits/award.png" type="Texture" id=6]
-[ext_resource path="res://resources/sprites/credits/share.png" type="Texture" id=7]
-[ext_resource path="res://resources/sprites/credits/save.png" type="Texture" id=8]
-[ext_resource path="res://scenes/Credits/RedditPost_miniheader.tres" type="DynamicFont" id=9]
+[ext_resource path="res://resources/ui/theme/reddit_style.tres" type="StyleBox" id=1]
+[ext_resource path="res://resources/fonts/Verdana_reddit.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/credits/RedditMainPost.gd" type="Script" id=3]
+[ext_resource path="res://resources/ui/icons/credits/speechbubble.png" type="Texture" id=5]
+[ext_resource path="res://resources/ui/icons/credits/award.png" type="Texture" id=6]
+[ext_resource path="res://resources/ui/icons/credits/share.png" type="Texture" id=7]
+[ext_resource path="res://resources/ui/icons/credits/save.png" type="Texture" id=8]
+[ext_resource path="res://scenes/credits/RedditPost_miniheader.tres" type="DynamicFont" id=9]
+
+
+
+
+
+
+
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 4.0

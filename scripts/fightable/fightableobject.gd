@@ -20,7 +20,7 @@ func _ready():
 	inherits from the fightable object
 	"""
 	
-	connect("die", self, "dying")
+	var _error = connect("die", self, "dying")
 
 func _process(_delta):
 	# TODO: time-dependency?

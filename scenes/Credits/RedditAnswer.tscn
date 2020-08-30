@@ -1,7 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/Credits/RedditMainPost.tscn" type="PackedScene" id=1]
-[ext_resource path="res://resources/sprites/credits/redditanswer.png" type="Texture" id=2]
+[ext_resource path="res://scenes/credits/RedditMainPost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/ui/icons/credits/redditanswer.png" type="Texture" id=2]
+
+
+
+
 
 [sub_resource type="StyleBoxTexture" id=1]
 content_margin_left = 0.0

@@ -27,7 +27,7 @@ func load_data():
 	Loads a level and returns a dictionary
 	"""
 	var file = File.new()
-	var error = file.open(path, file.READ)
+	var _error = file.open(path, file.READ)
 	var text = file.get_as_text()
 	var r = JSON.parse(text)
 

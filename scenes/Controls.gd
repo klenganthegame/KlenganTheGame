@@ -9,7 +9,8 @@ func _ready():
 	else:
 		_on_Keyboard_pressed()
 		
-	Input.connect("joy_connection_changed", self, "_on_joy_connection_changed")
+	var _error = Input.connect("joy_connection_changed", self, \
+		"_on_joy_connection_changed")
 	
 func show_controls():
 	if Input.get_joy_name(0) != "":
@@ -32,8 +33,8 @@ func _on_Keyboard_pressed():
 	$Joypad.hide()
 	$Keyboard.show()
 
-func _on_joy_connection_changed(device_id, connected):
-	if connected:
+func _on_joy_connection_changed(_device_id, _connected):
+	if _connected:
 		_on_JoyPad_pressed()
 	else:
 		_on_Keyboard_pressed()

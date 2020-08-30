@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/objects/mechanics/ui/HotlinkButton.gd" type="Script" id=1]
+[ext_resource path="res://resources/fonts/Verdana_reddit.ttf" type="DynamicFontData" id=2]
+
+
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="HotlinkButton" type="LinkButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.133333, 0.996078, 1 )
+custom_colors/font_color_hover = Color( 0, 0.133333, 0.996078, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.458824, 0.996078, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_HotlinkButton_pressed"]

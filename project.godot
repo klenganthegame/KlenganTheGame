@@ -17,17 +17,17 @@ _global_script_classes=[ {
 "base": "FightableObject",
 "class": "Breakable",
 "language": "GDScript",
-"path": "res://objects/mechanics/Breakable/Breakable.gd"
+"path": "res://scenes/objects/mechanics/Breakable/Breakable.gd"
 }, {
 "base": "LabeledHSlider",
 "class": "BusVolumeSlider",
 "language": "GDScript",
-"path": "res://objects/mechanics/ui/BusVolumeSlider.gd"
+"path": "res://scenes/objects/mechanics/ui/BusVolumeSlider.gd"
 }, {
 "base": "CheckButton",
 "class": "CheckGameButton",
 "language": "GDScript",
-"path": "res://objects/mechanics/ui/GameCheckButton.gd"
+"path": "res://scenes/objects/mechanics/ui/GameCheckButton.gd"
 }, {
 "base": "NinePatchRect",
 "class": "DialogueBox",
@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "ENEMY_ATTACKS",
 "language": "GDScript",
-"path": "res://objects/enemy/ENEMY_ATTACKS.gd"
+"path": "res://scenes/objects/enemy/ENEMY_ATTACKS.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "FightableObject",
@@ -47,32 +47,32 @@ _global_script_classes=[ {
 "base": "Button",
 "class": "GameButton",
 "language": "GDScript",
-"path": "res://objects/mechanics/ui/GameButton.gd"
+"path": "res://scenes/objects/mechanics/ui/GameButton.gd"
 }, {
 "base": "TextureButton",
 "class": "GameTextureButton",
 "language": "GDScript",
-"path": "res://objects/mechanics/ui/GameTextureButton.gd"
+"path": "res://scenes/objects/mechanics/ui/GameTextureButton.gd"
 }, {
 "base": "LinkButton",
 "class": "HotlinkButton",
 "language": "GDScript",
-"path": "res://objects/mechanics/ui/HotlinkButton.gd"
+"path": "res://scenes/objects/mechanics/ui/HotlinkButton.gd"
 }, {
 "base": "Node2D",
 "class": "InteractableObject",
 "language": "GDScript",
-"path": "res://objects/mechanics/Interactable.gd"
+"path": "res://scenes/objects/mechanics/Interactable.gd"
 }, {
 "base": "Reference",
 "class": "KLENGAN_ATTACKS",
 "language": "GDScript",
-"path": "res://objects/player/KLENGAN_ATTACKS.gd"
+"path": "res://scenes/objects/player/KLENGAN_ATTACKS.gd"
 }, {
 "base": "HSlider",
 "class": "LabeledHSlider",
 "language": "GDScript",
-"path": "res://objects/mechanics/ui/LabeledHSlider.gd"
+"path": "res://scenes/objects/mechanics/ui/LabeledHSlider.gd"
 }, {
 "base": "GameTextureButton",
 "class": "LoadButton",
@@ -92,7 +92,7 @@ _global_script_classes=[ {
 "base": "GameButton",
 "class": "WeaponButton",
 "language": "GDScript",
-"path": "res://objects/player/WeaponSelect/Weapon.gd"
+"path": "res://scenes/objects/player/WeaponSelect/Weapon.gd"
 } ]
 _global_script_class_icons={
 "Attack": "",
@@ -117,12 +117,12 @@ _global_script_class_icons={
 [application]
 
 config/name="KlenganTheGame"
-run/main_scene="res://level/1/Level1.tscn"
+run/main_scene="res://scenes/level/1/Level1.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="KlenganTheGame"
-boot_splash/image="res://resources/bootsplash/bootsplash.png"
+boot_splash/image="res://resources/ui/icons/app_icons/bootsplash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://resources/icons/icon.png"
+config/icon="res://resources/ui/icons/app_icons/icon.png"
 
 [autoload]
 

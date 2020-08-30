@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/objects/player/WeaponSelect/Weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/objects/player/WeaponSelect/WeaponSelection.gd" type="Script" id=2]
+[ext_resource path="res://resources/ui/theme/ktg_theme.tres" type="Theme" id=3]
+[ext_resource path="res://resources/ui/icons/weapon_selection/fist.png" type="Texture" id=4]
+[ext_resource path="res://resources/ui/icons/weapon_selection/harpune.png" type="Texture" id=5]
+
+
+
+
+
+
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("WeaponMenu:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("WeaponMenu:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[node name="WeaponSelection" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="WeaponMenu" type="HBoxContainer" parent="."]
+margin_right = 248.0
+margin_bottom = 91.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weapon" parent="WeaponMenu" instance=ExtResource( 1 )]
+margin_right = 80.0
+weapon_image = ExtResource( 4 )
+
+[node name="Weapon2" parent="WeaponMenu" instance=ExtResource( 1 )]
+margin_left = 84.0
+margin_right = 164.0
+key_id = 2
+weapon_image = ExtResource( 5 )
+
+[node name="Weapon3" parent="WeaponMenu" instance=ExtResource( 1 )]
+margin_left = 168.0
+margin_right = 248.0
+key_id = 3
+weapon_image = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade_in = SubResource( 1 )
+anims/fade_out = SubResource( 2 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

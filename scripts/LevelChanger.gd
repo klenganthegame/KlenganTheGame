@@ -11,7 +11,7 @@ var wait_frames = 0
 # Handles Levelchanging with loadingscreen
 
 func change_level_to(_level_name):
-	get_tree().change_scene(SCENES.LOADING)
+	var _error = get_tree().change_scene(SCENES.LOADING)
 	load_level(_level_name)
 
 
@@ -26,7 +26,7 @@ func load_level(_level_name):
 
 
 # If multiple stages should be loaded at once use code from background loading tutorial
-func _process(delta):
+func _process(_delta):
 	if loader == null:
 		set_process(false)
 		return
@@ -50,7 +50,7 @@ func _process(delta):
 
 func finalize_level():
 	var new_level_packed = loader.get_resource()
-	get_tree().change_scene_to(new_level_packed)
+	var _error = get_tree().change_scene_to(new_level_packed)
 
 
 func update_progress():

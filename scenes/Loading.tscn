@@ -2,7 +2,8 @@
 
 [ext_resource path="res://scenes/Loading.gd" type="Script" id=1]
 [ext_resource path="res://sprites/robbe/robbe_texture.tres" type="Texture" id=2]
-[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=3]
+[ext_resource path="res://resources/ui/theme/ktg_theme.tres" type="Theme" id=3]
+
 
 [node name="Loading" type="Control"]
 anchor_right = 1.0

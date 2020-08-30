@@ -24,9 +24,8 @@ export(bool) var sfx = false setget set_sfx
 
 
 func _gui_input(event):
-	if (!GlobalVars.is_touch() and event is InputEventMouseButton \
-	 and event.button_index == BUTTON_LEFT) \
-	 or (event is InputEventScreenTouch and GlobalVars.is_touch()):
+	if (event is InputEventMouseButton and event.button_index == BUTTON_LEFT) \
+	 	or event is InputEventScreenTouch:
 		if event.pressed:
 			AudioHandler.play_sound("mouse_pressed")
 		else:

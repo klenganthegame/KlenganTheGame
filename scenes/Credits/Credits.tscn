@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/Credits/HistoryPost.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/Credits/ProgrammerPost.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Credits/Credits.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Credits/DesignerPost.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/credits/HistoryPost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/credits/ProgrammerPost.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/credits/Credits.gd" type="Script" id=3]
+[ext_resource path="res://scenes/credits/DesignerPost.tscn" type="PackedScene" id=4]
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -26,7 +26,7 @@ __meta__ = {
 
 [node name="Posts" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 1012.0
-margin_bottom = 1270.0
+margin_bottom = 641.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -35,22 +35,22 @@ custom_constants/separation = 10
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1012.0
-margin_bottom = 811.456
+margin_bottom = 182.456
 unfolded = true
 
 [node name="DesignerPost" parent="ScrollContainer/Posts" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 821.0
+margin_top = 192.0
 margin_right = 1012.0
-margin_bottom = 1112.46
+margin_bottom = 483.457
 
 [node name="ProgrammerPost" parent="ScrollContainer/Posts" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 1122.0
+margin_top = 493.0
 margin_right = 1012.0
-margin_bottom = 1270.0
+margin_bottom = 641.0
 likes = 7
 
 [node name="BackButton" type="Button" parent="."]

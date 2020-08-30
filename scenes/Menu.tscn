@@ -1,18 +1,24 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://resources/ktg_theme.tres" type="Theme" id=1]
+[ext_resource path="res://resources/ui/theme/ktg_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=2]
-[ext_resource path="res://resources/bootsplash/bootsplash.png" type="Texture" id=3]
-[ext_resource path="res://resources/icons/youtube.png" type="Texture" id=4]
-[ext_resource path="res://resources/icons/reddit.png" type="Texture" id=5]
+[ext_resource path="res://resources/ui/icons/app_icons/bootsplash.png" type="Texture" id=3]
+[ext_resource path="res://resources/ui/icons/social_media/youtube.png" type="Texture" id=4]
+[ext_resource path="res://resources/ui/icons/social_media/reddit.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Krebshilfe.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/mechanics/ui/BusVolumeSlider.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/objects/mechanics/ui/BusVolumeSlider.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Donations.gd" type="Script" id=8]
 [ext_resource path="res://scenes/Controls.tscn" type="PackedScene" id=10]
-[ext_resource path="res://objects/player/Rumble.gd" type="Script" id=11]
+[ext_resource path="res://scenes/objects/player/Rumble.gd" type="Script" id=11]
 [ext_resource path="res://resources/shader/blur.shader" type="Shader" id=12]
 [ext_resource path="res://resources/shader/white.png" type="Texture" id=13]
-[ext_resource path="res://objects/mechanics/ui/GameButton.gd" type="Script" id=14]
+[ext_resource path="res://scenes/objects/mechanics/ui/GameButton.gd" type="Script" id=14]
+
+
+
+
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"

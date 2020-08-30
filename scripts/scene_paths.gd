@@ -7,10 +7,10 @@ const MENU = "res://scenes/Menu.tscn"
 const GAME_OVER = "res://scenes/GameOver.tscn"
 const LEVEL_SELECTION = "res://scenes/LevelSelection/LevelSelection.tscn"
 const LOADING = "res://scenes/Loading.tscn"
-const CREDITS = "res://scenes/Credits/Credits.tscn"
+const CREDITS = "res://scenes/Credits/credits.tscn"
 
-const LEVEL_0 = "res://level/0/Level0.tscn"
-const LEVEL_1 = "res://level/1/Level1.tscn"
+const LEVEL_0 = "res://scenes/level/0/Level0.tscn"
+const LEVEL_1 = "res://scenes/level/1/Level1.tscn"
 
 var LEVELS = {
 	0 : {

@@ -80,8 +80,8 @@ func check_version():
 	$HTTPRequest.request("https://cdn.klenganthegame.de/version")
 
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
-	var json_result = JSON.parse(body.get_string_from_utf8()).result
+func _on_HTTPRequest_request_completed(_result, _response_code, _headers, _body):
+	var json_result = JSON.parse(_body.get_string_from_utf8()).result
 	if (json_result != null):
 		var current_version = json_result["version"]
 		var local_version = ProjectSettings.get_setting("application/config/version")
