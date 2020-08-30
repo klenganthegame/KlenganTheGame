@@ -43,6 +43,8 @@
 [ext_resource path="res://resources/sprites/characters/bodyguard/walk/Bodyguard_walking_0007.png" type="Texture" id=42]
 [ext_resource path="res://resources/sprites/characters/bodyguard/walk/Bodyguard_walking_0008.png" type="Texture" id=43]
 
+
+
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 11 )
 shader_param/outline_color = Color( 0, 0, 0, 1 )

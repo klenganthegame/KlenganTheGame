@@ -277,7 +277,7 @@ config/icon="res://resources/ui/icons/app_icons/icon.png"
 [autoload]
 
 AudioLoader="*res://scripts/file_io/AudioLoader.gd"
-AudioHandler="*res://scripts/file_io/AudioHandler.gd"
+AudioHandler="*res://scripts/handler/AudioHandler.gd"
 SCENES="*res://scripts/data/ScenePaths.gd"
 SaveGame="*res://scripts/file_io/GameSaver.gd"
 LevelChanger="*res://scripts/file_io/LevelChanger.gd"

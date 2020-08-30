@@ -5,7 +5,6 @@
 [ext_resource path="res://resources/sprites/ambient/light.png" type="Texture" id=3]
 [ext_resource path="res://resources/sprites/objects/Light_off.png" type="Texture" id=4]
 
-
 [node name="lamp" type="Node2D"]
 script = ExtResource( 1 )
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_for_menu_disabled.png-2578a7b640ba4c8a7ca71751990b4271.stex"
+path="res://.import/hook_rope.png-43d2ff6d208b2af52a7e9d7b5ec7cdb3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/ui/theme/button_for_menu_disabled.png"
-dest_files=[ "res://.import/button_for_menu_disabled.png-2578a7b640ba4c8a7ca71751990b4271.stex" ]
+source_file="res://resources/sprites/objects/weapons/hook_rope.png"
+dest_files=[ "res://.import/hook_rope.png-43d2ff6d208b2af52a7e9d7b5ec7cdb3.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

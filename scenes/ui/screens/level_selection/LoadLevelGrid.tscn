@@ -3,10 +3,6 @@
 [ext_resource path="res://scenes/ui/screens/level_selection/LoadLevelGrid.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ui/screens/level_selection/LoadButton.tscn" type="PackedScene" id=2]
 
-
-
-
-
 [node name="LoadLevelGrid" type="GridContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -19,23 +15,19 @@ __meta__ = {
 [node name="LoadButton" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 321.0
+margin_right = 150.0
 margin_bottom = 150.0
 
 [node name="LoadButton2" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 345.0
-margin_top = 0.0
-margin_right = 666.0
+margin_left = 154.0
+margin_right = 304.0
 margin_bottom = 150.0
 
 [node name="LoadButton3" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 690.0
-margin_top = 0.0
-margin_right = 1011.0
+margin_left = 308.0
+margin_right = 458.0
 margin_bottom = 150.0

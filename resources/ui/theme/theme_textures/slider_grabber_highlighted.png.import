@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slider_background.png-4cbf23e369f3aa4b804ac9409dcab1e3.stex"
+path="res://.import/slider_grabber_highlighted.png-449c504bfd85b2221c20b64622a8280f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/ui/theme/slider_background.png"
-dest_files=[ "res://.import/slider_background.png-4cbf23e369f3aa4b804ac9409dcab1e3.stex" ]
+source_file="res://resources/ui/theme/theme_textures/slider_grabber_highlighted.png"
+dest_files=[ "res://.import/slider_grabber_highlighted.png-449c504bfd85b2221c20b64622a8280f.stex" ]
 
 [params]
 

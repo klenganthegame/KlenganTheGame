@@ -26,11 +26,11 @@ func load_level_one():
 
 
 func _on_LoadGame_pressed():
-	get_tree().change_scene(SCENES.LEVEL_SELECTION)
+	var _error = get_tree().change_scene(SCENES.LEVEL_SELECTION)
 
 
 func _on_Credits_pressed():
-	get_tree().change_scene(SCENES.CREDITS)
+	var _error = get_tree().change_scene(SCENES.CREDITS)
 
 
 func _on_Exit_pressed():
@@ -38,11 +38,11 @@ func _on_Exit_pressed():
 
 
 func _on_Reddit_pressed():
-	OS.shell_open("https://www.reddit.com/r/Klengan/")
+	var _error = OS.shell_open("https://www.reddit.com/r/Klengan/")
 
 
 func _on_Youtube_pressed():
-	OS.shell_open("https://www.youtube.com/channel/UC9N0MRIXnKo03d0mmZ3BwPA")
+	var _error = OS.shell_open("https://www.youtube.com/channel/UC9N0MRIXnKo03d0mmZ3BwPA")
 
 
 func toggle_menu():
@@ -87,3 +87,5 @@ func _on_HTTPRequest_request_completed(_result, _response_code, _headers, _body)
 		var local_version = ProjectSettings.get_setting("application/config/version")
 		if local_version != current_version:
 			$VersionPopup.popup_centered()
+	else:
+		print("MainMenu.gd: Version information could not be retrieved")

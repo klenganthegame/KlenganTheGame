@@ -1,7 +1,7 @@
 tool
 extends GridContainer
 
-onready var LoadButton = preload("res://scenes/LevelSelection/LoadButton.tscn")
+onready var load_button_scene = preload("res://scenes/ui/screens/level_selection/LoadButton.tscn")
 
 
 func _ready():
@@ -14,7 +14,7 @@ func setup_grid():
 			child.queue_free()
 		
 		for i in range(SCENES.LEVELS.size() + 1):
-			var load_button = LoadButton.instance()
+			var load_button = load_button_scene.instance()
 			load_button.set_level_to_load(i)
 			load_button.set_boss_unknown(i > 0)
 			load_button.set_locked(i > 0)

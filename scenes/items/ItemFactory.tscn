@@ -2,5 +2,7 @@
 
 [ext_resource path="res://scenes/items/ItemFactory.gd" type="Script" id=1]
 
+
+
 [node name="ItemFactory" type="Node"]
 script = ExtResource( 1 )

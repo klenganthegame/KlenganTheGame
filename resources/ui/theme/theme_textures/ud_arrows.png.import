@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/loadingbar_full.png-732d308443061cd8d6654dd0b4ad156a.stex"
+path="res://.import/ud_arrows.png-9b2ad58d993079898bd32795a1594a25.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/ui/theme/loadingbar_full.png"
-dest_files=[ "res://.import/loadingbar_full.png-732d308443061cd8d6654dd0b4ad156a.stex" ]
+source_file="res://resources/ui/theme/theme_textures/ud_arrows.png"
+dest_files=[ "res://.import/ud_arrows.png-9b2ad58d993079898bd32795a1594a25.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

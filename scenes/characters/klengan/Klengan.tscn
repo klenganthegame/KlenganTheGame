@@ -38,7 +38,7 @@
 [ext_resource path="res://resources/ui/icons/panels/stabilodash.png" type="Texture" id=36]
 [ext_resource path="res://resources/ui/icons/panels/stabilodash_full.png" type="Texture" id=37]
 [ext_resource path="res://scenes/ui/panels/weapon_selection/WeaponSelection.tscn" type="PackedScene" id=38]
-[ext_resource path="res://resources/ui/theme/dialoguebox.png" type="Texture" id=39]
+[ext_resource path="res://resources/ui/theme/theme_textures/dialoguebox.png" type="Texture" id=39]
 [ext_resource path="res://addons/adbox/DialogueBox.gd" type="Script" id=40]
 [ext_resource path="res://resources/audio/sounds/text_beep.wav" type="AudioStream" id=41]
 [ext_resource path="res://resources/fonts/PressStart2P.ttf" type="DynamicFontData" id=42]
@@ -64,6 +64,7 @@
 [ext_resource path="res://resources/sprites/characters/klengan/idle/klengan_idle_0004.png" type="Texture" id=62]
 [ext_resource path="res://resources/sprites/characters/klengan/idle/klengan_idle_0005.png" type="Texture" id=63]
 [ext_resource path="res://scenes/ui/panels/pause_panel/Stereo.gd" type="Script" id=64]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 56 )

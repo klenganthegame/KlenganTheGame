@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialoguebox.png-a184c355f7ae6b79fffd0941a3187808.stex"
+path="res://.import/button_for_menu_disabled.png-df0a8121a77d4fb7b864f4635825efae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/ui/theme/dialoguebox.png"
-dest_files=[ "res://.import/dialoguebox.png-a184c355f7ae6b79fffd0941a3187808.stex" ]
+source_file="res://resources/ui/theme/theme_textures/button_for_menu_disabled.png"
+dest_files=[ "res://.import/button_for_menu_disabled.png-df0a8121a77d4fb7b864f4635825efae.stex" ]
 
 [params]
 

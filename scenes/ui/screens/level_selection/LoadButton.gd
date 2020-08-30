@@ -2,8 +2,7 @@ tool
 extends GameTextureButton
 class_name LoadButton
 
-const PORTRAIT_PATH_FORMAT = "res://resources/sprites/level_selection/boss_level_%1d_%s.png"
-const LEVEL_SCENE_FORMAT = "res://level/1/Level%1d.tscn"
+const PORTRAIT_PATH_FORMAT = "res://resources/ui/icons/screens/level_selection/boss_level_%1d_%s.png"
 const LEVEL_FORMAT = "LEVEL %1d"
 
 enum LOCK_STATES {UNLOCKED, LOCKED, TBA}
