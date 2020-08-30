@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Backstage_background.png-ba121fe0a271e969d7f39fe3ef1f9ca4.stex"
+path="res://.import/loading_seal__5.png-f8a718fc61cd9215962ae168408255f2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/backgrounds/Backstage_background.png"
-dest_files=[ "res://.import/Backstage_background.png-ba121fe0a271e969d7f39fe3ef1f9ca4.stex" ]
+source_file="res://resources/ui/icons/screens/loading_screen/loading_seal__5.png"
+dest_files=[ "res://.import/loading_seal__5.png-f8a718fc61cd9215962ae168408255f2.stex" ]
 
 [params]
 

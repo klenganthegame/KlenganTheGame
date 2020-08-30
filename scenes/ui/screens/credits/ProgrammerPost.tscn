@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ui/screens/credits/RedditMainPost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/screens/credits/RedditAnswer.tscn" type="PackedScene" id=2]
+
+
+
+
+
+
+
+[node name="ProgrammerPost" instance=ExtResource( 1 )]
+username = "Programmierer Chef"
+header = "Kann Jemand Programmieren?"
+post = "Kann hier jemand was?!"
+unfolding_nodes = [ NodePath("HBox/ContentHBox/PostPanel") ]
+
+[node name="Postedby" parent="HBox/ContentHBox/TopInfo" index="0"]
+margin_right = 147.0
+text = "Posted by u/Programmierer Chef"
+
+[node name="Timeago" parent="HBox/ContentHBox/TopInfo" index="10"]
+margin_left = 151.0
+margin_right = 233.0
+
+[node name="Header" parent="HBox/ContentHBox" index="1"]
+text = "Kann Jemand Programmieren?"
+
+[node name="Post" parent="HBox/ContentHBox" index="2"]
+text = "Kann hier jemand was?!"
+
+[node name="PostPanel" parent="HBox/ContentHBox" index="5" instance=ExtResource( 2 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 355.0
+margin_right = 944.0
+margin_bottom = 590.218
+header = "Max Schmitt, 1 nicer Projectmanagementer!"
+post = "Hey ihr frohlockenden Gamer!
+Ich bin Max und freue mich,  dieses Projekt leiten zu dürfen! Ich habe parallel zu meinem Informatik-Studium
+das Software-Startup \"Divirad\" gegründet, weshalb sich meine Erfahrung für Projektleitung bei diesem Projekt sehr angeboten hat.
+Mein Startup hat unteranderem das Publishing im Google-PlayStore ermöglicht- Dafür wollte ich mich noch einmal bedanken!
+Ich hoffe sehr, dass durch dieses Projekt einige Spenden für die Krebshilfe zusammen kommen.
+Zudem bin ich mit einem Duo \"20three\" auch ein wenig als singer/songwriter musikalisch unterwegs und poste auf meiner eigenen
+Insta-Seite ab und zu kleinere kurze Cover. Falls es euch etwas davon interessiert, lass ich euch gerne die links unter diesem Post :)"

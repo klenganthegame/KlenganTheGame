@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Backstage_background.png-ba121fe0a271e969d7f39fe3ef1f9ca4.stex"
+path="res://.import/active_flames_0.png-f54508dc46f7686335aed4cbaad41d9c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/backgrounds/Backstage_background.png"
-dest_files=[ "res://.import/Backstage_background.png-ba121fe0a271e969d7f39fe3ef1f9ca4.stex" ]
+source_file="res://resources/ui/icons/screens/level_selection/background/active_flames_0.png"
+dest_files=[ "res://.import/active_flames_0.png-f54508dc46f7686335aed4cbaad41d9c.stex" ]
 
 [params]
 

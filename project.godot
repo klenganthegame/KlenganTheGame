@@ -12,22 +12,22 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Attack",
 "language": "GDScript",
-"path": "res://scripts/fightable/attack.gd"
+"path": "res://scenes/characters/Attack.gd"
 }, {
 "base": "FightableObject",
 "class": "Breakable",
 "language": "GDScript",
-"path": "res://scenes/objects/mechanics/Breakable/Breakable.gd"
+"path": "res://scenes/objects/interactables/Breakable/Breakable.gd"
 }, {
 "base": "LabeledHSlider",
 "class": "BusVolumeSlider",
 "language": "GDScript",
-"path": "res://scenes/objects/mechanics/ui/BusVolumeSlider.gd"
+"path": "res://scenes/ui/ui_elements/BusVolumeSlider.gd"
 }, {
 "base": "CheckButton",
 "class": "CheckGameButton",
 "language": "GDScript",
-"path": "res://scenes/objects/mechanics/ui/GameCheckButton.gd"
+"path": "res://scenes/ui/ui_elements/GameCheckButton.gd"
 }, {
 "base": "NinePatchRect",
 "class": "DialogueBox",
@@ -37,62 +37,187 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "ENEMY_ATTACKS",
 "language": "GDScript",
-"path": "res://scenes/objects/enemy/ENEMY_ATTACKS.gd"
+"path": "res://scenes/characters/enemys/ENEMY_ATTACKS.gd"
+}, {
+"base": "StateController",
+"class": "EnemyStateController",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/EnemyStateController.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "FightableObject",
 "language": "GDScript",
-"path": "res://scripts/fightable/fightableobject.gd"
+"path": "res://scenes/characters/FightableObject.gd"
 }, {
 "base": "Button",
 "class": "GameButton",
 "language": "GDScript",
-"path": "res://scenes/objects/mechanics/ui/GameButton.gd"
+"path": "res://scenes/ui/ui_elements/GameButton.gd"
 }, {
 "base": "TextureButton",
 "class": "GameTextureButton",
 "language": "GDScript",
-"path": "res://scenes/objects/mechanics/ui/GameTextureButton.gd"
+"path": "res://scenes/ui/ui_elements/GameTextureButton.gd"
 }, {
 "base": "LinkButton",
 "class": "HotlinkButton",
 "language": "GDScript",
-"path": "res://scenes/objects/mechanics/ui/HotlinkButton.gd"
+"path": "res://scenes/ui/ui_elements/HotlinkButton.gd"
 }, {
 "base": "Node2D",
 "class": "InteractableObject",
 "language": "GDScript",
-"path": "res://scenes/objects/mechanics/Interactable.gd"
+"path": "res://scenes/objects/interactables/InteractableObject.gd"
 }, {
 "base": "Reference",
 "class": "KLENGAN_ATTACKS",
 "language": "GDScript",
-"path": "res://scenes/objects/player/KLENGAN_ATTACKS.gd"
+"path": "res://scenes/characters/klengan/attacks/KLENGAN_ATTACKS.gd"
+}, {
+"base": "FightableObject",
+"class": "Klengan",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/Klengan.gd"
+}, {
+"base": "StateController",
+"class": "KlenganStateController",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/KlenganStateController.gd"
 }, {
 "base": "HSlider",
 "class": "LabeledHSlider",
 "language": "GDScript",
-"path": "res://scenes/objects/mechanics/ui/LabeledHSlider.gd"
+"path": "res://scenes/ui/ui_elements/LabeledHSlider.gd"
 }, {
 "base": "GameTextureButton",
 "class": "LoadButton",
 "language": "GDScript",
-"path": "res://scenes/LevelSelection/LoadButton.gd"
+"path": "res://scenes/ui/screens/level_selection/LoadButton.gd"
 }, {
 "base": "Reference",
 "class": "Profile",
 "language": "GDScript",
-"path": "res://scripts/Profile.gd"
+"path": "res://scripts/data/Profile.gd"
 }, {
 "base": "Node",
 "class": "Settings",
 "language": "GDScript",
-"path": "res://scripts/Settings.gd"
+"path": "res://scripts/data/Settings.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://scenes/characters/finite_state_machine/State.gd"
+}, {
+"base": "Node",
+"class": "StateController",
+"language": "GDScript",
+"path": "res://scenes/characters/finite_state_machine/StateController.gd"
+}, {
+"base": "State",
+"class": "StateEnemy",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/StateEnemy.gd"
+}, {
+"base": "StateEnemyMove",
+"class": "StateEnemyApproach",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/movement/move/StateEnemyApproach.gd"
+}, {
+"base": "StateEnemyApproach",
+"class": "StateEnemyApproachJump",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/movement/move/StateEnemyApproachJump.gd"
+}, {
+"base": "StateEnemyMovement",
+"class": "StateEnemyAttack",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/movement/StateEnemyAttack.gd"
+}, {
+"base": "StateEnemyMovement",
+"class": "StateEnemyDamage",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/movement/StateEnemyDamage.gd"
+}, {
+"base": "StateEnemy",
+"class": "StateEnemyIdle",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/movement/StateEnemyIdle.gd"
+}, {
+"base": "StateEnemyMovement",
+"class": "StateEnemyMove",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/movement/move/StateEnemyMove.gd"
+}, {
+"base": "StateEnemy",
+"class": "StateEnemyMovement",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/movement/StateEnemyMovement.gd"
+}, {
+"base": "StateEnemyMove",
+"class": "StateEnemyWander",
+"language": "GDScript",
+"path": "res://scenes/characters/enemys/fsm/states_enemy/movement/move/StateEnemyWander.gd"
+}, {
+"base": "State",
+"class": "StateKlengan",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/StateKlengan.gd"
+}, {
+"base": "StateKlenganMovement",
+"class": "StateKlenganDash",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/StateKlenganDash.gd"
+}, {
+"base": "StateKlenganMovement",
+"class": "StateKlenganDoublejump",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/Doublejump.gd"
+}, {
+"base": "StateKlenganMovement",
+"class": "StateKlenganIdle",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/StateKlenganIdle.gd"
+}, {
+"base": "StateKlenganMovement",
+"class": "StateKlenganJump",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/StateKlenganJump.gd"
+}, {
+"base": "StateKlenganMovement",
+"class": "StateKlenganMelee",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/StateKlenganMelee.gd"
+}, {
+"base": "StateKlenganMovement",
+"class": "StateKlenganMove",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/StateKlenganMove.gd"
+}, {
+"base": "StateKlengan",
+"class": "StateKlenganMovement",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/StateKlenganMovement.gd"
+}, {
+"base": "StateKlenganMovement",
+"class": "StateKlenganRanged",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/StateKlenganRanged.gd"
+}, {
+"base": "StateKlenganMovement",
+"class": "StateKlenganSneak",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/movement/StateKlenganSneak.gd"
+}, {
+"base": "StateKlengan",
+"class": "StateKlenganStagger",
+"language": "GDScript",
+"path": "res://scenes/characters/klengan/fsm/states_klengan/stagger/stagger.gd"
 }, {
 "base": "GameButton",
 "class": "WeaponButton",
 "language": "GDScript",
-"path": "res://scenes/objects/player/WeaponSelect/Weapon.gd"
+"path": "res://scenes/ui/panels/weapon_selection/Weapon.gd"
 } ]
 _global_script_class_icons={
 "Attack": "",
@@ -101,23 +226,48 @@ _global_script_class_icons={
 "CheckGameButton": "",
 "DialogueBox": "res://addons/adbox/icon.png",
 "ENEMY_ATTACKS": "",
+"EnemyStateController": "",
 "FightableObject": "",
 "GameButton": "",
 "GameTextureButton": "",
 "HotlinkButton": "",
 "InteractableObject": "",
 "KLENGAN_ATTACKS": "",
+"Klengan": "",
+"KlenganStateController": "",
 "LabeledHSlider": "",
 "LoadButton": "",
 "Profile": "",
 "Settings": "",
+"State": "",
+"StateController": "",
+"StateEnemy": "",
+"StateEnemyApproach": "",
+"StateEnemyApproachJump": "",
+"StateEnemyAttack": "",
+"StateEnemyDamage": "",
+"StateEnemyIdle": "",
+"StateEnemyMove": "",
+"StateEnemyMovement": "",
+"StateEnemyWander": "",
+"StateKlengan": "",
+"StateKlenganDash": "",
+"StateKlenganDoublejump": "",
+"StateKlenganIdle": "",
+"StateKlenganJump": "",
+"StateKlenganMelee": "",
+"StateKlenganMove": "",
+"StateKlenganMovement": "",
+"StateKlenganRanged": "",
+"StateKlenganSneak": "",
+"StateKlenganStagger": "",
 "WeaponButton": ""
 }
 
 [application]
 
 config/name="KlenganTheGame"
-run/main_scene="res://scenes/level/1/Level1.tscn"
+run/main_scene="res://scenes/levels/1/Level1.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="KlenganTheGame"
 boot_splash/image="res://resources/ui/icons/app_icons/bootsplash.png"
@@ -126,12 +276,12 @@ config/icon="res://resources/ui/icons/app_icons/icon.png"
 
 [autoload]
 
-AudioLoader="*res://scripts/audio/AudioLoader.gd"
-AudioHandler="*res://scripts/audio/AudioHandler.gd"
-SCENES="*res://scripts/scene_paths.gd"
-SaveGame="*res://scripts/GameSaver.gd"
-LevelChanger="*res://scripts/LevelChanger.gd"
-RumbleHandler="*res://scripts/RumbleHandler.gd"
+AudioLoader="*res://scripts/file_io/AudioLoader.gd"
+AudioHandler="*res://scripts/file_io/AudioHandler.gd"
+SCENES="*res://scripts/data/ScenePaths.gd"
+SaveGame="*res://scripts/file_io/GameSaver.gd"
+LevelChanger="*res://scripts/file_io/LevelChanger.gd"
+RumbleHandler="*res://scripts/handler/RumbleHandler.gd"
 
 [display]
 

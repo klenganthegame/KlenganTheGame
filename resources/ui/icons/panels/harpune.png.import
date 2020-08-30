@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Backstage_background.png-ba121fe0a271e969d7f39fe3ef1f9ca4.stex"
+path="res://.import/harpune.png-0bdc5aadc31ba63b426492171dc05da5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/backgrounds/Backstage_background.png"
-dest_files=[ "res://.import/Backstage_background.png-ba121fe0a271e969d7f39fe3ef1f9ca4.stex" ]
+source_file="res://resources/ui/icons/panels/harpune.png"
+dest_files=[ "res://.import/harpune.png-0bdc5aadc31ba63b426492171dc05da5.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Backstage_background.png-ba121fe0a271e969d7f39fe3ef1f9ca4.stex"
+path="res://.import/redditpost.png-4f0c5653381e49099c1d8e5894f51a60.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/backgrounds/Backstage_background.png"
-dest_files=[ "res://.import/Backstage_background.png-ba121fe0a271e969d7f39fe3ef1f9ca4.stex" ]
+source_file="res://resources/ui/icons/screens/credits/redditpost.png"
+dest_files=[ "res://.import/redditpost.png-4f0c5653381e49099c1d8e5894f51a60.stex" ]
 
 [params]
 
