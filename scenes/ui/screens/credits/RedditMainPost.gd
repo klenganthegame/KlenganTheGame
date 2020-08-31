@@ -1,17 +1,25 @@
 tool
 extends PanelContainer
 
+# Represents a Reddit main post
+# Add RedditAnswers under the ContentHBox (under BottomInfo)
+
+# Main post text
 export(String) var username = "anonymous" setget set_username
 export(String) var header = "" setget set_header
 export(String, MULTILINE) var post = "" setget set_post
 
+# the subposts and if they are unfolded
 export(bool) var unfolded = false setget set_unfolded
+# add all subposts here to make them dependent of the variable unfolded
 export(Array, NodePath) var unfolding_nodes = []  setget set_unfolding_nodes
 
+# Number of likes, comments and date of the post
 export(int) var likes = 0 setget set_likes
 export(int) var comments = 0 setget set_comments
 export(String) var time_ago = "a few seconds" setget set_time_ago
 
+# If set to true the tag appears in the bottom of the main post
 export(bool) var projectmanagement = false setget set_projectmanagement
 export(bool) var organization  = false setget set_organization
 export(bool) var group_manager = false setget set_group_manager
@@ -23,10 +31,12 @@ export(bool) var music = false setget set_music
 export(bool) var sfx = false setget set_sfx
 
 
-func _gui_input(event):
-	if (event is InputEventMouseButton and event.button_index == BUTTON_LEFT) \
-	 	or event is InputEventScreenTouch:
-		if event.pressed:
+func _gui_input(_event):
+	if (_event is InputEventMouseButton and _event.button_index == BUTTON_LEFT \
+		 and !OS.has_touchscreen_ui_hint()) \
+		 or (_event is InputEventScreenTouch):
+		
+		if _event.pressed:
 			AudioHandler.play_sound("mouse_pressed")
 		else:
 			set_unfolded(!unfolded)

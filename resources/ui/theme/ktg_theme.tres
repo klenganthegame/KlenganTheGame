@@ -13,7 +13,6 @@
 [ext_resource path="res://resources/ui/theme/theme_textures/popup_selected.png" type="Texture" id=11]
 [ext_resource path="res://resources/fonts/PressStart2P.ttf" type="DynamicFontData" id=12]
 
-
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 102, 102 )

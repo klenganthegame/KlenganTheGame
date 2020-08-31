@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ui/screens/credits/RedditAnswer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/screens/credits/RedditMainPost.tscn" type="PackedScene" id=2]
+
+[node name="ContributersPost" instance=ExtResource( 2 )]
+
+[node name="HBox" parent="." index="0"]
+margin_bottom = 1508.0
+
+[node name="Margin" parent="HBox" index="0"]
+margin_bottom = 1502.0
+
+[node name="Label" parent="HBox/Margin" index="0"]
+margin_bottom = 1502.0
+
+[node name="ContentHBox" parent="HBox" index="1"]
+margin_bottom = 1502.0
+
+[node name="Header" parent="HBox/ContentHBox" index="1"]
+text = "Die   Credits"
+
+[node name="Post" parent="HBox/ContentHBox" index="2"]
+margin_bottom = 217.0
+text = "Hi,
+cool, dass du dich hierher begeben hast.
+Das hier ist der Platz an dem die Personen, die zum Entstehen des dieses Spiel beigetragen haben, gewürdigt werden sollen.
+
+Wenn ihr uns weiter unterstützen möchtet folgt KlenganTheGame auf Social Media oder joine unserem Discord.
+
+P.S. Bei Bedarf an Grafiken, Sounds, Code, etc. von den Mitwirkenden vermitteln wir gerne."
+
+[node name="SocialMedia" parent="HBox/ContentHBox" index="3"]
+margin_top = 229.0
+margin_bottom = 229.0
+
+[node name="BottomInfo" parent="HBox/ContentHBox" index="4"]
+margin_top = 241.0
+margin_bottom = 258.0
+
+[node name="Organization" parent="HBox/ContentHBox" index="5" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 270.0
+margin_right = 944.0
+margin_bottom = 454.218
+username = "Kuro"
+header = "Organisation"
+post = "- Leiter: Kuro
+- Nachwahl
+- WittSam
+- Leo"
+
+[node name="Design" parent="HBox/ContentHBox" index="6" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 466.0
+margin_right = 944.0
+margin_bottom = 667.218
+username = "eisclimber"
+header = "Entwicklung"
+post = "- Leiter: Kuro
+- eisclimber
+- Knallbrezel
+- Sven
+- sycon"
+
+[node name="Development" parent="HBox/ContentHBox" index="7" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 679.0
+margin_right = 944.0
+margin_bottom = 948.218
+username = "SiriWesen"
+header = "Design"
+post = "- Leiterin: SiriWesen
+- Blum
+- DeadBulbblegum
+- Fireshake
+- GebackeneBanane
+- GoCut
+- Matty
+- Vincent
+- Xanad0u"
+
+[node name="Story" parent="HBox/ContentHBox" index="8" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 960.0
+margin_right = 944.0
+margin_bottom = 1144.22
+username = "Vablo"
+header = "Story"
+post = "- Leiter: Vablo
+- Blum
+- keggi
+- Nachwahl"
+
+[node name="VoiceActing" parent="HBox/ContentHBox" index="9" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1156.0
+margin_right = 944.0
+margin_bottom = 1306.22
+username = "EveryVoice"
+header = "Voice   Acting"
+post = "- Leiter: EveryVoice
+- Slayandra"
+
+[node name="DankeAn" parent="HBox/ContentHBox" index="10" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1318.0
+margin_right = 944.0
+margin_bottom = 1502.22
+username = "EveryVoice"
+header = "Danke   an..."
+post = "- Klengan: Vielen Dank, für die vielen tollen Videos und Podcast. Wir hoffen es gefällt :)
+- Natürlich auch den anderen Youtubern, etc. die sich in nsere Spielwelt verloren haben, wir haben euch lieb :P
+- Juan Linetsky, Ariel Manzur. und die DoDot-Gemeinschaft für die wundervolle Gameengine!
+- FluentCoding für die ...Mitarbeit bei der Entwicklung"

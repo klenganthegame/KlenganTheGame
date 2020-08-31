@@ -3,12 +3,6 @@
 [ext_resource path="res://scenes/ui/screens/credits/RedditMainPost.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/screens/credits/RedditAnswer.tscn" type="PackedScene" id=2]
 
-
-
-
-
-
-
 [node name="HistoryPost" instance=ExtResource( 1 )]
 header = "Klengan the Game"
 post = "Hat jemand Bock ein Spiel für den Youtuber Klengan zu machen?
