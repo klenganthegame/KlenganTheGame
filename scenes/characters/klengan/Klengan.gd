@@ -6,7 +6,7 @@ var looking_right : bool = true setget set_looking_right
 var can_interact = false
 var area : Area2D
 var paused: bool = false
-var spawn : Vector2
+var spawn : Vector2 = Vector2()
 var dashed : bool = false
 var dash: float = 0.01
 var selected_weapon : int = KLENGAN_ATTACKS.NORMAL
@@ -28,7 +28,6 @@ func _enter_tree():
 func _ready():
 	if !SaveGame.settings.is_touch():
 		$CanvasLayer/TouchControlls.hide()
-	update_life()
 	update_life()
 	
 	change_score_in_ui(500)

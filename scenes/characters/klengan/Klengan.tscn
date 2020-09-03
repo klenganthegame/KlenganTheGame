@@ -65,7 +65,6 @@
 [ext_resource path="res://resources/sprites/characters/klengan/idle/klengan_idle_0005.png" type="Texture" id=63]
 [ext_resource path="res://scenes/ui/panels/pause_panel/Stereo.gd" type="Script" id=64]
 
-
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 56 )
 shader_param/outline_color = Color( 0, 0, 0, 1 )
@@ -376,7 +375,7 @@ script = ExtResource( 11 )
 material = SubResource( 1 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
-animation = "melee"
+animation = "idle"
 
 [node name="AttackArea" type="Area2D" parent="."]
 position = Vector2( 35, 13 )
