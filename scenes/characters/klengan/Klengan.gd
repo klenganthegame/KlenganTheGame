@@ -39,10 +39,12 @@ func _process(_delta):
 	if dash <= 0.01:
 		dash = 0.01
 		dashed = false
-	if Input.is_action_pressed("sneak") && dash < 1 && $StateMachine.current_state != $StateMachine.states_map["stagger"] && !dashed:
+	if Input.is_action_pressed("sneak") && dash < 1 && !dashed \
+			&& $StateMachine.current_state != $StateMachine.states_map["stagger"]:
 		dash *= 1.02
 		#dash *= 100  #for debug purposes
-	elif dash > 0.01 && $StateMachine.current_state != $StateMachine.states_map["stagger"] || dashed:
+	elif  $StateMachine.current_state != $StateMachine.states_map["stagger"]\
+			 && dash > 0.01 || dashed:
 		dash -= 0.01
 	elif $StateMachine.current_state != $StateMachine.states_map["stagger"]:
 		dash = 0.01
@@ -117,9 +119,13 @@ func change_score_in_ui(score : int):
 	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
 
 
+func play_sound(_sound : String):
+	$GameAudioPlayer2D.play_sound(_sound)
+
+
 func hit(damage : int):
 	.hit(damage)
-	AudioHandler.play_sound("klengan_hurt")
+	play_sound("klengan_hurt")
 
 
 func dying():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scenes/characters/enemys/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/characters/bodyguard/walk/Bodyguard_walking_0002.png" type="Texture" id=2]
@@ -38,12 +38,11 @@
 [ext_resource path="res://resources/sprites/characters/bodyguard/idle/bodyguardm_idle__0023.png" type="Texture" id=36]
 [ext_resource path="res://resources/sprites/characters/bodyguard/idle/bodyguardm_idle__0024.png" type="Texture" id=37]
 [ext_resource path="res://scenes/items/ItemFactory.tscn" type="PackedScene" id=38]
+[ext_resource path="res://scenes/objects/game_elements/GameAudioPlayer2D.tscn" type="PackedScene" id=39]
 [ext_resource path="res://resources/sprites/characters/bodyguard/walk/Bodyguard_walking_0005.png" type="Texture" id=40]
 [ext_resource path="res://resources/sprites/characters/bodyguard/walk/Bodyguard_walking_0006.png" type="Texture" id=41]
 [ext_resource path="res://resources/sprites/characters/bodyguard/walk/Bodyguard_walking_0007.png" type="Texture" id=42]
 [ext_resource path="res://resources/sprites/characters/bodyguard/walk/Bodyguard_walking_0008.png" type="Texture" id=43]
-
-
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 11 )
@@ -116,7 +115,7 @@ position = Vector2( -4.41931, -107.116 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 6
+frame = 7
 playing = true
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -143,8 +142,7 @@ shape = SubResource( 5 )
 
 [node name="AttackCooldown" type="Timer" parent="."]
 
-[node name="EnemySoundsPlayer" type="AudioStreamPlayer2D" parent="."]
-bus = "Sounds"
+[node name="GameAudioPlayer2D" parent="." instance=ExtResource( 39 )]
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="body_entered" from="AttackArea" to="StateMachine" method="_on_AttackArea_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="StateMachine" method="_on_AttackArea_body_exited"]

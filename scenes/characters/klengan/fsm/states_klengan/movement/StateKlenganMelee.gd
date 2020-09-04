@@ -13,7 +13,7 @@ func enter():
 		#replace with idle attack anim
 		owner.play_directional_animation("melee")
 	
-	AudioHandler.play_sound("klengan_melee")
+	owner.play_sound("sounds.klengan_melee")
 
 
 func exit():

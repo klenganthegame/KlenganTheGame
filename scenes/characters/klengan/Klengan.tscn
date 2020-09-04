@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://scenes/characters/klengan/Klengan.gd" type="Script" id=1]
 [ext_resource path="res://scenes/characters/klengan/fsm/KlenganStateController.gd" type="Script" id=2]
@@ -64,6 +64,7 @@
 [ext_resource path="res://resources/sprites/characters/klengan/idle/klengan_idle_0004.png" type="Texture" id=62]
 [ext_resource path="res://resources/sprites/characters/klengan/idle/klengan_idle_0005.png" type="Texture" id=63]
 [ext_resource path="res://scenes/ui/panels/pause_panel/Stereo.gd" type="Script" id=64]
+[ext_resource path="res://scenes/objects/game_elements/GameAudioPlayer2D.tscn" type="PackedScene" id=65]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 56 )
@@ -727,7 +728,6 @@ __meta__ = {
 margin_top = 19.0
 margin_right = 465.0
 margin_bottom = 67.0
-audio_bus = "Master"
 
 [node name="SoundsVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 71.0
@@ -792,14 +792,16 @@ visible = false
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
 visible = false
 color = Color( 0, 0, 0, 1 )
+
+[node name="GameAudioPlayer2D" parent="." instance=ExtResource( 65 )]
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="area_entered" from="AttackArea" to="StateMachine" method="_on_AttackArea_area_entered"]
 [connection signal="area_exited" from="AttackArea" to="StateMachine" method="_on_AttackArea_area_exited"]
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CanvasLayer/TouchControlls/Pause" to="CanvasLayer" method="toggle_pause"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]

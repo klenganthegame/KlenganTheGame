@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/characters/FightableObject.gd"
 }, {
+"base": "AudioStreamPlayer2D",
+"class": "GameAudioPlayer2D",
+"language": "GDScript",
+"path": "res://scenes/objects/game_elements/GameAudioPlayer2D.gd"
+}, {
 "base": "Button",
 "class": "GameButton",
 "language": "GDScript",
@@ -233,6 +238,7 @@ _global_script_class_icons={
 "ENEMY_ATTACKS": "",
 "EnemyStateController": "",
 "FightableObject": "",
+"GameAudioPlayer2D": "",
 "GameButton": "",
 "GameTextureButton": "",
 "HotlinkButton": "",
@@ -282,12 +288,11 @@ config/icon="res://resources/ui/icons/app_icons/icon.png"
 
 [autoload]
 
-AudioLoader="*res://scripts/file_io/AudioLoader.gd"
-AudioHandler="*res://scripts/handler/AudioHandler.gd"
 SCENES="*res://scripts/data/ScenePaths.gd"
 SaveGame="*res://scripts/file_io/GameSaver.gd"
 LevelChanger="*res://scripts/file_io/LevelChanger.gd"
 RumbleHandler="*res://scripts/handler/RumbleHandler.gd"
+AudioHandler="*res://scripts/handler/AudioHandler.tscn"
 
 [display]
 

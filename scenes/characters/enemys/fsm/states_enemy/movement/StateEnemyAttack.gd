@@ -5,7 +5,7 @@ class_name StateEnemyAttack
 func enter():
 	.enter()
 	owner.play_directional_animation("idle")
-	AudioHandler.play_sound("enemy_attack")
+	owner.play_sound("sounds.enemy_attack")
 
 
 func update(_delta):
