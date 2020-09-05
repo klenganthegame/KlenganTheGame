@@ -13,10 +13,13 @@ onready var ambient_player = $AmbientPlayer
 var audio_dict : Dictionary = {}
 var local_audio_enabled = true
 
+var current_music = ""
+
 
 func _ready():
 	pause_mode = PAUSE_MODE_PROCESS
 	audio_dict = $AudioLoader.load_audio_dict()
+	play_random_music()
 
 
 func get_stream(_stream_name : String):
@@ -36,6 +39,8 @@ func play_in_bus(_sound_name : String, _bus_name : String):
 			BUS_MUSIC:
 				music_player.stream = sound
 				music_player.play()
+				print(sound.resource_name)
+				current_music = _sound_name
 			BUS_AMBIENT:
 				ambient_player.stream = sound
 				ambient_player.play()
@@ -60,3 +65,28 @@ func set_bus_muted_by_name(_bus_name : String, _muted : bool):
 
 func set_bus_muted(_bus_idx : int, _muted : bool):
 	AudioServer.set_bus_mute(_bus_idx, _muted)
+
+
+func get_audios_beginning_with_key(_key : String, _exceptions = []):
+	var audios = audio_dict.keys()
+	var keys = []
+	for stream in audios:
+		if stream.begins_with(_key) and !_exceptions.has(stream):
+			keys.append(stream)
+	return keys
+
+
+func play_random_music():
+	var music = get_audios_beginning_with_key("music.", [current_music])
+	if music.size() == 0:
+		if current_music != "": # Only one music audio -> replay current
+			play_in_bus(current_music, BUS_MUSIC)
+		else: # no music available
+			print("AudioHandler.gd: no music available")
+	else: # play a random other song
+		music.shuffle()
+		play_in_bus(music[0], BUS_MUSIC)
+
+
+func _on_MusicPlayer_finished():
+	play_random_music()

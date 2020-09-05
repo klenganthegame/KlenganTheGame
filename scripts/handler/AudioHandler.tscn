@@ -18,3 +18,4 @@ bus = "Music"
 
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Ambient"
+[connection signal="finished" from="MusicPlayer" to="." method="_on_MusicPlayer_finished"]
