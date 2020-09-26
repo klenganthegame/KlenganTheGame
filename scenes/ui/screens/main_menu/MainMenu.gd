@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	$FadeIn.play("in")
 	$AnimationPlayer.play("idle")
-	AudioHandler.play_music("BackstageDancer")
+	AudioHandler.play_in_bus("BackstageDancer", "Music")
 	if Input.get_joy_name(0) != "":
 		$VBoxContainer/NewGame.grab_focus()
 	check_version()

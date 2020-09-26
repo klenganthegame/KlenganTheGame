@@ -23,6 +23,7 @@ func _ready():
 func _on_Area2D_mouse_entered():
 	$AnimationPlayer.play("clicked")
 
+
 func _clicked():
 	emit_signal("picked_item", id, amount)
 	print("Item :: Picked " + String(id) + " ammount: " + String(amount))
