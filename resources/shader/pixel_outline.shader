@@ -1,10 +1,11 @@
 shader_type canvas_item;
 
 uniform vec4 outline_color : hint_color;
+uniform float outline_size;
 
 void fragment(){
-	float size_x = 1.0/float(textureSize(TEXTURE, 0).x);
-	float size_y = 1.0/float(textureSize(TEXTURE, 0).y);
+	float size_x = outline_size/float(textureSize(TEXTURE, 0).x);
+	float size_y = outline_size/float(textureSize(TEXTURE, 0).y);
 	vec4 sprite_color = texture(TEXTURE, UV);
 	float alpha = -4.0 * sprite_color.a;
 	alpha += texture(TEXTURE, UV + vec2(size_x, 0)).a;
