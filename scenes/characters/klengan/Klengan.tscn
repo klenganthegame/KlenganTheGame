@@ -77,15 +77,15 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ) ],
-"loop": true,
-"name": "walk",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "melee",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "walk",
+"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -414,11 +414,11 @@ offset = Vector2( 0, -50 )
 current = true
 smoothing_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 pause_mode = 2
 script = ExtResource( 24 )
 
-[node name="TouchControlls" type="Control" parent="CanvasLayer"]
+[node name="TouchControlls" type="Control" parent="HUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 25 )
@@ -426,7 +426,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pause" type="Button" parent="CanvasLayer/TouchControlls"]
+[node name="Pause" type="Button" parent="HUD/TouchControlls"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -107.0
@@ -440,7 +440,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Arrows" type="Control" parent="CanvasLayer/TouchControlls"]
+[node name="Arrows" type="Control" parent="HUD/TouchControlls"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -120.0
@@ -450,7 +450,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Right" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Arrows"]
+[node name="Right" type="TouchScreenButton" parent="HUD/TouchControlls/Arrows"]
 position = Vector2( 140, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 26 )
@@ -459,7 +459,7 @@ passby_press = true
 action = "walk_right"
 visibility_mode = 1
 
-[node name="Left" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Arrows"]
+[node name="Left" type="TouchScreenButton" parent="HUD/TouchControlls/Arrows"]
 position = Vector2( 40, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 28 )
@@ -468,7 +468,7 @@ passby_press = true
 action = "walk_left"
 visibility_mode = 1
 
-[node name="Interaction" type="Control" parent="CanvasLayer/TouchControlls"]
+[node name="Interaction" type="Control" parent="HUD/TouchControlls"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -481,7 +481,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Up" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+[node name="Up" type="TouchScreenButton" parent="HUD/TouchControlls/Interaction"]
 position = Vector2( 55, -100 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 30 )
@@ -490,7 +490,7 @@ passby_press = true
 action = "jump"
 visibility_mode = 1
 
-[node name="Okay" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+[node name="Okay" type="TouchScreenButton" parent="HUD/TouchControlls/Interaction"]
 position = Vector2( 160, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 31 )
@@ -498,14 +498,14 @@ pressed = ExtResource( 32 )
 action = "accept"
 visibility_mode = 1
 
-[node name="Attack" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+[node name="Attack" type="TouchScreenButton" parent="HUD/TouchControlls/Interaction"]
 position = Vector2( -40, 0 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 31 )
 passby_press = true
 action = "attack"
 
-[node name="Sneak" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+[node name="Sneak" type="TouchScreenButton" parent="HUD/TouchControlls/Interaction"]
 position = Vector2( 145, 85 )
 rotation = 3.14159
 scale = Vector2( 5, 5 )
@@ -513,7 +513,7 @@ normal = ExtResource( 30 )
 action = "sneak"
 visibility_mode = 1
 
-[node name="R" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+[node name="R" type="TouchScreenButton" parent="HUD/TouchControlls/Interaction"]
 position = Vector2( 160.909, -190.056 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 26 )
@@ -522,7 +522,7 @@ passby_press = true
 action = "last_weapon"
 visibility_mode = 1
 
-[node name="L" type="TouchScreenButton" parent="CanvasLayer/TouchControlls/Interaction"]
+[node name="L" type="TouchScreenButton" parent="HUD/TouchControlls/Interaction"]
 position = Vector2( 60.9089, -190.056 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 28 )
@@ -531,7 +531,7 @@ passby_press = true
 action = "next_weapon"
 visibility_mode = 1
 
-[node name="UI" type="Control" parent="CanvasLayer"]
+[node name="UI" type="Control" parent="HUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 0.176605
@@ -541,7 +541,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI"]
+[node name="ScoreLabel" type="Label" parent="HUD/UI"]
 pause_mode = 2
 margin_left = 20.0
 margin_top = 10.0
@@ -553,7 +553,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Health" type="TextureProgress" parent="CanvasLayer/UI"]
+[node name="Health" type="TextureProgress" parent="HUD/UI"]
 pause_mode = 2
 margin_left = 16.0
 margin_top = 41.0
@@ -566,7 +566,7 @@ texture_over = ExtResource( 34 )
 texture_progress = ExtResource( 35 )
 fill_mode = 4
 
-[node name="StabiloDash" type="TextureProgress" parent="CanvasLayer/UI"]
+[node name="StabiloDash" type="TextureProgress" parent="HUD/UI"]
 anchor_bottom = 1.0
 margin_left = 41.0
 margin_top = 130.0
@@ -580,7 +580,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WeaponSelection" parent="CanvasLayer/UI" instance=ExtResource( 38 )]
+[node name="WeaponSelection" parent="HUD/UI" instance=ExtResource( 38 )]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -123.5
@@ -588,7 +588,7 @@ margin_top = 30.0
 margin_right = 123.5
 margin_bottom = 139.0
 
-[node name="DialogueBox" type="NinePatchRect" parent="CanvasLayer"]
+[node name="DialogueBox" type="NinePatchRect" parent="HUD"]
 pause_mode = 2
 visible = false
 anchor_right = 1.0
@@ -611,7 +611,7 @@ font = SubResource( 7 )
 action_name = "accept"
 wait_time = 0.05
 
-[node name="PauseMenu" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="PauseMenu" type="AnimationPlayer" parent="HUD"]
 pause_mode = 2
 anims/backtomenu = SubResource( 8 )
 anims/die = SubResource( 9 )
@@ -620,7 +620,7 @@ anims/out = SubResource( 11 )
 anims/settings_in = SubResource( 12 )
 anims/settings_out = SubResource( 13 )
 
-[node name="Pause" type="Control" parent="CanvasLayer"]
+[node name="Pause" type="Control" parent="HUD"]
 pause_mode = 2
 visible = false
 anchor_right = 1.0
@@ -630,7 +630,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Blur" type="TextureRect" parent="CanvasLayer/Pause"]
+[node name="Blur" type="TextureRect" parent="HUD/Pause"]
 pause_mode = 2
 material = SubResource( 14 )
 anchor_right = 1.0
@@ -640,7 +640,7 @@ size_flags_vertical = 2
 texture = ExtResource( 44 )
 expand = true
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Pause"]
+[node name="Panel" type="Panel" parent="HUD/Pause"]
 pause_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
@@ -655,7 +655,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
+[node name="PauseMenu" type="VBoxContainer" parent="HUD/Pause/Panel"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -666,7 +666,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+[node name="Back" type="Button" parent="HUD/Pause/Panel/PauseMenu"]
 pause_mode = 2
 margin_top = 71.0
 margin_right = 464.0
@@ -676,7 +676,7 @@ mouse_default_cursor_shape = 2
 text = "Zurück zum Spiel"
 script = ExtResource( 57 )
 
-[node name="Save" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+[node name="Save" type="Button" parent="HUD/Pause/Panel/PauseMenu"]
 pause_mode = 2
 margin_top = 129.0
 margin_right = 464.0
@@ -685,7 +685,7 @@ mouse_default_cursor_shape = 2
 text = "Speichern"
 script = ExtResource( 57 )
 
-[node name="Settings" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+[node name="Settings" type="Button" parent="HUD/Pause/Panel/PauseMenu"]
 pause_mode = 2
 margin_top = 187.0
 margin_right = 464.0
@@ -694,7 +694,7 @@ mouse_default_cursor_shape = 2
 text = "Einstellungen"
 script = ExtResource( 57 )
 
-[node name="Controls" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+[node name="Controls" type="Button" parent="HUD/Pause/Panel/PauseMenu"]
 margin_top = 245.0
 margin_right = 464.0
 margin_bottom = 299.0
@@ -702,7 +702,7 @@ mouse_default_cursor_shape = 2
 text = "Steuerung"
 script = ExtResource( 57 )
 
-[node name="BackToMenu" type="Button" parent="CanvasLayer/Pause/Panel/PauseMenu"]
+[node name="BackToMenu" type="Button" parent="HUD/Pause/Panel/PauseMenu"]
 pause_mode = 2
 margin_top = 303.0
 margin_right = 464.0
@@ -712,7 +712,7 @@ mouse_default_cursor_shape = 2
 text = "Zurück zum Menü"
 script = ExtResource( 57 )
 
-[node name="Settings" type="VBoxContainer" parent="CanvasLayer/Pause/Panel"]
+[node name="Settings" type="VBoxContainer" parent="HUD/Pause/Panel"]
 pause_mode = 2
 visible = false
 anchor_right = 1.0
@@ -724,26 +724,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MasterVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
+[node name="MasterVolumeSlider" parent="HUD/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 19.0
 margin_right = 465.0
 margin_bottom = 67.0
+audio_bus = "Master"
 
-[node name="SoundsVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
+[node name="SoundsVolumeSlider" parent="HUD/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 71.0
 margin_right = 465.0
 margin_bottom = 119.0
 prefix = "Sounds: "
 audio_bus = "Sounds"
 
-[node name="MusicVolumeSlider" parent="CanvasLayer/Pause/Panel/Settings" instance=ExtResource( 45 )]
+[node name="MusicVolumeSlider" parent="HUD/Pause/Panel/Settings" instance=ExtResource( 45 )]
 margin_top = 123.0
 margin_right = 465.0
 margin_bottom = 171.0
 prefix = "Music: "
 audio_bus = "Music"
 
-[node name="Stereo" type="CheckButton" parent="CanvasLayer/Pause/Panel/Settings"]
+[node name="Stereo" type="CheckButton" parent="HUD/Pause/Panel/Settings"]
 pause_mode = 2
 margin_top = 175.0
 margin_right = 465.0
@@ -752,7 +753,7 @@ pressed = true
 text = "Stereo"
 script = ExtResource( 64 )
 
-[node name="Rumble" type="CheckButton" parent="CanvasLayer/Pause/Panel/Settings"]
+[node name="Rumble" type="CheckButton" parent="HUD/Pause/Panel/Settings"]
 pause_mode = 2
 margin_top = 235.0
 margin_right = 465.0
@@ -761,7 +762,7 @@ pressed = true
 text = "Controller-Rumble"
 script = ExtResource( 47 )
 
-[node name="Donations" type="CheckButton" parent="CanvasLayer/Pause/Panel/Settings"]
+[node name="Donations" type="CheckButton" parent="HUD/Pause/Panel/Settings"]
 pause_mode = 2
 margin_top = 295.0
 margin_right = 465.0
@@ -770,7 +771,7 @@ pressed = true
 text = "Spendenaufruf"
 script = ExtResource( 48 )
 
-[node name="Back" type="Button" parent="CanvasLayer/Pause/Panel/Settings"]
+[node name="Back" type="Button" parent="HUD/Pause/Panel/Settings"]
 pause_mode = 2
 margin_top = 355.0
 margin_right = 465.0
@@ -779,17 +780,17 @@ mouse_default_cursor_shape = 2
 text = "Zurück"
 script = ExtResource( 57 )
 
-[node name="Krebshilfe" parent="CanvasLayer/Pause" instance=ExtResource( 49 )]
+[node name="Krebshilfe" parent="HUD/Pause" instance=ExtResource( 49 )]
 pause_mode = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -118.0
 margin_bottom = 0.0
 
-[node name="Controlls" parent="CanvasLayer/Pause" instance=ExtResource( 50 )]
+[node name="Controlls" parent="HUD/Pause" instance=ExtResource( 50 )]
 visible = false
 
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+[node name="CanvasModulate" type="CanvasModulate" parent="HUD"]
 visible = false
 color = Color( 0, 0, 0, 1 )
 
@@ -799,14 +800,14 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="area_exited" from="AttackArea" to="StateMachine" method="_on_AttackArea_area_exited"]
 [connection signal="area_entered" from="interactionArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="interactionArea" to="." method="_on_Area2D_area_exited"]
-[connection signal="pressed" from="CanvasLayer/TouchControlls/Pause" to="CanvasLayer" method="toggle_pause"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
-[connection signal="dialogue_exit" from="CanvasLayer/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
-[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Back" to="CanvasLayer" method="toggle_pause"]
-[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Save" to="CanvasLayer" method="_on_Save_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Settings" to="CanvasLayer" method="_on_Settings_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/Controls" to="CanvasLayer" method="_on_Controls_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause/Panel/PauseMenu/BackToMenu" to="CanvasLayer" method="_on_BackToMenu_pressed"]
-[connection signal="toggled" from="CanvasLayer/Pause/Panel/Settings/Stereo" to="CanvasLayer/Pause/Panel/Settings/Stereo" method="_on_Stereo_toggled"]
-[connection signal="pressed" from="CanvasLayer/Pause/Panel/Settings/Back" to="CanvasLayer" method="_on_Back_pressed"]
-[connection signal="closed" from="CanvasLayer/Pause/Controlls" to="CanvasLayer" method="_on_Controlls_closed"]
+[connection signal="pressed" from="HUD/TouchControlls/Pause" to="HUD" method="toggle_pause"]
+[connection signal="dialogue_exit" from="HUD/DialogueBox" to="." method="_on_DialogueBox_dialogue_exit"]
+[connection signal="dialogue_exit" from="HUD/DialogueBox" to="StateMachine/Stagger" method="_on_DialogueBox_dialogue_exit"]
+[connection signal="pressed" from="HUD/Pause/Panel/PauseMenu/Back" to="HUD" method="toggle_pause"]
+[connection signal="pressed" from="HUD/Pause/Panel/PauseMenu/Save" to="HUD" method="_on_Save_pressed"]
+[connection signal="pressed" from="HUD/Pause/Panel/PauseMenu/Settings" to="HUD" method="_on_Settings_pressed"]
+[connection signal="pressed" from="HUD/Pause/Panel/PauseMenu/Controls" to="HUD" method="_on_Controls_pressed"]
+[connection signal="pressed" from="HUD/Pause/Panel/PauseMenu/BackToMenu" to="HUD" method="_on_BackToMenu_pressed"]
+[connection signal="toggled" from="HUD/Pause/Panel/Settings/Stereo" to="HUD/Pause/Panel/Settings/Stereo" method="_on_Stereo_toggled"]
+[connection signal="pressed" from="HUD/Pause/Panel/Settings/Back" to="HUD" method="_on_Back_pressed"]
+[connection signal="closed" from="HUD/Pause/Controlls" to="HUD" method="_on_Controlls_closed"]

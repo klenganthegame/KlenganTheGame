@@ -27,7 +27,7 @@ func _enter_tree():
 
 func _ready():
 	if !SaveGame.settings.is_touch():
-		$CanvasLayer/TouchControlls.hide()
+		$HUD/TouchControlls.hide()
 	update_life()
 	
 	change_score_in_ui(500)
@@ -48,11 +48,11 @@ func _process(_delta):
 		dash -= 0.01
 	elif $StateMachine.current_state != $StateMachine.states_map["stagger"]:
 		dash = 0.01
-	$CanvasLayer/UI/StabiloDash.value = 100 * dash
+	$HUD/UI/StabiloDash.value = 100 * dash
 	if Input.is_action_pressed("jump") && dash >= 0.94 && is_on_floor():
 		$StateMachine._change_state("dash")
 		dashed = true
-	$CanvasLayer/UI/Health.value = actual_life
+	$HUD/UI/Health.value = actual_life
 
 
 func play_directional_animation(_anim_name, _looking_right = looking_right):
@@ -72,8 +72,8 @@ func set_looking_right(_looking_right):
 
 
 func talk(_text : Array):
-	if !$CanvasLayer/DialogueBox.visible:
-		$CanvasLayer/DialogueBox.talk(_text)
+	if !$HUD/DialogueBox.visible:
+		$HUD/DialogueBox.talk(_text)
 		$StateMachine._change_state("stagger")
 
 
@@ -116,7 +116,7 @@ func set_DashCollision_disabled(_disabled):
 
 
 func change_score_in_ui(score : int):
-	$CanvasLayer/UI/ScoreLabel.text = "score: " + str(score)
+	$HUD/UI/ScoreLabel.text = "score: " + str(score)
 
 
 func play_sound(_sound : String):
@@ -129,7 +129,7 @@ func hit(damage : int):
 
 
 func dying():
-	$CanvasLayer/PauseMenu.play("die")
+	$HUD/PauseMenu.play("die")
 
 
 func die():
@@ -137,8 +137,8 @@ func die():
 
 
 func update_life():
-	$CanvasLayer/UI/Health.max_value = max_life
-	$CanvasLayer/UI/Health.value = actual_life
+	$HUD/UI/Health.max_value = max_life
+	$HUD/UI/Health.value = actual_life
 
 
 func _on_WeaponSelection_weapon_selected(id):
