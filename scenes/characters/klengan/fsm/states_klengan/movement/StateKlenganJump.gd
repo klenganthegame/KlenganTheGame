@@ -29,4 +29,4 @@ func apply_forces():
 			velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED/4*1.5, MAX_SPEED/4*1.5)
 		else:
 			velocity.x = clamp(velocity.x + input_direction.x * ACCELERATON, -MAX_SPEED, MAX_SPEED)
-		owner.play_directional_animation("walk", (input_direction.x > 0))
+		owner.play_directional_animation("jump", (input_direction.x > 0))
