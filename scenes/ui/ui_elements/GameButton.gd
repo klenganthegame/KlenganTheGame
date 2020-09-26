@@ -9,8 +9,8 @@ func _ready():
 
 
 func _on_GameButton_button_down():
-	AudioHandler.play_in_bus("menu_button_pressed", "Sounds")
+	AudioHandler.play_in_bus("sounds.menu_button_pressed", AudioHandler.BUS_SOUNDS)
 
 
 func _on_GameButton_button_up():
-	AudioHandler.play_in_bus("menu_button_released", "Sounds")
+	AudioHandler.play_in_bus("sounds.menu_button_released", AudioHandler.BUS_SOUNDS)

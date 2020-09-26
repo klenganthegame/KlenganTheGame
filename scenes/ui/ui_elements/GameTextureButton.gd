@@ -10,8 +10,8 @@ func _ready():
 
 
 func _on_GameTextureButton_button_down():
-	AudioHandler.play_sound("menu_button_pressed")
+	AudioHandler.play_in_bus("sounds.menu_button_pressed", AudioHandler.BUS_SOUNDS)
 
 
 func _on_GameTextureButton_button_up():
-	AudioHandler.play_sound("menu_button_released")
+	AudioHandler.play_sound("sounds.menu_button_released", AudioHandler.BUS_SOUNDS)
