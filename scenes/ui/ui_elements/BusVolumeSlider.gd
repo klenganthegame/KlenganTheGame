@@ -26,6 +26,6 @@ func _on_BusVolumeSlider_gui_input(event):
 	 or event is InputEventScreenTouch) \
 	 and !Engine.is_editor_hint():
 		if event.pressed:
-			AudioHandler.play_sound("menu_button_pressed")
+			AudioHandler.play_in_bus("menu_button_pressed", "Sounds")
 		else:
-			AudioHandler.play_sound("menu_button_released")
+			AudioHandler.play_in_bus("menu_button_released", "Sounds")

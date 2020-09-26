@@ -31,7 +31,7 @@ func _on_Save_pressed():
 
 func _on_Settings_pressed():
 	if Input.get_joy_name(0) != "":
-		$Pause/Panel/Settings/SoundsVolumeSlider.grab_focus()
+		$Pause/Panel/Settings/MasterVolumeSlider.grab_focus()
 	$PauseMenu.play("settings_in")
 
 
