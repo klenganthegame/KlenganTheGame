@@ -47,15 +47,15 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 (unvollständig)
 
 ### Projektleitung
-* [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### weitere Organisation
-* Nachwahl ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
-* Leo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* Nachwahl ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* Leo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 ### Grafiken
-* Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
-* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 * EnLo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 * KeksMandarine ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
@@ -63,15 +63,15 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 Youtube / Reddit Icon by [Freepik](https://www.flaticon.com/authors/freepik)
 
 ### Entwicklung
-* [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
-* [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
-* eisclimber ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* eisclimber ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 * [FluentCoding](https://github.com/FluentCoding) ![aktivität](https://img.shields.io/badge/Aktivität-ausgeschlossen-inactive.svg)
 
 ### Storywriting
-* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
-* keggi 
-* Blum
+* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* keggi ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* Blum ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
 
 #### Core-Story 
 * Blutlauch ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
