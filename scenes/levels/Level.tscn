@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/sprites/tilesets/level1.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/characters/klengan/Klengan.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/levels/Level.gd" type="Script" id=3]
+[ext_resource path="res://scenes/objects/props/LevelFloor.tscn" type="PackedScene" id=4]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+follow_viewport_scale = 0.8
+
+[node name="TileMap" type="TileMap" parent="BackgroundLayer"]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 8
+format = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="BackgroundLayer"]
+color = Color( 0.529412, 0.529412, 0.529412, 1 )
+
+[node name="MidLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="TileMap" type="TileMap" parent="MidLayer"]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="MidLayer"]
+
+[node name="Klengan" parent="MidLayer" instance=ExtResource( 2 )]
+position = Vector2( 0, -100 )
+
+[node name="Enemys" type="Node2D" parent="MidLayer"]
+
+[node name="Floors" type="Node2D" parent="MidLayer"]
+
+[node name="LevelFloor" parent="MidLayer/Floors" instance=ExtResource( 4 )]
+
+[node name="Interactables" type="Node2D" parent="MidLayer"]
+
+[node name="Props" type="Node2D" parent="MidLayer"]
+
+[node name="ForegroundLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+follow_viewport_scale = 1.2
+
+[node name="TileMap" type="TileMap" parent="ForegroundLayer"]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ForegroundLayer"]

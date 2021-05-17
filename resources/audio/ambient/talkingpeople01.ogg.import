@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/talkingpeople01.ogg-9bc713d77a39a843a377aaf2bfe3b976.oggstr"
+
+[deps]
+
+source_file="res://resources/audio/ambient/talkingpeople01.ogg"
+dest_files=[ "res://.import/talkingpeople01.ogg-9bc713d77a39a843a377aaf2bfe3b976.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

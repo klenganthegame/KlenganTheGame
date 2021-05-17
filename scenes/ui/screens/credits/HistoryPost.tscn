@@ -1,0 +1,138 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ui/screens/credits/RedditMainPost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/screens/credits/RedditAnswer.tscn" type="PackedScene" id=2]
+
+[node name="HistoryPost" instance=ExtResource( 1 )]
+header = "Klengan the Game"
+post = "Hat jemand Bock ein Spiel für den Youtuber Klengan zu machen?
+Hier kommt ein Pseudothread zur Entstehungsgeschichte, etc.
+A la: Nehmen wir Godot? - Hier ein erster Prototyp - Oh wer hat alles gelöscht? 
+- Wir brauchen neue Leute "
+unfolding_nodes = [ NodePath("HBox/ContentHBox/PostPanel"), NodePath("HBox/ContentHBox/PostPanel2") ]
+
+[node name="Header" parent="HBox/ContentHBox" index="1"]
+text = "Klengan the Game"
+
+[node name="Post" parent="HBox/ContentHBox" index="2"]
+text = "Hat jemand Bock ein Spiel für den Youtuber Klengan zu machen?
+Hier kommt ein Pseudothread zur Entstehungsgeschichte, etc.
+A la: Nehmen wir Godot? - Hier ein erster Prototyp - Oh wer hat alles gelöscht? 
+- Wir brauchen neue Leute "
+
+[node name="PostPanel" parent="HBox/ContentHBox" index="5" instance=ExtResource( 2 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 185.0
+margin_right = 944.0
+margin_bottom = 497.218
+header = "Max Schmitt, 1 nicer Projectmanager"
+post = "In einem Land vor unserer Zeit...."
+unfolding_nodes = [ NodePath("."), NodePath("../PostPanel2") ]
+
+[node name="HBox" parent="HBox/ContentHBox/PostPanel" index="0"]
+margin_right = 918.0
+margin_bottom = 307.0
+
+[node name="Margin" parent="HBox/ContentHBox/PostPanel/HBox" index="0"]
+margin_bottom = 301.0
+
+[node name="Label" parent="HBox/ContentHBox/PostPanel/HBox/Margin" index="0"]
+margin_bottom = 301.0
+
+[node name="ContentHBox" parent="HBox/ContentHBox/PostPanel/HBox" index="1"]
+margin_right = 918.0
+margin_bottom = 301.0
+
+[node name="TopInfo" parent="HBox/ContentHBox/PostPanel/HBox/ContentHBox" index="0"]
+margin_right = 890.0
+
+[node name="Header" parent="HBox/ContentHBox/PostPanel/HBox/ContentHBox" index="1"]
+margin_right = 890.0
+text = "Max Schmitt, 1 nicer Projectmanager"
+
+[node name="Post" parent="HBox/ContentHBox/PostPanel/HBox/ContentHBox" index="2"]
+margin_right = 890.0
+margin_bottom = 81.0
+text = "In einem Land vor unserer Zeit...."
+
+[node name="SocialMedia" parent="HBox/ContentHBox/PostPanel/HBox/ContentHBox" index="3"]
+margin_top = 93.0
+margin_right = 890.0
+margin_bottom = 93.0
+
+[node name="BottomInfo" parent="HBox/ContentHBox/PostPanel/HBox/ContentHBox" index="4"]
+margin_top = 105.0
+margin_right = 890.0
+margin_bottom = 122.0
+
+[node name="PostPanel2" parent="HBox/ContentHBox/PostPanel/HBox/ContentHBox" index="5" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 134.0
+margin_right = 890.0
+margin_bottom = 301.218
+header = "Peter Max S(ch)mit(t)s"
+post = "Da lebten Dinos am Boden, im Wasser
+und Fliege-Dinger
+(Ja, die heißen Fliegedinger!) "
+
+[node name="PostPanel2" parent="HBox/ContentHBox" index="6" instance=ExtResource( 2 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 509.0
+margin_right = 944.0
+margin_bottom = 802.218
+header = "Nicht Max Schmitt, aber auch nicht Nicht Max Schmitt"
+post = "Dann kam ein Komet und löschte das Ganze Proj… Leben auf der Erde aus"
+
+[node name="HBox" parent="HBox/ContentHBox/PostPanel2" index="0"]
+margin_right = 918.0
+margin_bottom = 288.0
+
+[node name="Margin" parent="HBox/ContentHBox/PostPanel2/HBox" index="0"]
+margin_bottom = 282.0
+
+[node name="Label" parent="HBox/ContentHBox/PostPanel2/HBox/Margin" index="0"]
+margin_bottom = 282.0
+
+[node name="ContentHBox" parent="HBox/ContentHBox/PostPanel2/HBox" index="1"]
+margin_right = 918.0
+margin_bottom = 282.0
+
+[node name="TopInfo" parent="HBox/ContentHBox/PostPanel2/HBox/ContentHBox" index="0"]
+margin_right = 890.0
+
+[node name="Header" parent="HBox/ContentHBox/PostPanel2/HBox/ContentHBox" index="1"]
+margin_right = 890.0
+text = "Nicht Max Schmitt, aber auch nicht Nicht Max Schmitt"
+
+[node name="Post" parent="HBox/ContentHBox/PostPanel2/HBox/ContentHBox" index="2"]
+margin_right = 890.0
+margin_bottom = 81.0
+text = "Dann kam ein Komet und löschte das Ganze Proj… Leben auf der Erde aus"
+
+[node name="SocialMedia" parent="HBox/ContentHBox/PostPanel2/HBox/ContentHBox" index="3"]
+margin_top = 93.0
+margin_right = 890.0
+margin_bottom = 93.0
+
+[node name="BottomInfo" parent="HBox/ContentHBox/PostPanel2/HBox/ContentHBox" index="4"]
+margin_top = 105.0
+margin_right = 890.0
+margin_bottom = 122.0
+
+[node name="PostPanel" parent="HBox/ContentHBox/PostPanel2/HBox/ContentHBox" index="5" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 134.0
+margin_right = 890.0
+margin_bottom = 282.0
+header = "Ein anderer Max Schmitt"
+post = "Dann kam ein weiser Kuro aka Max Schmitt (der echte) und belebte das Projekt wieder"
+
+[editable path="HBox/ContentHBox/PostPanel"]
+
+[editable path="HBox/ContentHBox/PostPanel2"]

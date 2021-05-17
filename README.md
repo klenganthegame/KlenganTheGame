@@ -9,6 +9,11 @@
 Ein Webgame für den YouTuber Klengan und seine Community.
 Momentante Idee ist ein Jump and Run mit einer kleinen Story mit Anspielungen auf Klengan und YouTube Deutschland. 
 
+![](https://img.shields.io/badge/Engine-Godot_3.2-blue.svg)
+![](https://img.shields.io/badge/Version-0.0-green.svg) 
+![](https://img.shields.io/badge/License-GNU_GPLv2-green.svg)
+<br>
+![](https://img.shields.io/github/issues/KlenganTheGame/KlenganTheGame)
 ## Technik und Bestandsaufnahme
 Eine Zusammenfassung zum momentanen Stand des Projektes findest du [hier](https://github.com/klenganthegame/KlenganTheGame/wiki/Momentaner-Stand).
 
@@ -34,5 +39,44 @@ Weitere Docs gibt es für Teammitglieder im Dicord.
 [Reddit](https://www.reddit.com/r/KlenganTheGame/) - Forum    
 
 ## Spielen
-[Hier klicken](https://klenganthegame.github.io/index.html)   
+[Hier klicken](https://klenganthegame.github.io/KlenganTheGame/index.html)
 
+![](https://cdn.discordapp.com/attachments/571696895085248512/572003302271746058/Fred_Scaled.png)
+
+## Mitwirkende
+(unvollständig)
+
+### Projektleitung
+* [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+
+### weitere Organisation
+* Nachwahl ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* Leo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+
+### Grafiken
+* Xanad0u ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* EnLo ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+* KeksMandarine ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+
+#### extern
+Youtube / Reddit Icon by [Freepik](https://www.flaticon.com/authors/freepik)
+
+### Entwicklung
+* [Kuro](https://divirad.com) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* [Sveniff](https://github.com/Sveniff) ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* eisclimber ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* [FluentCoding](https://github.com/FluentCoding) ![aktivität](https://img.shields.io/badge/Aktivität-ausgeschlossen-inactive.svg)
+
+### Storywriting
+* Vablo ![aktivität](https://img.shields.io/badge/Aktivität-aktiv-green.svg)
+* keggi 
+* Blum
+
+#### Core-Story 
+* Blutlauch ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)
+
+### Sound-Design 
+
+### Dokumentation uä.
+* [Cyanit](https://github.com/cyanit) ![aktivität](https://img.shields.io/badge/Aktivität-inaktiv-inactive.svg)

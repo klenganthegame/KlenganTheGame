@@ -1,8 +1,6 @@
 .import/*
-*.import
 
 export_presets\.cfg
 *.a
-*.pck
-*.xcodeproj
+
 KlenganTheGame/*

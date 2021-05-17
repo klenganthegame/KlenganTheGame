@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ui/screens/credits/RedditMainPost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/screens/credits/RedditAnswer.tscn" type="PackedScene" id=2]
+
+[node name="DesignerPost" instance=ExtResource( 1 )]
+username = "SiriWesen"
+header = "Sophie kenn ich nicht, aber sie kann zeichnen"
+post = "Was sind Hände?"
+
+[node name="Postedby" parent="HBox/ContentHBox/TopInfo" index="0"]
+margin_right = 101.0
+text = "Posted by u/SiriWesen"
+
+[node name="Timeago" parent="HBox/ContentHBox/TopInfo" index="10"]
+margin_left = 105.0
+margin_right = 187.0
+
+[node name="Header" parent="HBox/ContentHBox" index="1"]
+text = "Sophie kenn ich nicht, aber sie kann zeichnen"
+
+[node name="Post" parent="HBox/ContentHBox" index="2"]
+margin_bottom = 389.0
+text = "Was sind Hände?"
+
+[node name="SocialMedia" parent="HBox/ContentHBox" index="3"]
+margin_top = 401.0
+margin_bottom = 401.0
+
+[node name="BottomInfo" parent="HBox/ContentHBox" index="4"]
+margin_top = 413.0
+margin_bottom = 430.0
+
+[node name="PostPanel" parent="HBox/ContentHBox" index="5" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 442.0
+margin_right = 944.0
+margin_bottom = 590.0
+username = "Gebackene Banane"
+header = "Wie Dr Sommer aber als Frucht."

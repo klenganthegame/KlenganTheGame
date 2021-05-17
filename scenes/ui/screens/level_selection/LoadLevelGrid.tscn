@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ui/screens/level_selection/LoadLevelGrid.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ui/screens/level_selection/LoadButton.tscn" type="PackedScene" id=2]
+
+[node name="LoadLevelGrid" type="GridContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+columns = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadButton" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 150.0
+margin_bottom = 150.0
+
+[node name="LoadButton2" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 150.0
+
+[node name="LoadButton3" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 308.0
+margin_right = 458.0
+margin_bottom = 150.0

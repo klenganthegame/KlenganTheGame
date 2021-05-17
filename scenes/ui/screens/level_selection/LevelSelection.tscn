@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/ui/ui_elements/GameButton.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ui/screens/level_selection/LoadLevelGrid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/screens/level_selection/LevelSelection.gd" type="Script" id=3]
+
+[node name="LevelSelection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadLevelGrid" parent="." instance=ExtResource( 2 )]
+
+[node name="BackButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -20.0
+margin_bottom = 20.0
+grow_horizontal = 0
+rect_min_size = Vector2( 20, 20 )
+mouse_default_cursor_shape = 2
+text = "X"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
